@@ -655,184 +655,10 @@
           },
           "description": "{\n    \"InstanceIdentifier\": \"1\",\n    \"Interfaces\": [\"ens192\"],\n    \"CDCAdminState\":\"Enable\",\n    \"DiscoverySvcAdminState\":\"Enable\"\n}"
         }
-      },
-      "put": {
-        "summary": "Update CDC instance",
-        "operationId": "Put-redfish-v1-SFSSApp-CDCInstanceManagers",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "description": "",
-                  "type": "object",
-                  "properties": {
-                    "InstanceIdentifier": {
-                      "type": "string",
-                      "minLength": 1
-                    }
-                  },
-                  "required": [
-                    "InstanceIdentifier"
-                  ],
-                  "x-examples": {
-                    "example-1": {
-                      "InstanceIdentifier": "1"
-                    }
-                  }
-                },
-                "examples": {
-                  "example-1": {
-                    "value": {
-                      "InstanceIdentifier": "1"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "201": {
-            "description": "\"InstanceIdentifier\": \"1\""
-          }
-        },
-        "description": "This API updates CDC instance information based on the specified instance identifier.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "description": "",
-                "type": "object",
-                "x-examples": {
-                  "example-1": {
-                    "InstanceIdentifier": "1",
-                    "Interfaces": [
-                      "ens192"
-                    ],
-                    "CDCAdminState": "Enable",
-                    "DiscoverySvcAdminState": "Disable"
-                  }
-                },
-                "properties": {
-                  "InstanceIdentifier": {
-                    "type": "string",
-                    "minLength": 1,
-                    "description": "CDC instance identifier"
-                  },
-                  "Interfaces": {
-                    "type": "array",
-                    "description": "Interface(s) assigned to the CDC instance",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "CDCAdminState": {
-                    "type": "string",
-                    "minLength": 1,
-                    "description": "Administrative state of the CDC instance"
-                  },
-                  "DiscoverySvcAdminState": {
-                    "type": "string",
-                    "minLength": 1,
-                    "description": "Administrative state of the discovery service"
-                  }
-                },
-                "required": [
-                  "InstanceIdentifier",
-                  "Interfaces",
-                  "CDCAdminState",
-                  "DiscoverySvcAdminState"
-                ]
-              },
-              "examples": {
-                "example-1": {
-                  "value": {
-                    "InstanceIdentifier": "1",
-                    "Interfaces": [
-                      "ens192"
-                    ],
-                    "CDCAdminState": "Enable",
-                    "DiscoverySvcAdminState": "Disable"
-                  }
-                }
-              }
-            }
-          },
-          "description": "{\n    \"InstanceIdentifier\": \"1\",\n    \"Interfaces\": [\"ens192\"],\n    \"CDCAdminState\":\"Enable\",\n    \"DiscoverySvcAdminState\":\"Disable\"\n}"
-        },
-        "security": [
-          {
-            "BasicAuth": []
-          }
-        ],
-        "parameters": [
-          {
-            "schema": {
-              "type": "string"
-            },
-            "in": "query",
-            "name": "('1')",
-            "description": "InstanceIdentifier"
-          }
-        ]
-      },
-      "delete": {
-        "summary": "Delete CDC instance",
-        "operationId": "Delete-redfish-v1-SFSSApp-CDCInstanceManagers",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "description": "",
-                  "type": "object",
-                  "properties": {
-                    "InstanceIdentifier": {
-                      "type": "string",
-                      "minLength": 1
-                    }
-                  },
-                  "required": [
-                    "InstanceIdentifier"
-                  ],
-                  "x-examples": {
-                    "example-1": {
-                      "InstanceIdentifier": "1"
-                    }
-                  }
-                },
-                "examples": {
-                  "example-1": {
-                    "value": {
-                      "InstanceIdentifier": "1"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "description": "This API removes the specified CDC instance.",
-        "parameters": [
-          {
-            "schema": {
-              "type": "string"
-            },
-            "in": "query",
-            "name": "('1')",
-            "description": "InstanceIdentifier"
-          }
-        ],
-        "security": [
-          {
-            "BasicAuth": []
-          }
-        ]
       }
+
     },
     "/redfish/v1/SFSSApp/CDCInstanceManagers({InstanceId})": {
-
       "get": {
         "summary": "Get specific CDC information",
         "operationId": "Get-redfish-v1-SFSSApp-CDCInstanceManagers-ID",
@@ -952,6 +778,182 @@
         },
         "description": "This API retrieves information about the CDC instance based on the specified instance identifier."
 
+      },
+      "put": {
+        "summary": "Update CDC instance",
+        "operationId": "Put-redfish-v1-SFSSApp-CDCInstanceManagers",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "InstanceIdentifier": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "InstanceIdentifier"
+                  ],
+                  "x-examples": {
+                    "example-1": {
+                      "InstanceIdentifier": "1"
+                    }
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "InstanceIdentifier": "1"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "\"InstanceIdentifier\": \"1\""
+          }
+        },
+        "description": "This API updates CDC instance information based on the specified instance identifier.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "",
+                "type": "object",
+                "x-examples": {
+                  "example-1": {
+                    "InstanceIdentifier": "1",
+                    "Interfaces": [
+                      "ens192"
+                    ],
+                    "CDCAdminState": "Enable",
+                    "DiscoverySvcAdminState": "Disable"
+                  }
+                },
+                "properties": {
+                  "InstanceIdentifier": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "CDC instance identifier"
+                  },
+                  "Interfaces": {
+                    "type": "array",
+                    "description": "Interface(s) assigned to the CDC instance",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "CDCAdminState": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Administrative state of the CDC instance"
+                  },
+                  "DiscoverySvcAdminState": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Administrative state of the discovery service"
+                  }
+                },
+                "required": [
+                  "InstanceIdentifier",
+                  "Interfaces",
+                  "CDCAdminState",
+                  "DiscoverySvcAdminState"
+                ]
+              },
+              "examples": {
+                "example-1": {
+                  "value": {
+                    "InstanceIdentifier": "1",
+                    "Interfaces": [
+                      "ens192"
+                    ],
+                    "CDCAdminState": "Enable",
+                    "DiscoverySvcAdminState": "Disable"
+                  }
+                }
+              }
+            }
+          },
+          "description": "{\n    \"InstanceIdentifier\": \"1\",\n    \"Interfaces\": [\"ens192\"],\n    \"CDCAdminState\":\"Enable\",\n    \"DiscoverySvcAdminState\":\"Disable\"\n}"
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "name": "InstanceId",
+            "description": "InstanceIdentifier",
+            "required": true
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Delete CDC instance",
+        "operationId": "Delete-redfish-v1-SFSSApp-CDCInstanceManagers",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "InstanceIdentifier": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "InstanceIdentifier"
+                  ],
+                  "x-examples": {
+                    "example-1": {
+                      "InstanceIdentifier": "1"
+                    }
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "InstanceIdentifier": "1"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "This API removes the specified CDC instance.",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "name": "InstanceId",
+            "description": "InstanceIdentifier",
+            "required": true
+          }
+        ],
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
       }
     },
     "/redfish/v1/SFSSApp/SFSSImages": {
@@ -1589,7 +1591,7 @@
                       "APP"
                     ],
                     "HttpHeaders": [
-                      "Authorization: Basic ZG52dXNlcjpAIThwSU1vSQ==",
+                      "Authorization: Basic ZZZZZZZZZZZZZZZZZZZZZZZZZZ",
                       "ExternalServerRequiredHeader: ItsValue"
                     ],
                     "Destination": "https://[ipv4/ipv6]/external/Server/eventHandler"
@@ -1649,7 +1651,7 @@
                       "APP"
                     ],
                     "HttpHeaders": [
-                      "Authorization: Basic ZG52dXNlcjpAIThwSU1vSQ==",
+                      "Authorization: Basic ZZZZZZZZZZZZZZZZZZZZZZZZZZ",
                       "ExternalServerRequiredHeader: ItsValue"
                     ],
                     "Destination": "https://[ipv4/ipv6]/external/Server/eventHandler"
@@ -1771,7 +1773,7 @@
                       "APP"
                     ],
                     "HttpHeaders": [
-                      "Authorization: Basic ZG52dXNlcjpAIThwSU1vSQ==",
+                      "Authorization: Basic ZZZZZZZZZZZZZZZZZZZZZZZZZZ",
                       "ExternalServerRequiredHeader: ItsValue"
                     ],
                     "Destination": "https://[ipv4/ipv6]/external/Server/NeweventHandler"
@@ -1791,7 +1793,7 @@
                       "APP"
                     ],
                     "HttpHeaders": [
-                      "Authorization: Basic ZG52dXNlcjpAIThwSU1vSQ==",
+                      "Authorization: Basic ZZZZZZZZZZZZZZZZZZZZZZZZZZ",
                       "ExternalServerRequiredHeader: ItsValue"
                     ],
                     "Destination": "https://[ipv4/ipv6]/external/Server/NeweventHandler"
@@ -1800,7 +1802,7 @@
               }
             }
           },
-          "description": "{\n    \"Protocol\": \"redfish\",\n\n    \"Identifier\": \"uuid\",\n\n    \"Context\": \"NewSubscription\",\n    \"EventTypes\": [\n\n        \"Alert\"\n\n    ],\n   \"CdcInstances\": [\n        \"APP\"\n    ],\n\n    \"HttpHeaders\": [\n        \"Authorization: Basic ZG52dXNlcjpAIThwSU1vSQ==\",\n        \"ExternalServerRequiredHeader: ItsValue\"\n    ],\n    \"Destination\": \"https://[ipv4/ipv6]/external/Server/NeweventHandler\"\n\n}"
+          "description": "{\n    \"Protocol\": \"redfish\",\n\n    \"Identifier\": \"uuid\",\n\n    \"Context\": \"NewSubscription\",\n    \"EventTypes\": [\n\n        \"Alert\"\n\n    ],\n   \"CdcInstances\": [\n        \"APP\"\n    ],\n\n    \"HttpHeaders\": [\n        \"Authorization: Basic ZZZZZZZZZZZZZZZZZZZZZZZZZZ\",\n        \"ExternalServerRequiredHeader: ItsValue\"\n    ],\n    \"Destination\": \"https://[ipv4/ipv6]/external/Server/NeweventHandler\"\n\n}"
         },
         "security": [
           {
@@ -8825,7 +8827,7 @@
             ],
             "@odata.type": "#Alerts.Alerts",
             "HttpHeaders": [
-              "Authorization: Basic ZG52dXNlcjpAIThwSU1vSQ==",
+              "Authorization: Basic ZZZZZZZZZZZZZZZZZZZZZZZZZZ",
               "ExternalServerRequiredHeader: ItsValue"
             ],
             "Destination": "https://[ipv4/ipv6]/external/Server/eventHandler"
@@ -8846,7 +8848,7 @@
             ],
             "@odata.type": "#Alerts.Alerts",
             "HttpHeaders": [
-              "Authorization: Basic ZG52dXNlcjpAIThwSU1vSQ==",
+              "Authorization: Basic ZZZZZZZZZZZZZZZZZZZZZZZZZZ",
               "ExternalServerRequiredHeader: ItsValue"
             ],
             "Destination": "https://[ipv4/ipv6]/external/Server/eventHandler"
