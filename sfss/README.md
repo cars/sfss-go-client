@@ -79,7 +79,7 @@ All URIs are relative to *http://IPAddress*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *DefaultAPI* | [**DeleteRedfishV1SFSSAppAlertsCDCInstanceManagers**](docs/DefaultAPI.md#deleteredfishv1sfssappalertscdcinstancemanagers) | **Delete** /redfish/v1/SFSSApp/Alerts({uuid}) | Delete alert
-*DefaultAPI* | [**DeleteRedfishV1SFSSAppCDCInstanceManagers**](docs/DefaultAPI.md#deleteredfishv1sfssappcdcinstancemanagers) | **Delete** /redfish/v1/SFSSApp/CDCInstanceManagers | Delete CDC instance
+*DefaultAPI* | [**DeleteRedfishV1SFSSAppCDCInstanceManagers**](docs/DefaultAPI.md#deleteredfishv1sfssappcdcinstancemanagers) | **Delete** /redfish/v1/SFSSApp/CDCInstanceManagers({InstanceId}) | Delete CDC instance
 *DefaultAPI* | [**DeleteRedfishV1SFSSAppIpAddressManagements**](docs/DefaultAPI.md#deleteredfishv1sfssappipaddressmanagements) | **Delete** /redfish/v1/SFSSApp/IpAddressManagements({InterfaceId}) | Delete VLAN interface
 *DefaultAPI* | [**DeleteRedfishV1SFSSAppNTPServerIP**](docs/DefaultAPI.md#deleteredfishv1sfssappntpserverip) | **Delete** /redfish/v1/SFSSApp/NTP({ServerIP}) | Remove NTP configuration
 *DefaultAPI* | [**DeleteRedfishV1SFSSAppSFSSImages**](docs/DefaultAPI.md#deleteredfishv1sfssappsfssimages) | **Delete** /redfish/v1/SFSSApp/SFSSImages | Delete image
@@ -145,7 +145,7 @@ Class | Method | HTTP request | Description
 *DefaultAPI* | [**PostRedfishV1SFSSAppTacacsServers**](docs/DefaultAPI.md#postredfishv1sfssapptacacsservers) | **Post** /redfish/v1/SFSSApp/TacacsServers | Configure TACACS+ server
 *DefaultAPI* | [**PutRedfishV1SFSSApp**](docs/DefaultAPI.md#putredfishv1sfssapp) | **Put** /redfish/v1/SFSSApp/SFSSImages | Upgrade application
 *DefaultAPI* | [**PutRedfishV1SFSSAppAlerts**](docs/DefaultAPI.md#putredfishv1sfssappalerts) | **Put** /redfish/v1/SFSSApp/Alerts({uuid}) | Update alert
-*DefaultAPI* | [**PutRedfishV1SFSSAppCDCInstanceManagers**](docs/DefaultAPI.md#putredfishv1sfssappcdcinstancemanagers) | **Put** /redfish/v1/SFSSApp/CDCInstanceManagers | Update CDC instance
+*DefaultAPI* | [**PutRedfishV1SFSSAppCDCInstanceManagers**](docs/DefaultAPI.md#putredfishv1sfssappcdcinstancemanagers) | **Put** /redfish/v1/SFSSApp/CDCInstanceManagers({InstanceId}) | Update CDC instance
 *DefaultAPI* | [**PutRedfishV1SFSSAppIpAddressManagements**](docs/DefaultAPI.md#putredfishv1sfssappipaddressmanagements) | **Put** /redfish/v1/SFSSApp/IpAddressManagements({InterfaceId}) | Update interface
 *DefaultAPI* | [**PutRedfishV1SFSSAppNTP**](docs/DefaultAPI.md#putredfishv1sfssappntp) | **Put** /redfish/v1/SFSSApp/NTP | Enable or disable NTP service
 
@@ -248,6 +248,7 @@ Class | Method | HTTP request | Description
  - [PostRedfishV1SFSSAppBackups200Response](docs/PostRedfishV1SFSSAppBackups200Response.md)
  - [PostRedfishV1SFSSAppBackupsRequest](docs/PostRedfishV1SFSSAppBackupsRequest.md)
  - [PostRedfishV1SFSSAppChangePasswordRequest](docs/PostRedfishV1SFSSAppChangePasswordRequest.md)
+ - [PostRedfishV1SFSSAppFabricManagerInfoPost200Response](docs/PostRedfishV1SFSSAppFabricManagerInfoPost200Response.md)
  - [PostRedfishV1SFSSAppFabricManagerInfoPostRequest](docs/PostRedfishV1SFSSAppFabricManagerInfoPostRequest.md)
  - [PostRedfishV1SFSSAppGlobalSettingsRequest](docs/PostRedfishV1SFSSAppGlobalSettingsRequest.md)
  - [PostRedfishV1SFSSAppIpAddressManagementsRequest](docs/PostRedfishV1SFSSAppIpAddressManagementsRequest.md)
@@ -265,7 +266,6 @@ Class | Method | HTTP request | Description
  - [PostRedfishV1SFSSAppTacacsServersRequest](docs/PostRedfishV1SFSSAppTacacsServersRequest.md)
  - [PutRedfishV1SFSSApp200Response](docs/PutRedfishV1SFSSApp200Response.md)
  - [PutRedfishV1SFSSAppAlertsRequest](docs/PutRedfishV1SFSSAppAlertsRequest.md)
- - [PutRedfishV1SFSSAppCDCInstanceManagers200Response](docs/PutRedfishV1SFSSAppCDCInstanceManagers200Response.md)
  - [PutRedfishV1SFSSAppCDCInstanceManagersRequest](docs/PutRedfishV1SFSSAppCDCInstanceManagersRequest.md)
  - [PutRedfishV1SFSSAppIpAddressManagementsRequest](docs/PutRedfishV1SFSSAppIpAddressManagementsRequest.md)
  - [PutRedfishV1SFSSAppIpAddressManagementsRequestIPV6RouteInner](docs/PutRedfishV1SFSSAppIpAddressManagementsRequestIPV6RouteInner.md)

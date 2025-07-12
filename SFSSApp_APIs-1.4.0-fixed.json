@@ -1159,7 +1159,7 @@
               "type": "string"
             },
             "in": "query",
-            "name": "\"7cb748e4-8d52-4195-bee3-bb948190fd09\"",
+            "name": "versiontbd",
             "description": "ImageId "
           }
         ]
@@ -1314,7 +1314,7 @@
               "type": "string"
             },
             "in": "query",
-            "name": "\"7cb748e4-8d52-4195-bee3-bb948190fd09\"",
+            "name": "versiontbd",
             "description": "ImageId"
           }
         ]

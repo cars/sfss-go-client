@@ -581,32 +581,6 @@ paths:
       - BasicAuth: []
       summary: Accept EULA
   /redfish/v1/SFSSApp/CDCInstanceManagers:
-    delete:
-      description: This API removes the specified CDC instance.
-      operationId: Delete-redfish-v1-SFSSApp-CDCInstanceManagers
-      parameters:
-      - description: InstanceIdentifier
-        explode: true
-        in: query
-        name: ('1')
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        "200":
-          content:
-            application/json:
-              examples:
-                example-1:
-                  value:
-                    InstanceIdentifier: "1"
-              schema:
-                $ref: "#/components/schemas/Put_redfish_v1_SFSSApp_CDCInstanceManagers_200_response"
-          description: OK
-      security:
-      - BasicAuth: []
-      summary: Delete CDC instance
     get:
       description: This API retrieves details about all the Centralized Discovery
         Controller (CDC) instances configured in SFSS application.
@@ -670,44 +644,24 @@ paths:
                   value:
                     InstanceIdentifier: "1"
               schema:
-                $ref: "#/components/schemas/Put_redfish_v1_SFSSApp_CDCInstanceManagers_200_response"
+                $ref: "#/components/schemas/Post_redfish_v1_SFSSApp_FabricManagerInfo_post_200_response"
           description: OK
       security:
       - BasicAuth: []
       summary: Configure CDC instance
-    put:
-      description: This API updates CDC instance information based on the specified
-        instance identifier.
-      operationId: Put-redfish-v1-SFSSApp-CDCInstanceManagers
+  /redfish/v1/SFSSApp/CDCInstanceManagers({InstanceId}):
+    delete:
+      description: This API removes the specified CDC instance.
+      operationId: Delete-redfish-v1-SFSSApp-CDCInstanceManagers
       parameters:
       - description: InstanceIdentifier
-        explode: true
-        in: query
-        name: ('1')
-        required: false
+        explode: false
+        in: path
+        name: InstanceId
+        required: true
         schema:
           type: string
-        style: form
-      requestBody:
-        content:
-          application/json:
-            examples:
-              example-1:
-                value:
-                  InstanceIdentifier: "1"
-                  Interfaces:
-                  - ens192
-                  CDCAdminState: Enable
-                  DiscoverySvcAdminState: Disable
-            schema:
-              $ref: "#/components/schemas/Put_redfish_v1_SFSSApp_CDCInstanceManagers_request"
-        description: |-
-          {
-              "InstanceIdentifier": "1",
-              "Interfaces": ["ens192"],
-              "CDCAdminState":"Enable",
-              "DiscoverySvcAdminState":"Disable"
-          }
+        style: simple
       responses:
         "200":
           content:
@@ -717,14 +671,11 @@ paths:
                   value:
                     InstanceIdentifier: "1"
               schema:
-                $ref: "#/components/schemas/Put_redfish_v1_SFSSApp_CDCInstanceManagers_200_response"
+                $ref: "#/components/schemas/Post_redfish_v1_SFSSApp_FabricManagerInfo_post_200_response"
           description: OK
-        "201":
-          description: "\"InstanceIdentifier\": \"1\""
       security:
       - BasicAuth: []
-      summary: Update CDC instance
-  /redfish/v1/SFSSApp/CDCInstanceManagers({InstanceId}):
+      summary: Delete CDC instance
     get:
       description: This API retrieves information about the CDC instance based on
         the specified instance identifier.
@@ -762,6 +713,55 @@ paths:
                 $ref: "#/components/schemas/Get_redfish_v1_SFSSApp_CDCInstanceManagers_ID_200_response"
           description: OK
       summary: Get specific CDC information
+    put:
+      description: This API updates CDC instance information based on the specified
+        instance identifier.
+      operationId: Put-redfish-v1-SFSSApp-CDCInstanceManagers
+      parameters:
+      - description: InstanceIdentifier
+        explode: false
+        in: path
+        name: InstanceId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            examples:
+              example-1:
+                value:
+                  InstanceIdentifier: "1"
+                  Interfaces:
+                  - ens192
+                  CDCAdminState: Enable
+                  DiscoverySvcAdminState: Disable
+            schema:
+              $ref: "#/components/schemas/Put_redfish_v1_SFSSApp_CDCInstanceManagers_request"
+        description: |-
+          {
+              "InstanceIdentifier": "1",
+              "Interfaces": ["ens192"],
+              "CDCAdminState":"Enable",
+              "DiscoverySvcAdminState":"Disable"
+          }
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                example-1:
+                  value:
+                    InstanceIdentifier: "1"
+              schema:
+                $ref: "#/components/schemas/Post_redfish_v1_SFSSApp_FabricManagerInfo_post_200_response"
+          description: OK
+        "201":
+          description: "\"InstanceIdentifier\": \"1\""
+      security:
+      - BasicAuth: []
+      summary: Update CDC instance
   /redfish/v1/SFSSApp/SFSSImages:
     delete:
       description: This API is used to delete the specified image from the SFSS application.
@@ -770,7 +770,7 @@ paths:
       - description: ImageId
         explode: true
         in: query
-        name: '"7cb748e4-8d52-4195-bee3-bb948190fd09"'
+        name: versiontbd
         required: false
         schema:
           type: string
@@ -848,7 +848,7 @@ paths:
       - description: 'ImageId '
         explode: true
         in: query
-        name: '"7cb748e4-8d52-4195-bee3-bb948190fd09"'
+        name: versiontbd
         required: false
         schema:
           type: string
@@ -967,7 +967,7 @@ paths:
                   CdcInstances:
                   - APP
                   HttpHeaders:
-                  - "Authorization: Basic ZG52dXNlcjpAIThwSU1vSQ=="
+                  - "Authorization: Basic ZZZZZZZZZZZZZZZZZZZZZZZZZZ"
                   - "ExternalServerRequiredHeader: ItsValue"
                   Destination: "https://[ipv4/ipv6]/external/Server/eventHandler"
             schema:
@@ -1101,7 +1101,7 @@ paths:
                   CdcInstances:
                   - APP
                   HttpHeaders:
-                  - "Authorization: Basic ZG52dXNlcjpAIThwSU1vSQ=="
+                  - "Authorization: Basic ZZZZZZZZZZZZZZZZZZZZZZZZZZ"
                   - "ExternalServerRequiredHeader: ItsValue"
                   Destination: "https://[ipv4/ipv6]/external/Server/NeweventHandler"
             schema:
@@ -1123,7 +1123,7 @@ paths:
               ],
 
               "HttpHeaders": [
-                  "Authorization: Basic ZG52dXNlcjpAIThwSU1vSQ==",
+                  "Authorization: Basic ZZZZZZZZZZZZZZZZZZZZZZZZZZ",
                   "ExternalServerRequiredHeader: ItsValue"
               ],
               "Destination": "https://[ipv4/ipv6]/external/Server/NeweventHandler"
@@ -3996,7 +3996,7 @@ components:
           - Alert
           '@odata.type': "#Alerts.Alerts"
           HttpHeaders:
-          - "Authorization: Basic ZG52dXNlcjpAIThwSU1vSQ=="
+          - "Authorization: Basic ZZZZZZZZZZZZZZZZZZZZZZZZZZ"
           - "ExternalServerRequiredHeader: ItsValue"
           Destination: "https://[ipv4/ipv6]/external/Server/eventHandler"
     Device:
@@ -6257,51 +6257,6 @@ components:
           '@odata.id': /redfish/v1/SFSSApp/CDCInstanceManagers
           '@odata.context': /redfish/v1/SFSSApp/$metadata#CDCInstanceManagers
           '@odata.type': "#CDCInstanceManagersCollection.CDCInstanceManagersCollection"
-    Put_redfish_v1_SFSSApp_CDCInstanceManagers_request:
-      description: ""
-      properties:
-        InstanceIdentifier:
-          description: CDC instance identifier
-          minLength: 1
-          type: string
-        Interfaces:
-          description: Interface(s) assigned to the CDC instance
-          items:
-            type: string
-          type: array
-        CDCAdminState:
-          description: Administrative state of the CDC instance
-          minLength: 1
-          type: string
-        DiscoverySvcAdminState:
-          description: Administrative state of the discovery service
-          minLength: 1
-          type: string
-      required:
-      - CDCAdminState
-      - DiscoverySvcAdminState
-      - InstanceIdentifier
-      - Interfaces
-      x-examples:
-        example-1:
-          InstanceIdentifier: "1"
-          Interfaces:
-          - ens192
-          CDCAdminState: Enable
-          DiscoverySvcAdminState: Disable
-    Put_redfish_v1_SFSSApp_CDCInstanceManagers_200_response:
-      description: ""
-      example:
-        InstanceIdentifier: InstanceIdentifier
-      properties:
-        InstanceIdentifier:
-          minLength: 1
-          type: string
-      required:
-      - InstanceIdentifier
-      x-examples:
-        example-1:
-          InstanceIdentifier: "1"
     Post_redfish_v1_SFSSApp_FabricManagerInfo_post_request:
       description: ""
       properties:
@@ -6334,6 +6289,19 @@ components:
           - ens192
           CDCAdminState: Enable
           DiscoverySvcAdminState: Enable
+    Post_redfish_v1_SFSSApp_FabricManagerInfo_post_200_response:
+      description: ""
+      example:
+        InstanceIdentifier: InstanceIdentifier
+      properties:
+        InstanceIdentifier:
+          minLength: 1
+          type: string
+      required:
+      - InstanceIdentifier
+      x-examples:
+        example-1:
+          InstanceIdentifier: "1"
     Get_redfish_v1_SFSSApp_CDCInstanceManagers_ID_200_response:
       description: ""
       example:
@@ -6402,6 +6370,38 @@ components:
           '@odata.id': /redfish/v1/SFSSApp/CDCInstanceManagers("1")
           '@odata.type': "#CDCInstanceManagers.CDCInstanceManagers"
           '@odata.context': /redfish/v1/SFSSApp/$metadata#CDCInstanceManagers/CDCInstanceManagers/$entity
+    Put_redfish_v1_SFSSApp_CDCInstanceManagers_request:
+      description: ""
+      properties:
+        InstanceIdentifier:
+          description: CDC instance identifier
+          minLength: 1
+          type: string
+        Interfaces:
+          description: Interface(s) assigned to the CDC instance
+          items:
+            type: string
+          type: array
+        CDCAdminState:
+          description: Administrative state of the CDC instance
+          minLength: 1
+          type: string
+        DiscoverySvcAdminState:
+          description: Administrative state of the discovery service
+          minLength: 1
+          type: string
+      required:
+      - CDCAdminState
+      - DiscoverySvcAdminState
+      - InstanceIdentifier
+      - Interfaces
+      x-examples:
+        example-1:
+          InstanceIdentifier: "1"
+          Interfaces:
+          - ens192
+          CDCAdminState: Enable
+          DiscoverySvcAdminState: Disable
     get_redfish_v1_SFSSApp_200_response:
       description: ""
       example:
@@ -6677,7 +6677,7 @@ components:
           CdcInstances:
           - APP
           HttpHeaders:
-          - "Authorization: Basic ZG52dXNlcjpAIThwSU1vSQ=="
+          - "Authorization: Basic ZZZZZZZZZZZZZZZZZZZZZZZZZZ"
           - "ExternalServerRequiredHeader: ItsValue"
           Destination: "https://[ipv4/ipv6]/external/Server/eventHandler"
     Post_redfish_v1_SFSSApp_Alerts_200_response:
@@ -6817,7 +6817,7 @@ components:
           CdcInstances:
           - APP
           HttpHeaders:
-          - "Authorization: Basic ZG52dXNlcjpAIThwSU1vSQ=="
+          - "Authorization: Basic ZZZZZZZZZZZZZZZZZZZZZZZZZZ"
           - "ExternalServerRequiredHeader: ItsValue"
           Destination: "https://[ipv4/ipv6]/external/Server/NeweventHandler"
     Delete_redfish_v1_SFSSApp_AlertsCDCInstanceManagers_200_response:

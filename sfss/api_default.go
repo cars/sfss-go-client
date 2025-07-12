@@ -129,16 +129,10 @@ func (a *DefaultAPIService) DeleteRedfishV1SFSSAppAlertsCDCInstanceManagersExecu
 type ApiDeleteRedfishV1SFSSAppCDCInstanceManagersRequest struct {
 	ctx context.Context
 	ApiService *DefaultAPIService
-	var1 *string
+	instanceId string
 }
 
-// InstanceIdentifier
-func (r ApiDeleteRedfishV1SFSSAppCDCInstanceManagersRequest) Var1(var1 string) ApiDeleteRedfishV1SFSSAppCDCInstanceManagersRequest {
-	r.var1 = &var1
-	return r
-}
-
-func (r ApiDeleteRedfishV1SFSSAppCDCInstanceManagersRequest) Execute() (*PutRedfishV1SFSSAppCDCInstanceManagers200Response, *http.Response, error) {
+func (r ApiDeleteRedfishV1SFSSAppCDCInstanceManagersRequest) Execute() (*PostRedfishV1SFSSAppFabricManagerInfoPost200Response, *http.Response, error) {
 	return r.ApiService.DeleteRedfishV1SFSSAppCDCInstanceManagersExecute(r)
 }
 
@@ -148,23 +142,25 @@ DeleteRedfishV1SFSSAppCDCInstanceManagers Delete CDC instance
 This API removes the specified CDC instance.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param instanceId InstanceIdentifier
  @return ApiDeleteRedfishV1SFSSAppCDCInstanceManagersRequest
 */
-func (a *DefaultAPIService) DeleteRedfishV1SFSSAppCDCInstanceManagers(ctx context.Context) ApiDeleteRedfishV1SFSSAppCDCInstanceManagersRequest {
+func (a *DefaultAPIService) DeleteRedfishV1SFSSAppCDCInstanceManagers(ctx context.Context, instanceId string) ApiDeleteRedfishV1SFSSAppCDCInstanceManagersRequest {
 	return ApiDeleteRedfishV1SFSSAppCDCInstanceManagersRequest{
 		ApiService: a,
 		ctx: ctx,
+		instanceId: instanceId,
 	}
 }
 
 // Execute executes the request
-//  @return PutRedfishV1SFSSAppCDCInstanceManagers200Response
-func (a *DefaultAPIService) DeleteRedfishV1SFSSAppCDCInstanceManagersExecute(r ApiDeleteRedfishV1SFSSAppCDCInstanceManagersRequest) (*PutRedfishV1SFSSAppCDCInstanceManagers200Response, *http.Response, error) {
+//  @return PostRedfishV1SFSSAppFabricManagerInfoPost200Response
+func (a *DefaultAPIService) DeleteRedfishV1SFSSAppCDCInstanceManagersExecute(r ApiDeleteRedfishV1SFSSAppCDCInstanceManagersRequest) (*PostRedfishV1SFSSAppFabricManagerInfoPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PutRedfishV1SFSSAppCDCInstanceManagers200Response
+		localVarReturnValue  *PostRedfishV1SFSSAppFabricManagerInfoPost200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.DeleteRedfishV1SFSSAppCDCInstanceManagers")
@@ -172,15 +168,13 @@ func (a *DefaultAPIService) DeleteRedfishV1SFSSAppCDCInstanceManagersExecute(r A
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/redfish/v1/SFSSApp/CDCInstanceManagers"
+	localVarPath := localBasePath + "/redfish/v1/SFSSApp/CDCInstanceManagers({InstanceId})"
+	localVarPath = strings.Replace(localVarPath, "{"+"InstanceId"+"}", url.PathEscape(parameterValueToString(r.instanceId, "instanceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.var1 != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "('1')", r.var1, "form", "")
-	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -433,12 +427,12 @@ func (a *DefaultAPIService) DeleteRedfishV1SFSSAppNTPServerIPExecute(r ApiDelete
 type ApiDeleteRedfishV1SFSSAppSFSSImagesRequest struct {
 	ctx context.Context
 	ApiService *DefaultAPIService
-	var7cb748e48d524195Bee3Bb948190fd09 *string
+	versiontbd *string
 }
 
 // ImageId
-func (r ApiDeleteRedfishV1SFSSAppSFSSImagesRequest) Var7cb748e48d524195Bee3Bb948190fd09(var7cb748e48d524195Bee3Bb948190fd09 string) ApiDeleteRedfishV1SFSSAppSFSSImagesRequest {
-	r.var7cb748e48d524195Bee3Bb948190fd09 = &var7cb748e48d524195Bee3Bb948190fd09
+func (r ApiDeleteRedfishV1SFSSAppSFSSImagesRequest) Versiontbd(versiontbd string) ApiDeleteRedfishV1SFSSAppSFSSImagesRequest {
+	r.versiontbd = &versiontbd
 	return r
 }
 
@@ -482,8 +476,8 @@ func (a *DefaultAPIService) DeleteRedfishV1SFSSAppSFSSImagesExecute(r ApiDeleteR
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.var7cb748e48d524195Bee3Bb948190fd09 != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, ""7cb748e4-8d52-4195-bee3-bb948190fd09"", r.var7cb748e48d524195Bee3Bb948190fd09, "form", "")
+	if r.versiontbd != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "versiontbd", r.versiontbd, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -5734,7 +5728,7 @@ func (r ApiPostRedfishV1SFSSAppFabricManagerInfoPostRequest) PostRedfishV1SFSSAp
 	return r
 }
 
-func (r ApiPostRedfishV1SFSSAppFabricManagerInfoPostRequest) Execute() (*PutRedfishV1SFSSAppCDCInstanceManagers200Response, *http.Response, error) {
+func (r ApiPostRedfishV1SFSSAppFabricManagerInfoPostRequest) Execute() (*PostRedfishV1SFSSAppFabricManagerInfoPost200Response, *http.Response, error) {
 	return r.ApiService.PostRedfishV1SFSSAppFabricManagerInfoPostExecute(r)
 }
 
@@ -5754,13 +5748,13 @@ func (a *DefaultAPIService) PostRedfishV1SFSSAppFabricManagerInfoPost(ctx contex
 }
 
 // Execute executes the request
-//  @return PutRedfishV1SFSSAppCDCInstanceManagers200Response
-func (a *DefaultAPIService) PostRedfishV1SFSSAppFabricManagerInfoPostExecute(r ApiPostRedfishV1SFSSAppFabricManagerInfoPostRequest) (*PutRedfishV1SFSSAppCDCInstanceManagers200Response, *http.Response, error) {
+//  @return PostRedfishV1SFSSAppFabricManagerInfoPost200Response
+func (a *DefaultAPIService) PostRedfishV1SFSSAppFabricManagerInfoPostExecute(r ApiPostRedfishV1SFSSAppFabricManagerInfoPostRequest) (*PostRedfishV1SFSSAppFabricManagerInfoPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PutRedfishV1SFSSAppCDCInstanceManagers200Response
+		localVarReturnValue  *PostRedfishV1SFSSAppFabricManagerInfoPost200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRedfishV1SFSSAppFabricManagerInfoPost")
@@ -6674,13 +6668,13 @@ func (a *DefaultAPIService) PostRedfishV1SFSSAppTacacsServersExecute(r ApiPostRe
 type ApiPutRedfishV1SFSSAppRequest struct {
 	ctx context.Context
 	ApiService *DefaultAPIService
-	var7cb748e48d524195Bee3Bb948190fd09 *string
+	versiontbd *string
 	putRedfishV1SFSSAppRequest *PutRedfishV1SFSSAppRequest
 }
 
 // ImageId 
-func (r ApiPutRedfishV1SFSSAppRequest) Var7cb748e48d524195Bee3Bb948190fd09(var7cb748e48d524195Bee3Bb948190fd09 string) ApiPutRedfishV1SFSSAppRequest {
-	r.var7cb748e48d524195Bee3Bb948190fd09 = &var7cb748e48d524195Bee3Bb948190fd09
+func (r ApiPutRedfishV1SFSSAppRequest) Versiontbd(versiontbd string) ApiPutRedfishV1SFSSAppRequest {
+	r.versiontbd = &versiontbd
 	return r
 }
 
@@ -6730,8 +6724,8 @@ func (a *DefaultAPIService) PutRedfishV1SFSSAppExecute(r ApiPutRedfishV1SFSSAppR
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.var7cb748e48d524195Bee3Bb948190fd09 != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, ""7cb748e4-8d52-4195-bee3-bb948190fd09"", r.var7cb748e48d524195Bee3Bb948190fd09, "form", "")
+	if r.versiontbd != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "versiontbd", r.versiontbd, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -6796,7 +6790,7 @@ type ApiPutRedfishV1SFSSAppAlertsRequest struct {
 	putRedfishV1SFSSAppAlertsRequest *PutRedfishV1SFSSAppAlertsRequest
 }
 
-// {     \&quot;Protocol\&quot;: \&quot;redfish\&quot;,      \&quot;Identifier\&quot;: \&quot;uuid\&quot;,      \&quot;Context\&quot;: \&quot;NewSubscription\&quot;,     \&quot;EventTypes\&quot;: [          \&quot;Alert\&quot;      ],    \&quot;CdcInstances\&quot;: [         \&quot;APP\&quot;     ],      \&quot;HttpHeaders\&quot;: [         \&quot;Authorization: Basic ZG52dXNlcjpAIThwSU1vSQ&#x3D;&#x3D;\&quot;,         \&quot;ExternalServerRequiredHeader: ItsValue\&quot;     ],     \&quot;Destination\&quot;: \&quot;https://[ipv4/ipv6]/external/Server/NeweventHandler\&quot;  }
+// {     \&quot;Protocol\&quot;: \&quot;redfish\&quot;,      \&quot;Identifier\&quot;: \&quot;uuid\&quot;,      \&quot;Context\&quot;: \&quot;NewSubscription\&quot;,     \&quot;EventTypes\&quot;: [          \&quot;Alert\&quot;      ],    \&quot;CdcInstances\&quot;: [         \&quot;APP\&quot;     ],      \&quot;HttpHeaders\&quot;: [         \&quot;Authorization: Basic ZZZZZZZZZZZZZZZZZZZZZZZZZZ\&quot;,         \&quot;ExternalServerRequiredHeader: ItsValue\&quot;     ],     \&quot;Destination\&quot;: \&quot;https://[ipv4/ipv6]/external/Server/NeweventHandler\&quot;  }
 func (r ApiPutRedfishV1SFSSAppAlertsRequest) PutRedfishV1SFSSAppAlertsRequest(putRedfishV1SFSSAppAlertsRequest PutRedfishV1SFSSAppAlertsRequest) ApiPutRedfishV1SFSSAppAlertsRequest {
 	r.putRedfishV1SFSSAppAlertsRequest = &putRedfishV1SFSSAppAlertsRequest
 	return r
@@ -6904,14 +6898,8 @@ func (a *DefaultAPIService) PutRedfishV1SFSSAppAlertsExecute(r ApiPutRedfishV1SF
 type ApiPutRedfishV1SFSSAppCDCInstanceManagersRequest struct {
 	ctx context.Context
 	ApiService *DefaultAPIService
-	var1 *string
+	instanceId string
 	putRedfishV1SFSSAppCDCInstanceManagersRequest *PutRedfishV1SFSSAppCDCInstanceManagersRequest
-}
-
-// InstanceIdentifier
-func (r ApiPutRedfishV1SFSSAppCDCInstanceManagersRequest) Var1(var1 string) ApiPutRedfishV1SFSSAppCDCInstanceManagersRequest {
-	r.var1 = &var1
-	return r
 }
 
 // {     \&quot;InstanceIdentifier\&quot;: \&quot;1\&quot;,     \&quot;Interfaces\&quot;: [\&quot;ens192\&quot;],     \&quot;CDCAdminState\&quot;:\&quot;Enable\&quot;,     \&quot;DiscoverySvcAdminState\&quot;:\&quot;Disable\&quot; }
@@ -6920,7 +6908,7 @@ func (r ApiPutRedfishV1SFSSAppCDCInstanceManagersRequest) PutRedfishV1SFSSAppCDC
 	return r
 }
 
-func (r ApiPutRedfishV1SFSSAppCDCInstanceManagersRequest) Execute() (*PutRedfishV1SFSSAppCDCInstanceManagers200Response, *http.Response, error) {
+func (r ApiPutRedfishV1SFSSAppCDCInstanceManagersRequest) Execute() (*PostRedfishV1SFSSAppFabricManagerInfoPost200Response, *http.Response, error) {
 	return r.ApiService.PutRedfishV1SFSSAppCDCInstanceManagersExecute(r)
 }
 
@@ -6930,23 +6918,25 @@ PutRedfishV1SFSSAppCDCInstanceManagers Update CDC instance
 This API updates CDC instance information based on the specified instance identifier.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param instanceId InstanceIdentifier
  @return ApiPutRedfishV1SFSSAppCDCInstanceManagersRequest
 */
-func (a *DefaultAPIService) PutRedfishV1SFSSAppCDCInstanceManagers(ctx context.Context) ApiPutRedfishV1SFSSAppCDCInstanceManagersRequest {
+func (a *DefaultAPIService) PutRedfishV1SFSSAppCDCInstanceManagers(ctx context.Context, instanceId string) ApiPutRedfishV1SFSSAppCDCInstanceManagersRequest {
 	return ApiPutRedfishV1SFSSAppCDCInstanceManagersRequest{
 		ApiService: a,
 		ctx: ctx,
+		instanceId: instanceId,
 	}
 }
 
 // Execute executes the request
-//  @return PutRedfishV1SFSSAppCDCInstanceManagers200Response
-func (a *DefaultAPIService) PutRedfishV1SFSSAppCDCInstanceManagersExecute(r ApiPutRedfishV1SFSSAppCDCInstanceManagersRequest) (*PutRedfishV1SFSSAppCDCInstanceManagers200Response, *http.Response, error) {
+//  @return PostRedfishV1SFSSAppFabricManagerInfoPost200Response
+func (a *DefaultAPIService) PutRedfishV1SFSSAppCDCInstanceManagersExecute(r ApiPutRedfishV1SFSSAppCDCInstanceManagersRequest) (*PostRedfishV1SFSSAppFabricManagerInfoPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PutRedfishV1SFSSAppCDCInstanceManagers200Response
+		localVarReturnValue  *PostRedfishV1SFSSAppFabricManagerInfoPost200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PutRedfishV1SFSSAppCDCInstanceManagers")
@@ -6954,15 +6944,13 @@ func (a *DefaultAPIService) PutRedfishV1SFSSAppCDCInstanceManagersExecute(r ApiP
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/redfish/v1/SFSSApp/CDCInstanceManagers"
+	localVarPath := localBasePath + "/redfish/v1/SFSSApp/CDCInstanceManagers({InstanceId})"
+	localVarPath = strings.Replace(localVarPath, "{"+"InstanceId"+"}", url.PathEscape(parameterValueToString(r.instanceId, "instanceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.var1 != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "('1')", r.var1, "form", "")
-	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 

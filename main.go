@@ -1,16 +1,20 @@
 package main
+
 import (
+	"context"
 	"fmt"
 	"os"
+
 	"github.com/cars/sfss-go-client/sfss"
 )
+
 func main() {
-	cfg := sfss.NewConfiguration{}
-		Host:     "https://api.example.com",
-		Username: "user",
-		Password: "pass",
-	}
+	cfg := sfss.NewConfiguration()
+	cfg.Host = "https://api.example.com"
+	cfg.Scheme = "https"
+
 	client := sfss.NewAPIClient(cfg)
+	client.DefaultAPI.GetIDRedfishV1SFSSApp()
 	resp, _, err := client.SFSSAppApi.GetSosReports(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SFSSAppApi.GetSosReports`: %v\n", err)

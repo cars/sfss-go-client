@@ -5,7 +5,7 @@ All URIs are relative to *http://IPAddress*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DeleteRedfishV1SFSSAppAlertsCDCInstanceManagers**](DefaultAPI.md#DeleteRedfishV1SFSSAppAlertsCDCInstanceManagers) | **Delete** /redfish/v1/SFSSApp/Alerts({uuid}) | Delete alert
-[**DeleteRedfishV1SFSSAppCDCInstanceManagers**](DefaultAPI.md#DeleteRedfishV1SFSSAppCDCInstanceManagers) | **Delete** /redfish/v1/SFSSApp/CDCInstanceManagers | Delete CDC instance
+[**DeleteRedfishV1SFSSAppCDCInstanceManagers**](DefaultAPI.md#DeleteRedfishV1SFSSAppCDCInstanceManagers) | **Delete** /redfish/v1/SFSSApp/CDCInstanceManagers({InstanceId}) | Delete CDC instance
 [**DeleteRedfishV1SFSSAppIpAddressManagements**](DefaultAPI.md#DeleteRedfishV1SFSSAppIpAddressManagements) | **Delete** /redfish/v1/SFSSApp/IpAddressManagements({InterfaceId}) | Delete VLAN interface
 [**DeleteRedfishV1SFSSAppNTPServerIP**](DefaultAPI.md#DeleteRedfishV1SFSSAppNTPServerIP) | **Delete** /redfish/v1/SFSSApp/NTP({ServerIP}) | Remove NTP configuration
 [**DeleteRedfishV1SFSSAppSFSSImages**](DefaultAPI.md#DeleteRedfishV1SFSSAppSFSSImages) | **Delete** /redfish/v1/SFSSApp/SFSSImages | Delete image
@@ -71,7 +71,7 @@ Method | HTTP request | Description
 [**PostRedfishV1SFSSAppTacacsServers**](DefaultAPI.md#PostRedfishV1SFSSAppTacacsServers) | **Post** /redfish/v1/SFSSApp/TacacsServers | Configure TACACS+ server
 [**PutRedfishV1SFSSApp**](DefaultAPI.md#PutRedfishV1SFSSApp) | **Put** /redfish/v1/SFSSApp/SFSSImages | Upgrade application
 [**PutRedfishV1SFSSAppAlerts**](DefaultAPI.md#PutRedfishV1SFSSAppAlerts) | **Put** /redfish/v1/SFSSApp/Alerts({uuid}) | Update alert
-[**PutRedfishV1SFSSAppCDCInstanceManagers**](DefaultAPI.md#PutRedfishV1SFSSAppCDCInstanceManagers) | **Put** /redfish/v1/SFSSApp/CDCInstanceManagers | Update CDC instance
+[**PutRedfishV1SFSSAppCDCInstanceManagers**](DefaultAPI.md#PutRedfishV1SFSSAppCDCInstanceManagers) | **Put** /redfish/v1/SFSSApp/CDCInstanceManagers({InstanceId}) | Update CDC instance
 [**PutRedfishV1SFSSAppIpAddressManagements**](DefaultAPI.md#PutRedfishV1SFSSAppIpAddressManagements) | **Put** /redfish/v1/SFSSApp/IpAddressManagements({InterfaceId}) | Update interface
 [**PutRedfishV1SFSSAppNTP**](DefaultAPI.md#PutRedfishV1SFSSAppNTP) | **Put** /redfish/v1/SFSSApp/NTP | Enable or disable NTP service
 
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ## DeleteRedfishV1SFSSAppCDCInstanceManagers
 
-> PutRedfishV1SFSSAppCDCInstanceManagers200Response DeleteRedfishV1SFSSAppCDCInstanceManagers(ctx).Var1(var1).Execute()
+> PostRedfishV1SFSSAppFabricManagerInfoPost200Response DeleteRedfishV1SFSSAppCDCInstanceManagers(ctx, instanceId).Execute()
 
 Delete CDC instance
 
@@ -168,16 +168,16 @@ import (
 )
 
 func main() {
-	var1 := "var1_example" // string | InstanceIdentifier (optional)
+	instanceId := "instanceId_example" // string | InstanceIdentifier
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.DeleteRedfishV1SFSSAppCDCInstanceManagers(context.Background()).Var1(var1).Execute()
+	resp, r, err := apiClient.DefaultAPI.DeleteRedfishV1SFSSAppCDCInstanceManagers(context.Background(), instanceId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteRedfishV1SFSSAppCDCInstanceManagers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeleteRedfishV1SFSSAppCDCInstanceManagers`: PutRedfishV1SFSSAppCDCInstanceManagers200Response
+	// response from `DeleteRedfishV1SFSSAppCDCInstanceManagers`: PostRedfishV1SFSSAppFabricManagerInfoPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteRedfishV1SFSSAppCDCInstanceManagers`: %v\n", resp)
 }
 ```
@@ -185,6 +185,10 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**instanceId** | **string** | InstanceIdentifier | 
 
 ### Other Parameters
 
@@ -193,11 +197,11 @@ Other parameters are passed through a pointer to a apiDeleteRedfishV1SFSSAppCDCI
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **var1** | **string** | InstanceIdentifier | 
+
 
 ### Return type
 
-[**PutRedfishV1SFSSAppCDCInstanceManagers200Response**](PutRedfishV1SFSSAppCDCInstanceManagers200Response.md)
+[**PostRedfishV1SFSSAppFabricManagerInfoPost200Response**](PostRedfishV1SFSSAppFabricManagerInfoPost200Response.md)
 
 ### Authorization
 
@@ -353,7 +357,7 @@ No authorization required
 
 ## DeleteRedfishV1SFSSAppSFSSImages
 
-> PutRedfishV1SFSSApp200Response DeleteRedfishV1SFSSAppSFSSImages(ctx).Var7cb748e48d524195Bee3Bb948190fd09(var7cb748e48d524195Bee3Bb948190fd09).Execute()
+> PutRedfishV1SFSSApp200Response DeleteRedfishV1SFSSAppSFSSImages(ctx).Versiontbd(versiontbd).Execute()
 
 Delete image
 
@@ -372,11 +376,11 @@ import (
 )
 
 func main() {
-	var7cb748e48d524195Bee3Bb948190fd09 := "var7cb748e48d524195Bee3Bb948190fd09_example" // string | ImageId (optional)
+	versiontbd := "versiontbd_example" // string | ImageId (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.DeleteRedfishV1SFSSAppSFSSImages(context.Background()).Var7cb748e48d524195Bee3Bb948190fd09(var7cb748e48d524195Bee3Bb948190fd09).Execute()
+	resp, r, err := apiClient.DefaultAPI.DeleteRedfishV1SFSSAppSFSSImages(context.Background()).Versiontbd(versiontbd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteRedfishV1SFSSAppSFSSImages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -397,7 +401,7 @@ Other parameters are passed through a pointer to a apiDeleteRedfishV1SFSSAppSFSS
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **var7cb748e48d524195Bee3Bb948190fd09** | **string** | ImageId | 
+ **versiontbd** | **string** | ImageId | 
 
 ### Return type
 
@@ -3695,7 +3699,7 @@ Name | Type | Description  | Notes
 
 ## PostRedfishV1SFSSAppFabricManagerInfoPost
 
-> PutRedfishV1SFSSAppCDCInstanceManagers200Response PostRedfishV1SFSSAppFabricManagerInfoPost(ctx).PostRedfishV1SFSSAppFabricManagerInfoPostRequest(postRedfishV1SFSSAppFabricManagerInfoPostRequest).Execute()
+> PostRedfishV1SFSSAppFabricManagerInfoPost200Response PostRedfishV1SFSSAppFabricManagerInfoPost(ctx).PostRedfishV1SFSSAppFabricManagerInfoPostRequest(postRedfishV1SFSSAppFabricManagerInfoPostRequest).Execute()
 
 Configure CDC instance
 
@@ -3723,7 +3727,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostRedfishV1SFSSAppFabricManagerInfoPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostRedfishV1SFSSAppFabricManagerInfoPost`: PutRedfishV1SFSSAppCDCInstanceManagers200Response
+	// response from `PostRedfishV1SFSSAppFabricManagerInfoPost`: PostRedfishV1SFSSAppFabricManagerInfoPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostRedfishV1SFSSAppFabricManagerInfoPost`: %v\n", resp)
 }
 ```
@@ -3743,7 +3747,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PutRedfishV1SFSSAppCDCInstanceManagers200Response**](PutRedfishV1SFSSAppCDCInstanceManagers200Response.md)
+[**PostRedfishV1SFSSAppFabricManagerInfoPost200Response**](PostRedfishV1SFSSAppFabricManagerInfoPost200Response.md)
 
 ### Authorization
 
@@ -4285,7 +4289,7 @@ Name | Type | Description  | Notes
 
 ## PutRedfishV1SFSSApp
 
-> PutRedfishV1SFSSApp200Response PutRedfishV1SFSSApp(ctx).Var7cb748e48d524195Bee3Bb948190fd09(var7cb748e48d524195Bee3Bb948190fd09).PutRedfishV1SFSSAppRequest(putRedfishV1SFSSAppRequest).Execute()
+> PutRedfishV1SFSSApp200Response PutRedfishV1SFSSApp(ctx).Versiontbd(versiontbd).PutRedfishV1SFSSAppRequest(putRedfishV1SFSSAppRequest).Execute()
 
 Upgrade application
 
@@ -4304,12 +4308,12 @@ import (
 )
 
 func main() {
-	var7cb748e48d524195Bee3Bb948190fd09 := "var7cb748e48d524195Bee3Bb948190fd09_example" // string | ImageId  (optional)
+	versiontbd := "versiontbd_example" // string | ImageId  (optional)
 	putRedfishV1SFSSAppRequest := *openapiclient.NewPutRedfishV1SFSSAppRequest("ImageServerUserName_example", "ImageServerPassword_example", "ImageServerLocation_example", "TransportType_example") // PutRedfishV1SFSSAppRequest | {     \"ImageServerUserName\" : \"dell\",     \"ImageServerPassword\" : \"New_Password\",     \"ImageServerLocation\" : \"100.94.72.166:/home/dell/new_location/SFSS-1.2.0.deb\",     \"TransportType\" : \"SCP\" } (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PutRedfishV1SFSSApp(context.Background()).Var7cb748e48d524195Bee3Bb948190fd09(var7cb748e48d524195Bee3Bb948190fd09).PutRedfishV1SFSSAppRequest(putRedfishV1SFSSAppRequest).Execute()
+	resp, r, err := apiClient.DefaultAPI.PutRedfishV1SFSSApp(context.Background()).Versiontbd(versiontbd).PutRedfishV1SFSSAppRequest(putRedfishV1SFSSAppRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PutRedfishV1SFSSApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4330,7 +4334,7 @@ Other parameters are passed through a pointer to a apiPutRedfishV1SFSSAppRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **var7cb748e48d524195Bee3Bb948190fd09** | **string** | ImageId  | 
+ **versiontbd** | **string** | ImageId  | 
  **putRedfishV1SFSSAppRequest** | [**PutRedfishV1SFSSAppRequest**](PutRedfishV1SFSSAppRequest.md) | {     \&quot;ImageServerUserName\&quot; : \&quot;dell\&quot;,     \&quot;ImageServerPassword\&quot; : \&quot;New_Password\&quot;,     \&quot;ImageServerLocation\&quot; : \&quot;100.94.72.166:/home/dell/new_location/SFSS-1.2.0.deb\&quot;,     \&quot;TransportType\&quot; : \&quot;SCP\&quot; } | 
 
 ### Return type
@@ -4373,7 +4377,7 @@ import (
 
 func main() {
 	uuid := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Alert UUID
-	putRedfishV1SFSSAppAlertsRequest := *openapiclient.NewPutRedfishV1SFSSAppAlertsRequest("Protocol_example", "Identifier_example", "Context_example", []interface{}{nil}, []interface{}{nil}, []interface{}{nil}, "Destination_example") // PutRedfishV1SFSSAppAlertsRequest | {     \"Protocol\": \"redfish\",      \"Identifier\": \"uuid\",      \"Context\": \"NewSubscription\",     \"EventTypes\": [          \"Alert\"      ],    \"CdcInstances\": [         \"APP\"     ],      \"HttpHeaders\": [         \"Authorization: Basic ZG52dXNlcjpAIThwSU1vSQ==\",         \"ExternalServerRequiredHeader: ItsValue\"     ],     \"Destination\": \"https://[ipv4/ipv6]/external/Server/NeweventHandler\"  } (optional)
+	putRedfishV1SFSSAppAlertsRequest := *openapiclient.NewPutRedfishV1SFSSAppAlertsRequest("Protocol_example", "Identifier_example", "Context_example", []interface{}{nil}, []interface{}{nil}, []interface{}{nil}, "Destination_example") // PutRedfishV1SFSSAppAlertsRequest | {     \"Protocol\": \"redfish\",      \"Identifier\": \"uuid\",      \"Context\": \"NewSubscription\",     \"EventTypes\": [          \"Alert\"      ],    \"CdcInstances\": [         \"APP\"     ],      \"HttpHeaders\": [         \"Authorization: Basic ZZZZZZZZZZZZZZZZZZZZZZZZZZ\",         \"ExternalServerRequiredHeader: ItsValue\"     ],     \"Destination\": \"https://[ipv4/ipv6]/external/Server/NeweventHandler\"  } (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4403,7 +4407,7 @@ Other parameters are passed through a pointer to a apiPutRedfishV1SFSSAppAlertsR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **putRedfishV1SFSSAppAlertsRequest** | [**PutRedfishV1SFSSAppAlertsRequest**](PutRedfishV1SFSSAppAlertsRequest.md) | {     \&quot;Protocol\&quot;: \&quot;redfish\&quot;,      \&quot;Identifier\&quot;: \&quot;uuid\&quot;,      \&quot;Context\&quot;: \&quot;NewSubscription\&quot;,     \&quot;EventTypes\&quot;: [          \&quot;Alert\&quot;      ],    \&quot;CdcInstances\&quot;: [         \&quot;APP\&quot;     ],      \&quot;HttpHeaders\&quot;: [         \&quot;Authorization: Basic ZG52dXNlcjpAIThwSU1vSQ&#x3D;&#x3D;\&quot;,         \&quot;ExternalServerRequiredHeader: ItsValue\&quot;     ],     \&quot;Destination\&quot;: \&quot;https://[ipv4/ipv6]/external/Server/NeweventHandler\&quot;  } | 
+ **putRedfishV1SFSSAppAlertsRequest** | [**PutRedfishV1SFSSAppAlertsRequest**](PutRedfishV1SFSSAppAlertsRequest.md) | {     \&quot;Protocol\&quot;: \&quot;redfish\&quot;,      \&quot;Identifier\&quot;: \&quot;uuid\&quot;,      \&quot;Context\&quot;: \&quot;NewSubscription\&quot;,     \&quot;EventTypes\&quot;: [          \&quot;Alert\&quot;      ],    \&quot;CdcInstances\&quot;: [         \&quot;APP\&quot;     ],      \&quot;HttpHeaders\&quot;: [         \&quot;Authorization: Basic ZZZZZZZZZZZZZZZZZZZZZZZZZZ\&quot;,         \&quot;ExternalServerRequiredHeader: ItsValue\&quot;     ],     \&quot;Destination\&quot;: \&quot;https://[ipv4/ipv6]/external/Server/NeweventHandler\&quot;  } | 
 
 ### Return type
 
@@ -4425,7 +4429,7 @@ Name | Type | Description  | Notes
 
 ## PutRedfishV1SFSSAppCDCInstanceManagers
 
-> PutRedfishV1SFSSAppCDCInstanceManagers200Response PutRedfishV1SFSSAppCDCInstanceManagers(ctx).Var1(var1).PutRedfishV1SFSSAppCDCInstanceManagersRequest(putRedfishV1SFSSAppCDCInstanceManagersRequest).Execute()
+> PostRedfishV1SFSSAppFabricManagerInfoPost200Response PutRedfishV1SFSSAppCDCInstanceManagers(ctx, instanceId).PutRedfishV1SFSSAppCDCInstanceManagersRequest(putRedfishV1SFSSAppCDCInstanceManagersRequest).Execute()
 
 Update CDC instance
 
@@ -4444,17 +4448,17 @@ import (
 )
 
 func main() {
-	var1 := "var1_example" // string | InstanceIdentifier (optional)
+	instanceId := "instanceId_example" // string | InstanceIdentifier
 	putRedfishV1SFSSAppCDCInstanceManagersRequest := *openapiclient.NewPutRedfishV1SFSSAppCDCInstanceManagersRequest("InstanceIdentifier_example", []string{"Interfaces_example"}, "CDCAdminState_example", "DiscoverySvcAdminState_example") // PutRedfishV1SFSSAppCDCInstanceManagersRequest | {     \"InstanceIdentifier\": \"1\",     \"Interfaces\": [\"ens192\"],     \"CDCAdminState\":\"Enable\",     \"DiscoverySvcAdminState\":\"Disable\" } (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PutRedfishV1SFSSAppCDCInstanceManagers(context.Background()).Var1(var1).PutRedfishV1SFSSAppCDCInstanceManagersRequest(putRedfishV1SFSSAppCDCInstanceManagersRequest).Execute()
+	resp, r, err := apiClient.DefaultAPI.PutRedfishV1SFSSAppCDCInstanceManagers(context.Background(), instanceId).PutRedfishV1SFSSAppCDCInstanceManagersRequest(putRedfishV1SFSSAppCDCInstanceManagersRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PutRedfishV1SFSSAppCDCInstanceManagers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PutRedfishV1SFSSAppCDCInstanceManagers`: PutRedfishV1SFSSAppCDCInstanceManagers200Response
+	// response from `PutRedfishV1SFSSAppCDCInstanceManagers`: PostRedfishV1SFSSAppFabricManagerInfoPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PutRedfishV1SFSSAppCDCInstanceManagers`: %v\n", resp)
 }
 ```
@@ -4462,6 +4466,10 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**instanceId** | **string** | InstanceIdentifier | 
 
 ### Other Parameters
 
@@ -4470,12 +4478,12 @@ Other parameters are passed through a pointer to a apiPutRedfishV1SFSSAppCDCInst
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **var1** | **string** | InstanceIdentifier | 
+
  **putRedfishV1SFSSAppCDCInstanceManagersRequest** | [**PutRedfishV1SFSSAppCDCInstanceManagersRequest**](PutRedfishV1SFSSAppCDCInstanceManagersRequest.md) | {     \&quot;InstanceIdentifier\&quot;: \&quot;1\&quot;,     \&quot;Interfaces\&quot;: [\&quot;ens192\&quot;],     \&quot;CDCAdminState\&quot;:\&quot;Enable\&quot;,     \&quot;DiscoverySvcAdminState\&quot;:\&quot;Disable\&quot; } | 
 
 ### Return type
 
-[**PutRedfishV1SFSSAppCDCInstanceManagers200Response**](PutRedfishV1SFSSAppCDCInstanceManagers200Response.md)
+[**PostRedfishV1SFSSAppFabricManagerInfoPost200Response**](PostRedfishV1SFSSAppFabricManagerInfoPost200Response.md)
 
 ### Authorization
 
