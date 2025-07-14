@@ -13,7 +13,6 @@
   ],
   "paths": {
     "/redfish/v1/SFSSApp": {
-      "parameters": [],
       "get": {
         "summary": "Get SFSS application details",
         "operationId": "Get-redfish-v1-SFSSApp",

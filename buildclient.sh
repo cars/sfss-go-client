@@ -2,20 +2,35 @@
 
 export api_gen_version="latest"
 export api_gen_language="go"
-export openapi_spec="SFSSApp_APIs-1.4.0-fixed.json"
-export pkg_name="sfss"
+export sfssapp_spec="SFSSApp_APIs-1.4.0-fixed.json"
+export restapi_spec="Final_RestService_JSON-1.4.0-fixed.json"
+export sfssapp_pkg_name="sfssapp"
+export sfssrest_pkg_name="sfssrest"
 
 docker run --rm -v "$(pwd):/local" \
   openapitools/openapi-generator-cli:${api_gen_version} \
   generate \
   -g ${api_gen_language} \
-  -i /local/${openapi_spec} \
-  -o /local/${pkg_name} \
-  --package-name ${pkg_name} \
+  -i /local/${sfssapp_spec} \
+  -o /local/${sfssapp_pkg_name} \
+  --package-name ${sfssapp_pkg_name} \
 
 docker run --rm -v "$(pwd):/local" \
   openapitools/openapi-generator-cli:${api_gen_version} \
-  chown -R $UID /local/${pkg_name}
+  chown -R $UID /local/${sfssapp_pkg_name}
+
+
+docker run --rm -v "$(pwd):/local" \
+  openapitools/openapi-generator-cli:${api_gen_version} \
+  generate \
+  -g ${api_gen_language} \
+  -i /local/${restapi_spec} \
+  -o /local/${sfssrestpkg_name} \
+  --package-name ${sfssrest_pkg_name} \
+
+docker run --rm -v "$(pwd):/local" \
+  openapitools/openapi-generator-cli:${api_gen_version} \
+  chown -R $UID /local/${sfssrest_pkg_name}
 
   # Run hacks if appropriate
 
