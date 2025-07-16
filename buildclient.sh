@@ -25,7 +25,7 @@ docker run --rm -v "$(pwd):/local" \
   generate \
   -g ${api_gen_language} \
   -i /local/${restapi_spec} \
-  -o /local/${sfssrestpkg_name} \
+  -o /local/${sfssrest_pkg_name} \
   --package-name ${sfssrest_pkg_name} \
 
 docker run --rm -v "$(pwd):/local" \
