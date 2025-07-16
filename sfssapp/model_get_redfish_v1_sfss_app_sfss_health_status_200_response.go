@@ -11,23 +11,23 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the GetRedfishV1SFSSAppSFSSHealthStatus200Response type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &GetRedfishV1SFSSAppSFSSHealthStatus200Response{}
 
-// GetRedfishV1SFSSAppSFSSHealthStatus200Response
+// GetRedfishV1SFSSAppSFSSHealthStatus200Response 
 type GetRedfishV1SFSSAppSFSSHealthStatus200Response struct {
 	// Health status of the SFSS VM; possible values include Ok, Warning, and Critical
 	Health string `json:"Health"`
 	//  Reason for the SFSS VM health to be in Warning or Critical state
-	ReasonCode   []string `json:"ReasonCode"`
-	OdataId      string   `json:"@odata.id"`
-	OdataType    string   `json:"@odata.type"`
-	OdataContext string   `json:"@odata.context"`
+	ReasonCode []string `json:"ReasonCode"`
+	OdataId string `json:"@odata.id"`
+	OdataType string `json:"@odata.type"`
+	OdataContext string `json:"@odata.context"`
 }
 
 type _GetRedfishV1SFSSAppSFSSHealthStatus200Response GetRedfishV1SFSSAppSFSSHealthStatus200Response
@@ -175,7 +175,7 @@ func (o *GetRedfishV1SFSSAppSFSSHealthStatus200Response) SetOdataContext(v strin
 }
 
 func (o GetRedfishV1SFSSAppSFSSHealthStatus200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -209,10 +209,10 @@ func (o *GetRedfishV1SFSSAppSFSSHealthStatus200Response) UnmarshalJSON(data []by
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -268,3 +268,5 @@ func (v *NullableGetRedfishV1SFSSAppSFSSHealthStatus200Response) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

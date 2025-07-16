@@ -11,17 +11,17 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the PutRedfishV1SFSSAppIpAddressManagementsRequest type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PutRedfishV1SFSSAppIpAddressManagementsRequest{}
 
-// PutRedfishV1SFSSAppIpAddressManagementsRequest
+// PutRedfishV1SFSSAppIpAddressManagementsRequest 
 type PutRedfishV1SFSSAppIpAddressManagementsRequest struct {
-	// Interface IPv4 address
+	// Interface IPv4 address 
 	IPV4Address []string `json:"IPV4Address"`
 	// IP address configuration type; possible values include Manual, Automatic, and Disabled
 	IPV4Config string `json:"IPV4Config"`
@@ -35,14 +35,14 @@ type PutRedfishV1SFSSAppIpAddressManagementsRequest struct {
 	IPV6Config string `json:"IPV6Config"`
 	// Friendly name for the interface
 	Name *string `json:"Name,omitempty"`
-	// Interface IPv6 address
+	// Interface IPv6 address 
 	IPV6Address []string `json:"IPV6Address"`
 	// IPv6 gateway address
 	IPV6Gateway string `json:"IPV6Gateway"`
 	// Subnet mask
 	IPV6PrefixLength float32 `json:"IPV6PrefixLength"`
 	// The cost assigned to the route; valid range is from 1 to 255
-	MTU       *float32                                                       `json:"MTU,omitempty"`
+	MTU *float32 `json:"MTU,omitempty"`
 	IPV6Route []PutRedfishV1SFSSAppIpAddressManagementsRequestIPV6RouteInner `json:"IPV6Route,omitempty"`
 }
 
@@ -394,7 +394,7 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) SetIPV6Route(v []PutRed
 }
 
 func (o PutRedfishV1SFSSAppIpAddressManagementsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -446,10 +446,10 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) UnmarshalJSON(data []by
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -505,3 +505,5 @@ func (v *NullablePutRedfishV1SFSSAppIpAddressManagementsRequest) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

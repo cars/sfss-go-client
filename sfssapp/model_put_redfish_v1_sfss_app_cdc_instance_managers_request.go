@@ -11,15 +11,15 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the PutRedfishV1SFSSAppCDCInstanceManagersRequest type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PutRedfishV1SFSSAppCDCInstanceManagersRequest{}
 
-// PutRedfishV1SFSSAppCDCInstanceManagersRequest
+// PutRedfishV1SFSSAppCDCInstanceManagersRequest 
 type PutRedfishV1SFSSAppCDCInstanceManagersRequest struct {
 	// CDC instance identifier
 	InstanceIdentifier string `json:"InstanceIdentifier"`
@@ -151,7 +151,7 @@ func (o *PutRedfishV1SFSSAppCDCInstanceManagersRequest) SetDiscoverySvcAdminStat
 }
 
 func (o PutRedfishV1SFSSAppCDCInstanceManagersRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -183,10 +183,10 @@ func (o *PutRedfishV1SFSSAppCDCInstanceManagersRequest) UnmarshalJSON(data []byt
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -242,3 +242,5 @@ func (v *NullablePutRedfishV1SFSSAppCDCInstanceManagersRequest) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

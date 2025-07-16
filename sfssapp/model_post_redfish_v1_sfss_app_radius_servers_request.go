@@ -11,15 +11,15 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the PostRedfishV1SFSSAppRadiusServersRequest type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PostRedfishV1SFSSAppRadiusServersRequest{}
 
-// PostRedfishV1SFSSAppRadiusServersRequest
+// PostRedfishV1SFSSAppRadiusServersRequest 
 type PostRedfishV1SFSSAppRadiusServersRequest struct {
 	// IP address of the RADIUS server; SFSS supports only IPv4 communication with remote servers
 	ServerIp string `json:"ServerIp"`
@@ -97,7 +97,7 @@ func (o *PostRedfishV1SFSSAppRadiusServersRequest) SetServerPass(v string) {
 }
 
 func (o PostRedfishV1SFSSAppRadiusServersRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -125,10 +125,10 @@ func (o *PostRedfishV1SFSSAppRadiusServersRequest) UnmarshalJSON(data []byte) (e
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -184,3 +184,5 @@ func (v *NullablePostRedfishV1SFSSAppRadiusServersRequest) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

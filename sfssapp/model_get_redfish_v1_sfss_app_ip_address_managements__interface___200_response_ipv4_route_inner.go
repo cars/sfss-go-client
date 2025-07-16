@@ -175,7 +175,7 @@ func (o *GetRedfishV1SFSSAppIpAddressManagementsInterface200ResponseIPV4RouteInn
 }
 
 func (o GetRedfishV1SFSSAppIpAddressManagementsInterface200ResponseIPV4RouteInner) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -234,3 +234,5 @@ func (v *NullableGetRedfishV1SFSSAppIpAddressManagementsInterface200ResponseIPV4
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -11,8 +11,8 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
@@ -21,7 +21,7 @@ var _ MappedNullable = &SFSSImagesGETENUMs{}
 
 // SFSSImagesGETENUMs This model lists the supported enumerations for the SFSS image configuration
 type SFSSImagesGETENUMs struct {
-	// Status of the add image operation; possible values inclulde Failure, InProgress, Success, and NotStarted
+	// Status of the add image operation; possible values inclulde Failure, InProgress, Success, and NotStarted 
 	Status []interface{} `json:"Status"`
 	// Transport type used to copy the SFSS image from the remote repository; possible values include SCP, SFTP, HTTP, and HTTPs
 	TransportType []interface{} `json:"TransportType"`
@@ -97,7 +97,7 @@ func (o *SFSSImagesGETENUMs) SetTransportType(v []interface{}) {
 }
 
 func (o SFSSImagesGETENUMs) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -125,10 +125,10 @@ func (o *SFSSImagesGETENUMs) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -184,3 +184,5 @@ func (v *NullableSFSSImagesGETENUMs) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

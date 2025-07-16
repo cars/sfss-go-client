@@ -11,23 +11,23 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the UserActivityAuditGET type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &UserActivityAuditGET{}
 
-// UserActivityAuditGET This model lists all the user activities.
+// UserActivityAuditGET This model lists all the user activities. 
 type UserActivityAuditGET struct {
 	// A set of user activity audit records
 	UserActivityAudits []UserActivityAuditGETUserActivityAuditsInner `json:"UserActivityAudits"`
 	// Number of user activity audit records
 	UserActivityAuditsodataCount float32 `json:"UserActivityAudits@odata.count"`
-	OdataId                      string  `json:"@odata.id"`
-	OdataContext                 string  `json:"@odata.context"`
-	OdataType                    string  `json:"@odata.type"`
+	OdataId string `json:"@odata.id"`
+	OdataContext string `json:"@odata.context"`
+	OdataType string `json:"@odata.type"`
 	// Total number of user activity audit records
 	TotalCount string `json:"TotalCount"`
 }
@@ -202,7 +202,7 @@ func (o *UserActivityAuditGET) SetTotalCount(v string) {
 }
 
 func (o UserActivityAuditGET) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -238,10 +238,10 @@ func (o *UserActivityAuditGET) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -297,3 +297,5 @@ func (v *NullableUserActivityAuditGET) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

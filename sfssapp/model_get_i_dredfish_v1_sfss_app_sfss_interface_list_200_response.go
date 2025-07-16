@@ -11,15 +11,15 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the GetIDredfishV1SFSSAppSFSSInterfaceList200Response type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &GetIDredfishV1SFSSAppSFSSInterfaceList200Response{}
 
-// GetIDredfishV1SFSSAppSFSSInterfaceList200Response
+// GetIDredfishV1SFSSAppSFSSInterfaceList200Response 
 type GetIDredfishV1SFSSAppSFSSInterfaceList200Response struct {
 	// A set of available interfaces
 	ListOfInterfaces []string `json:"List of Interfaces"`
@@ -70,7 +70,7 @@ func (o *GetIDredfishV1SFSSAppSFSSInterfaceList200Response) SetListOfInterfaces(
 }
 
 func (o GetIDredfishV1SFSSAppSFSSInterfaceList200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,10 +96,10 @@ func (o *GetIDredfishV1SFSSAppSFSSInterfaceList200Response) UnmarshalJSON(data [
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -155,3 +155,5 @@ func (v *NullableGetIDredfishV1SFSSAppSFSSInterfaceList200Response) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

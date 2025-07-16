@@ -11,8 +11,8 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
@@ -37,9 +37,9 @@ type SosReportsGETEXPANDSosReportsInner struct {
 	TransportType string `json:"TransportType"`
 	// Username to access the remote server
 	ServerUserName string `json:"ServerUserName"`
-	OdataId        string `json:"@odata.id"`
-	OdataType      string `json:"@odata.type"`
-	OdataContext   string `json:"@odata.context"`
+	OdataId string `json:"@odata.id"`
+	OdataType string `json:"@odata.type"`
+	OdataContext string `json:"@odata.context"`
 }
 
 type _SosReportsGETEXPANDSosReportsInner SosReportsGETEXPANDSosReportsInner
@@ -337,7 +337,7 @@ func (o *SosReportsGETEXPANDSosReportsInner) SetOdataContext(v string) {
 }
 
 func (o SosReportsGETEXPANDSosReportsInner) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -383,10 +383,10 @@ func (o *SosReportsGETEXPANDSosReportsInner) UnmarshalJSON(data []byte) (err err
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -442,3 +442,5 @@ func (v *NullableSosReportsGETEXPANDSosReportsInner) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -11,23 +11,23 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200Response type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200Response{}
 
-// GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200Response
+// GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200Response 
 type GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200Response struct {
 	// A set of foundational configurations from the SFSS VM
 	FoundationalConfigs []GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200ResponseFoundationalConfigsInner `json:"FoundationalConfigs"`
 	// Number of foundational configurations (one for each CDC instance running on the SFSS VM)
 	FoundationalConfigsodataCount float32 `json:"FoundationalConfigs@odata.count"`
-	OdataId                       string  `json:"@odata.id"`
-	OdataContext                  string  `json:"@odata.context"`
-	OdataType                     string  `json:"@odata.type"`
+	OdataId string `json:"@odata.id"`
+	OdataContext string `json:"@odata.context"`
+	OdataType string `json:"@odata.type"`
 }
 
 type _GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200Response GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200Response
@@ -175,7 +175,7 @@ func (o *GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200Response) SetOd
 }
 
 func (o GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -209,10 +209,10 @@ func (o *GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200Response) Unmar
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -268,3 +268,5 @@ func (v *NullableGetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200Respons
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -11,8 +11,8 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
@@ -23,7 +23,7 @@ var _ MappedNullable = &SosReportsGETID{}
 type SosReportsGETID struct {
 	// SOS report ID
 	ID string `json:"ID"`
-	// Location of the remote server to download the SOS report
+	// Location of the remote server to download the SOS report 
 	FileLocation string `json:"FileLocation"`
 	// A detailed status message of the SOS report download operation
 	StatusMessage string `json:"StatusMessage"`
@@ -37,9 +37,9 @@ type SosReportsGETID struct {
 	TransportType string `json:"TransportType"`
 	// Username to access the remote server
 	ServerUserName string `json:"ServerUserName"`
-	OdataId        string `json:"@odata.id"`
-	OdataType      string `json:"@odata.type"`
-	OdataContext   string `json:"@odata.context"`
+	OdataId string `json:"@odata.id"`
+	OdataType string `json:"@odata.type"`
+	OdataContext string `json:"@odata.context"`
 }
 
 type _SosReportsGETID SosReportsGETID
@@ -337,7 +337,7 @@ func (o *SosReportsGETID) SetOdataContext(v string) {
 }
 
 func (o SosReportsGETID) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -383,10 +383,10 @@ func (o *SosReportsGETID) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -442,3 +442,5 @@ func (v *NullableSosReportsGETID) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

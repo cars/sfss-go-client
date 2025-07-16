@@ -11,15 +11,15 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the GetRedfishV1SFSSAppGlobalSettings200Response type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &GetRedfishV1SFSSAppGlobalSettings200Response{}
 
-// GetRedfishV1SFSSAppGlobalSettings200Response
+// GetRedfishV1SFSSAppGlobalSettings200Response 
 type GetRedfishV1SFSSAppGlobalSettings200Response struct {
 	// Hostname of the SFSS VM
 	HostName string `json:"HostName"`
@@ -29,9 +29,9 @@ type GetRedfishV1SFSSAppGlobalSettings200Response struct {
 	ReservedIPV6SubnetPrefix string `json:"ReservedIPV6SubnetPrefix"`
 	// Maximum transmission unit; range is from 1250 to 9000; default value is 1500
 	StorageInterfaceMTU float32 `json:"StorageInterfaceMTU"`
-	OdataId             string  `json:"@odata.id"`
-	OdataType           string  `json:"@odata.type"`
-	OdataContext        string  `json:"@odata.context"`
+	OdataId string `json:"@odata.id"`
+	OdataType string `json:"@odata.type"`
+	OdataContext string `json:"@odata.context"`
 }
 
 type _GetRedfishV1SFSSAppGlobalSettings200Response GetRedfishV1SFSSAppGlobalSettings200Response
@@ -229,7 +229,7 @@ func (o *GetRedfishV1SFSSAppGlobalSettings200Response) SetOdataContext(v string)
 }
 
 func (o GetRedfishV1SFSSAppGlobalSettings200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -267,10 +267,10 @@ func (o *GetRedfishV1SFSSAppGlobalSettings200Response) UnmarshalJSON(data []byte
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -326,3 +326,5 @@ func (v *NullableGetRedfishV1SFSSAppGlobalSettings200Response) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

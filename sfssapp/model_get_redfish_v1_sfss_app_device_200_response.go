@@ -11,23 +11,23 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the GetRedfishV1SFSSAppDevice200Response type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &GetRedfishV1SFSSAppDevice200Response{}
 
-// GetRedfishV1SFSSAppDevice200Response
+// GetRedfishV1SFSSAppDevice200Response 
 type GetRedfishV1SFSSAppDevice200Response struct {
 	// SFSS VM device identifier
 	DeviceId string `json:"DeviceId"`
 	// Total number of endpoints that the license supports
 	TotalNumOfEndPoints float32 `json:"TotalNumOfEndPoints"`
-	OdataId             string  `json:"@odata.id"`
-	OdataType           string  `json:"@odata.type"`
-	OdataContext        string  `json:"@odata.context"`
+	OdataId string `json:"@odata.id"`
+	OdataType string `json:"@odata.type"`
+	OdataContext string `json:"@odata.context"`
 	// The total number of NVMe hosts and subsystems that register with the CDC instances configured in the SFSS VM
 	NumOfEndPointInUse float32 `json:"NumOfEndPointInUse"`
 }
@@ -202,7 +202,7 @@ func (o *GetRedfishV1SFSSAppDevice200Response) SetNumOfEndPointInUse(v float32) 
 }
 
 func (o GetRedfishV1SFSSAppDevice200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -238,10 +238,10 @@ func (o *GetRedfishV1SFSSAppDevice200Response) UnmarshalJSON(data []byte) (err e
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -297,3 +297,5 @@ func (v *NullableGetRedfishV1SFSSAppDevice200Response) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

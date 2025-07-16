@@ -11,21 +11,21 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the GetRedfishV1SFSSAppUserActivityAuditID200Response type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &GetRedfishV1SFSSAppUserActivityAuditID200Response{}
 
-// GetRedfishV1SFSSAppUserActivityAuditID200Response
+// GetRedfishV1SFSSAppUserActivityAuditID200Response 
 type GetRedfishV1SFSSAppUserActivityAuditID200Response struct {
 	// CDC instance identifier
 	CDCInstance string `json:"CDCInstance"`
-	// Response code that indicates whether the user activity is successfully completed or not
+	// Response code that indicates whether the user activity is successfully completed or not 
 	HTTPCode string `json:"HTTPCode"`
-	// Operation performed by the user
+	// Operation performed by the user 
 	Operation string `json:"Operation"`
 	// Information provided by the user for the specific user activity
 	Payload string `json:"Payload"`
@@ -34,14 +34,14 @@ type GetRedfishV1SFSSAppUserActivityAuditID200Response struct {
 	// Date and time at which the operation was performed; date in dd/mm/yyyy format and time in hh:mm:ss format
 	TimeStamp string `json:"TimeStamp"`
 	// RESTAPI URL that is used for the specific user activity
-	URL       string `json:"URL"`
+	URL string `json:"URL"`
 	UserAgent string `json:"UserAgent"`
 	// Username of the user who performed the operation
 	UserName string `json:"UserName"`
 	// Role of the user
-	UserRole     string `json:"UserRole"`
-	OdataId      string `json:"@odata.id"`
-	OdataType    string `json:"@odata.type"`
+	UserRole string `json:"UserRole"`
+	OdataId string `json:"@odata.id"`
+	OdataType string `json:"@odata.type"`
 	OdataContext string `json:"@odata.context"`
 }
 
@@ -390,7 +390,7 @@ func (o *GetRedfishV1SFSSAppUserActivityAuditID200Response) SetOdataContext(v st
 }
 
 func (o GetRedfishV1SFSSAppUserActivityAuditID200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -440,10 +440,10 @@ func (o *GetRedfishV1SFSSAppUserActivityAuditID200Response) UnmarshalJSON(data [
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -499,3 +499,5 @@ func (v *NullableGetRedfishV1SFSSAppUserActivityAuditID200Response) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

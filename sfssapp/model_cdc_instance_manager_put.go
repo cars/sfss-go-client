@@ -11,8 +11,8 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
@@ -21,18 +21,18 @@ var _ MappedNullable = &CDCInstanceManagerPUT{}
 
 // CDCInstanceManagerPUT This model updates the CDC instance configuration.
 type CDCInstanceManagerPUT struct {
-	// Administrative state of the CDC instance
+	// Administrative state of the CDC instance 
 	CDCAdminState string `json:"CDCAdminState"`
 	// Administrative state of the discovery service
 	DiscoverySvcAdminState string `json:"DiscoverySvcAdminState"`
 	// CDC instance identifier
 	InstanceIdentifier string `json:"InstanceIdentifier"`
 	// Interface that is assigned to the CDC instance
-	Interfaces      []interface{} `json:"Interfaces"`
+	Interfaces []interface{} `json:"Interfaces"`
 	ServiceNetworks []interface{} `json:"ServiceNetworks"`
-	OdataId         string        `json:"@odata.id"`
-	OdataType       string        `json:"@odata.type"`
-	OdataContext    string        `json:"@odata.context"`
+	OdataId string `json:"@odata.id"`
+	OdataType string `json:"@odata.type"`
+	OdataContext string `json:"@odata.context"`
 }
 
 type _CDCInstanceManagerPUT CDCInstanceManagerPUT
@@ -255,7 +255,7 @@ func (o *CDCInstanceManagerPUT) SetOdataContext(v string) {
 }
 
 func (o CDCInstanceManagerPUT) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -295,10 +295,10 @@ func (o *CDCInstanceManagerPUT) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -354,3 +354,5 @@ func (v *NullableCDCInstanceManagerPUT) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

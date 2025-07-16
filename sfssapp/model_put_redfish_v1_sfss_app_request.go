@@ -11,15 +11,15 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the PUTRedfishV1SFSSAppRequest type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PUTRedfishV1SFSSAppRequest{}
 
-// PUTRedfishV1SFSSAppRequest
+// PUTRedfishV1SFSSAppRequest 
 type PUTRedfishV1SFSSAppRequest struct {
 	Version string `json:"Version"`
 }
@@ -69,7 +69,7 @@ func (o *PUTRedfishV1SFSSAppRequest) SetVersion(v string) {
 }
 
 func (o PUTRedfishV1SFSSAppRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,10 +95,10 @@ func (o *PUTRedfishV1SFSSAppRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -154,3 +154,5 @@ func (v *NullablePUTRedfishV1SFSSAppRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

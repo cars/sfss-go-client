@@ -11,15 +11,15 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the CDCHealthStatusGETID type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &CDCHealthStatusGETID{}
 
-// CDCHealthStatusGETID This model lists the health status information for a particular CDC instance based on the specified CDC instance ID.
+// CDCHealthStatusGETID This model lists the health status information for a particular CDC instance based on the specified CDC instance ID.  
 type CDCHealthStatusGETID struct {
 	// Health status of the CDC instance; possible values include Ok, Warning, and Critical
 	Health string `json:"Health"`
@@ -27,9 +27,9 @@ type CDCHealthStatusGETID struct {
 	ReasonCode []map[string]interface{} `json:"ReasonCode"`
 	// CDC instance identifier
 	InstanceIdentifier string `json:"InstanceIdentifier"`
-	OdataId            string `json:"@odata.id"`
-	OdataType          string `json:"@odata.type"`
-	OdataContext       string `json:"@odata.context"`
+	OdataId string `json:"@odata.id"`
+	OdataType string `json:"@odata.type"`
+	OdataContext string `json:"@odata.context"`
 }
 
 type _CDCHealthStatusGETID CDCHealthStatusGETID
@@ -202,7 +202,7 @@ func (o *CDCHealthStatusGETID) SetOdataContext(v string) {
 }
 
 func (o CDCHealthStatusGETID) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -238,10 +238,10 @@ func (o *CDCHealthStatusGETID) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -297,3 +297,5 @@ func (v *NullableCDCHealthStatusGETID) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

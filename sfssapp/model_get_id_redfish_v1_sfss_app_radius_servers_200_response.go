@@ -11,22 +11,22 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the GetIDRedfishV1SFSSAppRadiusServers200Response type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &GetIDRedfishV1SFSSAppRadiusServers200Response{}
 
-// GetIDRedfishV1SFSSAppRadiusServers200Response
+// GetIDRedfishV1SFSSAppRadiusServers200Response 
 type GetIDRedfishV1SFSSAppRadiusServers200Response struct {
 	// IP address of the RADIUS server
 	ServerIp string `json:"ServerIp"`
-	// Password to access the RADIUS server
-	ServerPass   string `json:"ServerPass"`
-	OdataId      string `json:"@odata.id"`
-	OdataType    string `json:"@odata.type"`
+	// Password to access the RADIUS server 
+	ServerPass string `json:"ServerPass"`
+	OdataId string `json:"@odata.id"`
+	OdataType string `json:"@odata.type"`
 	OdataContext string `json:"@odata.context"`
 }
 
@@ -175,7 +175,7 @@ func (o *GetIDRedfishV1SFSSAppRadiusServers200Response) SetOdataContext(v string
 }
 
 func (o GetIDRedfishV1SFSSAppRadiusServers200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -209,10 +209,10 @@ func (o *GetIDRedfishV1SFSSAppRadiusServers200Response) UnmarshalJSON(data []byt
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -268,3 +268,5 @@ func (v *NullableGetIDRedfishV1SFSSAppRadiusServers200Response) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

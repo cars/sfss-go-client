@@ -11,15 +11,15 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the GetIDRedfishV1SFSSApp200Response type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &GetIDRedfishV1SFSSApp200Response{}
 
-// GetIDRedfishV1SFSSApp200Response
+// GetIDRedfishV1SFSSApp200Response 
 type GetIDRedfishV1SFSSApp200Response struct {
 	// Location of the SFSS image in the remote server; SFSS supports only IPv4 communication with remote servers
 	ImageServerLocation string `json:"ImageServerLocation"`
@@ -34,9 +34,9 @@ type GetIDRedfishV1SFSSApp200Response struct {
 	// Username to access the remote server
 	ImageServerUserName string `json:"ImageServerUserName"`
 	// Version of the SFSS image
-	Version      string `json:"Version"`
-	OdataId      string `json:"@odata.id"`
-	OdataType    string `json:"@odata.type"`
+	Version string `json:"Version"`
+	OdataId string `json:"@odata.id"`
+	OdataType string `json:"@odata.type"`
 	OdataContext string `json:"@odata.context"`
 }
 
@@ -310,7 +310,7 @@ func (o *GetIDRedfishV1SFSSApp200Response) SetOdataContext(v string) {
 }
 
 func (o GetIDRedfishV1SFSSApp200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -354,10 +354,10 @@ func (o *GetIDRedfishV1SFSSApp200Response) UnmarshalJSON(data []byte) (err error
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -413,3 +413,5 @@ func (v *NullableGetIDRedfishV1SFSSApp200Response) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

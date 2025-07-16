@@ -1,7 +1,6 @@
-module github.com/cars/sfss-go-client
+module github.com/GIT_USER_ID/GIT_REPO_ID
 
-go 1.22.2
+go 1.18
 
-require github.com/cars/sfss-go-client/sfss v0.0.0-20231002120000-abcdef123456
-
-replace github.com/cars/sfss-go-client/sfss => ./sfss
+require (
+)

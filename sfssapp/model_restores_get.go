@@ -11,23 +11,23 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the RestoresGET type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &RestoresGET{}
 
-// RestoresGET This model lists the restore information from SFSS.
+// RestoresGET This model lists the restore information from SFSS. 
 type RestoresGET struct {
 	// A set of restore operations performed on SFSS
 	Restores []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner `json:"Restores"`
 	// Number of restore operations performed
 	RestoresodataCount float32 `json:"Restores@odata.count"`
-	OdataId            string  `json:"@odata.id"`
-	OdataContext       string  `json:"@odata.context"`
-	OdataType          string  `json:"@odata.type"`
+	OdataId string `json:"@odata.id"`
+	OdataContext string `json:"@odata.context"`
+	OdataType string `json:"@odata.type"`
 }
 
 type _RestoresGET RestoresGET
@@ -175,7 +175,7 @@ func (o *RestoresGET) SetOdataType(v string) {
 }
 
 func (o RestoresGET) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -209,10 +209,10 @@ func (o *RestoresGET) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -268,3 +268,5 @@ func (v *NullableRestoresGET) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

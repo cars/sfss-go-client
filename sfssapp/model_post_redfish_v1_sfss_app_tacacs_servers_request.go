@@ -11,15 +11,15 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the PostRedfishV1SFSSAppTacacsServersRequest type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PostRedfishV1SFSSAppTacacsServersRequest{}
 
-// PostRedfishV1SFSSAppTacacsServersRequest
+// PostRedfishV1SFSSAppTacacsServersRequest 
 type PostRedfishV1SFSSAppTacacsServersRequest struct {
 	// IP address of the TACACS+ server; SFSS supports only IPv4 communication with remote servers
 	ServerIp string `json:"ServerIp"`
@@ -97,7 +97,7 @@ func (o *PostRedfishV1SFSSAppTacacsServersRequest) SetServerPass(v string) {
 }
 
 func (o PostRedfishV1SFSSAppTacacsServersRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -125,10 +125,10 @@ func (o *PostRedfishV1SFSSAppTacacsServersRequest) UnmarshalJSON(data []byte) (e
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -184,3 +184,5 @@ func (v *NullablePostRedfishV1SFSSAppTacacsServersRequest) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

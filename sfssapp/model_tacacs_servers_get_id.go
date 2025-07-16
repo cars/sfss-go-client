@@ -11,23 +11,23 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the TacacsServersGETID type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &TacacsServersGETID{}
 
-// TacacsServersGETID This model lists the TACACS+ server information based on the specified TACACS+ server ID.
+// TacacsServersGETID This model lists the TACACS+ server information based on the specified TACACS+ server ID. 
 type TacacsServersGETID struct {
 	// List of configured TACACS+ servers
 	TacacsServers []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner `json:"TacacsServers"`
 	// Number of configured TACACS+ servers
 	TacacsServersodataCount float32 `json:"TacacsServers@odata.count"`
-	OdataId                 string  `json:"@odata.id"`
-	OdataContext            string  `json:"@odata.context"`
-	OdataType               string  `json:"@odata.type"`
+	OdataId string `json:"@odata.id"`
+	OdataContext string `json:"@odata.context"`
+	OdataType string `json:"@odata.type"`
 }
 
 type _TacacsServersGETID TacacsServersGETID
@@ -175,7 +175,7 @@ func (o *TacacsServersGETID) SetOdataType(v string) {
 }
 
 func (o TacacsServersGETID) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -209,10 +209,10 @@ func (o *TacacsServersGETID) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -268,3 +268,5 @@ func (v *NullableTacacsServersGETID) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

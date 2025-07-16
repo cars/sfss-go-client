@@ -11,8 +11,8 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
@@ -25,10 +25,10 @@ type EventsGET struct {
 	Events []EventsGETEventsInner `json:"Events"`
 	// Number of events reported
 	EventsodataCount float32 `json:"Events@odata.count"`
-	OdataId          string  `json:"@odata.id"`
-	OdataContext     string  `json:"@odata.context"`
-	OdataType        string  `json:"@odata.type"`
-	TotalCount       float32 `json:"TotalCount"`
+	OdataId string `json:"@odata.id"`
+	OdataContext string `json:"@odata.context"`
+	OdataType string `json:"@odata.type"`
+	TotalCount float32 `json:"TotalCount"`
 }
 
 type _EventsGET EventsGET
@@ -201,7 +201,7 @@ func (o *EventsGET) SetTotalCount(v float32) {
 }
 
 func (o EventsGET) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -237,10 +237,10 @@ func (o *EventsGET) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -296,3 +296,5 @@ func (v *NullableEventsGET) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

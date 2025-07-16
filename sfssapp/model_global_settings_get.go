@@ -11,8 +11,8 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
@@ -29,9 +29,9 @@ type GlobalSettingsGET struct {
 	ReservedIPV6SubnetPrefix string `json:"ReservedIPV6SubnetPrefix"`
 	// Maximum transmission unit; range is from 1250 to 9000; default value is 1500
 	StorageInterfaceMTU float32 `json:"StorageInterfaceMTU"`
-	OdataId             string  `json:"@odata.id"`
-	OdataType           string  `json:"@odata.type"`
-	OdataContext        string  `json:"@odata.context"`
+	OdataId string `json:"@odata.id"`
+	OdataType string `json:"@odata.type"`
+	OdataContext string `json:"@odata.context"`
 }
 
 type _GlobalSettingsGET GlobalSettingsGET
@@ -229,7 +229,7 @@ func (o *GlobalSettingsGET) SetOdataContext(v string) {
 }
 
 func (o GlobalSettingsGET) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -267,10 +267,10 @@ func (o *GlobalSettingsGET) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -326,3 +326,5 @@ func (v *NullableGlobalSettingsGET) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -11,15 +11,15 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the PostRedfishV1SFSSAppLicenses200Response type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PostRedfishV1SFSSAppLicenses200Response{}
 
-// PostRedfishV1SFSSAppLicenses200Response
+// PostRedfishV1SFSSAppLicenses200Response 
 type PostRedfishV1SFSSAppLicenses200Response struct {
 	// License identifier
 	Identifier string `json:"Identifier"`
@@ -70,7 +70,7 @@ func (o *PostRedfishV1SFSSAppLicenses200Response) SetIdentifier(v string) {
 }
 
 func (o PostRedfishV1SFSSAppLicenses200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,10 +96,10 @@ func (o *PostRedfishV1SFSSAppLicenses200Response) UnmarshalJSON(data []byte) (er
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -155,3 +155,5 @@ func (v *NullablePostRedfishV1SFSSAppLicenses200Response) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

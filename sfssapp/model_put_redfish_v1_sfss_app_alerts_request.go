@@ -11,23 +11,23 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the PutRedfishV1SFSSAppAlertsRequest type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PutRedfishV1SFSSAppAlertsRequest{}
 
-// PutRedfishV1SFSSAppAlertsRequest
+// PutRedfishV1SFSSAppAlertsRequest 
 type PutRedfishV1SFSSAppAlertsRequest struct {
-	Protocol     string        `json:"Protocol"`
-	Identifier   string        `json:"Identifier"`
-	Context      string        `json:"Context"`
-	EventTypes   []interface{} `json:"EventTypes"`
+	Protocol string `json:"Protocol"`
+	Identifier string `json:"Identifier"`
+	Context string `json:"Context"`
+	EventTypes []interface{} `json:"EventTypes"`
 	CdcInstances []interface{} `json:"CdcInstances"`
-	HttpHeaders  []interface{} `json:"HttpHeaders"`
-	Destination  string        `json:"Destination"`
+	HttpHeaders []interface{} `json:"HttpHeaders"`
+	Destination string `json:"Destination"`
 }
 
 type _PutRedfishV1SFSSAppAlertsRequest PutRedfishV1SFSSAppAlertsRequest
@@ -225,7 +225,7 @@ func (o *PutRedfishV1SFSSAppAlertsRequest) SetDestination(v string) {
 }
 
 func (o PutRedfishV1SFSSAppAlertsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -263,10 +263,10 @@ func (o *PutRedfishV1SFSSAppAlertsRequest) UnmarshalJSON(data []byte) (err error
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -322,3 +322,5 @@ func (v *NullablePutRedfishV1SFSSAppAlertsRequest) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

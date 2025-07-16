@@ -11,8 +11,8 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
@@ -23,11 +23,11 @@ var _ MappedNullable = &BackupsGETEXPAND{}
 type BackupsGETEXPAND struct {
 	// List of available backups
 	Backups []BackupsGETEXPANDBackupsInner `json:"Backups"`
-	// Number of backups available
+	// Number of backups available 
 	BackupsodataCount float32 `json:"Backups@odata.count"`
-	OdataId           string  `json:"@odata.id"`
-	OdataContext      string  `json:"@odata.context"`
-	OdataType         string  `json:"@odata.type"`
+	OdataId string `json:"@odata.id"`
+	OdataContext string `json:"@odata.context"`
+	OdataType string `json:"@odata.type"`
 }
 
 type _BackupsGETEXPAND BackupsGETEXPAND
@@ -175,7 +175,7 @@ func (o *BackupsGETEXPAND) SetOdataType(v string) {
 }
 
 func (o BackupsGETEXPAND) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -209,10 +209,10 @@ func (o *BackupsGETEXPAND) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -268,3 +268,5 @@ func (v *NullableBackupsGETEXPAND) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

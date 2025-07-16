@@ -11,17 +11,17 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the PostRedfishV1SFSSAppIpAddressManagementsRequest type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PostRedfishV1SFSSAppIpAddressManagementsRequest{}
 
-// PostRedfishV1SFSSAppIpAddressManagementsRequest
+// PostRedfishV1SFSSAppIpAddressManagementsRequest 
 type PostRedfishV1SFSSAppIpAddressManagementsRequest struct {
-	// Interface IPv4 address
+	// Interface IPv4 address 
 	IPV4Address []string `json:"IPV4Address"`
 	// IP address configuration type; possible values include Manual, Automatic, and Disabled
 	IPV4Config string `json:"IPV4Config"`
@@ -41,7 +41,7 @@ type PostRedfishV1SFSSAppIpAddressManagementsRequest struct {
 	IPV6Gateway string `json:"IPV6Gateway"`
 	// IPv6 address subnet mask
 	IPV6PrefixLength float32 `json:"IPV6PrefixLength"`
-	// The parent interface on which the VLAN subinterface is created; possible values include ens160, ens192, ens224, ens256, ens161, ens193, ens225, ens257, ens162, and ens194
+	// The parent interface on which the VLAN subinterface is created; possible values include ens160, ens192, ens224, ens256, ens161, ens193, ens225, ens257, ens162, and ens194 
 	ParentInterface string `json:"ParentInterface"`
 	// VLAN identifier
 	VlanId float32 `json:"VlanId"`
@@ -449,7 +449,7 @@ func (o *PostRedfishV1SFSSAppIpAddressManagementsRequest) SetIPV6Route(v []PostR
 }
 
 func (o PostRedfishV1SFSSAppIpAddressManagementsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -505,10 +505,10 @@ func (o *PostRedfishV1SFSSAppIpAddressManagementsRequest) UnmarshalJSON(data []b
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -564,3 +564,5 @@ func (v *NullablePostRedfishV1SFSSAppIpAddressManagementsRequest) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -11,15 +11,15 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the PostRedfishV1SFSSAppAuthenticationSequenceRequest type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PostRedfishV1SFSSAppAuthenticationSequenceRequest{}
 
-// PostRedfishV1SFSSAppAuthenticationSequenceRequest
+// PostRedfishV1SFSSAppAuthenticationSequenceRequest 
 type PostRedfishV1SFSSAppAuthenticationSequenceRequest struct {
 	// Defines a set of authentication servers (local and remote) configured in SFSS and the order in which SFSS looks up user information in these servers
 	AuthenticationSequence []string `json:"AuthenticationSequence"`
@@ -70,7 +70,7 @@ func (o *PostRedfishV1SFSSAppAuthenticationSequenceRequest) SetAuthenticationSeq
 }
 
 func (o PostRedfishV1SFSSAppAuthenticationSequenceRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,10 +96,10 @@ func (o *PostRedfishV1SFSSAppAuthenticationSequenceRequest) UnmarshalJSON(data [
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -155,3 +155,5 @@ func (v *NullablePostRedfishV1SFSSAppAuthenticationSequenceRequest) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

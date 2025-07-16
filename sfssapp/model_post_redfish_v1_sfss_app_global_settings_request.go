@@ -11,15 +11,15 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the PostRedfishV1SFSSAppGlobalSettingsRequest type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PostRedfishV1SFSSAppGlobalSettingsRequest{}
 
-// PostRedfishV1SFSSAppGlobalSettingsRequest
+// PostRedfishV1SFSSAppGlobalSettingsRequest 
 type PostRedfishV1SFSSAppGlobalSettingsRequest struct {
 	// Hostname of the SFSS VM
 	HostName string `json:"HostName"`
@@ -27,7 +27,7 @@ type PostRedfishV1SFSSAppGlobalSettingsRequest struct {
 	ReservedIPV4SubnetPrefix string `json:"ReservedIPV4SubnetPrefix"`
 	// Reserved IPv6 subnet prefix for internal VM networking use; the default value is fd01::x
 	ReservedIPV6SubnetPrefix string `json:"ReservedIPV6SubnetPrefix"`
-	// Maximum transmission unit; range is from 1250 to 9000; default value is 1500
+	// Maximum transmission unit; range is from 1250 to 9000; default value is 1500 
 	StorageInterfaceMTU float32 `json:"StorageInterfaceMTU"`
 }
 
@@ -151,7 +151,7 @@ func (o *PostRedfishV1SFSSAppGlobalSettingsRequest) SetStorageInterfaceMTU(v flo
 }
 
 func (o PostRedfishV1SFSSAppGlobalSettingsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -183,10 +183,10 @@ func (o *PostRedfishV1SFSSAppGlobalSettingsRequest) UnmarshalJSON(data []byte) (
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -242,3 +242,5 @@ func (v *NullablePostRedfishV1SFSSAppGlobalSettingsRequest) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

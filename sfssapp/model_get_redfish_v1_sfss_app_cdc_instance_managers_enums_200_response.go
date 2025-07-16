@@ -11,21 +11,21 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the GetRedfishV1SFSSAppCDCInstanceManagersEnums200Response type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &GetRedfishV1SFSSAppCDCInstanceManagersEnums200Response{}
 
-// GetRedfishV1SFSSAppCDCInstanceManagersEnums200Response
+// GetRedfishV1SFSSAppCDCInstanceManagersEnums200Response 
 type GetRedfishV1SFSSAppCDCInstanceManagersEnums200Response struct {
 	// Administrative state of the CDC instance
 	CDCAdminState []string `json:"CDCAdminState"`
 	// Administrative state of the discovery service
 	DiscoverySvcAdminState []string `json:"DiscoverySvcAdminState"`
-	// Status of Add CDC operation; possible values include INIT, INPROGRESS, SUCCESS, FAIL, and ABORT
+	// Status of Add CDC operation; possible values include INIT, INPROGRESS, SUCCESS, FAIL, and ABORT 
 	Status []string `json:"Status"`
 }
 
@@ -124,7 +124,7 @@ func (o *GetRedfishV1SFSSAppCDCInstanceManagersEnums200Response) SetStatus(v []s
 }
 
 func (o GetRedfishV1SFSSAppCDCInstanceManagersEnums200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -154,10 +154,10 @@ func (o *GetRedfishV1SFSSAppCDCInstanceManagersEnums200Response) UnmarshalJSON(d
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -213,3 +213,5 @@ func (v *NullableGetRedfishV1SFSSAppCDCInstanceManagersEnums200Response) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

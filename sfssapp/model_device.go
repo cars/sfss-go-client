@@ -11,8 +11,8 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
@@ -25,9 +25,9 @@ type Device struct {
 	DeviceId string `json:"DeviceId"`
 	// Total number of endpoints; total number of hosts, subsystems, and DDCs
 	TotalNumOfEndPoints float32 `json:"TotalNumOfEndPoints"`
-	OdataId             string  `json:"@odata.id"`
-	OdataType           string  `json:"@odata.type"`
-	OdataContext        string  `json:"@odata.context"`
+	OdataId string `json:"@odata.id"`
+	OdataType string `json:"@odata.type"`
+	OdataContext string `json:"@odata.context"`
 	// Total number of endpoints in use
 	NumOfEndPointInUse float32 `json:"NumOfEndPointInUse"`
 }
@@ -202,7 +202,7 @@ func (o *Device) SetNumOfEndPointInUse(v float32) {
 }
 
 func (o Device) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -238,10 +238,10 @@ func (o *Device) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -297,3 +297,5 @@ func (v *NullableDevice) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

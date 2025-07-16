@@ -11,24 +11,24 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the GetRedfishV1SFSSAppUserActivityAudit200Response type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &GetRedfishV1SFSSAppUserActivityAudit200Response{}
 
-// GetRedfishV1SFSSAppUserActivityAudit200Response
+// GetRedfishV1SFSSAppUserActivityAudit200Response 
 type GetRedfishV1SFSSAppUserActivityAudit200Response struct {
 	// A set of user activity audit records
 	UserActivityAudits []GetRedfishV1SFSSAppUserActivityAudit200ResponseUserActivityAuditsInner `json:"UserActivityAudits"`
 	// Number of user activity audit records present in the response
 	UserActivityAuditsodataCount float32 `json:"UserActivityAudits@odata.count"`
-	OdataId                      string  `json:"@odata.id"`
-	OdataContext                 string  `json:"@odata.context"`
-	OdataType                    string  `json:"@odata.type"`
-	TotalCount                   string  `json:"TotalCount"`
+	OdataId string `json:"@odata.id"`
+	OdataContext string `json:"@odata.context"`
+	OdataType string `json:"@odata.type"`
+	TotalCount string `json:"TotalCount"`
 }
 
 type _GetRedfishV1SFSSAppUserActivityAudit200Response GetRedfishV1SFSSAppUserActivityAudit200Response
@@ -201,7 +201,7 @@ func (o *GetRedfishV1SFSSAppUserActivityAudit200Response) SetTotalCount(v string
 }
 
 func (o GetRedfishV1SFSSAppUserActivityAudit200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -237,10 +237,10 @@ func (o *GetRedfishV1SFSSAppUserActivityAudit200Response) UnmarshalJSON(data []b
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -296,3 +296,5 @@ func (v *NullableGetRedfishV1SFSSAppUserActivityAudit200Response) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

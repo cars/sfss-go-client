@@ -24,9 +24,9 @@ type GetRedfishV1SFSSAppNTP200Response struct {
 	// Connection status with the NTP server; possible values include Connected and Not Connected
 	State *string `json:"State,omitempty"`
 	// Status of the NTP service; possible values include Enable and Disable
-	Status       *string `json:"Status,omitempty"`
-	OdataId      *string `json:"@odata.id,omitempty"`
-	OdataType    *string `json:"@odata.type,omitempty"`
+	Status *string `json:"Status,omitempty"`
+	OdataId *string `json:"@odata.id,omitempty"`
+	OdataType *string `json:"@odata.type,omitempty"`
 	OdataContext *string `json:"@odata.context,omitempty"`
 }
 
@@ -240,7 +240,7 @@ func (o *GetRedfishV1SFSSAppNTP200Response) SetOdataContext(v string) {
 }
 
 func (o GetRedfishV1SFSSAppNTP200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -305,3 +305,5 @@ func (v *NullableGetRedfishV1SFSSAppNTP200Response) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

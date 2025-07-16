@@ -11,23 +11,23 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the GetExpandRedfishV1SFSSAppBackups200Response type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &GetExpandRedfishV1SFSSAppBackups200Response{}
 
-// GetExpandRedfishV1SFSSAppBackups200Response
+// GetExpandRedfishV1SFSSAppBackups200Response 
 type GetExpandRedfishV1SFSSAppBackups200Response struct {
 	// A set of backups obtained from SFSS
 	Backups []GetExpandRedfishV1SFSSAppBackups200ResponseBackupsInner `json:"Backups"`
 	// Number of backups available
 	BackupsodataCount float32 `json:"Backups@odata.count"`
-	OdataId           string  `json:"@odata.id"`
-	OdataContext      string  `json:"@odata.context"`
-	OdataType         string  `json:"@odata.type"`
+	OdataId string `json:"@odata.id"`
+	OdataContext string `json:"@odata.context"`
+	OdataType string `json:"@odata.type"`
 }
 
 type _GetExpandRedfishV1SFSSAppBackups200Response GetExpandRedfishV1SFSSAppBackups200Response
@@ -175,7 +175,7 @@ func (o *GetExpandRedfishV1SFSSAppBackups200Response) SetOdataType(v string) {
 }
 
 func (o GetExpandRedfishV1SFSSAppBackups200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -209,10 +209,10 @@ func (o *GetExpandRedfishV1SFSSAppBackups200Response) UnmarshalJSON(data []byte)
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -268,3 +268,5 @@ func (v *NullableGetExpandRedfishV1SFSSAppBackups200Response) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

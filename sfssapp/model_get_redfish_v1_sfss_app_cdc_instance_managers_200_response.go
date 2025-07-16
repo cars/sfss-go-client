@@ -11,23 +11,23 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the GetRedfishV1SFSSAppCDCInstanceManagers200Response type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &GetRedfishV1SFSSAppCDCInstanceManagers200Response{}
 
-// GetRedfishV1SFSSAppCDCInstanceManagers200Response
+// GetRedfishV1SFSSAppCDCInstanceManagers200Response 
 type GetRedfishV1SFSSAppCDCInstanceManagers200Response struct {
 	// A set of CDC instances
 	CDCInstanceManagers []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner `json:"CDCInstanceManagers"`
 	// Number of CDC instances
 	CDCInstanceManagersodataCount float32 `json:"CDCInstanceManagers@odata.count"`
-	OdataId                       string  `json:"@odata.id"`
-	OdataContext                  string  `json:"@odata.context"`
-	OdataType                     string  `json:"@odata.type"`
+	OdataId string `json:"@odata.id"`
+	OdataContext string `json:"@odata.context"`
+	OdataType string `json:"@odata.type"`
 }
 
 type _GetRedfishV1SFSSAppCDCInstanceManagers200Response GetRedfishV1SFSSAppCDCInstanceManagers200Response
@@ -175,7 +175,7 @@ func (o *GetRedfishV1SFSSAppCDCInstanceManagers200Response) SetOdataType(v strin
 }
 
 func (o GetRedfishV1SFSSAppCDCInstanceManagers200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -209,10 +209,10 @@ func (o *GetRedfishV1SFSSAppCDCInstanceManagers200Response) UnmarshalJSON(data [
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -268,3 +268,5 @@ func (v *NullableGetRedfishV1SFSSAppCDCInstanceManagers200Response) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

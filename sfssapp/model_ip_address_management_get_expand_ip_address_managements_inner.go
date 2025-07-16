@@ -11,8 +11,8 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
@@ -27,7 +27,7 @@ type IpAddressManagementGETEXPANDIpAddressManagementsInner struct {
 	Type string `json:"Type"`
 	// IPv4 address configured on the interface
 	IPV4Address []map[string]interface{} `json:"IPV4Address,omitempty"`
-	// IPv4 configuration type; possible values include Manual, Automatic, and Disabled
+	// IPv4 configuration type; possible values include Manual, Automatic, and Disabled 
 	IPV4Config string `json:"IPV4Config"`
 	// IPv4 gateway address
 	IPV4Gateway string `json:"IPV4Gateway"`
@@ -46,9 +46,9 @@ type IpAddressManagementGETEXPANDIpAddressManagementsInner struct {
 	// Maximum transmission unit of the interface; default value is 1500
 	MTU float32 `json:"MTU"`
 	// Friendly name configured for the interface
-	Name         string `json:"Name"`
-	OdataId      string `json:"@odata.id"`
-	OdataType    string `json:"@odata.type"`
+	Name string `json:"Name"`
+	OdataId string `json:"@odata.id"`
+	OdataType string `json:"@odata.type"`
 	OdataContext string `json:"@odata.context"`
 }
 
@@ -486,7 +486,7 @@ func (o *IpAddressManagementGETEXPANDIpAddressManagementsInner) SetOdataContext(
 }
 
 func (o IpAddressManagementGETEXPANDIpAddressManagementsInner) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -544,10 +544,10 @@ func (o *IpAddressManagementGETEXPANDIpAddressManagementsInner) UnmarshalJSON(da
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -603,3 +603,5 @@ func (v *NullableIpAddressManagementGETEXPANDIpAddressManagementsInner) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

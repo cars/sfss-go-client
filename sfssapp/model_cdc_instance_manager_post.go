@@ -11,8 +11,8 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
@@ -23,7 +23,7 @@ var _ MappedNullable = &CDCInstanceManagerPOST{}
 type CDCInstanceManagerPOST struct {
 	// CDC instance identifier
 	InstanceIdentifier string `json:"InstanceIdentifier"`
-	// Interface that is assigned to the CDC instance
+	// Interface that is assigned to the CDC instance 
 	Interfaces []interface{} `json:"Interfaces"`
 	// Administrative state of the CDC instance
 	CDCAdminState *string `json:"CDCAdminState,omitempty"`
@@ -165,7 +165,7 @@ func (o *CDCInstanceManagerPOST) SetDiscoverySvcAdminState(v string) {
 }
 
 func (o CDCInstanceManagerPOST) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -199,10 +199,10 @@ func (o *CDCInstanceManagerPOST) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -258,3 +258,5 @@ func (v *NullableCDCInstanceManagerPOST) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

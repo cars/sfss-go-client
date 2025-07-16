@@ -11,15 +11,15 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the DeleteRedfishV1SFSSAppAlertsCDCInstanceManagers200Response type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &DeleteRedfishV1SFSSAppAlertsCDCInstanceManagers200Response{}
 
-// DeleteRedfishV1SFSSAppAlertsCDCInstanceManagers200Response
+// DeleteRedfishV1SFSSAppAlertsCDCInstanceManagers200Response 
 type DeleteRedfishV1SFSSAppAlertsCDCInstanceManagers200Response struct {
 	// Alert identifier
 	Identifier string `json:"Identifier"`
@@ -70,7 +70,7 @@ func (o *DeleteRedfishV1SFSSAppAlertsCDCInstanceManagers200Response) SetIdentifi
 }
 
 func (o DeleteRedfishV1SFSSAppAlertsCDCInstanceManagers200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,10 +96,10 @@ func (o *DeleteRedfishV1SFSSAppAlertsCDCInstanceManagers200Response) UnmarshalJS
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -155,3 +155,5 @@ func (v *NullableDeleteRedfishV1SFSSAppAlertsCDCInstanceManagers200Response) Unm
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

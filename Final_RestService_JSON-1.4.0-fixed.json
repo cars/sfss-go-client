@@ -12,7 +12,7 @@
     }
   ],
   "paths": {
-    "/redfish/v1/SFSS/<InstanceID>/Hosts": {
+    "/redfish/v1/SFSS/{InstanceID}/Hosts": {
       "get": {
         "summary": "Get all hosts",
         "tags": [],
@@ -231,9 +231,21 @@
           }
         }
       },
-      "parameters": []
+      "parameters": [
+        {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        }]
     },
-    "/redfish/v1/SFSS/<InstanceID>/Hosts('Id')": {
+    "/redfish/v1/SFSS/{InstanceID}/Hosts({Id})": {
       "get": {
         "summary": "Get specific host",
         "tags": [],
@@ -365,7 +377,7 @@
             }
           }
         },
-        "operationId": "get-redfish-v1-SFSS-Instance#-Hosts('Id')",
+        "operationId": "get-redfish-v1-SFSS-Instance#-Hosts-Id",
         "description": "This API retrieves detailed information about a host from a CDC instance based on the specified CDC instance and host identifiers.",
         "security": [
           {
@@ -375,7 +387,7 @@
       },
       "delete": {
         "summary": "Delete host",
-        "operationId": "delete-redfish-v1-SFSS-Instance#-Hosts('Id')",
+        "operationId": "delete-redfish-v1-SFSS-Instance#-Hosts-Id)",
         "responses": {
           "200": {
             "description": "OK"
@@ -383,9 +395,33 @@
         },
         "description": "This API removes a host from a CDC instance based on the specified CDC instance and host identifiers. "
       },
-      "parameters": []
+      "parameters": [{
+        "name": "InstanceID",
+        "in": "path",
+        "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        },
+        {
+          "name": "Id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        }
+      ]
     },
-    "/redfish/v1/SFSS/<InstanceID>/Hosts?$expand=Hosts": {
+    "/redfish/v1/SFSS/{InstanceID}/Hosts2": {
       "get": {
         "summary": "Get detailed host information",
         "tags": [],
@@ -665,7 +701,7 @@
               "type": "integer"
             },
             "in": "query",
-            "name": "&$skip=1",
+            "name": "$skip",
             "description": "Helps to skip records"
           },
           {
@@ -673,14 +709,34 @@
               "type": "string"
             },
             "in": "query",
-            "name": "&$filter=TransportAddress eq 11.22.33.44 or TransportAddress eq 1.2.3.4",
-            "description": "Filter based on the  eq conditions"
+            "name": "$filter",
+            "description": "Filter based on the  eq conditions: ex: TransportAddress eq 11.22.33.44 or TransportAddress eq 1.2.3.4"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "required": true, 
+            "schema": {
+              "type": "string",
+              "default": "Hosts"
+            }
+          },
+          {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 32,
+              "default": 1,
+              "format": "int32"
+            }
           }
         ]
-      },
-      "parameters": []
+      }
     },
-    "/redfish/v1/SFSS/<InstanceID>/Subsystems('Id')": {
+    "/redfish/v1/SFSS/{InstanceID}/Subsystems({Id})": {
       "get": {
         "summary": "Get specific subsystem",
         "tags": [],
@@ -874,9 +930,34 @@
         },
         "description": "This API removes a subsystem from a CDC instance based on the specified CDC instance and subsystem identifiers."
       },
-      "parameters": []
+      "parameters": [
+        {
+        "name": "InstanceID",
+        "in": "path",
+        "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        },
+        {
+          "name": "Id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        }
+      ]
     },
-    "/redfish/v1/SFSS/<InstanceID>/Subsystems": {
+    "/redfish/v1/SFSS/{InstanceID}/Subsystems": {
       "get": {
         "summary": "Get all subsystems",
         "tags": [],
@@ -980,14 +1061,7 @@
           }
         ],
         "parameters": [
-          {
-            "schema": {
-              "type": "string"
-            },
-            "in": "query",
-            "name": "?$source=config",
-            "description": "This is an optional param to fetch the details from config DB."
-          }
+         
         ]
       },
       "post": {
@@ -1105,9 +1179,28 @@
           }
         }
       },
-      "parameters": []
+      "parameters": [ {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "?$source=config",
+            "description": "This is an optional param to fetch the details from config DB."
+          },
+          {
+            "name": "InstanceID",
+            "in": "path",
+            "required": true,
+              "schema": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 32,
+                "default": 1,
+                "format": "int32"
+              }
+          }]
     },
-    "/redfish/v1/SFSS/<InstanceID>/Hosts/Enums": {
+    "/redfish/v1/SFSS/{InstanceID}/Hosts/Enums": {
       "get": {
         "summary": "Get host enums",
         "tags": [],
@@ -1278,11 +1371,24 @@
           {
             "basic": []
           }
+        ],
+        "parameters": [  
+          {
+            "name": "InstanceID",
+            "in": "path",
+            "required": true,
+              "schema": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 32,
+                "default": 1,
+                "format": "int32"
+              }
+            }
         ]
-      },
-      "parameters": []
+      }
     },
-    "/redfish/v1/SFSS/<InstanceID>/Subsystems?$expand=Subsystems": {
+    "/redfish/v1/SFSS/{InstanceID}/Subsystems?$expand=Subsystems": {
       "get": {
         "summary": "Get detailed subsystem information",
         "tags": [],
@@ -1658,12 +1764,24 @@
             "in": "query",
             "name": "&$filter=TransportAddress eq 1.1.1.1 or TransportAddress eq 3.3.3.3",
             "description": "Optional query param to filer based on the eq condition."
+          },
+          {
+            "name": "InstanceID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 32,
+              "default": 1,
+              "format": "int32"
+            }
           }
         ]
-      },
-      "parameters": []
+      }
+      
     },
-    "/redfish/v1/SFSS/<InstanceID>/Subsystems/Enums": {
+    "/redfish/v1/SFSS/{InstanceID}/Subsystems/Enums": {
       "get": {
         "summary": "Get subsystem enums",
         "tags": [],
@@ -1852,11 +1970,23 @@
           {
             "basic": []
           }
-        ]
-      },
-      "parameters": []
+        ],
+        "parameters": [  {
+        "name": "InstanceID",
+        "in": "path",
+        "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        }]
+      }
+      
     },
-    "/redfish/v1/SFSS/<InstanceID>/DDCs": {
+    "/redfish/v1/SFSS/{InstanceID}/DDCs": {
       "get": {
         "summary": "Get DDC",
         "tags": [],
@@ -1952,7 +2082,18 @@
           }
         ]
       },
-      "parameters": [],
+      "parameters": [  {
+        "name": "InstanceID",
+        "in": "path",
+        "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        }],
       "post": {
         "summary": "Add DDC",
         "operationId": "post-redfish-v1-SFSS-Instance-#-DDCs",
@@ -2288,7 +2429,7 @@
         "parameters": []
       }
     },
-    "/redfish/v1/SFSS/<InstanceID>/DDCs('Id')": {
+    "/redfish/v1/SFSS/{InstanceID}/DDCs({Id})": {
       "get": {
         "summary": "Get specific DDC",
         "tags": [],
@@ -2418,7 +2559,29 @@
           }
         ]
       },
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        },
+       {
+          "name": "Id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      ],
       "put": {
         "summary": "Update DDC",
         "operationId": "put-redfish-v1-SFSS-InstanceID-DDCs('Id')",
@@ -2522,7 +2685,7 @@
         ]
       }
     },
-    "/redfish/v1/SFSS/<InstanceID>/DDCs/Enums": {
+    "/redfish/v1/SFSS/{InstanceID}/DDCs/Enums": {
       "get": {
         "summary": "Get DDC enums",
         "tags": [],
@@ -2647,9 +2810,22 @@
           }
         ]
       },
-      "parameters": []
+      "parameters": [
+                {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        }
+      ]
     },
-    "/redfish/v1/SFSS/<InstanceID>/CDCInstance?$source=config": {
+    "/redfish/v1/SFSS/{InstanceID}/CDCInstance?$source=config": {
       "get": {
         "summary": "Get detailed CDC information",
         "tags": [],
@@ -2732,9 +2908,22 @@
           }
         ]
       },
-      "parameters": []
+      "parameters": [
+                {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        }
+      ]
     },
-    "/redfish/v1/SFSS/<InstanceID>/ZoneDBs": {
+    "/redfish/v1/SFSS/{InstanceID}/ZoneDBs": {
       "get": {
         "summary": "Get zone database",
         "tags": [],
@@ -2859,9 +3048,20 @@
           }
         ]
       },
-      "parameters": []
+      "parameters": [        {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        }]
     },
-    "/redfish/v1/SFSS/<InstanceID>/ZoneDBs('config')": {
+    "/redfish/v1/SFSS/{InstanceID}/ZoneDBs('config')": {
       "get": {
         "summary": "Get config database",
         "tags": [],
@@ -2939,7 +3139,18 @@
           }
         ]
       },
-      "parameters": [],
+      "parameters": [        {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        }],
       "delete": {
         "summary": "Delete zoning configuration",
         "operationId": "delete-redfish-v1-SFSS-Instance#-ZoneDBs('config')",
@@ -2980,7 +3191,7 @@
         "description": "This API removes all the zoning configuration from the specified CDC instance."
       }
     },
-    "/redfish/v1/SFSS/<InstanceID>/ZoneDBs('active')": {
+    "/redfish/v1/SFSS/{InstanceID}/ZoneDBs('active')": {
       "get": {
         "summary": "Get active database",
         "tags": [],
@@ -3061,9 +3272,22 @@
           }
         ]
       },
-      "parameters": []
+      "parameters": [
+                {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        }
+      ]
     },
-    "/redfish/v1/SFSS/<InstanceID>/ZoneDBs('config')/ZoneGroups('ID')": {
+    "/redfish/v1/SFSS/{InstanceID}/ZoneDBs('config')/ZoneGroups({ID})": {
       "get": {
         "summary": "Get specific zone group",
         "tags": [],
@@ -3169,7 +3393,27 @@
           }
         ]
       },
-      "parameters": [],
+      "parameters": [        {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        },
+        {
+          "name": "ID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }],
       "post": {
         "summary": "Add zone group",
         "operationId": "post-redfish-v1-SFSS-Instance#-ZoneDBs('config')-ZoneGroups",
@@ -3396,7 +3640,7 @@
         ]
       }
     },
-    "/redfish/v1/SFSS/<InstanceID>/ZoneDBs('config')/ZoneGroups('ZoneGroupID'){expand}": {
+    "/redfish/v1/SFSS/{InstanceID}/ZoneDBs('config')/ZoneGroups({ZoneGroupID})": {
       "get": {
         "summary": "Get specific zone group",
         "tags": [],
@@ -3526,10 +3770,29 @@
           "in": "path",
           "description": "?$source=config",
           "required": true
+        },        {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        },        {
+          "name": "ZoneGroupID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
         }
       ]
     },
-    "/redfish/v1/SFSS/<InstanceID>/ZoneDBs/ZoneGroups/Enums": {
+    "/redfish/v1/SFSS/{InstanceID}/ZoneDBs/ZoneGroups/Enums": {
       "get": {
         "summary": "Get zone group enums",
         "tags": [],
@@ -3622,9 +3885,20 @@
           }
         ]
       },
-      "parameters": []
+      "parameters": [        {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        }]
     },
-    "/redfish/v1/SFSS/<InstanceID>/ZoneDBs('config')/ZoneGroups('ZoneGrpID')/Zones('ZoneID')": {
+    "/redfish/v1/SFSS/{InstanceID}/ZoneDBs('config')/ZoneGroups({ZoneGrpID})/Zones({ZoneID})": {
       "get": {
         "summary": "Get all zones",
         "tags": [],
@@ -3730,7 +4004,36 @@
           }
         ]
       },
-      "parameters": [],
+      "parameters": [        {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        },
+        {
+          "name": "ZoneGrpID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "name": "ZoneID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }],
       "post": {
         "summary": "Add zone",
         "operationId": "post-redfish-v1-SFSS-Instance#-ZoneDBs('config')-ZoneGroups('ZoneGrpID')-Zones?$source=config",
@@ -3858,7 +4161,7 @@
         ]
       }
     },
-    "/redfish/v1/SFSS/<InstanceID>/ZoneDBs('config')/ZoneGroups('ZoneGroupId')/Zones('ZoneID')/ZoneMembers('ZoneMemberID')": {
+    "/redfish/v1/SFSS/{InstanceID}/ZoneDBs('config')/ZoneGroups({ZoneGroupId})/Zones({ZoneID})/ZoneMembers({ZoneMemberID})": {
       "get": {
         "summary": "Get zone members",
         "tags": [],
@@ -3958,7 +4261,7 @@
             }
           }
         },
-        "operationId": "get-https:-IP-redfish-v1-SFSS-Instance#-ZoneDBs('config')-ZoneGroups('config:SampleZoneGroup:nqn.1988-11.com.dell:SFSS:1:20210527171628c9')-Zones('config:SampleZoneGroup:nqn.1988-11.com.dell:SFSS:1:20210527171628c9:SampleZone1')-ZoneMembers?$source=config",
+        "operationId": "get-https:-IP-redfish-v1-SFSS-Instance#-ZoneDBs('config')-ZoneGroups('config')-Zones('config')-ZoneMembers?$source=config",
         "description": "This API retrieves a list of zone members that are part of the specified CDC instance, zone group, and zone identifiers.",
         "security": [
           {
@@ -3976,7 +4279,47 @@
           }
         ]
       },
-      "parameters": [],
+      "parameters": [
+      {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        },
+        {
+          "name": "ZoneGroupId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "name": "ZoneID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "name": "ZoneMemberID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ],
       "post": {
         "summary": "Add zone member",
         "operationId": "post-redfish-v1-SFSS-Instance#-ZoneDBs('config')-ZoneGroups('ZoneGroupId')-Zones('ZoneID')-ZoneMembers",
@@ -4182,7 +4525,7 @@
         }
       }
     },
-    "/redfish/v1/SFSS/<InstanceID>/ZoneDBs('config')/ZoneGroups('ZoneGroupId')/Zones('ZoneID')/ZoneMembers{config}{zonemem}": {
+    "/redfish/v1/SFSS/{InstanceID}/ZoneDBs('config')/ZoneGroups('ZoneGroupId')/Zones('ZoneID')/ZoneMembers{config}{zonemem}": {
       "get": {
         "summary": "Get zone members (detailed)",
         "tags": [],
@@ -4366,10 +4709,40 @@
           "in": "path",
           "required": true,
           "description": "&$expand=ZoneMembers"
+        },
+                {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        },
+        {
+          "name": "ZoneGroupId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "name": "ZoneID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
         }
       ]
     },
-    "/redfish/v1/SFSS/<InstanceID>/ZoneDBs/ZoneGroups/Zones/ZoneMembers/Enums": {
+    "/redfish/v1/SFSS/{InstanceID}/ZoneDBs/ZoneGroups/Zones/ZoneMembers/Enums": {
       "get": {
         "summary": "Get zone member enums",
         "tags": [],
@@ -4444,7 +4817,20 @@
           }
         ]
       },
-      "parameters": []
+      "parameters": [
+        {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        }
+      ]
     },
     "/redfish/v1/SFSS/<Instance#>/ZoneDBs('config')/ZoneGroups('ZoneGroupId')/Zones('ZoneID')/ZoneMembers('ZoneMemberID')": {
       "get": {
@@ -4530,9 +4916,49 @@
           }
         ]
       },
-      "parameters": []
+      "parameters": [       
+        {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        },
+        {
+          "name": "ZoneGroupId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "name": "ZoneID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "name": "ZoneMemberID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ]
     },
-    "/redfish/v1/SFSS/<InstanceID>/ZoneDBs('config')/ZoneAlias": {
+    "/redfish/v1/SFSS/{InstanceID}/ZoneDBs('config')/ZoneAlias": {
       "get": {
         "summary": "Get zone alias",
         "tags": [],
@@ -4776,10 +5202,45 @@
           }
         }
       },
-      "parameters": []
+      "parameters": [        
+        {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        }
+      ]
     },
-    "/redfish/v1/SFSS/<InstanceID>/ZoneDBs('config')/ZoneAlias('ZoneAliasId')": {
-      "parameters": [],
+    "/redfish/v1/SFSS/{InstanceID}/ZoneDBs('config')/ZoneAlias({ZoneAliasId})": {
+      "parameters": [
+        {
+          "name": "ZoneAliasId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        }
+      ],
       "delete": {
         "summary": "Delete a zone alias",
         "operationId": "delete-redfish-v1-SFSS-Instance#-ZoneDBs('config')-ZoneAlias",
@@ -4820,7 +5281,7 @@
         "description": "This API removes a zone alias from the specified CDC instance based on the zone alias identifier."
       }
     },
-    "/redfish/v1/SFSS/<InstanceID>/ZoneDBs('config')/ZoneAlias('config:DhanaSampleAlias')/ZoneAliasMembers": {
+    "/redfish/v1/SFSS/{InstanceID}/ZoneDBs('config')/ZoneAlias({ZoneAliasId)/ZoneAliasMembers": {
       "get": {
         "summary": "Get zone alias member",
         "tags": [],
@@ -5031,133 +5492,31 @@
           }
         }
       },
-      "parameters": []
-    },
-    "/redfish/v1/SFSS/<InstanceID>/ZoneDBs('config')/ZoneAlias('config:DhanaSampleAlias')/ZoneAliasMembers('ZoneAliasMemberId')": {
-      "put": {
-        "summary": "Update zone alias member",
-        "operationId": "put-redfish-v1-SFSS-Instance#-ZoneDBs('config')-ZoneAlias('config:DhanaSampleAlias')-ZoneAliasMembers?$source=config",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "description": "",
-                  "type": "object",
-                  "properties": {
-                    "EId": {
-                      "type": "string",
-                      "minLength": 1
-                    }
-                  },
-                  "required": [
-                    "EId"
-                  ],
-                  "x-examples": {
-                    "example-1": {
-                      "EId": "config:SampleZoneAlias:nqn.2014-08.org.nvmexpress:uuid:host"
-                    }
-                  }
-                },
-                "examples": {
-                  "example-1": {
-                    "value": {
-                      "EId": "config:SampleZoneAlias:nqn.2014-08.org.nvmexpress:uuid:host"
-                    }
-                  }
-                }
-              }
-            }
+      "parameters": [
+                {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
           }
         },
-        "description": "This API updates zone alias member information in the specified CDC instance based on the zone alias member identifier. ",
-        "security": [
-          {
-            "basic": []
-          }
-        ],
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "description": "",
-                "type": "object",
-                "x-examples": {
-                  "example-1": {
-                    "Role": "Host"
-                  }
-                },
-                "properties": {
-                  "Role": {
-                    "type": "string",
-                    "minLength": 1,
-                    "description": "Type of endpoint; possible values include host and subsystem"
-                  }
-                },
-                "required": [
-                  "Role"
-                ]
-              },
-              "examples": {
-                "example-1": {
-                  "value": {
-                    "Role": "Host"
-                  }
-                },
-                "example-2": {
-                  "value": {
-                    "Role": "Subsystem"
-                  }
-                }
-              }
-            }
+        {
+          "name": "ZoneAliasId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
           }
         }
-      },
-      "parameters": [],
-      "delete": {
-        "summary": "Delete zone alias member",
-        "operationId": "delete-redfish-v1-SFSS-Instance#-ZoneDBs('config')-ZoneAlias('config:DhanaSampleAlias')-ZoneAliasMembers",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "description": "",
-                  "type": "object",
-                  "properties": {
-                    "EId": {
-                      "type": "string",
-                      "minLength": 1
-                    }
-                  },
-                  "required": [
-                    "EId"
-                  ],
-                  "x-examples": {
-                    "example-1": {
-                      "EId": "config:DhanaSampleAlias:nqn.2014-08.org.nvmexpress:uuid:host:TCP:Ipv4:1.1.1.1:3002"
-                    }
-                  }
-                },
-                "examples": {
-                  "example-1": {
-                    "value": {
-                      "EId": "config:DhanaSampleAlias:nqn.2014-08.org.nvmexpress:uuid:host:TCP:Ipv4:1.1.1.1:3002"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "description": "This API removes a zone alias member from the specified CDC instance based on the zone alias member identifier."
-      }
+      ]
     },
-    "/redfish/v1/SFSS/<InstanceID>/ZoneDBs('config')/ZoneAlias?$source=config&$expand=ZoneAlias": {
+    "/redfish/v1/SFSS/{InstanceID}/ZoneDBs('config')/ZoneAlias?$source=config&$expand=ZoneAlias": {
       "get": {
         "summary": "Get a zone alias",
         "tags": [],
@@ -5241,9 +5600,175 @@
           }
         ]
       },
-      "parameters": []
+      "parameters": [
+                {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        }
+      ]
     },
-    "/redfish/v1/SFSS/<InstanceID>/ZoneDBs('config')/ZoneAlias('config:DhanaSampleAlias')/ZoneAliasMembers('config:DhanaSampleAlias:nqn.2014-08.org.nvmexpress:uuid:host')": {
+    "/redfish/v1/SFSS/{InstanceID}/ZoneDBs('config')/ZoneAlias({ZoneAliasId})/ZoneAliasMembers({ZoneAliasMemberId})": {
+      "put": {
+        "summary": "Update zone alias member",
+        "operationId": "put-redfish-v1-SFSS-Instance#-ZoneDBs('config')-ZoneAlias('config:DhanaSampleAlias')-ZoneAliasMembers?$source=config",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "EId": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "EId"
+                  ],
+                  "x-examples": {
+                    "example-1": {
+                      "EId": "config:SampleZoneAlias:nqn.2014-08.org.nvmexpress:uuid:host"
+                    }
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "EId": "config:SampleZoneAlias:nqn.2014-08.org.nvmexpress:uuid:host"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "This API updates zone alias member information in the specified CDC instance based on the zone alias member identifier. ",
+        "security": [
+          {
+            "basic": []
+          }
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "",
+                "type": "object",
+                "x-examples": {
+                  "example-1": {
+                    "Role": "Host"
+                  }
+                },
+                "properties": {
+                  "Role": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Type of endpoint; possible values include host and subsystem"
+                  }
+                },
+                "required": [
+                  "Role"
+                ]
+              },
+              "examples": {
+                "example-1": {
+                  "value": {
+                    "Role": "Host"
+                  }
+                },
+                "example-2": {
+                  "value": {
+                    "Role": "Subsystem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+                {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        },
+        {
+          "name": "ZoneAliasId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "name": "ZoneAliasMemberId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ],
+      "delete": {
+        "summary": "Delete zone alias member",
+        "operationId": "delete-redfish-v1-SFSS-Instance#-ZoneDBs('config')-ZoneAlias('config:DhanaSampleAlias')-ZoneAliasMembers",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "EId": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "EId"
+                  ],
+                  "x-examples": {
+                    "example-1": {
+                      "EId": "config:DhanaSampleAlias:nqn.2014-08.org.nvmexpress:uuid:host:TCP:Ipv4:1.1.1.1:3002"
+                    }
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "EId": "config:DhanaSampleAlias:nqn.2014-08.org.nvmexpress:uuid:host:TCP:Ipv4:1.1.1.1:3002"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "This API removes a zone alias member from the specified CDC instance based on the zone alias member identifier."
+      },
       "get": {
         "summary": "Get zone alias member",
         "tags": [],
@@ -5326,10 +5851,9 @@
             "basic": []
           }
         ]
-      },
-      "parameters": []
+      }
     },
-    "/redfish/v1/SFSS/<InstanceID>/ZoneDBs('config')/ZoneAlias('config:DhanaSampleAlias')/ZoneAliasMembers{config}{zonealiasmem}": {
+    "/redfish/v1/SFSS/{InstanceID}/ZoneDBs('config')/ZoneAlias({ZoneAliasId})/ZoneAliasMembers2({ZoneAliasMemberId})": {
       "get": {
         "summary": "Get zone alias members",
         "tags": [],
@@ -5489,10 +6013,40 @@
           "in": "path",
           "required": true,
           "description": "&$expand=ZoneAliasMembers"
+        },
+        {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        },
+        {
+          "name": "ZoneAliasId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "name": "ZoneAliasMemberId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
         }
       ]
     },
-    "/redfish/v1/SFSS/<InstanceID>/GlobalPolicies": {
+    "/redfish/v1/SFSS/{InstanceID}/GlobalPolicies": {
       "get": {
         "summary": "Get global policies",
         "tags": [],
@@ -5623,9 +6177,20 @@
           }
         }
       },
-      "parameters": []
+      "parameters": [        {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        }]
     },
-    "/redfish/v1/SFSS/<InstanceID>/ZoneDBs/ZoneAlias/ZoneAliasMembers/Enums": {
+    "/redfish/v1/SFSS/{InstanceID}/ZoneDBs/ZoneAlias/ZoneAliasMembers/Enums": {
       "get": {
         "summary": "Get zone alias member enums",
         "tags": [],
@@ -5696,9 +6261,22 @@
           }
         ]
       },
-      "parameters": []
+      "parameters": [
+        {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        }
+      ]
     },
-    "/redfish/v1/SFSS/<InstanceID>/GlobalPolicies/Enums": {
+    "/redfish/v1/SFSS/{InstanceID}/GlobalPolicies/Enums": {
       "get": {
         "summary": "Get global policy enums",
         "tags": [],
@@ -5779,7 +6357,20 @@
           }
         ]
       },
-      "parameters": []
+      "parameters": [
+                {
+          "name": "InstanceID",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32,
+            "default": 1,
+            "format": "int32"
+          }
+        }
+      ]
     }
   },
   "components": {

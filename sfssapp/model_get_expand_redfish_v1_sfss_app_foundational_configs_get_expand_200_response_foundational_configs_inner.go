@@ -11,8 +11,8 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
@@ -26,9 +26,9 @@ type GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200ResponseFoundationa
 	// CDC instance identifier
 	InstanceIdentifier string `json:"InstanceIdentifier"`
 	// A unique NVMe Qualified Name (NQN) that is used to identify the CDC instance
-	NQN          string `json:"NQN"`
-	OdataId      string `json:"@odata.id"`
-	OdataType    string `json:"@odata.type"`
+	NQN string `json:"NQN"`
+	OdataId string `json:"@odata.id"`
+	OdataType string `json:"@odata.type"`
 	OdataContext string `json:"@odata.context"`
 }
 
@@ -202,7 +202,7 @@ func (o *GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200ResponseFoundat
 }
 
 func (o GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200ResponseFoundationalConfigsInner) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -238,10 +238,10 @@ func (o *GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200ResponseFoundat
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -297,3 +297,5 @@ func (v *NullableGetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200Respons
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

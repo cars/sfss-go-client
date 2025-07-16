@@ -11,15 +11,15 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the GetRedfishV1SFSSAppEnums200Response type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &GetRedfishV1SFSSAppEnums200Response{}
 
-// GetRedfishV1SFSSAppEnums200Response
+// GetRedfishV1SFSSAppEnums200Response 
 type GetRedfishV1SFSSAppEnums200Response struct {
 	// Status of the add image operation; possible values include Failure, InProgress, Success, and NotStarted
 	Status []string `json:"Status"`
@@ -97,7 +97,7 @@ func (o *GetRedfishV1SFSSAppEnums200Response) SetTransportType(v []string) {
 }
 
 func (o GetRedfishV1SFSSAppEnums200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -125,10 +125,10 @@ func (o *GetRedfishV1SFSSAppEnums200Response) UnmarshalJSON(data []byte) (err er
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -184,3 +184,5 @@ func (v *NullableGetRedfishV1SFSSAppEnums200Response) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

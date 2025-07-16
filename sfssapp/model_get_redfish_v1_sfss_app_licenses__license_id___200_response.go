@@ -11,15 +11,15 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the GetRedfishV1SFSSAppLicensesLicenseId200Response type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &GetRedfishV1SFSSAppLicensesLicenseId200Response{}
 
-// GetRedfishV1SFSSAppLicensesLicenseId200Response
+// GetRedfishV1SFSSAppLicensesLicenseId200Response 
 type GetRedfishV1SFSSAppLicensesLicenseId200Response struct {
 	// License service tag
 	ServiceTag string `json:"ServiceTag"`
@@ -31,9 +31,9 @@ type GetRedfishV1SFSSAppLicensesLicenseId200Response struct {
 	LicenseType string `json:"LicenseType"`
 	// License expiry date
 	LicenseExpiry string `json:"LicenseExpiry"`
-	OdataId       string `json:"@odata.id"`
-	OdataType     string `json:"@odata.type"`
-	OdataContext  string `json:"@odata.context"`
+	OdataId string `json:"@odata.id"`
+	OdataType string `json:"@odata.type"`
+	OdataContext string `json:"@odata.context"`
 	// A unique NVMe Qualified Name (NQN) that is used to identify the SFSS VM
 	DeviceId string `json:"DeviceId"`
 }
@@ -283,7 +283,7 @@ func (o *GetRedfishV1SFSSAppLicensesLicenseId200Response) SetDeviceId(v string) 
 }
 
 func (o GetRedfishV1SFSSAppLicensesLicenseId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -325,10 +325,10 @@ func (o *GetRedfishV1SFSSAppLicensesLicenseId200Response) UnmarshalJSON(data []b
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -384,3 +384,5 @@ func (v *NullableGetRedfishV1SFSSAppLicensesLicenseId200Response) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

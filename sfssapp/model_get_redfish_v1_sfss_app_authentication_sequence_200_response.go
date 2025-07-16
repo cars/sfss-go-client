@@ -11,21 +11,21 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the GetRedfishV1SFSSAppAuthenticationSequence200Response type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &GetRedfishV1SFSSAppAuthenticationSequence200Response{}
 
-// GetRedfishV1SFSSAppAuthenticationSequence200Response
+// GetRedfishV1SFSSAppAuthenticationSequence200Response 
 type GetRedfishV1SFSSAppAuthenticationSequence200Response struct {
 	// Defines a set of authentication servers (local and remote) configured in SFSS and the order in which SFSS looks up user information in these servers
 	AuthenticationSequence []string `json:"AuthenticationSequence"`
-	OdataId                string   `json:"@odata.id"`
-	OdataType              string   `json:"@odata.type"`
-	OdataContext           string   `json:"@odata.context"`
+	OdataId string `json:"@odata.id"`
+	OdataType string `json:"@odata.type"`
+	OdataContext string `json:"@odata.context"`
 }
 
 type _GetRedfishV1SFSSAppAuthenticationSequence200Response GetRedfishV1SFSSAppAuthenticationSequence200Response
@@ -148,7 +148,7 @@ func (o *GetRedfishV1SFSSAppAuthenticationSequence200Response) SetOdataContext(v
 }
 
 func (o GetRedfishV1SFSSAppAuthenticationSequence200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,10 +180,10 @@ func (o *GetRedfishV1SFSSAppAuthenticationSequence200Response) UnmarshalJSON(dat
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -239,3 +239,5 @@ func (v *NullableGetRedfishV1SFSSAppAuthenticationSequence200Response) Unmarshal
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

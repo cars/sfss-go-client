@@ -19,13 +19,14 @@ import (
 	"strings"
 )
 
+
 // DefaultAPIService DefaultAPI service
 type DefaultAPIService service
 
 type ApiDeleteRedfishV1SFSSAppAlertsCDCInstanceManagersRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
-	uuid       string
+	uuid string
 }
 
 func (r ApiDeleteRedfishV1SFSSAppAlertsCDCInstanceManagersRequest) Execute() (*DeleteRedfishV1SFSSAppAlertsCDCInstanceManagers200Response, *http.Response, error) {
@@ -37,27 +38,26 @@ DeleteRedfishV1SFSSAppAlertsCDCInstanceManagers Delete alert
 
 This API removes the specified alert from the SFSS application based on the alert identifier.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param uuid Alert UUID
-	@return ApiDeleteRedfishV1SFSSAppAlertsCDCInstanceManagersRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param uuid Alert UUID
+ @return ApiDeleteRedfishV1SFSSAppAlertsCDCInstanceManagersRequest
 */
 func (a *DefaultAPIService) DeleteRedfishV1SFSSAppAlertsCDCInstanceManagers(ctx context.Context, uuid string) ApiDeleteRedfishV1SFSSAppAlertsCDCInstanceManagersRequest {
 	return ApiDeleteRedfishV1SFSSAppAlertsCDCInstanceManagersRequest{
 		ApiService: a,
-		ctx:        ctx,
-		uuid:       uuid,
+		ctx: ctx,
+		uuid: uuid,
 	}
 }
 
 // Execute executes the request
-//
-//	@return DeleteRedfishV1SFSSAppAlertsCDCInstanceManagers200Response
+//  @return DeleteRedfishV1SFSSAppAlertsCDCInstanceManagers200Response
 func (a *DefaultAPIService) DeleteRedfishV1SFSSAppAlertsCDCInstanceManagersExecute(r ApiDeleteRedfishV1SFSSAppAlertsCDCInstanceManagersRequest) (*DeleteRedfishV1SFSSAppAlertsCDCInstanceManagers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodDelete
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *DeleteRedfishV1SFSSAppAlertsCDCInstanceManagers200Response
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *DeleteRedfishV1SFSSAppAlertsCDCInstanceManagers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.DeleteRedfishV1SFSSAppAlertsCDCInstanceManagers")
@@ -127,7 +127,7 @@ func (a *DefaultAPIService) DeleteRedfishV1SFSSAppAlertsCDCInstanceManagersExecu
 }
 
 type ApiDeleteRedfishV1SFSSAppCDCInstanceManagersRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 	instanceId string
 }
@@ -141,27 +141,26 @@ DeleteRedfishV1SFSSAppCDCInstanceManagers Delete CDC instance
 
 This API removes the specified CDC instance.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param instanceId InstanceIdentifier
-	@return ApiDeleteRedfishV1SFSSAppCDCInstanceManagersRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param instanceId InstanceIdentifier
+ @return ApiDeleteRedfishV1SFSSAppCDCInstanceManagersRequest
 */
 func (a *DefaultAPIService) DeleteRedfishV1SFSSAppCDCInstanceManagers(ctx context.Context, instanceId string) ApiDeleteRedfishV1SFSSAppCDCInstanceManagersRequest {
 	return ApiDeleteRedfishV1SFSSAppCDCInstanceManagersRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 		instanceId: instanceId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PostRedfishV1SFSSAppFabricManagerInfoPost200Response
+//  @return PostRedfishV1SFSSAppFabricManagerInfoPost200Response
 func (a *DefaultAPIService) DeleteRedfishV1SFSSAppCDCInstanceManagersExecute(r ApiDeleteRedfishV1SFSSAppCDCInstanceManagersRequest) (*PostRedfishV1SFSSAppFabricManagerInfoPost200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodDelete
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PostRedfishV1SFSSAppFabricManagerInfoPost200Response
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PostRedfishV1SFSSAppFabricManagerInfoPost200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.DeleteRedfishV1SFSSAppCDCInstanceManagers")
@@ -231,8 +230,8 @@ func (a *DefaultAPIService) DeleteRedfishV1SFSSAppCDCInstanceManagersExecute(r A
 }
 
 type ApiDeleteRedfishV1SFSSAppIpAddressManagementsRequest struct {
-	ctx         context.Context
-	ApiService  *DefaultAPIService
+	ctx context.Context
+	ApiService *DefaultAPIService
 	interfaceId string
 }
 
@@ -245,14 +244,14 @@ DeleteRedfishV1SFSSAppIpAddressManagements Delete VLAN interface
 
 This API removes the specified interface from SFSS application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param interfaceId Vlan interface Name
-	@return ApiDeleteRedfishV1SFSSAppIpAddressManagementsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param interfaceId Vlan interface Name
+ @return ApiDeleteRedfishV1SFSSAppIpAddressManagementsRequest
 */
 func (a *DefaultAPIService) DeleteRedfishV1SFSSAppIpAddressManagements(ctx context.Context, interfaceId string) ApiDeleteRedfishV1SFSSAppIpAddressManagementsRequest {
 	return ApiDeleteRedfishV1SFSSAppIpAddressManagementsRequest{
-		ApiService:  a,
-		ctx:         ctx,
+		ApiService: a,
+		ctx: ctx,
 		interfaceId: interfaceId,
 	}
 }
@@ -260,9 +259,9 @@ func (a *DefaultAPIService) DeleteRedfishV1SFSSAppIpAddressManagements(ctx conte
 // Execute executes the request
 func (a *DefaultAPIService) DeleteRedfishV1SFSSAppIpAddressManagementsExecute(r ApiDeleteRedfishV1SFSSAppIpAddressManagementsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.DeleteRedfishV1SFSSAppIpAddressManagements")
@@ -323,9 +322,9 @@ func (a *DefaultAPIService) DeleteRedfishV1SFSSAppIpAddressManagementsExecute(r 
 }
 
 type ApiDeleteRedfishV1SFSSAppNTPServerIPRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
-	serverIP   string
+	serverIP string
 }
 
 func (r ApiDeleteRedfishV1SFSSAppNTPServerIPRequest) Execute() (*DeleteRedfishV1SFSSAppNTPServerIP200Response, *http.Response, error) {
@@ -337,27 +336,26 @@ DeleteRedfishV1SFSSAppNTPServerIP Remove NTP configuration
 
 This API removes the NTP server configuration from SFSS application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param serverIP IP address of the NTP server
-	@return ApiDeleteRedfishV1SFSSAppNTPServerIPRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param serverIP IP address of the NTP server
+ @return ApiDeleteRedfishV1SFSSAppNTPServerIPRequest
 */
 func (a *DefaultAPIService) DeleteRedfishV1SFSSAppNTPServerIP(ctx context.Context, serverIP string) ApiDeleteRedfishV1SFSSAppNTPServerIPRequest {
 	return ApiDeleteRedfishV1SFSSAppNTPServerIPRequest{
 		ApiService: a,
-		ctx:        ctx,
-		serverIP:   serverIP,
+		ctx: ctx,
+		serverIP: serverIP,
 	}
 }
 
 // Execute executes the request
-//
-//	@return DeleteRedfishV1SFSSAppNTPServerIP200Response
+//  @return DeleteRedfishV1SFSSAppNTPServerIP200Response
 func (a *DefaultAPIService) DeleteRedfishV1SFSSAppNTPServerIPExecute(r ApiDeleteRedfishV1SFSSAppNTPServerIPRequest) (*DeleteRedfishV1SFSSAppNTPServerIP200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodDelete
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *DeleteRedfishV1SFSSAppNTPServerIP200Response
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *DeleteRedfishV1SFSSAppNTPServerIP200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.DeleteRedfishV1SFSSAppNTPServerIP")
@@ -427,7 +425,7 @@ func (a *DefaultAPIService) DeleteRedfishV1SFSSAppNTPServerIPExecute(r ApiDelete
 }
 
 type ApiDeleteRedfishV1SFSSAppSFSSImagesRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 	versiontbd *string
 }
@@ -447,25 +445,24 @@ DeleteRedfishV1SFSSAppSFSSImages Delete image
 
 This API is used to delete the specified image from the SFSS application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiDeleteRedfishV1SFSSAppSFSSImagesRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiDeleteRedfishV1SFSSAppSFSSImagesRequest
 */
 func (a *DefaultAPIService) DeleteRedfishV1SFSSAppSFSSImages(ctx context.Context) ApiDeleteRedfishV1SFSSAppSFSSImagesRequest {
 	return ApiDeleteRedfishV1SFSSAppSFSSImagesRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PutRedfishV1SFSSApp200Response
+//  @return PutRedfishV1SFSSApp200Response
 func (a *DefaultAPIService) DeleteRedfishV1SFSSAppSFSSImagesExecute(r ApiDeleteRedfishV1SFSSAppSFSSImagesRequest) (*PutRedfishV1SFSSApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodDelete
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PutRedfishV1SFSSApp200Response
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PutRedfishV1SFSSApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.DeleteRedfishV1SFSSAppSFSSImages")
@@ -537,7 +534,7 @@ func (a *DefaultAPIService) DeleteRedfishV1SFSSAppSFSSImagesExecute(r ApiDeleteR
 }
 
 type ApiGetEnumsRedfishV1SFSSAppIpAddressManagementsEnumsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -550,25 +547,24 @@ GetEnumsRedfishV1SFSSAppIpAddressManagementsEnums Get interface enums
 
 This API retreives all supported enumerations for the IP address management API to configure interfaces.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetEnumsRedfishV1SFSSAppIpAddressManagementsEnumsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetEnumsRedfishV1SFSSAppIpAddressManagementsEnumsRequest
 */
 func (a *DefaultAPIService) GetEnumsRedfishV1SFSSAppIpAddressManagementsEnums(ctx context.Context) ApiGetEnumsRedfishV1SFSSAppIpAddressManagementsEnumsRequest {
 	return ApiGetEnumsRedfishV1SFSSAppIpAddressManagementsEnumsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetEnumsRedfishV1SFSSAppIpAddressManagementsEnums200Response
+//  @return GetEnumsRedfishV1SFSSAppIpAddressManagementsEnums200Response
 func (a *DefaultAPIService) GetEnumsRedfishV1SFSSAppIpAddressManagementsEnumsExecute(r ApiGetEnumsRedfishV1SFSSAppIpAddressManagementsEnumsRequest) (*GetEnumsRedfishV1SFSSAppIpAddressManagementsEnums200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetEnumsRedfishV1SFSSAppIpAddressManagementsEnums200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetEnumsRedfishV1SFSSAppIpAddressManagementsEnums200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetEnumsRedfishV1SFSSAppIpAddressManagementsEnums")
@@ -637,7 +633,7 @@ func (a *DefaultAPIService) GetEnumsRedfishV1SFSSAppIpAddressManagementsEnumsExe
 }
 
 type ApiGetExpandRedfishV1SFSSAppBackupsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -650,25 +646,24 @@ GetExpandRedfishV1SFSSAppBackups Get all backups
 
 This API retrieves detailed backup information available in SFSS.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetExpandRedfishV1SFSSAppBackupsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetExpandRedfishV1SFSSAppBackupsRequest
 */
 func (a *DefaultAPIService) GetExpandRedfishV1SFSSAppBackups(ctx context.Context) ApiGetExpandRedfishV1SFSSAppBackupsRequest {
 	return ApiGetExpandRedfishV1SFSSAppBackupsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetExpandRedfishV1SFSSAppBackups200Response
+//  @return GetExpandRedfishV1SFSSAppBackups200Response
 func (a *DefaultAPIService) GetExpandRedfishV1SFSSAppBackupsExecute(r ApiGetExpandRedfishV1SFSSAppBackupsRequest) (*GetExpandRedfishV1SFSSAppBackups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetExpandRedfishV1SFSSAppBackups200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetExpandRedfishV1SFSSAppBackups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetExpandRedfishV1SFSSAppBackups")
@@ -737,7 +732,7 @@ func (a *DefaultAPIService) GetExpandRedfishV1SFSSAppBackupsExecute(r ApiGetExpa
 }
 
 type ApiGetExpandRedfishV1SFSSAppFoundationalConfigsGETExpandRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -750,25 +745,24 @@ GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand Get all foundational confi
 
 This API retrieves all the foundational configuration information from the SFSS application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetExpandRedfishV1SFSSAppFoundationalConfigsGETExpandRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetExpandRedfishV1SFSSAppFoundationalConfigsGETExpandRequest
 */
 func (a *DefaultAPIService) GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand(ctx context.Context) ApiGetExpandRedfishV1SFSSAppFoundationalConfigsGETExpandRequest {
 	return ApiGetExpandRedfishV1SFSSAppFoundationalConfigsGETExpandRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200Response
+//  @return GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200Response
 func (a *DefaultAPIService) GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpandExecute(r ApiGetExpandRedfishV1SFSSAppFoundationalConfigsGETExpandRequest) (*GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand")
@@ -837,7 +831,7 @@ func (a *DefaultAPIService) GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpan
 }
 
 type ApiGetExpandRedfishV1SFSSAppIpAddressManagementsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -850,25 +844,24 @@ GetExpandRedfishV1SFSSAppIpAddressManagements Get all interfaces
 
 This API retrieves detailed information about all the interfaces configured in SFSS application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetExpandRedfishV1SFSSAppIpAddressManagementsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetExpandRedfishV1SFSSAppIpAddressManagementsRequest
 */
 func (a *DefaultAPIService) GetExpandRedfishV1SFSSAppIpAddressManagements(ctx context.Context) ApiGetExpandRedfishV1SFSSAppIpAddressManagementsRequest {
 	return ApiGetExpandRedfishV1SFSSAppIpAddressManagementsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetExpandRedfishV1SFSSAppIpAddressManagements200Response
+//  @return GetExpandRedfishV1SFSSAppIpAddressManagements200Response
 func (a *DefaultAPIService) GetExpandRedfishV1SFSSAppIpAddressManagementsExecute(r ApiGetExpandRedfishV1SFSSAppIpAddressManagementsRequest) (*GetExpandRedfishV1SFSSAppIpAddressManagements200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetExpandRedfishV1SFSSAppIpAddressManagements200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetExpandRedfishV1SFSSAppIpAddressManagements200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetExpandRedfishV1SFSSAppIpAddressManagements")
@@ -937,7 +930,7 @@ func (a *DefaultAPIService) GetExpandRedfishV1SFSSAppIpAddressManagementsExecute
 }
 
 type ApiGetExpandRedfishV1SFSSAppRestoresRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -950,25 +943,24 @@ GetExpandRedfishV1SFSSAppRestores Get detailed restore information
 
 This API retrieves detailed information about the restored data.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetExpandRedfishV1SFSSAppRestoresRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetExpandRedfishV1SFSSAppRestoresRequest
 */
 func (a *DefaultAPIService) GetExpandRedfishV1SFSSAppRestores(ctx context.Context) ApiGetExpandRedfishV1SFSSAppRestoresRequest {
 	return ApiGetExpandRedfishV1SFSSAppRestoresRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetExpandRedfishV1SFSSAppRestores200Response
+//  @return GetExpandRedfishV1SFSSAppRestores200Response
 func (a *DefaultAPIService) GetExpandRedfishV1SFSSAppRestoresExecute(r ApiGetExpandRedfishV1SFSSAppRestoresRequest) (*GetExpandRedfishV1SFSSAppRestores200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetExpandRedfishV1SFSSAppRestores200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetExpandRedfishV1SFSSAppRestores200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetExpandRedfishV1SFSSAppRestores")
@@ -1037,9 +1029,9 @@ func (a *DefaultAPIService) GetExpandRedfishV1SFSSAppRestoresExecute(r ApiGetExp
 }
 
 type ApiGetIDRedfishV1SFSSAppRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
-	version    string
+	version string
 }
 
 func (r ApiGetIDRedfishV1SFSSAppRequest) Execute() (*GetIDRedfishV1SFSSApp200Response, *http.Response, error) {
@@ -1051,27 +1043,26 @@ GetIDRedfishV1SFSSApp Get specific image
 
 This API retrieves information about the specified SFSS image.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param version The version of the SFSS image to retrieve information for.
-	@return ApiGetIDRedfishV1SFSSAppRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param version The version of the SFSS image to retrieve information for.
+ @return ApiGetIDRedfishV1SFSSAppRequest
 */
 func (a *DefaultAPIService) GetIDRedfishV1SFSSApp(ctx context.Context, version string) ApiGetIDRedfishV1SFSSAppRequest {
 	return ApiGetIDRedfishV1SFSSAppRequest{
 		ApiService: a,
-		ctx:        ctx,
-		version:    version,
+		ctx: ctx,
+		version: version,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetIDRedfishV1SFSSApp200Response
+//  @return GetIDRedfishV1SFSSApp200Response
 func (a *DefaultAPIService) GetIDRedfishV1SFSSAppExecute(r ApiGetIDRedfishV1SFSSAppRequest) (*GetIDRedfishV1SFSSApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetIDRedfishV1SFSSApp200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetIDRedfishV1SFSSApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetIDRedfishV1SFSSApp")
@@ -1141,9 +1132,9 @@ func (a *DefaultAPIService) GetIDRedfishV1SFSSAppExecute(r ApiGetIDRedfishV1SFSS
 }
 
 type ApiGetIDRedfishV1SFSSAppRadiusServersRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
-	iP         string
+	iP string
 }
 
 func (r ApiGetIDRedfishV1SFSSAppRadiusServersRequest) Execute() (*GetIDRedfishV1SFSSAppRadiusServers200Response, *http.Response, error) {
@@ -1155,27 +1146,26 @@ GetIDRedfishV1SFSSAppRadiusServers Get specific RADIUS server
 
 This API retrieves information about the specified RADIUS server based on the IP address.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param iP IP address of the RADIUS server
-	@return ApiGetIDRedfishV1SFSSAppRadiusServersRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param iP IP address of the RADIUS server
+ @return ApiGetIDRedfishV1SFSSAppRadiusServersRequest
 */
 func (a *DefaultAPIService) GetIDRedfishV1SFSSAppRadiusServers(ctx context.Context, iP string) ApiGetIDRedfishV1SFSSAppRadiusServersRequest {
 	return ApiGetIDRedfishV1SFSSAppRadiusServersRequest{
 		ApiService: a,
-		ctx:        ctx,
-		iP:         iP,
+		ctx: ctx,
+		iP: iP,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetIDRedfishV1SFSSAppRadiusServers200Response
+//  @return GetIDRedfishV1SFSSAppRadiusServers200Response
 func (a *DefaultAPIService) GetIDRedfishV1SFSSAppRadiusServersExecute(r ApiGetIDRedfishV1SFSSAppRadiusServersRequest) (*GetIDRedfishV1SFSSAppRadiusServers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetIDRedfishV1SFSSAppRadiusServers200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetIDRedfishV1SFSSAppRadiusServers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetIDRedfishV1SFSSAppRadiusServers")
@@ -1245,9 +1235,9 @@ func (a *DefaultAPIService) GetIDRedfishV1SFSSAppRadiusServersExecute(r ApiGetID
 }
 
 type ApiGetIDRedfishV1SFSSAppTacacsServersRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
-	iP         string
+	iP string
 }
 
 func (r ApiGetIDRedfishV1SFSSAppTacacsServersRequest) Execute() (*GetIDRedfishV1SFSSAppTacacsServers200Response, *http.Response, error) {
@@ -1259,27 +1249,26 @@ GetIDRedfishV1SFSSAppTacacsServers Get specific TACACS+ server
 
 This API retrieves information about the specific TACACS+ server based on the TACACS+ server IP address.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param iP IP address of the TACACS+ server
-	@return ApiGetIDRedfishV1SFSSAppTacacsServersRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param iP IP address of the TACACS+ server
+ @return ApiGetIDRedfishV1SFSSAppTacacsServersRequest
 */
 func (a *DefaultAPIService) GetIDRedfishV1SFSSAppTacacsServers(ctx context.Context, iP string) ApiGetIDRedfishV1SFSSAppTacacsServersRequest {
 	return ApiGetIDRedfishV1SFSSAppTacacsServersRequest{
 		ApiService: a,
-		ctx:        ctx,
-		iP:         iP,
+		ctx: ctx,
+		iP: iP,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetIDRedfishV1SFSSAppTacacsServers200Response
+//  @return GetIDRedfishV1SFSSAppTacacsServers200Response
 func (a *DefaultAPIService) GetIDRedfishV1SFSSAppTacacsServersExecute(r ApiGetIDRedfishV1SFSSAppTacacsServersRequest) (*GetIDRedfishV1SFSSAppTacacsServers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetIDRedfishV1SFSSAppTacacsServers200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetIDRedfishV1SFSSAppTacacsServers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetIDRedfishV1SFSSAppTacacsServers")
@@ -1352,7 +1341,7 @@ func (a *DefaultAPIService) GetIDRedfishV1SFSSAppTacacsServersExecute(r ApiGetID
 }
 
 type ApiGetIDredfishV1SFSSAppSFSSInterfaceListRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -1365,25 +1354,24 @@ GetIDredfishV1SFSSAppSFSSInterfaceList Get all interfaces
 
 This API retrieves a list of available interfaces in SFSS application. This API is applicable only for standalone virtual machine deployments.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetIDredfishV1SFSSAppSFSSInterfaceListRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetIDredfishV1SFSSAppSFSSInterfaceListRequest
 */
 func (a *DefaultAPIService) GetIDredfishV1SFSSAppSFSSInterfaceList(ctx context.Context) ApiGetIDredfishV1SFSSAppSFSSInterfaceListRequest {
 	return ApiGetIDredfishV1SFSSAppSFSSInterfaceListRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetIDredfishV1SFSSAppSFSSInterfaceList200Response
+//  @return GetIDredfishV1SFSSAppSFSSInterfaceList200Response
 func (a *DefaultAPIService) GetIDredfishV1SFSSAppSFSSInterfaceListExecute(r ApiGetIDredfishV1SFSSAppSFSSInterfaceListRequest) (*GetIDredfishV1SFSSAppSFSSInterfaceList200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetIDredfishV1SFSSAppSFSSInterfaceList200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetIDredfishV1SFSSAppSFSSInterfaceList200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetIDredfishV1SFSSAppSFSSInterfaceList")
@@ -1452,7 +1440,7 @@ func (a *DefaultAPIService) GetIDredfishV1SFSSAppSFSSInterfaceListExecute(r ApiG
 }
 
 type ApiGetRedfishV1SFSSAppRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -1465,25 +1453,24 @@ GetRedfishV1SFSSApp Get SFSS application details
 
 This API retrieves information about the SFSS application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSAppRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSAppRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSApp(ctx context.Context) ApiGetRedfishV1SFSSAppRequest {
 	return ApiGetRedfishV1SFSSAppRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSApp200Response
+//  @return GetRedfishV1SFSSApp200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppExecute(r ApiGetRedfishV1SFSSAppRequest) (*GetRedfishV1SFSSApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSApp200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSApp")
@@ -1552,9 +1539,9 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppExecute(r ApiGetRedfishV1SFSSAppR
 }
 
 type ApiGetRedfishV1SFSSAppAlertsAlertIdRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
-	uuid       string
+	uuid string
 }
 
 func (r ApiGetRedfishV1SFSSAppAlertsAlertIdRequest) Execute() (*http.Response, error) {
@@ -1566,24 +1553,24 @@ GetRedfishV1SFSSAppAlertsAlertId Get specific alert
 
 This API retrieves information about a specific alert based on the alert identifier.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param uuid Alert UUID
-	@return ApiGetRedfishV1SFSSAppAlertsAlertIdRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param uuid Alert UUID
+ @return ApiGetRedfishV1SFSSAppAlertsAlertIdRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppAlertsAlertId(ctx context.Context, uuid string) ApiGetRedfishV1SFSSAppAlertsAlertIdRequest {
 	return ApiGetRedfishV1SFSSAppAlertsAlertIdRequest{
 		ApiService: a,
-		ctx:        ctx,
-		uuid:       uuid,
+		ctx: ctx,
+		uuid: uuid,
 	}
 }
 
 // Execute executes the request
 func (a *DefaultAPIService) GetRedfishV1SFSSAppAlertsAlertIdExecute(r ApiGetRedfishV1SFSSAppAlertsAlertIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppAlertsAlertId")
@@ -1644,7 +1631,7 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppAlertsAlertIdExecute(r ApiGetRedf
 }
 
 type ApiGetRedfishV1SFSSAppAuthenticationSequenceRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -1657,25 +1644,24 @@ GetRedfishV1SFSSAppAuthenticationSequence Get authentication sequence
 
 This API retrieves authentication sequence information for SFSS application authentication.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSAppAuthenticationSequenceRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSAppAuthenticationSequenceRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppAuthenticationSequence(ctx context.Context) ApiGetRedfishV1SFSSAppAuthenticationSequenceRequest {
 	return ApiGetRedfishV1SFSSAppAuthenticationSequenceRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppAuthenticationSequence200Response
+//  @return GetRedfishV1SFSSAppAuthenticationSequence200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppAuthenticationSequenceExecute(r ApiGetRedfishV1SFSSAppAuthenticationSequenceRequest) (*GetRedfishV1SFSSAppAuthenticationSequence200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppAuthenticationSequence200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppAuthenticationSequence200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppAuthenticationSequence")
@@ -1744,7 +1730,7 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppAuthenticationSequenceExecute(r A
 }
 
 type ApiGetRedfishV1SFSSAppAuthenticationSequenceEnumsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -1757,25 +1743,24 @@ GetRedfishV1SFSSAppAuthenticationSequenceEnums Get authentication sequence enums
 
 This API retrieves all the supported enumerations for the authentication sequence.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSAppAuthenticationSequenceEnumsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSAppAuthenticationSequenceEnumsRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppAuthenticationSequenceEnums(ctx context.Context) ApiGetRedfishV1SFSSAppAuthenticationSequenceEnumsRequest {
 	return ApiGetRedfishV1SFSSAppAuthenticationSequenceEnumsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppAuthenticationSequenceEnums200Response
+//  @return GetRedfishV1SFSSAppAuthenticationSequenceEnums200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppAuthenticationSequenceEnumsExecute(r ApiGetRedfishV1SFSSAppAuthenticationSequenceEnumsRequest) (*GetRedfishV1SFSSAppAuthenticationSequenceEnums200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppAuthenticationSequenceEnums200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppAuthenticationSequenceEnums200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppAuthenticationSequenceEnums")
@@ -1844,7 +1829,7 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppAuthenticationSequenceEnumsExecut
 }
 
 type ApiGetRedfishV1SFSSAppBackupsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -1857,25 +1842,24 @@ GetRedfishV1SFSSAppBackups Get all backups
 
 This API retrieves all the available backups from SFSS application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSAppBackupsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSAppBackupsRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppBackups(ctx context.Context) ApiGetRedfishV1SFSSAppBackupsRequest {
 	return ApiGetRedfishV1SFSSAppBackupsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppBackups200Response
+//  @return GetRedfishV1SFSSAppBackups200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppBackupsExecute(r ApiGetRedfishV1SFSSAppBackupsRequest) (*GetRedfishV1SFSSAppBackups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppBackups200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppBackups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppBackups")
@@ -1944,9 +1928,9 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppBackupsExecute(r ApiGetRedfishV1S
 }
 
 type ApiGetRedfishV1SFSSAppBackupsIDRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
-	iD         string
+	iD string
 }
 
 func (r ApiGetRedfishV1SFSSAppBackupsIDRequest) Execute() (*GetRedfishV1SFSSAppBackupsID200Response, *http.Response, error) {
@@ -1958,27 +1942,26 @@ GetRedfishV1SFSSAppBackupsID Get specific backup
 
 This API retrieves information about a backup operation based on the specified backup id.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param iD Backup identifier
-	@return ApiGetRedfishV1SFSSAppBackupsIDRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param iD Backup identifier
+ @return ApiGetRedfishV1SFSSAppBackupsIDRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppBackupsID(ctx context.Context, iD string) ApiGetRedfishV1SFSSAppBackupsIDRequest {
 	return ApiGetRedfishV1SFSSAppBackupsIDRequest{
 		ApiService: a,
-		ctx:        ctx,
-		iD:         iD,
+		ctx: ctx,
+		iD: iD,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppBackupsID200Response
+//  @return GetRedfishV1SFSSAppBackupsID200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppBackupsIDExecute(r ApiGetRedfishV1SFSSAppBackupsIDRequest) (*GetRedfishV1SFSSAppBackupsID200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppBackupsID200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppBackupsID200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppBackupsID")
@@ -2051,7 +2034,7 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppBackupsIDExecute(r ApiGetRedfishV
 }
 
 type ApiGetRedfishV1SFSSAppCDCHealthStatusRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -2064,25 +2047,24 @@ GetRedfishV1SFSSAppCDCHealthStatus Get CDC health
 
 This API retrieves health status information of the CDC instances running in SFSS.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSAppCDCHealthStatusRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSAppCDCHealthStatusRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppCDCHealthStatus(ctx context.Context) ApiGetRedfishV1SFSSAppCDCHealthStatusRequest {
 	return ApiGetRedfishV1SFSSAppCDCHealthStatusRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppCDCHealthStatus200Response
+//  @return GetRedfishV1SFSSAppCDCHealthStatus200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppCDCHealthStatusExecute(r ApiGetRedfishV1SFSSAppCDCHealthStatusRequest) (*GetRedfishV1SFSSAppCDCHealthStatus200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppCDCHealthStatus200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppCDCHealthStatus200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppCDCHealthStatus")
@@ -2151,9 +2133,9 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppCDCHealthStatusExecute(r ApiGetRe
 }
 
 type ApiGetRedfishV1SFSSAppCDCHealthStatusIDRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
-	iD         string
+	iD string
 }
 
 func (r ApiGetRedfishV1SFSSAppCDCHealthStatusIDRequest) Execute() (*GetRedfishV1SFSSAppCDCHealthStatusID200Response, *http.Response, error) {
@@ -2165,27 +2147,26 @@ GetRedfishV1SFSSAppCDCHealthStatusID Get specific CDC health
 
 This API retrieves detailed health status of the specified CDC instance identifier.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param iD CDC instance identifier
-	@return ApiGetRedfishV1SFSSAppCDCHealthStatusIDRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param iD CDC instance identifier
+ @return ApiGetRedfishV1SFSSAppCDCHealthStatusIDRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppCDCHealthStatusID(ctx context.Context, iD string) ApiGetRedfishV1SFSSAppCDCHealthStatusIDRequest {
 	return ApiGetRedfishV1SFSSAppCDCHealthStatusIDRequest{
 		ApiService: a,
-		ctx:        ctx,
-		iD:         iD,
+		ctx: ctx,
+		iD: iD,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppCDCHealthStatusID200Response
+//  @return GetRedfishV1SFSSAppCDCHealthStatusID200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppCDCHealthStatusIDExecute(r ApiGetRedfishV1SFSSAppCDCHealthStatusIDRequest) (*GetRedfishV1SFSSAppCDCHealthStatusID200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppCDCHealthStatusID200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppCDCHealthStatusID200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppCDCHealthStatusID")
@@ -2258,9 +2239,9 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppCDCHealthStatusIDExecute(r ApiGet
 }
 
 type ApiGetRedfishV1SFSSAppCDCInstanceManagersRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
-	expand     *string
+	expand *string
 }
 
 // CDCInstanceManagers
@@ -2278,25 +2259,24 @@ GetRedfishV1SFSSAppCDCInstanceManagers Get all CDCs
 
 This API retrieves details about all the Centralized Discovery Controller (CDC) instances configured in SFSS application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSAppCDCInstanceManagersRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSAppCDCInstanceManagersRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppCDCInstanceManagers(ctx context.Context) ApiGetRedfishV1SFSSAppCDCInstanceManagersRequest {
 	return ApiGetRedfishV1SFSSAppCDCInstanceManagersRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppCDCInstanceManagers200Response
+//  @return GetRedfishV1SFSSAppCDCInstanceManagers200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppCDCInstanceManagersExecute(r ApiGetRedfishV1SFSSAppCDCInstanceManagersRequest) (*GetRedfishV1SFSSAppCDCInstanceManagers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppCDCInstanceManagers200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppCDCInstanceManagers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppCDCInstanceManagers")
@@ -2368,7 +2348,7 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppCDCInstanceManagersExecute(r ApiG
 }
 
 type ApiGetRedfishV1SFSSAppCDCInstanceManagersEnumsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -2381,25 +2361,24 @@ GetRedfishV1SFSSAppCDCInstanceManagersEnums Get CDC enums
 
 This API retrieves all the supported enumerations for the CDC instance manager.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSAppCDCInstanceManagersEnumsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSAppCDCInstanceManagersEnumsRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppCDCInstanceManagersEnums(ctx context.Context) ApiGetRedfishV1SFSSAppCDCInstanceManagersEnumsRequest {
 	return ApiGetRedfishV1SFSSAppCDCInstanceManagersEnumsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppCDCInstanceManagersEnums200Response
+//  @return GetRedfishV1SFSSAppCDCInstanceManagersEnums200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppCDCInstanceManagersEnumsExecute(r ApiGetRedfishV1SFSSAppCDCInstanceManagersEnumsRequest) (*GetRedfishV1SFSSAppCDCInstanceManagersEnums200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppCDCInstanceManagersEnums200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppCDCInstanceManagersEnums200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppCDCInstanceManagersEnums")
@@ -2468,7 +2447,7 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppCDCInstanceManagersEnumsExecute(r
 }
 
 type ApiGetRedfishV1SFSSAppCDCInstanceManagersIDRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 	instanceId int32
 }
@@ -2482,27 +2461,26 @@ GetRedfishV1SFSSAppCDCInstanceManagersID Get specific CDC information
 
 This API retrieves information about the CDC instance based on the specified instance identifier.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param instanceId The identifier of the CDC instance to retrieve information for.
-	@return ApiGetRedfishV1SFSSAppCDCInstanceManagersIDRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param instanceId The identifier of the CDC instance to retrieve information for.
+ @return ApiGetRedfishV1SFSSAppCDCInstanceManagersIDRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppCDCInstanceManagersID(ctx context.Context, instanceId int32) ApiGetRedfishV1SFSSAppCDCInstanceManagersIDRequest {
 	return ApiGetRedfishV1SFSSAppCDCInstanceManagersIDRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 		instanceId: instanceId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppCDCInstanceManagersID200Response
+//  @return GetRedfishV1SFSSAppCDCInstanceManagersID200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppCDCInstanceManagersIDExecute(r ApiGetRedfishV1SFSSAppCDCInstanceManagersIDRequest) (*GetRedfishV1SFSSAppCDCInstanceManagersID200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppCDCInstanceManagersID200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppCDCInstanceManagersID200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppCDCInstanceManagersID")
@@ -2578,9 +2556,9 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppCDCInstanceManagersIDExecute(r Ap
 }
 
 type ApiGetRedfishV1SFSSAppDeviceRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
-	body       *map[string]interface{}
+	body *map[string]interface{}
 }
 
 func (r ApiGetRedfishV1SFSSAppDeviceRequest) Body(body map[string]interface{}) ApiGetRedfishV1SFSSAppDeviceRequest {
@@ -2597,25 +2575,24 @@ GetRedfishV1SFSSAppDevice Get device details
 
 This API retrieves device details from SFSS application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSAppDeviceRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSAppDeviceRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppDevice(ctx context.Context) ApiGetRedfishV1SFSSAppDeviceRequest {
 	return ApiGetRedfishV1SFSSAppDeviceRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppDevice200Response
+//  @return GetRedfishV1SFSSAppDevice200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppDeviceExecute(r ApiGetRedfishV1SFSSAppDeviceRequest) (*GetRedfishV1SFSSAppDevice200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppDevice200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppDevice200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppDevice")
@@ -2686,7 +2663,7 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppDeviceExecute(r ApiGetRedfishV1SF
 }
 
 type ApiGetRedfishV1SFSSAppEnumsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -2699,25 +2676,24 @@ GetRedfishV1SFSSAppEnums Get image enums
 
 This API lists all the supported enumerations for the SFSS image.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSAppEnumsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSAppEnumsRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppEnums(ctx context.Context) ApiGetRedfishV1SFSSAppEnumsRequest {
 	return ApiGetRedfishV1SFSSAppEnumsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppEnums200Response
+//  @return GetRedfishV1SFSSAppEnums200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppEnumsExecute(r ApiGetRedfishV1SFSSAppEnumsRequest) (*GetRedfishV1SFSSAppEnums200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppEnums200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppEnums200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppEnums")
@@ -2786,9 +2762,9 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppEnumsExecute(r ApiGetRedfishV1SFS
 }
 
 type ApiGetRedfishV1SFSSAppEventsRequest struct {
-	ctx                  context.Context
-	ApiService           *DefaultAPIService
-	top2                 *int32
+	ctx context.Context
+	ApiService *DefaultAPIService
+	top2 *int32
 	filterCDCInstanceEq1 *string
 }
 
@@ -2813,25 +2789,24 @@ GetRedfishV1SFSSAppEvents Get all events
 
 This API retrieves a list of events from SFSS application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSAppEventsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSAppEventsRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppEvents(ctx context.Context) ApiGetRedfishV1SFSSAppEventsRequest {
 	return ApiGetRedfishV1SFSSAppEventsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppEvents200Response
+//  @return GetRedfishV1SFSSAppEvents200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppEventsExecute(r ApiGetRedfishV1SFSSAppEventsRequest) (*GetRedfishV1SFSSAppEvents200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppEvents200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppEvents200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppEvents")
@@ -2906,9 +2881,9 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppEventsExecute(r ApiGetRedfishV1SF
 }
 
 type ApiGetRedfishV1SFSSAppEventsIDRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
-	iD         string
+	iD string
 }
 
 func (r ApiGetRedfishV1SFSSAppEventsIDRequest) Execute() (*GetRedfishV1SFSSAppEventsID200Response, *http.Response, error) {
@@ -2920,27 +2895,26 @@ GetRedfishV1SFSSAppEventsID Get specific event
 
 This API retrieves detailed event information based on the specified event ID.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param iD Event ID
-	@return ApiGetRedfishV1SFSSAppEventsIDRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param iD Event ID
+ @return ApiGetRedfishV1SFSSAppEventsIDRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppEventsID(ctx context.Context, iD string) ApiGetRedfishV1SFSSAppEventsIDRequest {
 	return ApiGetRedfishV1SFSSAppEventsIDRequest{
 		ApiService: a,
-		ctx:        ctx,
-		iD:         iD,
+		ctx: ctx,
+		iD: iD,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppEventsID200Response
+//  @return GetRedfishV1SFSSAppEventsID200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppEventsIDExecute(r ApiGetRedfishV1SFSSAppEventsIDRequest) (*GetRedfishV1SFSSAppEventsID200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppEventsID200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppEventsID200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppEventsID")
@@ -3013,8 +2987,8 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppEventsIDExecute(r ApiGetRedfishV1
 }
 
 type ApiGetRedfishV1SFSSAppFoundationalConfigsInstanceIdentifierRequest struct {
-	ctx               context.Context
-	ApiService        *DefaultAPIService
+	ctx context.Context
+	ApiService *DefaultAPIService
 	instanceIdentifer string
 }
 
@@ -3027,27 +3001,26 @@ GetRedfishV1SFSSAppFoundationalConfigsInstanceIdentifier Get specific foundation
 
 This API retrieves detailed foundational configuration information based on the specified instance identifier.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param instanceIdentifer Instance identifier of the CDC
-	@return ApiGetRedfishV1SFSSAppFoundationalConfigsInstanceIdentifierRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param instanceIdentifer Instance identifier of the CDC
+ @return ApiGetRedfishV1SFSSAppFoundationalConfigsInstanceIdentifierRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppFoundationalConfigsInstanceIdentifier(ctx context.Context, instanceIdentifer string) ApiGetRedfishV1SFSSAppFoundationalConfigsInstanceIdentifierRequest {
 	return ApiGetRedfishV1SFSSAppFoundationalConfigsInstanceIdentifierRequest{
-		ApiService:        a,
-		ctx:               ctx,
+		ApiService: a,
+		ctx: ctx,
 		instanceIdentifer: instanceIdentifer,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppFoundationalConfigsInstanceIdentifier200Response
+//  @return GetRedfishV1SFSSAppFoundationalConfigsInstanceIdentifier200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppFoundationalConfigsInstanceIdentifierExecute(r ApiGetRedfishV1SFSSAppFoundationalConfigsInstanceIdentifierRequest) (*GetRedfishV1SFSSAppFoundationalConfigsInstanceIdentifier200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppFoundationalConfigsInstanceIdentifier200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppFoundationalConfigsInstanceIdentifier200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppFoundationalConfigsInstanceIdentifier")
@@ -3120,7 +3093,7 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppFoundationalConfigsInstanceIdenti
 }
 
 type ApiGetRedfishV1SFSSAppGlobalSettingsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -3133,25 +3106,24 @@ GetRedfishV1SFSSAppGlobalSettings Get global settings
 
 This API retrieves global settings configuration from SFSS application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSAppGlobalSettingsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSAppGlobalSettingsRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppGlobalSettings(ctx context.Context) ApiGetRedfishV1SFSSAppGlobalSettingsRequest {
 	return ApiGetRedfishV1SFSSAppGlobalSettingsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppGlobalSettings200Response
+//  @return GetRedfishV1SFSSAppGlobalSettings200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppGlobalSettingsExecute(r ApiGetRedfishV1SFSSAppGlobalSettingsRequest) (*GetRedfishV1SFSSAppGlobalSettings200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppGlobalSettings200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppGlobalSettings200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppGlobalSettings")
@@ -3220,7 +3192,7 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppGlobalSettingsExecute(r ApiGetRed
 }
 
 type ApiGetRedfishV1SFSSAppIpAddressManagementsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -3233,25 +3205,24 @@ GetRedfishV1SFSSAppIpAddressManagements Get all interfaces
 
 This API retrieves all the interfaces that are assigned an IP address in SFSS application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSAppIpAddressManagementsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSAppIpAddressManagementsRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppIpAddressManagements(ctx context.Context) ApiGetRedfishV1SFSSAppIpAddressManagementsRequest {
 	return ApiGetRedfishV1SFSSAppIpAddressManagementsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppIpAddressManagements200Response
+//  @return GetRedfishV1SFSSAppIpAddressManagements200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppIpAddressManagementsExecute(r ApiGetRedfishV1SFSSAppIpAddressManagementsRequest) (*GetRedfishV1SFSSAppIpAddressManagements200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppIpAddressManagements200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppIpAddressManagements200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppIpAddressManagements")
@@ -3320,7 +3291,7 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppIpAddressManagementsExecute(r Api
 }
 
 type ApiGetRedfishV1SFSSAppIpAddressManagementsInterfaceRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 	interface_ string
 }
@@ -3334,27 +3305,26 @@ GetRedfishV1SFSSAppIpAddressManagementsInterface Get specific interface
 
 This API retrieves details of the specified interface from SFSS application based on the interface name. IPv4 and IPv6 route-specific configuration parameters are available from Release 1.3.0 onwards. See example-2 for sample route configuration in the response.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param interface_ Interface identifier
-	@return ApiGetRedfishV1SFSSAppIpAddressManagementsInterfaceRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param interface_ Interface identifier
+ @return ApiGetRedfishV1SFSSAppIpAddressManagementsInterfaceRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppIpAddressManagementsInterface(ctx context.Context, interface_ string) ApiGetRedfishV1SFSSAppIpAddressManagementsInterfaceRequest {
 	return ApiGetRedfishV1SFSSAppIpAddressManagementsInterfaceRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 		interface_: interface_,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppIpAddressManagementsInterface200Response
+//  @return GetRedfishV1SFSSAppIpAddressManagementsInterface200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppIpAddressManagementsInterfaceExecute(r ApiGetRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) (*GetRedfishV1SFSSAppIpAddressManagementsInterface200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppIpAddressManagementsInterface200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppIpAddressManagementsInterface200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppIpAddressManagementsInterface")
@@ -3424,7 +3394,7 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppIpAddressManagementsInterfaceExec
 }
 
 type ApiGetRedfishV1SFSSAppLicensesRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -3437,25 +3407,24 @@ GetRedfishV1SFSSAppLicenses Get license count
 
 This API retrieves information about the number of licenses installed in SFSS application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSAppLicensesRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSAppLicensesRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppLicenses(ctx context.Context) ApiGetRedfishV1SFSSAppLicensesRequest {
 	return ApiGetRedfishV1SFSSAppLicensesRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppLicenses200Response
+//  @return GetRedfishV1SFSSAppLicenses200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppLicensesExecute(r ApiGetRedfishV1SFSSAppLicensesRequest) (*GetRedfishV1SFSSAppLicenses200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppLicenses200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppLicenses200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppLicenses")
@@ -3524,9 +3493,9 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppLicensesExecute(r ApiGetRedfishV1
 }
 
 type ApiGetRedfishV1SFSSAppLicensesLicenseIdRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
-	licenseId  string
+	licenseId string
 }
 
 func (r ApiGetRedfishV1SFSSAppLicensesLicenseIdRequest) Execute() (*GetRedfishV1SFSSAppLicensesLicenseId200Response, *http.Response, error) {
@@ -3538,27 +3507,26 @@ GetRedfishV1SFSSAppLicensesLicenseId Get specific license
 
 This API retrieves details about the specified license based on the license identifier.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param licenseId License identifier
-	@return ApiGetRedfishV1SFSSAppLicensesLicenseIdRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param licenseId License identifier
+ @return ApiGetRedfishV1SFSSAppLicensesLicenseIdRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppLicensesLicenseId(ctx context.Context, licenseId string) ApiGetRedfishV1SFSSAppLicensesLicenseIdRequest {
 	return ApiGetRedfishV1SFSSAppLicensesLicenseIdRequest{
 		ApiService: a,
-		ctx:        ctx,
-		licenseId:  licenseId,
+		ctx: ctx,
+		licenseId: licenseId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppLicensesLicenseId200Response
+//  @return GetRedfishV1SFSSAppLicensesLicenseId200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppLicensesLicenseIdExecute(r ApiGetRedfishV1SFSSAppLicensesLicenseIdRequest) (*GetRedfishV1SFSSAppLicensesLicenseId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppLicensesLicenseId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppLicensesLicenseId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppLicensesLicenseId")
@@ -3628,7 +3596,7 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppLicensesLicenseIdExecute(r ApiGet
 }
 
 type ApiGetRedfishV1SFSSAppLicensesexpandLicensesRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -3641,25 +3609,24 @@ GetRedfishV1SFSSAppLicensesexpandLicenses Get detailed license information
 
 This API retrieves detailed license information from the system.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSAppLicensesexpandLicensesRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSAppLicensesexpandLicensesRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppLicensesexpandLicenses(ctx context.Context) ApiGetRedfishV1SFSSAppLicensesexpandLicensesRequest {
 	return ApiGetRedfishV1SFSSAppLicensesexpandLicensesRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppLicensesExpandLicenses200Response
+//  @return GetRedfishV1SFSSAppLicensesExpandLicenses200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppLicensesexpandLicensesExecute(r ApiGetRedfishV1SFSSAppLicensesexpandLicensesRequest) (*GetRedfishV1SFSSAppLicensesExpandLicenses200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppLicensesExpandLicenses200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppLicensesExpandLicenses200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppLicensesexpandLicenses")
@@ -3728,7 +3695,7 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppLicensesexpandLicensesExecute(r A
 }
 
 type ApiGetRedfishV1SFSSAppNTPRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -3741,25 +3708,24 @@ GetRedfishV1SFSSAppNTP Get NTP server information
 
 This API configures an NTP server.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSAppNTPRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSAppNTPRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppNTP(ctx context.Context) ApiGetRedfishV1SFSSAppNTPRequest {
 	return ApiGetRedfishV1SFSSAppNTPRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppNTP200Response
+//  @return GetRedfishV1SFSSAppNTP200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppNTPExecute(r ApiGetRedfishV1SFSSAppNTPRequest) (*GetRedfishV1SFSSAppNTP200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppNTP200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppNTP200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppNTP")
@@ -3828,7 +3794,7 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppNTPExecute(r ApiGetRedfishV1SFSSA
 }
 
 type ApiGetRedfishV1SFSSAppRadiusServersRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -3841,25 +3807,24 @@ GetRedfishV1SFSSAppRadiusServers Get all RADIUS servers
 
 This API retrieves a list of RADIUS servers configured in SFSS application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSAppRadiusServersRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSAppRadiusServersRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppRadiusServers(ctx context.Context) ApiGetRedfishV1SFSSAppRadiusServersRequest {
 	return ApiGetRedfishV1SFSSAppRadiusServersRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppRadiusServers200Response
+//  @return GetRedfishV1SFSSAppRadiusServers200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppRadiusServersExecute(r ApiGetRedfishV1SFSSAppRadiusServersRequest) (*GetRedfishV1SFSSAppRadiusServers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppRadiusServers200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppRadiusServers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppRadiusServers")
@@ -3928,7 +3893,7 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppRadiusServersExecute(r ApiGetRedf
 }
 
 type ApiGetRedfishV1SFSSAppRadiusServersSequenceRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -3941,22 +3906,22 @@ GetRedfishV1SFSSAppRadiusServersSequence Get all RADIUS servers
 
 This API retrieves a list of RADIUS servers that are configured in SFSS. This API returns the server IP addresses in the order in which they are configured.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSAppRadiusServersSequenceRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSAppRadiusServersSequenceRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppRadiusServersSequence(ctx context.Context) ApiGetRedfishV1SFSSAppRadiusServersSequenceRequest {
 	return ApiGetRedfishV1SFSSAppRadiusServersSequenceRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DefaultAPIService) GetRedfishV1SFSSAppRadiusServersSequenceExecute(r ApiGetRedfishV1SFSSAppRadiusServersSequenceRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppRadiusServersSequence")
@@ -4016,7 +3981,7 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppRadiusServersSequenceExecute(r Ap
 }
 
 type ApiGetRedfishV1SFSSAppRestoresRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -4029,25 +3994,24 @@ GetRedfishV1SFSSAppRestores Get all restores
 
 This API retrieves all the available restore information from SFSS application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSAppRestoresRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSAppRestoresRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppRestores(ctx context.Context) ApiGetRedfishV1SFSSAppRestoresRequest {
 	return ApiGetRedfishV1SFSSAppRestoresRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppRestores200Response
+//  @return GetRedfishV1SFSSAppRestores200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppRestoresExecute(r ApiGetRedfishV1SFSSAppRestoresRequest) (*GetRedfishV1SFSSAppRestores200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppRestores200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppRestores200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppRestores")
@@ -4116,9 +4080,9 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppRestoresExecute(r ApiGetRedfishV1
 }
 
 type ApiGetRedfishV1SFSSAppRestoresIDRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
-	iD         string
+	iD string
 }
 
 func (r ApiGetRedfishV1SFSSAppRestoresIDRequest) Execute() (*GetRedfishV1SFSSAppRestoresID200Response, *http.Response, error) {
@@ -4130,27 +4094,26 @@ GetRedfishV1SFSSAppRestoresID Get specific restore
 
 This API retrieves information about a restore operation based on the specified restore id.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param iD Restore identifier
-	@return ApiGetRedfishV1SFSSAppRestoresIDRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param iD Restore identifier
+ @return ApiGetRedfishV1SFSSAppRestoresIDRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppRestoresID(ctx context.Context, iD string) ApiGetRedfishV1SFSSAppRestoresIDRequest {
 	return ApiGetRedfishV1SFSSAppRestoresIDRequest{
 		ApiService: a,
-		ctx:        ctx,
-		iD:         iD,
+		ctx: ctx,
+		iD: iD,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppRestoresID200Response
+//  @return GetRedfishV1SFSSAppRestoresID200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppRestoresIDExecute(r ApiGetRedfishV1SFSSAppRestoresIDRequest) (*GetRedfishV1SFSSAppRestoresID200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppRestoresID200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppRestoresID200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppRestoresID")
@@ -4223,7 +4186,7 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppRestoresIDExecute(r ApiGetRedfish
 }
 
 type ApiGetRedfishV1SFSSAppSFSSHealthStatusRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -4236,25 +4199,24 @@ GetRedfishV1SFSSAppSFSSHealthStatus Get system health
 
 This API retrieves SFSS system health status.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSAppSFSSHealthStatusRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSAppSFSSHealthStatusRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppSFSSHealthStatus(ctx context.Context) ApiGetRedfishV1SFSSAppSFSSHealthStatusRequest {
 	return ApiGetRedfishV1SFSSAppSFSSHealthStatusRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppSFSSHealthStatus200Response
+//  @return GetRedfishV1SFSSAppSFSSHealthStatus200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppSFSSHealthStatusExecute(r ApiGetRedfishV1SFSSAppSFSSHealthStatusRequest) (*GetRedfishV1SFSSAppSFSSHealthStatus200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppSFSSHealthStatus200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppSFSSHealthStatus200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppSFSSHealthStatus")
@@ -4323,7 +4285,7 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppSFSSHealthStatusExecute(r ApiGetR
 }
 
 type ApiGetRedfishV1SFSSAppSosReportsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -4336,25 +4298,24 @@ GetRedfishV1SFSSAppSosReports Get SOS report
 
 This API retrieves the SOS report from SFSS.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSAppSosReportsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSAppSosReportsRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppSosReports(ctx context.Context) ApiGetRedfishV1SFSSAppSosReportsRequest {
 	return ApiGetRedfishV1SFSSAppSosReportsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppSosReports200Response
+//  @return GetRedfishV1SFSSAppSosReports200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppSosReportsExecute(r ApiGetRedfishV1SFSSAppSosReportsRequest) (*GetRedfishV1SFSSAppSosReports200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppSosReports200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppSosReports200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppSosReports")
@@ -4423,9 +4384,9 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppSosReportsExecute(r ApiGetRedfish
 }
 
 type ApiGetRedfishV1SFSSAppSosReportsIDRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
-	iD         string
+	iD string
 }
 
 func (r ApiGetRedfishV1SFSSAppSosReportsIDRequest) Execute() (*GetRedfishV1SFSSAppSosReportsID200Response, *http.Response, error) {
@@ -4437,27 +4398,26 @@ GetRedfishV1SFSSAppSosReportsID Get specific SOS report
 
 This API retrieves details about the SOS report based on the specified SOS report ID.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param iD SOS report ID
-	@return ApiGetRedfishV1SFSSAppSosReportsIDRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param iD SOS report ID
+ @return ApiGetRedfishV1SFSSAppSosReportsIDRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppSosReportsID(ctx context.Context, iD string) ApiGetRedfishV1SFSSAppSosReportsIDRequest {
 	return ApiGetRedfishV1SFSSAppSosReportsIDRequest{
 		ApiService: a,
-		ctx:        ctx,
-		iD:         iD,
+		ctx: ctx,
+		iD: iD,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppSosReportsID200Response
+//  @return GetRedfishV1SFSSAppSosReportsID200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppSosReportsIDExecute(r ApiGetRedfishV1SFSSAppSosReportsIDRequest) (*GetRedfishV1SFSSAppSosReportsID200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppSosReportsID200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppSosReportsID200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppSosReportsID")
@@ -4530,7 +4490,7 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppSosReportsIDExecute(r ApiGetRedfi
 }
 
 type ApiGetRedfishV1SFSSAppSosReportsexpandSosReportsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -4543,25 +4503,24 @@ GetRedfishV1SFSSAppSosReportsexpandSosReports Get all SOS reports
 
 This API retrieves details about all the available SOS reports from SFSS application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSAppSosReportsexpandSosReportsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSAppSosReportsexpandSosReportsRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppSosReportsexpandSosReports(ctx context.Context) ApiGetRedfishV1SFSSAppSosReportsexpandSosReportsRequest {
 	return ApiGetRedfishV1SFSSAppSosReportsexpandSosReportsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppSosReportsExpandSosReports200Response
+//  @return GetRedfishV1SFSSAppSosReportsExpandSosReports200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppSosReportsexpandSosReportsExecute(r ApiGetRedfishV1SFSSAppSosReportsexpandSosReportsRequest) (*GetRedfishV1SFSSAppSosReportsExpandSosReports200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppSosReportsExpandSosReports200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppSosReportsExpandSosReports200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppSosReportsexpandSosReports")
@@ -4630,7 +4589,7 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppSosReportsexpandSosReportsExecute
 }
 
 type ApiGetRedfishV1SFSSAppTacacsServersRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -4641,27 +4600,26 @@ func (r ApiGetRedfishV1SFSSAppTacacsServersRequest) Execute() (*GetRedfishV1SFSS
 /*
 GetRedfishV1SFSSAppTacacsServers Get all TACACS+ servers
 
-This API retrieves TACACS+ server information configured in the SFSS application.
+This API retrieves TACACS+ server information configured in the SFSS application. 
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSAppTacacsServersRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSAppTacacsServersRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppTacacsServers(ctx context.Context) ApiGetRedfishV1SFSSAppTacacsServersRequest {
 	return ApiGetRedfishV1SFSSAppTacacsServersRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppTacacsServers200Response
+//  @return GetRedfishV1SFSSAppTacacsServers200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppTacacsServersExecute(r ApiGetRedfishV1SFSSAppTacacsServersRequest) (*GetRedfishV1SFSSAppTacacsServers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppTacacsServers200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppTacacsServers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppTacacsServers")
@@ -4730,7 +4688,7 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppTacacsServersExecute(r ApiGetRedf
 }
 
 type ApiGetRedfishV1SFSSAppTacacsServersSequenceRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -4743,22 +4701,22 @@ GetRedfishV1SFSSAppTacacsServersSequence Get all TACACS+ servers
 
 This API retrieves a list of TACACS+ servers that are configured in SFSS. This API returns the server IP addresses in the order in which they are configured.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSAppTacacsServersSequenceRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSAppTacacsServersSequenceRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppTacacsServersSequence(ctx context.Context) ApiGetRedfishV1SFSSAppTacacsServersSequenceRequest {
 	return ApiGetRedfishV1SFSSAppTacacsServersSequenceRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DefaultAPIService) GetRedfishV1SFSSAppTacacsServersSequenceExecute(r ApiGetRedfishV1SFSSAppTacacsServersSequenceRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppTacacsServersSequence")
@@ -4818,7 +4776,7 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppTacacsServersSequenceExecute(r Ap
 }
 
 type ApiGetRedfishV1SFSSAppUserActivityAuditRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -4831,25 +4789,24 @@ GetRedfishV1SFSSAppUserActivityAudit Get user activities
 
 This API retrieves user activity details from SFSS application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSAppUserActivityAuditRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSAppUserActivityAuditRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppUserActivityAudit(ctx context.Context) ApiGetRedfishV1SFSSAppUserActivityAuditRequest {
 	return ApiGetRedfishV1SFSSAppUserActivityAuditRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppUserActivityAudit200Response
+//  @return GetRedfishV1SFSSAppUserActivityAudit200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppUserActivityAuditExecute(r ApiGetRedfishV1SFSSAppUserActivityAuditRequest) (*GetRedfishV1SFSSAppUserActivityAudit200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppUserActivityAudit200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppUserActivityAudit200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppUserActivityAudit")
@@ -4918,9 +4875,9 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppUserActivityAuditExecute(r ApiGet
 }
 
 type ApiGetRedfishV1SFSSAppUserActivityAuditIDRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
-	iD         string
+	iD string
 }
 
 func (r ApiGetRedfishV1SFSSAppUserActivityAuditIDRequest) Execute() (*GetRedfishV1SFSSAppUserActivityAuditID200Response, *http.Response, error) {
@@ -4932,27 +4889,26 @@ GetRedfishV1SFSSAppUserActivityAuditID Get specific user activity
 
 This API retrieves detailed user activity information based on the specified audit identifier.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param iD User activity audit identifier
-	@return ApiGetRedfishV1SFSSAppUserActivityAuditIDRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param iD User activity audit identifier
+ @return ApiGetRedfishV1SFSSAppUserActivityAuditIDRequest
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSAppUserActivityAuditID(ctx context.Context, iD string) ApiGetRedfishV1SFSSAppUserActivityAuditIDRequest {
 	return ApiGetRedfishV1SFSSAppUserActivityAuditIDRequest{
 		ApiService: a,
-		ctx:        ctx,
-		iD:         iD,
+		ctx: ctx,
+		iD: iD,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSAppUserActivityAuditID200Response
+//  @return GetRedfishV1SFSSAppUserActivityAuditID200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSAppUserActivityAuditIDExecute(r ApiGetRedfishV1SFSSAppUserActivityAuditIDRequest) (*GetRedfishV1SFSSAppUserActivityAuditID200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSAppUserActivityAuditID200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSAppUserActivityAuditID200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSAppUserActivityAuditID")
@@ -5025,7 +4981,7 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppUserActivityAuditIDExecute(r ApiG
 }
 
 type ApiGetRedfishV1SFSSApp_0Request struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *DefaultAPIService
 }
 
@@ -5038,25 +4994,24 @@ GetRedfishV1SFSSApp_0 Get all images
 
 This API retrieves all the SFSS images available in the system.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetRedfishV1SFSSApp_0Request
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRedfishV1SFSSApp_0Request
 */
 func (a *DefaultAPIService) GetRedfishV1SFSSApp_1(ctx context.Context) ApiGetRedfishV1SFSSApp_0Request {
 	return ApiGetRedfishV1SFSSApp_0Request{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return GetRedfishV1SFSSApp200Response
+//  @return GetRedfishV1SFSSApp200Response
 func (a *DefaultAPIService) GetRedfishV1SFSSApp_1Execute(r ApiGetRedfishV1SFSSApp_0Request) (*GetRedfishV1SFSSApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GetRedfishV1SFSSApp200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRedfishV1SFSSApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRedfishV1SFSSApp_1")
@@ -5125,8 +5080,8 @@ func (a *DefaultAPIService) GetRedfishV1SFSSApp_1Execute(r ApiGetRedfishV1SFSSAp
 }
 
 type ApiPUTRedfishV1SFSSAppRequest struct {
-	ctx                        context.Context
-	ApiService                 *DefaultAPIService
+	ctx context.Context
+	ApiService *DefaultAPIService
 	pUTRedfishV1SFSSAppRequest *PUTRedfishV1SFSSAppRequest
 }
 
@@ -5145,25 +5100,24 @@ PUTRedfishV1SFSSApp Upgrade SFSS application
 
 This API upgrades the SFSS application to the specified version.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPUTRedfishV1SFSSAppRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPUTRedfishV1SFSSAppRequest
 */
 func (a *DefaultAPIService) PUTRedfishV1SFSSApp(ctx context.Context) ApiPUTRedfishV1SFSSAppRequest {
 	return ApiPUTRedfishV1SFSSAppRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PUTRedfishV1SFSSAppRequest
+//  @return PUTRedfishV1SFSSAppRequest
 func (a *DefaultAPIService) PUTRedfishV1SFSSAppExecute(r ApiPUTRedfishV1SFSSAppRequest) (*PUTRedfishV1SFSSAppRequest, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PUTRedfishV1SFSSAppRequest
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PUTRedfishV1SFSSAppRequest
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PUTRedfishV1SFSSApp")
@@ -5234,8 +5188,8 @@ func (a *DefaultAPIService) PUTRedfishV1SFSSAppExecute(r ApiPUTRedfishV1SFSSAppR
 }
 
 type ApiPUTRedfishV1SFSSAppLicensesRequest struct {
-	ctx                                context.Context
-	ApiService                         *DefaultAPIService
+	ctx context.Context
+	ApiService *DefaultAPIService
 	pUTRedfishV1SFSSAppLicensesRequest *PUTRedfishV1SFSSAppLicensesRequest
 }
 
@@ -5254,25 +5208,24 @@ PUTRedfishV1SFSSAppLicenses Accept EULA
 
 This API is used to accept the End User License Agreement (EULA) for the partner license.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPUTRedfishV1SFSSAppLicensesRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPUTRedfishV1SFSSAppLicensesRequest
 */
 func (a *DefaultAPIService) PUTRedfishV1SFSSAppLicenses(ctx context.Context) ApiPUTRedfishV1SFSSAppLicensesRequest {
 	return ApiPUTRedfishV1SFSSAppLicensesRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PUTRedfishV1SFSSAppLicenses200Response
+//  @return PUTRedfishV1SFSSAppLicenses200Response
 func (a *DefaultAPIService) PUTRedfishV1SFSSAppLicensesExecute(r ApiPUTRedfishV1SFSSAppLicensesRequest) (*PUTRedfishV1SFSSAppLicenses200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PUTRedfishV1SFSSAppLicenses200Response
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PUTRedfishV1SFSSAppLicenses200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PUTRedfishV1SFSSAppLicenses")
@@ -5343,8 +5296,8 @@ func (a *DefaultAPIService) PUTRedfishV1SFSSAppLicensesExecute(r ApiPUTRedfishV1
 }
 
 type ApiPostRedfishV1SFSSAppAlertsRequest struct {
-	ctx                               context.Context
-	ApiService                        *DefaultAPIService
+	ctx context.Context
+	ApiService *DefaultAPIService
 	postRedfishV1SFSSAppAlertsRequest *PostRedfishV1SFSSAppAlertsRequest
 }
 
@@ -5363,25 +5316,24 @@ PostRedfishV1SFSSAppAlerts Add alert
 
 This API creates an alert in the SFSS application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPostRedfishV1SFSSAppAlertsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPostRedfishV1SFSSAppAlertsRequest
 */
 func (a *DefaultAPIService) PostRedfishV1SFSSAppAlerts(ctx context.Context) ApiPostRedfishV1SFSSAppAlertsRequest {
 	return ApiPostRedfishV1SFSSAppAlertsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PostRedfishV1SFSSAppAlerts200Response
+//  @return PostRedfishV1SFSSAppAlerts200Response
 func (a *DefaultAPIService) PostRedfishV1SFSSAppAlertsExecute(r ApiPostRedfishV1SFSSAppAlertsRequest) (*PostRedfishV1SFSSAppAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PostRedfishV1SFSSAppAlerts200Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PostRedfishV1SFSSAppAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRedfishV1SFSSAppAlerts")
@@ -5452,8 +5404,8 @@ func (a *DefaultAPIService) PostRedfishV1SFSSAppAlertsExecute(r ApiPostRedfishV1
 }
 
 type ApiPostRedfishV1SFSSAppAuthenticationSequenceRequest struct {
-	ctx                                               context.Context
-	ApiService                                        *DefaultAPIService
+	ctx context.Context
+	ApiService *DefaultAPIService
 	postRedfishV1SFSSAppAuthenticationSequenceRequest *PostRedfishV1SFSSAppAuthenticationSequenceRequest
 }
 
@@ -5472,25 +5424,24 @@ PostRedfishV1SFSSAppAuthenticationSequence Add authentication sequence
 
 This API creates an authentication sequence in SFSS application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPostRedfishV1SFSSAppAuthenticationSequenceRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPostRedfishV1SFSSAppAuthenticationSequenceRequest
 */
 func (a *DefaultAPIService) PostRedfishV1SFSSAppAuthenticationSequence(ctx context.Context) ApiPostRedfishV1SFSSAppAuthenticationSequenceRequest {
 	return ApiPostRedfishV1SFSSAppAuthenticationSequenceRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PostRedfishV1SFSSAppAuthenticationSequence200Response
+//  @return PostRedfishV1SFSSAppAuthenticationSequence200Response
 func (a *DefaultAPIService) PostRedfishV1SFSSAppAuthenticationSequenceExecute(r ApiPostRedfishV1SFSSAppAuthenticationSequenceRequest) (*PostRedfishV1SFSSAppAuthenticationSequence200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PostRedfishV1SFSSAppAuthenticationSequence200Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PostRedfishV1SFSSAppAuthenticationSequence200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRedfishV1SFSSAppAuthenticationSequence")
@@ -5561,12 +5512,12 @@ func (a *DefaultAPIService) PostRedfishV1SFSSAppAuthenticationSequenceExecute(r 
 }
 
 type ApiPostRedfishV1SFSSAppBackupsRequest struct {
-	ctx                                context.Context
-	ApiService                         *DefaultAPIService
+	ctx context.Context
+	ApiService *DefaultAPIService
 	postRedfishV1SFSSAppBackupsRequest *PostRedfishV1SFSSAppBackupsRequest
 }
 
-// {             \&quot;ImageServerLocation\&quot;: \&quot;100.94.72.166:/home/dell/temp_images/\&quot;,             \&quot;ImageServerPassword\&quot;: \&quot;Force10\&quot;,             \&quot;TransportType\&quot;: \&quot;SCP\&quot;,             \&quot;ImageServerUserName\&quot;: \&quot;Dell\&quot;         }
+//         {             \&quot;ImageServerLocation\&quot;: \&quot;100.94.72.166:/home/dell/temp_images/\&quot;,             \&quot;ImageServerPassword\&quot;: \&quot;Force10\&quot;,             \&quot;TransportType\&quot;: \&quot;SCP\&quot;,             \&quot;ImageServerUserName\&quot;: \&quot;Dell\&quot;         }
 func (r ApiPostRedfishV1SFSSAppBackupsRequest) PostRedfishV1SFSSAppBackupsRequest(postRedfishV1SFSSAppBackupsRequest PostRedfishV1SFSSAppBackupsRequest) ApiPostRedfishV1SFSSAppBackupsRequest {
 	r.postRedfishV1SFSSAppBackupsRequest = &postRedfishV1SFSSAppBackupsRequest
 	return r
@@ -5581,25 +5532,24 @@ PostRedfishV1SFSSAppBackups Perform backup
 
 This API creates a backup of the SFSS configuration data in the specified server.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPostRedfishV1SFSSAppBackupsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPostRedfishV1SFSSAppBackupsRequest
 */
 func (a *DefaultAPIService) PostRedfishV1SFSSAppBackups(ctx context.Context) ApiPostRedfishV1SFSSAppBackupsRequest {
 	return ApiPostRedfishV1SFSSAppBackupsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PostRedfishV1SFSSAppBackups200Response
+//  @return PostRedfishV1SFSSAppBackups200Response
 func (a *DefaultAPIService) PostRedfishV1SFSSAppBackupsExecute(r ApiPostRedfishV1SFSSAppBackupsRequest) (*PostRedfishV1SFSSAppBackups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PostRedfishV1SFSSAppBackups200Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PostRedfishV1SFSSAppBackups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRedfishV1SFSSAppBackups")
@@ -5670,8 +5620,8 @@ func (a *DefaultAPIService) PostRedfishV1SFSSAppBackupsExecute(r ApiPostRedfishV
 }
 
 type ApiPostRedfishV1SFSSAppChangePasswordRequest struct {
-	ctx                                       context.Context
-	ApiService                                *DefaultAPIService
+	ctx context.Context
+	ApiService *DefaultAPIService
 	postRedfishV1SFSSAppChangePasswordRequest *PostRedfishV1SFSSAppChangePasswordRequest
 }
 
@@ -5690,22 +5640,22 @@ PostRedfishV1SFSSAppChangePassword Change admin password
 
 This API allows the user to change the admin user password.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPostRedfishV1SFSSAppChangePasswordRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPostRedfishV1SFSSAppChangePasswordRequest
 */
 func (a *DefaultAPIService) PostRedfishV1SFSSAppChangePassword(ctx context.Context) ApiPostRedfishV1SFSSAppChangePasswordRequest {
 	return ApiPostRedfishV1SFSSAppChangePasswordRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DefaultAPIService) PostRedfishV1SFSSAppChangePasswordExecute(r ApiPostRedfishV1SFSSAppChangePasswordRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRedfishV1SFSSAppChangePassword")
@@ -5767,8 +5717,8 @@ func (a *DefaultAPIService) PostRedfishV1SFSSAppChangePasswordExecute(r ApiPostR
 }
 
 type ApiPostRedfishV1SFSSAppFabricManagerInfoPostRequest struct {
-	ctx                                              context.Context
-	ApiService                                       *DefaultAPIService
+	ctx context.Context
+	ApiService *DefaultAPIService
 	postRedfishV1SFSSAppFabricManagerInfoPostRequest *PostRedfishV1SFSSAppFabricManagerInfoPostRequest
 }
 
@@ -5787,25 +5737,24 @@ PostRedfishV1SFSSAppFabricManagerInfoPost Configure CDC instance
 
 This API creates a CDC instance.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPostRedfishV1SFSSAppFabricManagerInfoPostRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPostRedfishV1SFSSAppFabricManagerInfoPostRequest
 */
 func (a *DefaultAPIService) PostRedfishV1SFSSAppFabricManagerInfoPost(ctx context.Context) ApiPostRedfishV1SFSSAppFabricManagerInfoPostRequest {
 	return ApiPostRedfishV1SFSSAppFabricManagerInfoPostRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PostRedfishV1SFSSAppFabricManagerInfoPost200Response
+//  @return PostRedfishV1SFSSAppFabricManagerInfoPost200Response
 func (a *DefaultAPIService) PostRedfishV1SFSSAppFabricManagerInfoPostExecute(r ApiPostRedfishV1SFSSAppFabricManagerInfoPostRequest) (*PostRedfishV1SFSSAppFabricManagerInfoPost200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PostRedfishV1SFSSAppFabricManagerInfoPost200Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PostRedfishV1SFSSAppFabricManagerInfoPost200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRedfishV1SFSSAppFabricManagerInfoPost")
@@ -5876,8 +5825,8 @@ func (a *DefaultAPIService) PostRedfishV1SFSSAppFabricManagerInfoPostExecute(r A
 }
 
 type ApiPostRedfishV1SFSSAppGlobalSettingsRequest struct {
-	ctx                                       context.Context
-	ApiService                                *DefaultAPIService
+	ctx context.Context
+	ApiService *DefaultAPIService
 	postRedfishV1SFSSAppGlobalSettingsRequest *PostRedfishV1SFSSAppGlobalSettingsRequest
 }
 
@@ -5896,22 +5845,22 @@ PostRedfishV1SFSSAppGlobalSettings Configure global settings
 
 This API configures global settings in SFSS application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPostRedfishV1SFSSAppGlobalSettingsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPostRedfishV1SFSSAppGlobalSettingsRequest
 */
 func (a *DefaultAPIService) PostRedfishV1SFSSAppGlobalSettings(ctx context.Context) ApiPostRedfishV1SFSSAppGlobalSettingsRequest {
 	return ApiPostRedfishV1SFSSAppGlobalSettingsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DefaultAPIService) PostRedfishV1SFSSAppGlobalSettingsExecute(r ApiPostRedfishV1SFSSAppGlobalSettingsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRedfishV1SFSSAppGlobalSettings")
@@ -5973,8 +5922,8 @@ func (a *DefaultAPIService) PostRedfishV1SFSSAppGlobalSettingsExecute(r ApiPostR
 }
 
 type ApiPostRedfishV1SFSSAppIpAddressManagementsRequest struct {
-	ctx                                             context.Context
-	ApiService                                      *DefaultAPIService
+	ctx context.Context
+	ApiService *DefaultAPIService
 	postRedfishV1SFSSAppIpAddressManagementsRequest *PostRedfishV1SFSSAppIpAddressManagementsRequest
 }
 
@@ -5992,22 +5941,22 @@ PostRedfishV1SFSSAppIpAddressManagements Configure interface
 
 This API configures an interface in SFSS application and assigns the specified IP address to the interface. IPv4 and IPv6 route-specific configuration parameters are available from Release 1.3.0 onwards. See example-2 with route configuration for payload details.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPostRedfishV1SFSSAppIpAddressManagementsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPostRedfishV1SFSSAppIpAddressManagementsRequest
 */
 func (a *DefaultAPIService) PostRedfishV1SFSSAppIpAddressManagements(ctx context.Context) ApiPostRedfishV1SFSSAppIpAddressManagementsRequest {
 	return ApiPostRedfishV1SFSSAppIpAddressManagementsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DefaultAPIService) PostRedfishV1SFSSAppIpAddressManagementsExecute(r ApiPostRedfishV1SFSSAppIpAddressManagementsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRedfishV1SFSSAppIpAddressManagements")
@@ -6069,8 +6018,8 @@ func (a *DefaultAPIService) PostRedfishV1SFSSAppIpAddressManagementsExecute(r Ap
 }
 
 type ApiPostRedfishV1SFSSAppLicensesRequest struct {
-	ctx                                 context.Context
-	ApiService                          *DefaultAPIService
+	ctx context.Context
+	ApiService *DefaultAPIService
 	postRedfishV1SFSSAppLicensesRequest *PostRedfishV1SFSSAppLicensesRequest
 }
 
@@ -6089,25 +6038,24 @@ PostRedfishV1SFSSAppLicenses Install a license
 
 This API installs a license in SFSS application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPostRedfishV1SFSSAppLicensesRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPostRedfishV1SFSSAppLicensesRequest
 */
 func (a *DefaultAPIService) PostRedfishV1SFSSAppLicenses(ctx context.Context) ApiPostRedfishV1SFSSAppLicensesRequest {
 	return ApiPostRedfishV1SFSSAppLicensesRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PostRedfishV1SFSSAppLicenses200Response
+//  @return PostRedfishV1SFSSAppLicenses200Response
 func (a *DefaultAPIService) PostRedfishV1SFSSAppLicensesExecute(r ApiPostRedfishV1SFSSAppLicensesRequest) (*PostRedfishV1SFSSAppLicenses200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PostRedfishV1SFSSAppLicenses200Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PostRedfishV1SFSSAppLicenses200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRedfishV1SFSSAppLicenses")
@@ -6178,11 +6126,12 @@ func (a *DefaultAPIService) PostRedfishV1SFSSAppLicensesExecute(r ApiPostRedfish
 }
 
 type ApiPostRedfishV1SFSSAppNTP1Request struct {
-	ctx                             context.Context
-	ApiService                      *DefaultAPIService
+	ctx context.Context
+	ApiService *DefaultAPIService
 	postRedfishV1SFSSAppNTP1Request *PostRedfishV1SFSSAppNTP1Request
 }
 
+//  
 func (r ApiPostRedfishV1SFSSAppNTP1Request) PostRedfishV1SFSSAppNTP1Request(postRedfishV1SFSSAppNTP1Request PostRedfishV1SFSSAppNTP1Request) ApiPostRedfishV1SFSSAppNTP1Request {
 	r.postRedfishV1SFSSAppNTP1Request = &postRedfishV1SFSSAppNTP1Request
 	return r
@@ -6197,25 +6146,24 @@ PostRedfishV1SFSSAppNTP1 Configure NTP server
 
 This API restores an SFSS configuration from the backup file.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPostRedfishV1SFSSAppNTP1Request
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPostRedfishV1SFSSAppNTP1Request
 */
 func (a *DefaultAPIService) PostRedfishV1SFSSAppNTP1(ctx context.Context) ApiPostRedfishV1SFSSAppNTP1Request {
 	return ApiPostRedfishV1SFSSAppNTP1Request{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PostRedfishV1SFSSAppNTP1200Response
+//  @return PostRedfishV1SFSSAppNTP1200Response
 func (a *DefaultAPIService) PostRedfishV1SFSSAppNTP1Execute(r ApiPostRedfishV1SFSSAppNTP1Request) (*PostRedfishV1SFSSAppNTP1200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PostRedfishV1SFSSAppNTP1200Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PostRedfishV1SFSSAppNTP1200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRedfishV1SFSSAppNTP1")
@@ -6286,8 +6234,8 @@ func (a *DefaultAPIService) PostRedfishV1SFSSAppNTP1Execute(r ApiPostRedfishV1SF
 }
 
 type ApiPostRedfishV1SFSSAppRadiusServersRequest struct {
-	ctx                                      context.Context
-	ApiService                               *DefaultAPIService
+	ctx context.Context
+	ApiService *DefaultAPIService
 	postRedfishV1SFSSAppRadiusServersRequest *PostRedfishV1SFSSAppRadiusServersRequest
 }
 
@@ -6306,25 +6254,24 @@ PostRedfishV1SFSSAppRadiusServers Configure RADIUS server
 
 This API configures a RADIUS server for authentication in SFSS application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPostRedfishV1SFSSAppRadiusServersRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPostRedfishV1SFSSAppRadiusServersRequest
 */
 func (a *DefaultAPIService) PostRedfishV1SFSSAppRadiusServers(ctx context.Context) ApiPostRedfishV1SFSSAppRadiusServersRequest {
 	return ApiPostRedfishV1SFSSAppRadiusServersRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PostRedfishV1SFSSAppRadiusServers200Response
+//  @return PostRedfishV1SFSSAppRadiusServers200Response
 func (a *DefaultAPIService) PostRedfishV1SFSSAppRadiusServersExecute(r ApiPostRedfishV1SFSSAppRadiusServersRequest) (*PostRedfishV1SFSSAppRadiusServers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PostRedfishV1SFSSAppRadiusServers200Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PostRedfishV1SFSSAppRadiusServers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRedfishV1SFSSAppRadiusServers")
@@ -6395,12 +6342,12 @@ func (a *DefaultAPIService) PostRedfishV1SFSSAppRadiusServersExecute(r ApiPostRe
 }
 
 type ApiPostRedfishV1SFSSAppRestoresRequest struct {
-	ctx                                 context.Context
-	ApiService                          *DefaultAPIService
+	ctx context.Context
+	ApiService *DefaultAPIService
 	postRedfishV1SFSSAppRestoresRequest *PostRedfishV1SFSSAppRestoresRequest
 }
 
-// {             \&quot;ImageServerLocation\&quot;: \&quot;100.94.72.166:/home/dell/temp_images/backup_file.tar.gz\&quot;,             \&quot;ImageServerPassword\&quot;: \&quot;Force10\&quot;,             \&quot;TransportType\&quot;: \&quot;SCP\&quot;,             \&quot;ImageServerUserName\&quot;: \&quot;Dell\&quot;         }
+//  {             \&quot;ImageServerLocation\&quot;: \&quot;100.94.72.166:/home/dell/temp_images/backup_file.tar.gz\&quot;,             \&quot;ImageServerPassword\&quot;: \&quot;Force10\&quot;,             \&quot;TransportType\&quot;: \&quot;SCP\&quot;,             \&quot;ImageServerUserName\&quot;: \&quot;Dell\&quot;         }
 func (r ApiPostRedfishV1SFSSAppRestoresRequest) PostRedfishV1SFSSAppRestoresRequest(postRedfishV1SFSSAppRestoresRequest PostRedfishV1SFSSAppRestoresRequest) ApiPostRedfishV1SFSSAppRestoresRequest {
 	r.postRedfishV1SFSSAppRestoresRequest = &postRedfishV1SFSSAppRestoresRequest
 	return r
@@ -6415,25 +6362,24 @@ PostRedfishV1SFSSAppRestores Restore a backup
 
 This API restores an SFSS configuration from the backup file.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPostRedfishV1SFSSAppRestoresRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPostRedfishV1SFSSAppRestoresRequest
 */
 func (a *DefaultAPIService) PostRedfishV1SFSSAppRestores(ctx context.Context) ApiPostRedfishV1SFSSAppRestoresRequest {
 	return ApiPostRedfishV1SFSSAppRestoresRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PostRedfishV1SFSSAppRestores200Response
+//  @return PostRedfishV1SFSSAppRestores200Response
 func (a *DefaultAPIService) PostRedfishV1SFSSAppRestoresExecute(r ApiPostRedfishV1SFSSAppRestoresRequest) (*PostRedfishV1SFSSAppRestores200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PostRedfishV1SFSSAppRestores200Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PostRedfishV1SFSSAppRestores200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRedfishV1SFSSAppRestores")
@@ -6504,11 +6450,12 @@ func (a *DefaultAPIService) PostRedfishV1SFSSAppRestoresExecute(r ApiPostRedfish
 }
 
 type ApiPostRedfishV1SFSSAppSFSSImagesRequest struct {
-	ctx                                   context.Context
-	ApiService                            *DefaultAPIService
+	ctx context.Context
+	ApiService *DefaultAPIService
 	postRedfishV1SFSSAppSFSSImagesRequest *PostRedfishV1SFSSAppSFSSImagesRequest
 }
 
+// 
 func (r ApiPostRedfishV1SFSSAppSFSSImagesRequest) PostRedfishV1SFSSAppSFSSImagesRequest(postRedfishV1SFSSAppSFSSImagesRequest PostRedfishV1SFSSAppSFSSImagesRequest) ApiPostRedfishV1SFSSAppSFSSImagesRequest {
 	r.postRedfishV1SFSSAppSFSSImagesRequest = &postRedfishV1SFSSAppSFSSImagesRequest
 	return r
@@ -6523,25 +6470,24 @@ PostRedfishV1SFSSAppSFSSImages Add image
 
 This API adds an SFSS image to the SFSS application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPostRedfishV1SFSSAppSFSSImagesRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPostRedfishV1SFSSAppSFSSImagesRequest
 */
 func (a *DefaultAPIService) PostRedfishV1SFSSAppSFSSImages(ctx context.Context) ApiPostRedfishV1SFSSAppSFSSImagesRequest {
 	return ApiPostRedfishV1SFSSAppSFSSImagesRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PutRedfishV1SFSSApp200Response
+//  @return PutRedfishV1SFSSApp200Response
 func (a *DefaultAPIService) PostRedfishV1SFSSAppSFSSImagesExecute(r ApiPostRedfishV1SFSSAppSFSSImagesRequest) (*PutRedfishV1SFSSApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PutRedfishV1SFSSApp200Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PutRedfishV1SFSSApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRedfishV1SFSSAppSFSSImages")
@@ -6612,8 +6558,8 @@ func (a *DefaultAPIService) PostRedfishV1SFSSAppSFSSImagesExecute(r ApiPostRedfi
 }
 
 type ApiPostRedfishV1SFSSAppTacacsServersRequest struct {
-	ctx                                      context.Context
-	ApiService                               *DefaultAPIService
+	ctx context.Context
+	ApiService *DefaultAPIService
 	postRedfishV1SFSSAppTacacsServersRequest *PostRedfishV1SFSSAppTacacsServersRequest
 }
 
@@ -6632,25 +6578,24 @@ PostRedfishV1SFSSAppTacacsServers Configure TACACS+ server
 
 This API configures a TACACS+ server in SFSS application.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPostRedfishV1SFSSAppTacacsServersRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPostRedfishV1SFSSAppTacacsServersRequest
 */
 func (a *DefaultAPIService) PostRedfishV1SFSSAppTacacsServers(ctx context.Context) ApiPostRedfishV1SFSSAppTacacsServersRequest {
 	return ApiPostRedfishV1SFSSAppTacacsServersRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PostRedfishV1SFSSAppTacacsServers200Response
+//  @return PostRedfishV1SFSSAppTacacsServers200Response
 func (a *DefaultAPIService) PostRedfishV1SFSSAppTacacsServersExecute(r ApiPostRedfishV1SFSSAppTacacsServersRequest) (*PostRedfishV1SFSSAppTacacsServers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PostRedfishV1SFSSAppTacacsServers200Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PostRedfishV1SFSSAppTacacsServers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRedfishV1SFSSAppTacacsServers")
@@ -6721,13 +6666,13 @@ func (a *DefaultAPIService) PostRedfishV1SFSSAppTacacsServersExecute(r ApiPostRe
 }
 
 type ApiPutRedfishV1SFSSAppRequest struct {
-	ctx                        context.Context
-	ApiService                 *DefaultAPIService
-	versiontbd                 *string
+	ctx context.Context
+	ApiService *DefaultAPIService
+	versiontbd *string
 	putRedfishV1SFSSAppRequest *PutRedfishV1SFSSAppRequest
 }
 
-// ImageId
+// ImageId 
 func (r ApiPutRedfishV1SFSSAppRequest) Versiontbd(versiontbd string) ApiPutRedfishV1SFSSAppRequest {
 	r.versiontbd = &versiontbd
 	return r
@@ -6748,25 +6693,24 @@ PutRedfishV1SFSSApp Upgrade application
 
 This API upgrades the SFSS application to the specified version from the list of available images.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPutRedfishV1SFSSAppRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPutRedfishV1SFSSAppRequest
 */
 func (a *DefaultAPIService) PutRedfishV1SFSSApp(ctx context.Context) ApiPutRedfishV1SFSSAppRequest {
 	return ApiPutRedfishV1SFSSAppRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PutRedfishV1SFSSApp200Response
+//  @return PutRedfishV1SFSSApp200Response
 func (a *DefaultAPIService) PutRedfishV1SFSSAppExecute(r ApiPutRedfishV1SFSSAppRequest) (*PutRedfishV1SFSSApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PutRedfishV1SFSSApp200Response
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PutRedfishV1SFSSApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PutRedfishV1SFSSApp")
@@ -6840,9 +6784,9 @@ func (a *DefaultAPIService) PutRedfishV1SFSSAppExecute(r ApiPutRedfishV1SFSSAppR
 }
 
 type ApiPutRedfishV1SFSSAppAlertsRequest struct {
-	ctx                              context.Context
-	ApiService                       *DefaultAPIService
-	uuid                             string
+	ctx context.Context
+	ApiService *DefaultAPIService
+	uuid string
 	putRedfishV1SFSSAppAlertsRequest *PutRedfishV1SFSSAppAlertsRequest
 }
 
@@ -6861,27 +6805,26 @@ PutRedfishV1SFSSAppAlerts Update alert
 
 This API updates an existing alert in the SFSS application based on the alert identifier.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param uuid Alert UUID
-	@return ApiPutRedfishV1SFSSAppAlertsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param uuid Alert UUID
+ @return ApiPutRedfishV1SFSSAppAlertsRequest
 */
 func (a *DefaultAPIService) PutRedfishV1SFSSAppAlerts(ctx context.Context, uuid string) ApiPutRedfishV1SFSSAppAlertsRequest {
 	return ApiPutRedfishV1SFSSAppAlertsRequest{
 		ApiService: a,
-		ctx:        ctx,
-		uuid:       uuid,
+		ctx: ctx,
+		uuid: uuid,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PostRedfishV1SFSSAppAlerts200Response
+//  @return PostRedfishV1SFSSAppAlerts200Response
 func (a *DefaultAPIService) PutRedfishV1SFSSAppAlertsExecute(r ApiPutRedfishV1SFSSAppAlertsRequest) (*PostRedfishV1SFSSAppAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PostRedfishV1SFSSAppAlerts200Response
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PostRedfishV1SFSSAppAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PutRedfishV1SFSSAppAlerts")
@@ -6953,9 +6896,9 @@ func (a *DefaultAPIService) PutRedfishV1SFSSAppAlertsExecute(r ApiPutRedfishV1SF
 }
 
 type ApiPutRedfishV1SFSSAppCDCInstanceManagersRequest struct {
-	ctx                                           context.Context
-	ApiService                                    *DefaultAPIService
-	instanceId                                    string
+	ctx context.Context
+	ApiService *DefaultAPIService
+	instanceId string
 	putRedfishV1SFSSAppCDCInstanceManagersRequest *PutRedfishV1SFSSAppCDCInstanceManagersRequest
 }
 
@@ -6974,27 +6917,26 @@ PutRedfishV1SFSSAppCDCInstanceManagers Update CDC instance
 
 This API updates CDC instance information based on the specified instance identifier.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param instanceId InstanceIdentifier
-	@return ApiPutRedfishV1SFSSAppCDCInstanceManagersRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param instanceId InstanceIdentifier
+ @return ApiPutRedfishV1SFSSAppCDCInstanceManagersRequest
 */
 func (a *DefaultAPIService) PutRedfishV1SFSSAppCDCInstanceManagers(ctx context.Context, instanceId string) ApiPutRedfishV1SFSSAppCDCInstanceManagersRequest {
 	return ApiPutRedfishV1SFSSAppCDCInstanceManagersRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 		instanceId: instanceId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PostRedfishV1SFSSAppFabricManagerInfoPost200Response
+//  @return PostRedfishV1SFSSAppFabricManagerInfoPost200Response
 func (a *DefaultAPIService) PutRedfishV1SFSSAppCDCInstanceManagersExecute(r ApiPutRedfishV1SFSSAppCDCInstanceManagersRequest) (*PostRedfishV1SFSSAppFabricManagerInfoPost200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PostRedfishV1SFSSAppFabricManagerInfoPost200Response
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PostRedfishV1SFSSAppFabricManagerInfoPost200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PutRedfishV1SFSSAppCDCInstanceManagers")
@@ -7066,9 +7008,9 @@ func (a *DefaultAPIService) PutRedfishV1SFSSAppCDCInstanceManagersExecute(r ApiP
 }
 
 type ApiPutRedfishV1SFSSAppIpAddressManagementsRequest struct {
-	ctx                                            context.Context
-	ApiService                                     *DefaultAPIService
-	interfaceId                                    string
+	ctx context.Context
+	ApiService *DefaultAPIService
+	interfaceId string
 	putRedfishV1SFSSAppIpAddressManagementsRequest *PutRedfishV1SFSSAppIpAddressManagementsRequest
 }
 
@@ -7087,14 +7029,14 @@ PutRedfishV1SFSSAppIpAddressManagements Update interface
 
 This API updates the interface information based on the specified interface name. IPv4 and IPv6 route-specific configuration parameters are available from Release 1.3.0 onwards. See example-2 with route configuration for payload details.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param interfaceId Interface Name
-	@return ApiPutRedfishV1SFSSAppIpAddressManagementsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param interfaceId Interface Name
+ @return ApiPutRedfishV1SFSSAppIpAddressManagementsRequest
 */
 func (a *DefaultAPIService) PutRedfishV1SFSSAppIpAddressManagements(ctx context.Context, interfaceId string) ApiPutRedfishV1SFSSAppIpAddressManagementsRequest {
 	return ApiPutRedfishV1SFSSAppIpAddressManagementsRequest{
-		ApiService:  a,
-		ctx:         ctx,
+		ApiService: a,
+		ctx: ctx,
 		interfaceId: interfaceId,
 	}
 }
@@ -7102,9 +7044,9 @@ func (a *DefaultAPIService) PutRedfishV1SFSSAppIpAddressManagements(ctx context.
 // Execute executes the request
 func (a *DefaultAPIService) PutRedfishV1SFSSAppIpAddressManagementsExecute(r ApiPutRedfishV1SFSSAppIpAddressManagementsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPut
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PutRedfishV1SFSSAppIpAddressManagements")
@@ -7167,11 +7109,12 @@ func (a *DefaultAPIService) PutRedfishV1SFSSAppIpAddressManagementsExecute(r Api
 }
 
 type ApiPutRedfishV1SFSSAppNTPRequest struct {
-	ctx                           context.Context
-	ApiService                    *DefaultAPIService
+	ctx context.Context
+	ApiService *DefaultAPIService
 	putRedfishV1SFSSAppNTPRequest *PutRedfishV1SFSSAppNTPRequest
 }
 
+// 
 func (r ApiPutRedfishV1SFSSAppNTPRequest) PutRedfishV1SFSSAppNTPRequest(putRedfishV1SFSSAppNTPRequest PutRedfishV1SFSSAppNTPRequest) ApiPutRedfishV1SFSSAppNTPRequest {
 	r.putRedfishV1SFSSAppNTPRequest = &putRedfishV1SFSSAppNTPRequest
 	return r
@@ -7184,27 +7127,26 @@ func (r ApiPutRedfishV1SFSSAppNTPRequest) Execute() (*PutRedfishV1SFSSAppNTP200R
 /*
 PutRedfishV1SFSSAppNTP Enable or disable NTP service
 
-This API enables or disables the configured NTP service.
+This API enables or disables the configured NTP service. 
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPutRedfishV1SFSSAppNTPRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPutRedfishV1SFSSAppNTPRequest
 */
 func (a *DefaultAPIService) PutRedfishV1SFSSAppNTP(ctx context.Context) ApiPutRedfishV1SFSSAppNTPRequest {
 	return ApiPutRedfishV1SFSSAppNTPRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PutRedfishV1SFSSAppNTP200Response
+//  @return PutRedfishV1SFSSAppNTP200Response
 func (a *DefaultAPIService) PutRedfishV1SFSSAppNTPExecute(r ApiPutRedfishV1SFSSAppNTPRequest) (*PutRedfishV1SFSSAppNTP200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PutRedfishV1SFSSAppNTP200Response
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PutRedfishV1SFSSAppNTP200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PutRedfishV1SFSSAppNTP")

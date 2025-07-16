@@ -11,15 +11,15 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the GetRedfishV1SFSSAppCDCInstanceManagersID200Response type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &GetRedfishV1SFSSAppCDCInstanceManagersID200Response{}
 
-// GetRedfishV1SFSSAppCDCInstanceManagersID200Response
+// GetRedfishV1SFSSAppCDCInstanceManagersID200Response 
 type GetRedfishV1SFSSAppCDCInstanceManagersID200Response struct {
 	// Administrative state of the CDC instance
 	CDCAdminState string `json:"CDCAdminState"`
@@ -27,13 +27,13 @@ type GetRedfishV1SFSSAppCDCInstanceManagersID200Response struct {
 	DiscoverySvcAdminState string `json:"DiscoverySvcAdminState"`
 	// CDC instance identifier
 	InstanceIdentifier string `json:"InstanceIdentifier"`
-	// Interface(s) assigned to the CDC instance
+	// Interface(s) assigned to the CDC instance 
 	Interfaces []string `json:"Interfaces"`
 	// IP address assigned to the interface
-	IpAddresses  []string `json:"IpAddresses"`
-	OdataId      string   `json:"@odata.id"`
-	OdataType    string   `json:"@odata.type"`
-	OdataContext string   `json:"@odata.context"`
+	IpAddresses []string `json:"IpAddresses"`
+	OdataId string `json:"@odata.id"`
+	OdataType string `json:"@odata.type"`
+	OdataContext string `json:"@odata.context"`
 }
 
 type _GetRedfishV1SFSSAppCDCInstanceManagersID200Response GetRedfishV1SFSSAppCDCInstanceManagersID200Response
@@ -256,7 +256,7 @@ func (o *GetRedfishV1SFSSAppCDCInstanceManagersID200Response) SetOdataContext(v 
 }
 
 func (o GetRedfishV1SFSSAppCDCInstanceManagersID200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -296,10 +296,10 @@ func (o *GetRedfishV1SFSSAppCDCInstanceManagersID200Response) UnmarshalJSON(data
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -355,3 +355,5 @@ func (v *NullableGetRedfishV1SFSSAppCDCInstanceManagersID200Response) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

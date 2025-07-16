@@ -11,15 +11,15 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the PutRedfishV1SFSSApp200Response type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PutRedfishV1SFSSApp200Response{}
 
-// PutRedfishV1SFSSApp200Response
+// PutRedfishV1SFSSApp200Response 
 type PutRedfishV1SFSSApp200Response struct {
 	ImageId string `json:"ImageId"`
 }
@@ -69,7 +69,7 @@ func (o *PutRedfishV1SFSSApp200Response) SetImageId(v string) {
 }
 
 func (o PutRedfishV1SFSSApp200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,10 +95,10 @@ func (o *PutRedfishV1SFSSApp200Response) UnmarshalJSON(data []byte) (err error) 
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -154,3 +154,5 @@ func (v *NullablePutRedfishV1SFSSApp200Response) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

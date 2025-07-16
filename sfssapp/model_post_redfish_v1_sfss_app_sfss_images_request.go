@@ -11,15 +11,15 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the PostRedfishV1SFSSAppSFSSImagesRequest type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PostRedfishV1SFSSAppSFSSImagesRequest{}
 
-// PostRedfishV1SFSSAppSFSSImagesRequest
+// PostRedfishV1SFSSAppSFSSImagesRequest 
 type PostRedfishV1SFSSAppSFSSImagesRequest struct {
 	// Username to access the remote server
 	ImageServerUserName string `json:"ImageServerUserName"`
@@ -151,7 +151,7 @@ func (o *PostRedfishV1SFSSAppSFSSImagesRequest) SetTransportType(v string) {
 }
 
 func (o PostRedfishV1SFSSAppSFSSImagesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -183,10 +183,10 @@ func (o *PostRedfishV1SFSSAppSFSSImagesRequest) UnmarshalJSON(data []byte) (err 
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -242,3 +242,5 @@ func (v *NullablePostRedfishV1SFSSAppSFSSImagesRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

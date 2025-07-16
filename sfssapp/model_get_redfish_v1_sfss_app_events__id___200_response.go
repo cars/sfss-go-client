@@ -11,26 +11,26 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the GetRedfishV1SFSSAppEventsID200Response type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &GetRedfishV1SFSSAppEventsID200Response{}
 
-// GetRedfishV1SFSSAppEventsID200Response
+// GetRedfishV1SFSSAppEventsID200Response 
 type GetRedfishV1SFSSAppEventsID200Response struct {
 	// Required arguments for the specified event
 	Args []string `json:"Args"`
 	// CDC instance identifier
 	CDCInstance string `json:"CDCInstance"`
-	// Enhanced Event Message Initiative (EEMI) Message Code
+	// Enhanced Event Message Initiative (EEMI) Message Code 
 	EEMI string `json:"EEMI"`
 	// Hostname of the SFSS VM
 	HostName string `json:"HostName"`
 	// Message summary
-	Message           string   `json:"Message"`
+	Message string `json:"Message"`
 	OriginOfCondition []string `json:"OriginOfCondition"`
 	// Severity of the system message; possible values include Critical, Warning, and Informational
 	Severity string `json:"Severity"`
@@ -39,9 +39,9 @@ type GetRedfishV1SFSSAppEventsID200Response struct {
 	// The module within the SFSS service that is responsible for handling the event
 	SourceSubType string `json:"SourceSubType"`
 	// Date and time at which the event occurred; date in dd/mm/yyyy format and time in hh:mm:ss format
-	TimeStamp    string `json:"timeStamp"`
-	OdataId      string `json:"@odata.id"`
-	OdataType    string `json:"@odata.type"`
+	TimeStamp string `json:"timeStamp"`
+	OdataId string `json:"@odata.id"`
+	OdataType string `json:"@odata.type"`
 	OdataContext string `json:"@odata.context"`
 }
 
@@ -390,7 +390,7 @@ func (o *GetRedfishV1SFSSAppEventsID200Response) SetOdataContext(v string) {
 }
 
 func (o GetRedfishV1SFSSAppEventsID200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -440,10 +440,10 @@ func (o *GetRedfishV1SFSSAppEventsID200Response) UnmarshalJSON(data []byte) (err
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -499,3 +499,5 @@ func (v *NullableGetRedfishV1SFSSAppEventsID200Response) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

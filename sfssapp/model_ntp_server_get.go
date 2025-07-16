@@ -21,12 +21,12 @@ var _ MappedNullable = &NTPServerGET{}
 type NTPServerGET struct {
 	// IP address of the NTP server
 	NtpServer *string `json:"NtpServer,omitempty"`
-	// NTP connection state; possible values include Connected and Not Connected
+	// NTP connection state; possible values include Connected and Not Connected 
 	State *string `json:"State,omitempty"`
 	// Status of the NTP service; possible values include Enable and Disable
-	Status       *string `json:"Status,omitempty"`
-	OdataId      *string `json:"@odata.id,omitempty"`
-	OdataType    *string `json:"@odata.type,omitempty"`
+	Status *string `json:"Status,omitempty"`
+	OdataId *string `json:"@odata.id,omitempty"`
+	OdataType *string `json:"@odata.type,omitempty"`
 	OdataContext *string `json:"@odata.context,omitempty"`
 }
 
@@ -240,7 +240,7 @@ func (o *NTPServerGET) SetOdataContext(v string) {
 }
 
 func (o NTPServerGET) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -305,3 +305,5 @@ func (v *NullableNTPServerGET) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -11,8 +11,8 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
@@ -29,19 +29,19 @@ type UserActivityAuditGETID struct {
 	Operation string `json:"Operation"`
 	// Information provided by the user for the specific user activity
 	Payload string `json:"Payload"`
-	// IP address of the system from which the specific user activity was done
+	// IP address of the system from which the specific user activity was done 
 	SourceIP string `json:"SourceIP"`
 	// Date and time at which the operation was performed; the date is of the mm/dd/yyyy format and time is of hh:mm:ss format
 	TimeStamp string `json:"TimeStamp"`
 	// RESTAPI URL that is used for the specific user activity
-	URL       string `json:"URL"`
+	URL string `json:"URL"`
 	UserAgent string `json:"UserAgent"`
-	// Username of the user who performed the operation
+	// Username of the user who performed the operation 
 	UserName string `json:"UserName"`
 	// Role of the user
-	UserRole     string `json:"UserRole"`
-	OdataId      string `json:"@odata.id"`
-	OdataType    string `json:"@odata.type"`
+	UserRole string `json:"UserRole"`
+	OdataId string `json:"@odata.id"`
+	OdataType string `json:"@odata.type"`
 	OdataContext string `json:"@odata.context"`
 }
 
@@ -390,7 +390,7 @@ func (o *UserActivityAuditGETID) SetOdataContext(v string) {
 }
 
 func (o UserActivityAuditGETID) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -440,10 +440,10 @@ func (o *UserActivityAuditGETID) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -499,3 +499,5 @@ func (v *NullableUserActivityAuditGETID) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

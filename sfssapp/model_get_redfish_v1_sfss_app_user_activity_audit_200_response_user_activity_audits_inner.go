@@ -11,8 +11,8 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
@@ -29,7 +29,7 @@ type GetRedfishV1SFSSAppUserActivityAudit200ResponseUserActivityAuditsInner stru
 	Operation string `json:"Operation"`
 	// Information provided by the user for the specific user activity
 	Payload string `json:"Payload"`
-	// IP address of the system from which the specific user activity was done
+	// IP address of the system from which the specific user activity was done 
 	SourceIP string `json:"SourceIP"`
 	// Date and time at which the user performed the operation; date in dd/mm/yyyy format and time in hh:mm:ss format
 	TimeStamp string `json:"TimeStamp"`
@@ -40,9 +40,9 @@ type GetRedfishV1SFSSAppUserActivityAudit200ResponseUserActivityAuditsInner stru
 	// Username of the user who performed the operation
 	UserName string `json:"UserName"`
 	// Role of the user
-	UserRole     string `json:"UserRole"`
-	OdataId      string `json:"@odata.id"`
-	OdataType    string `json:"@odata.type"`
+	UserRole string `json:"UserRole"`
+	OdataId string `json:"@odata.id"`
+	OdataType string `json:"@odata.type"`
 	OdataContext string `json:"@odata.context"`
 }
 
@@ -391,7 +391,7 @@ func (o *GetRedfishV1SFSSAppUserActivityAudit200ResponseUserActivityAuditsInner)
 }
 
 func (o GetRedfishV1SFSSAppUserActivityAudit200ResponseUserActivityAuditsInner) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -441,10 +441,10 @@ func (o *GetRedfishV1SFSSAppUserActivityAudit200ResponseUserActivityAuditsInner)
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -500,3 +500,5 @@ func (v *NullableGetRedfishV1SFSSAppUserActivityAudit200ResponseUserActivityAudi
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

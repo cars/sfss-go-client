@@ -11,23 +11,23 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
 // checks if the GetRedfishV1SFSSAppCDCHealthStatus200Response type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &GetRedfishV1SFSSAppCDCHealthStatus200Response{}
 
-// GetRedfishV1SFSSAppCDCHealthStatus200Response
+// GetRedfishV1SFSSAppCDCHealthStatus200Response 
 type GetRedfishV1SFSSAppCDCHealthStatus200Response struct {
 	// Health status of the CDC instance; possible values include Ok, Warning, and Critical
 	CDCHealthStatus []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner `json:"CDCHealthStatus"`
 	// Number of health status records (one for each CDC instance)
 	CDCHealthStatusodataCount float32 `json:"CDCHealthStatus@odata.count"`
-	OdataId                   string  `json:"@odata.id"`
-	OdataContext              string  `json:"@odata.context"`
-	OdataType                 string  `json:"@odata.type"`
+	OdataId string `json:"@odata.id"`
+	OdataContext string `json:"@odata.context"`
+	OdataType string `json:"@odata.type"`
 }
 
 type _GetRedfishV1SFSSAppCDCHealthStatus200Response GetRedfishV1SFSSAppCDCHealthStatus200Response
@@ -175,7 +175,7 @@ func (o *GetRedfishV1SFSSAppCDCHealthStatus200Response) SetOdataType(v string) {
 }
 
 func (o GetRedfishV1SFSSAppCDCHealthStatus200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -209,10 +209,10 @@ func (o *GetRedfishV1SFSSAppCDCHealthStatus200Response) UnmarshalJSON(data []byt
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -268,3 +268,5 @@ func (v *NullableGetRedfishV1SFSSAppCDCHealthStatus200Response) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

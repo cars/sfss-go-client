@@ -11,8 +11,8 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
@@ -30,18 +30,18 @@ type EventsGETEventsInner struct {
 	// Hostname of the CDC instance
 	HostName string `json:"HostName"`
 	// Message summary
-	Message           string                   `json:"Message"`
+	Message string `json:"Message"`
 	OriginOfCondition []map[string]interface{} `json:"OriginOfCondition,omitempty"`
 	// Severity of the event; possible values include Critical, Warning, and Informational
 	Severity string `json:"Severity"`
 	// SFSS service that is responsible for handling the event
 	Source string `json:"Source"`
-	// The module within the SFSS service that is responsible for handling the event
+	// The module within the SFSS service that is responsible for handling the event 
 	SourceSubType string `json:"SourceSubType"`
 	// Date and time at which the event occurred; date is of the mm/dd/yyyy format and time is of hh:mm:ss format
-	TimeStamp    string `json:"timeStamp"`
-	OdataId      string `json:"@odata.id"`
-	OdataType    string `json:"@odata.type"`
+	TimeStamp string `json:"timeStamp"`
+	OdataId string `json:"@odata.id"`
+	OdataType string `json:"@odata.type"`
 	OdataContext string `json:"@odata.context"`
 }
 
@@ -404,7 +404,7 @@ func (o *EventsGETEventsInner) SetOdataContext(v string) {
 }
 
 func (o EventsGETEventsInner) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -456,10 +456,10 @@ func (o *EventsGETEventsInner) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -515,3 +515,5 @@ func (v *NullableEventsGETEventsInner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

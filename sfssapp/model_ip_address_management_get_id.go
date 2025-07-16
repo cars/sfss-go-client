@@ -11,8 +11,8 @@ API version: 1.0
 package sfssapp
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
@@ -46,10 +46,10 @@ type IpAddressManagementGETID struct {
 	// Maximum transmission unit for the interface; default value is 1500
 	MTU float32 `json:"MTU"`
 	// IPv6 static route configuration
-	IPV6Route    []PostRedfishV1SFSSAppIpAddressManagementsRequestIPV4RouteInner `json:"IPV6Route,omitempty"`
-	OdataId      string                                                          `json:"@odata.id"`
-	OdataType    string                                                          `json:"@odata.type"`
-	OdataContext string                                                          `json:"@odata.context"`
+	IPV6Route []PostRedfishV1SFSSAppIpAddressManagementsRequestIPV4RouteInner `json:"IPV6Route,omitempty"`
+	OdataId string `json:"@odata.id"`
+	OdataType string `json:"@odata.type"`
+	OdataContext string `json:"@odata.context"`
 }
 
 type _IpAddressManagementGETID IpAddressManagementGETID
@@ -486,7 +486,7 @@ func (o *IpAddressManagementGETID) SetOdataContext(v string) {
 }
 
 func (o IpAddressManagementGETID) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -544,10 +544,10 @@ func (o *IpAddressManagementGETID) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -603,3 +603,5 @@ func (v *NullableIpAddressManagementGETID) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+
