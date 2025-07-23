@@ -31,7 +31,7 @@ paths:
       summary: Get SFSS application details
     put:
       description: This API upgrades the SFSS application to the specified version.
-      operationId: PUT-redfish-v1-SFSSApp
+      operationId: put-redfish-v1-SFSSApp
       requestBody:
         content:
           application/json:
@@ -40,7 +40,7 @@ paths:
                 value:
                   Version: 1.2.0
             schema:
-              $ref: "#/components/schemas/PUT_redfish_v1_SFSSApp_request"
+              $ref: "#/components/schemas/put_redfish_v1_SFSSApp_request"
         description: |-
           {
               "Version": "1.2.0"
@@ -54,7 +54,7 @@ paths:
                   value:
                     Version: 1.2.0
               schema:
-                $ref: "#/components/schemas/PUT_redfish_v1_SFSSApp_request"
+                $ref: "#/components/schemas/put_redfish_v1_SFSSApp_request"
           description: OK
       security:
       - BasicAuth: []
@@ -549,7 +549,7 @@ paths:
     put:
       description: This API is used to accept the End User License Agreement (EULA)
         for the partner license.
-      operationId: PUT-redfish-v1-SFSSApp-Licenses
+      operationId: put-redfish-v1-SFSSApp-Licenses
       parameters: []
       requestBody:
         content:
@@ -560,7 +560,7 @@ paths:
                   Identifier: "2"
                   EULA: Agreed
             schema:
-              $ref: "#/components/schemas/PUT_redfish_v1_SFSSApp_Licenses_request"
+              $ref: "#/components/schemas/put_redfish_v1_SFSSApp_Licenses_request"
         description: |-
           {
           "Identifier": "2",
@@ -575,7 +575,7 @@ paths:
                   value:
                     Identifier: "2"
               schema:
-                $ref: "#/components/schemas/PUT_redfish_v1_SFSSApp_Licenses_200_response"
+                $ref: "#/components/schemas/put_redfish_v1_SFSSApp_Licenses_200_response"
           description: OK
       security:
       - BasicAuth: []
@@ -6083,7 +6083,7 @@ components:
           '@odata.id': /redfish/v1/SFSSApp
           '@odata.type': "#SFSSApp.SFSSApp"
           '@odata.context': /redfish/v1/$metadata#SFSSApp/SFSSApp/$entity
-    PUT_redfish_v1_SFSSApp_request:
+    put_redfish_v1_SFSSApp_request:
       description: ""
       example:
         Version: Version
@@ -6150,7 +6150,7 @@ components:
           '@odata.id': /redfish/v1/SFSSApp/Licenses
           '@odata.context': /redfish/v1/SFSSApp/$metadata#Licenses
           '@odata.type': "#LicensesCollection.LicensesCollection"
-    PUT_redfish_v1_SFSSApp_Licenses_request:
+    put_redfish_v1_SFSSApp_Licenses_request:
       description: ""
       properties:
         Identifier:
@@ -6168,7 +6168,7 @@ components:
         example-1:
           Identifier: "2"
           EULA: Agreed
-    PUT_redfish_v1_SFSSApp_Licenses_200_response:
+    put_redfish_v1_SFSSApp_Licenses_200_response:
       description: ""
       example:
         Identifier: Identifier

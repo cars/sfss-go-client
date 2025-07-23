@@ -128,8 +128,6 @@ Class | Method | HTTP request | Description
 *DefaultAPI* | [**GetRedfishV1SFSSAppUserActivityAudit**](docs/DefaultAPI.md#getredfishv1sfssappuseractivityaudit) | **Get** /redfish/v1/SFSSApp/UserActivityAudit | Get user activities
 *DefaultAPI* | [**GetRedfishV1SFSSAppUserActivityAuditID**](docs/DefaultAPI.md#getredfishv1sfssappuseractivityauditid) | **Get** /redfish/v1/SFSSApp/UserActivityAudit({ID}) | Get specific user activity
 *DefaultAPI* | [**GetRedfishV1SFSSApp_0**](docs/DefaultAPI.md#getredfishv1sfssapp_0) | **Get** /redfish/v1/SFSSApp/SFSSImages | Get all images
-*DefaultAPI* | [**PUTRedfishV1SFSSApp**](docs/DefaultAPI.md#putredfishv1sfssapp) | **Put** /redfish/v1/SFSSApp | Upgrade SFSS application
-*DefaultAPI* | [**PUTRedfishV1SFSSAppLicenses**](docs/DefaultAPI.md#putredfishv1sfssapplicenses) | **Put** /redfish/v1/SFSSApp/Licenses | Accept EULA
 *DefaultAPI* | [**PostRedfishV1SFSSAppAlerts**](docs/DefaultAPI.md#postredfishv1sfssappalerts) | **Post** /redfish/v1/SFSSApp/Alerts | Add alert
 *DefaultAPI* | [**PostRedfishV1SFSSAppAuthenticationSequence**](docs/DefaultAPI.md#postredfishv1sfssappauthenticationsequence) | **Post** /redfish/v1/SFSSApp/AuthenticationSequence | Add authentication sequence
 *DefaultAPI* | [**PostRedfishV1SFSSAppBackups**](docs/DefaultAPI.md#postredfishv1sfssappbackups) | **Post** /redfish/v1/SFSSApp/Backups | Perform backup
@@ -143,11 +141,13 @@ Class | Method | HTTP request | Description
 *DefaultAPI* | [**PostRedfishV1SFSSAppRestores**](docs/DefaultAPI.md#postredfishv1sfssapprestores) | **Post** /redfish/v1/SFSSApp/Restores | Restore a backup
 *DefaultAPI* | [**PostRedfishV1SFSSAppSFSSImages**](docs/DefaultAPI.md#postredfishv1sfssappsfssimages) | **Post** /redfish/v1/SFSSApp/SFSSImages | Add image
 *DefaultAPI* | [**PostRedfishV1SFSSAppTacacsServers**](docs/DefaultAPI.md#postredfishv1sfssapptacacsservers) | **Post** /redfish/v1/SFSSApp/TacacsServers | Configure TACACS+ server
-*DefaultAPI* | [**PutRedfishV1SFSSApp**](docs/DefaultAPI.md#putredfishv1sfssapp) | **Put** /redfish/v1/SFSSApp/SFSSImages | Upgrade application
+*DefaultAPI* | [**PutRedfishV1SFSSApp**](docs/DefaultAPI.md#putredfishv1sfssapp) | **Put** /redfish/v1/SFSSApp | Upgrade SFSS application
 *DefaultAPI* | [**PutRedfishV1SFSSAppAlerts**](docs/DefaultAPI.md#putredfishv1sfssappalerts) | **Put** /redfish/v1/SFSSApp/Alerts({uuid}) | Update alert
 *DefaultAPI* | [**PutRedfishV1SFSSAppCDCInstanceManagers**](docs/DefaultAPI.md#putredfishv1sfssappcdcinstancemanagers) | **Put** /redfish/v1/SFSSApp/CDCInstanceManagers({InstanceId}) | Update CDC instance
 *DefaultAPI* | [**PutRedfishV1SFSSAppIpAddressManagements**](docs/DefaultAPI.md#putredfishv1sfssappipaddressmanagements) | **Put** /redfish/v1/SFSSApp/IpAddressManagements({InterfaceId}) | Update interface
+*DefaultAPI* | [**PutRedfishV1SFSSAppLicenses**](docs/DefaultAPI.md#putredfishv1sfssapplicenses) | **Put** /redfish/v1/SFSSApp/Licenses | Accept EULA
 *DefaultAPI* | [**PutRedfishV1SFSSAppNTP**](docs/DefaultAPI.md#putredfishv1sfssappntp) | **Put** /redfish/v1/SFSSApp/NTP | Enable or disable NTP service
+*DefaultAPI* | [**PutRedfishV1SFSSApp_0**](docs/DefaultAPI.md#putredfishv1sfssapp_0) | **Put** /redfish/v1/SFSSApp/SFSSImages | Upgrade application
 
 
 ## Documentation For Models
@@ -238,9 +238,6 @@ Class | Method | HTTP request | Description
  - [LicensesGETID](docs/LicensesGETID.md)
  - [NTPServerConfig](docs/NTPServerConfig.md)
  - [NTPServerGET](docs/NTPServerGET.md)
- - [PUTRedfishV1SFSSAppLicenses200Response](docs/PUTRedfishV1SFSSAppLicenses200Response.md)
- - [PUTRedfishV1SFSSAppLicensesRequest](docs/PUTRedfishV1SFSSAppLicensesRequest.md)
- - [PUTRedfishV1SFSSAppRequest](docs/PUTRedfishV1SFSSAppRequest.md)
  - [PostRedfishV1SFSSAppAlerts200Response](docs/PostRedfishV1SFSSAppAlerts200Response.md)
  - [PostRedfishV1SFSSAppAlertsRequest](docs/PostRedfishV1SFSSAppAlertsRequest.md)
  - [PostRedfishV1SFSSAppAuthenticationSequence200Response](docs/PostRedfishV1SFSSAppAuthenticationSequence200Response.md)
@@ -269,6 +266,8 @@ Class | Method | HTTP request | Description
  - [PutRedfishV1SFSSAppCDCInstanceManagersRequest](docs/PutRedfishV1SFSSAppCDCInstanceManagersRequest.md)
  - [PutRedfishV1SFSSAppIpAddressManagementsRequest](docs/PutRedfishV1SFSSAppIpAddressManagementsRequest.md)
  - [PutRedfishV1SFSSAppIpAddressManagementsRequestIPV6RouteInner](docs/PutRedfishV1SFSSAppIpAddressManagementsRequestIPV6RouteInner.md)
+ - [PutRedfishV1SFSSAppLicenses200Response](docs/PutRedfishV1SFSSAppLicenses200Response.md)
+ - [PutRedfishV1SFSSAppLicensesRequest](docs/PutRedfishV1SFSSAppLicensesRequest.md)
  - [PutRedfishV1SFSSAppNTP200Response](docs/PutRedfishV1SFSSAppNTP200Response.md)
  - [PutRedfishV1SFSSAppNTPRequest](docs/PutRedfishV1SFSSAppNTPRequest.md)
  - [PutRedfishV1SFSSAppRequest](docs/PutRedfishV1SFSSAppRequest.md)

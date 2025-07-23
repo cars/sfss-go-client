@@ -90,7 +90,7 @@
       },
       "put": {
         "summary": "Upgrade SFSS application",
-        "operationId": "PUT-redfish-v1-SFSSApp",
+        "operationId": "put-redfish-v1-SFSSApp",
         "responses": {
           "200": {
             "description": "OK",
@@ -269,7 +269,7 @@
       },
       "put": {
         "summary": "Accept EULA",
-        "operationId": "PUT-redfish-v1-SFSSApp-Licenses",
+        "operationId": "put-redfish-v1-SFSSApp-Licenses",
         "responses": {
           "200": {
             "description": "OK",

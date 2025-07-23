@@ -16,36 +16,36 @@ import (
 	"fmt"
 )
 
-// checks if the PUTRedfishV1SFSSAppLicenses200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PUTRedfishV1SFSSAppLicenses200Response{}
+// checks if the PutRedfishV1SFSSAppLicenses200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PutRedfishV1SFSSAppLicenses200Response{}
 
-// PUTRedfishV1SFSSAppLicenses200Response 
-type PUTRedfishV1SFSSAppLicenses200Response struct {
+// PutRedfishV1SFSSAppLicenses200Response 
+type PutRedfishV1SFSSAppLicenses200Response struct {
 	Identifier string `json:"Identifier"`
 }
 
-type _PUTRedfishV1SFSSAppLicenses200Response PUTRedfishV1SFSSAppLicenses200Response
+type _PutRedfishV1SFSSAppLicenses200Response PutRedfishV1SFSSAppLicenses200Response
 
-// NewPUTRedfishV1SFSSAppLicenses200Response instantiates a new PUTRedfishV1SFSSAppLicenses200Response object
+// NewPutRedfishV1SFSSAppLicenses200Response instantiates a new PutRedfishV1SFSSAppLicenses200Response object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPUTRedfishV1SFSSAppLicenses200Response(identifier string) *PUTRedfishV1SFSSAppLicenses200Response {
-	this := PUTRedfishV1SFSSAppLicenses200Response{}
+func NewPutRedfishV1SFSSAppLicenses200Response(identifier string) *PutRedfishV1SFSSAppLicenses200Response {
+	this := PutRedfishV1SFSSAppLicenses200Response{}
 	this.Identifier = identifier
 	return &this
 }
 
-// NewPUTRedfishV1SFSSAppLicenses200ResponseWithDefaults instantiates a new PUTRedfishV1SFSSAppLicenses200Response object
+// NewPutRedfishV1SFSSAppLicenses200ResponseWithDefaults instantiates a new PutRedfishV1SFSSAppLicenses200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewPUTRedfishV1SFSSAppLicenses200ResponseWithDefaults() *PUTRedfishV1SFSSAppLicenses200Response {
-	this := PUTRedfishV1SFSSAppLicenses200Response{}
+func NewPutRedfishV1SFSSAppLicenses200ResponseWithDefaults() *PutRedfishV1SFSSAppLicenses200Response {
+	this := PutRedfishV1SFSSAppLicenses200Response{}
 	return &this
 }
 
 // GetIdentifier returns the Identifier field value
-func (o *PUTRedfishV1SFSSAppLicenses200Response) GetIdentifier() string {
+func (o *PutRedfishV1SFSSAppLicenses200Response) GetIdentifier() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -56,7 +56,7 @@ func (o *PUTRedfishV1SFSSAppLicenses200Response) GetIdentifier() string {
 
 // GetIdentifierOk returns a tuple with the Identifier field value
 // and a boolean to check if the value has been set.
-func (o *PUTRedfishV1SFSSAppLicenses200Response) GetIdentifierOk() (*string, bool) {
+func (o *PutRedfishV1SFSSAppLicenses200Response) GetIdentifierOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -64,11 +64,11 @@ func (o *PUTRedfishV1SFSSAppLicenses200Response) GetIdentifierOk() (*string, boo
 }
 
 // SetIdentifier sets field value
-func (o *PUTRedfishV1SFSSAppLicenses200Response) SetIdentifier(v string) {
+func (o *PutRedfishV1SFSSAppLicenses200Response) SetIdentifier(v string) {
 	o.Identifier = v
 }
 
-func (o PUTRedfishV1SFSSAppLicenses200Response) MarshalJSON() ([]byte, error) {
+func (o PutRedfishV1SFSSAppLicenses200Response) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -76,13 +76,13 @@ func (o PUTRedfishV1SFSSAppLicenses200Response) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o PUTRedfishV1SFSSAppLicenses200Response) ToMap() (map[string]interface{}, error) {
+func (o PutRedfishV1SFSSAppLicenses200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["Identifier"] = o.Identifier
 	return toSerialize, nil
 }
 
-func (o *PUTRedfishV1SFSSAppLicenses200Response) UnmarshalJSON(data []byte) (err error) {
+func (o *PutRedfishV1SFSSAppLicenses200Response) UnmarshalJSON(data []byte) (err error) {
 	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
@@ -104,53 +104,53 @@ func (o *PUTRedfishV1SFSSAppLicenses200Response) UnmarshalJSON(data []byte) (err
 		}
 	}
 
-	varPUTRedfishV1SFSSAppLicenses200Response := _PUTRedfishV1SFSSAppLicenses200Response{}
+	varPutRedfishV1SFSSAppLicenses200Response := _PutRedfishV1SFSSAppLicenses200Response{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
 	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varPUTRedfishV1SFSSAppLicenses200Response)
+	err = decoder.Decode(&varPutRedfishV1SFSSAppLicenses200Response)
 
 	if err != nil {
 		return err
 	}
 
-	*o = PUTRedfishV1SFSSAppLicenses200Response(varPUTRedfishV1SFSSAppLicenses200Response)
+	*o = PutRedfishV1SFSSAppLicenses200Response(varPutRedfishV1SFSSAppLicenses200Response)
 
 	return err
 }
 
-type NullablePUTRedfishV1SFSSAppLicenses200Response struct {
-	value *PUTRedfishV1SFSSAppLicenses200Response
+type NullablePutRedfishV1SFSSAppLicenses200Response struct {
+	value *PutRedfishV1SFSSAppLicenses200Response
 	isSet bool
 }
 
-func (v NullablePUTRedfishV1SFSSAppLicenses200Response) Get() *PUTRedfishV1SFSSAppLicenses200Response {
+func (v NullablePutRedfishV1SFSSAppLicenses200Response) Get() *PutRedfishV1SFSSAppLicenses200Response {
 	return v.value
 }
 
-func (v *NullablePUTRedfishV1SFSSAppLicenses200Response) Set(val *PUTRedfishV1SFSSAppLicenses200Response) {
+func (v *NullablePutRedfishV1SFSSAppLicenses200Response) Set(val *PutRedfishV1SFSSAppLicenses200Response) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullablePUTRedfishV1SFSSAppLicenses200Response) IsSet() bool {
+func (v NullablePutRedfishV1SFSSAppLicenses200Response) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullablePUTRedfishV1SFSSAppLicenses200Response) Unset() {
+func (v *NullablePutRedfishV1SFSSAppLicenses200Response) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullablePUTRedfishV1SFSSAppLicenses200Response(val *PUTRedfishV1SFSSAppLicenses200Response) *NullablePUTRedfishV1SFSSAppLicenses200Response {
-	return &NullablePUTRedfishV1SFSSAppLicenses200Response{value: val, isSet: true}
+func NewNullablePutRedfishV1SFSSAppLicenses200Response(val *PutRedfishV1SFSSAppLicenses200Response) *NullablePutRedfishV1SFSSAppLicenses200Response {
+	return &NullablePutRedfishV1SFSSAppLicenses200Response{value: val, isSet: true}
 }
 
-func (v NullablePUTRedfishV1SFSSAppLicenses200Response) MarshalJSON() ([]byte, error) {
+func (v NullablePutRedfishV1SFSSAppLicenses200Response) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullablePUTRedfishV1SFSSAppLicenses200Response) UnmarshalJSON(src []byte) error {
+func (v *NullablePutRedfishV1SFSSAppLicenses200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
