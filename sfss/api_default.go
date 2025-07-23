@@ -5079,222 +5079,6 @@ func (a *DefaultAPIService) GetRedfishV1SFSSApp_1Execute(r ApiGetRedfishV1SFSSAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPUTRedfishV1SFSSAppRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
-	pUTRedfishV1SFSSAppRequest *PUTRedfishV1SFSSAppRequest
-}
-
-// {     \&quot;Version\&quot;: \&quot;1.2.0\&quot; }
-func (r ApiPUTRedfishV1SFSSAppRequest) PUTRedfishV1SFSSAppRequest(pUTRedfishV1SFSSAppRequest PUTRedfishV1SFSSAppRequest) ApiPUTRedfishV1SFSSAppRequest {
-	r.pUTRedfishV1SFSSAppRequest = &pUTRedfishV1SFSSAppRequest
-	return r
-}
-
-func (r ApiPUTRedfishV1SFSSAppRequest) Execute() (*PUTRedfishV1SFSSAppRequest, *http.Response, error) {
-	return r.ApiService.PUTRedfishV1SFSSAppExecute(r)
-}
-
-/*
-PUTRedfishV1SFSSApp Upgrade SFSS application
-
-This API upgrades the SFSS application to the specified version.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPUTRedfishV1SFSSAppRequest
-*/
-func (a *DefaultAPIService) PUTRedfishV1SFSSApp(ctx context.Context) ApiPUTRedfishV1SFSSAppRequest {
-	return ApiPUTRedfishV1SFSSAppRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return PUTRedfishV1SFSSAppRequest
-func (a *DefaultAPIService) PUTRedfishV1SFSSAppExecute(r ApiPUTRedfishV1SFSSAppRequest) (*PUTRedfishV1SFSSAppRequest, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PUTRedfishV1SFSSAppRequest
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PUTRedfishV1SFSSApp")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/redfish/v1/SFSSApp"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.pUTRedfishV1SFSSAppRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiPUTRedfishV1SFSSAppLicensesRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
-	pUTRedfishV1SFSSAppLicensesRequest *PUTRedfishV1SFSSAppLicensesRequest
-}
-
-// { \&quot;Identifier\&quot;: \&quot;2\&quot;, \&quot;EULA\&quot;: \&quot;Agreed\&quot; }
-func (r ApiPUTRedfishV1SFSSAppLicensesRequest) PUTRedfishV1SFSSAppLicensesRequest(pUTRedfishV1SFSSAppLicensesRequest PUTRedfishV1SFSSAppLicensesRequest) ApiPUTRedfishV1SFSSAppLicensesRequest {
-	r.pUTRedfishV1SFSSAppLicensesRequest = &pUTRedfishV1SFSSAppLicensesRequest
-	return r
-}
-
-func (r ApiPUTRedfishV1SFSSAppLicensesRequest) Execute() (*PUTRedfishV1SFSSAppLicenses200Response, *http.Response, error) {
-	return r.ApiService.PUTRedfishV1SFSSAppLicensesExecute(r)
-}
-
-/*
-PUTRedfishV1SFSSAppLicenses Accept EULA
-
-This API is used to accept the End User License Agreement (EULA) for the partner license.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPUTRedfishV1SFSSAppLicensesRequest
-*/
-func (a *DefaultAPIService) PUTRedfishV1SFSSAppLicenses(ctx context.Context) ApiPUTRedfishV1SFSSAppLicensesRequest {
-	return ApiPUTRedfishV1SFSSAppLicensesRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return PUTRedfishV1SFSSAppLicenses200Response
-func (a *DefaultAPIService) PUTRedfishV1SFSSAppLicensesExecute(r ApiPUTRedfishV1SFSSAppLicensesRequest) (*PUTRedfishV1SFSSAppLicenses200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PUTRedfishV1SFSSAppLicenses200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PUTRedfishV1SFSSAppLicenses")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/redfish/v1/SFSSApp/Licenses"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.pUTRedfishV1SFSSAppLicensesRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
 type ApiPostRedfishV1SFSSAppAlertsRequest struct {
 	ctx context.Context
 	ApiService *DefaultAPIService
@@ -6668,30 +6452,23 @@ func (a *DefaultAPIService) PostRedfishV1SFSSAppTacacsServersExecute(r ApiPostRe
 type ApiPutRedfishV1SFSSAppRequest struct {
 	ctx context.Context
 	ApiService *DefaultAPIService
-	versiontbd *string
 	putRedfishV1SFSSAppRequest *PutRedfishV1SFSSAppRequest
 }
 
-// ImageId 
-func (r ApiPutRedfishV1SFSSAppRequest) Versiontbd(versiontbd string) ApiPutRedfishV1SFSSAppRequest {
-	r.versiontbd = &versiontbd
-	return r
-}
-
-// {     \&quot;ImageServerUserName\&quot; : \&quot;dell\&quot;,     \&quot;ImageServerPassword\&quot; : \&quot;New_Password\&quot;,     \&quot;ImageServerLocation\&quot; : \&quot;100.94.72.166:/home/dell/new_location/SFSS-1.2.0.deb\&quot;,     \&quot;TransportType\&quot; : \&quot;SCP\&quot; }
+// {     \&quot;Version\&quot;: \&quot;1.2.0\&quot; }
 func (r ApiPutRedfishV1SFSSAppRequest) PutRedfishV1SFSSAppRequest(putRedfishV1SFSSAppRequest PutRedfishV1SFSSAppRequest) ApiPutRedfishV1SFSSAppRequest {
 	r.putRedfishV1SFSSAppRequest = &putRedfishV1SFSSAppRequest
 	return r
 }
 
-func (r ApiPutRedfishV1SFSSAppRequest) Execute() (*PutRedfishV1SFSSApp200Response, *http.Response, error) {
+func (r ApiPutRedfishV1SFSSAppRequest) Execute() (*PutRedfishV1SFSSAppRequest, *http.Response, error) {
 	return r.ApiService.PutRedfishV1SFSSAppExecute(r)
 }
 
 /*
-PutRedfishV1SFSSApp Upgrade application
+PutRedfishV1SFSSApp Upgrade SFSS application
 
-This API upgrades the SFSS application to the specified version from the list of available images.
+This API upgrades the SFSS application to the specified version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPutRedfishV1SFSSAppRequest
@@ -6704,13 +6481,13 @@ func (a *DefaultAPIService) PutRedfishV1SFSSApp(ctx context.Context) ApiPutRedfi
 }
 
 // Execute executes the request
-//  @return PutRedfishV1SFSSApp200Response
-func (a *DefaultAPIService) PutRedfishV1SFSSAppExecute(r ApiPutRedfishV1SFSSAppRequest) (*PutRedfishV1SFSSApp200Response, *http.Response, error) {
+//  @return PutRedfishV1SFSSAppRequest
+func (a *DefaultAPIService) PutRedfishV1SFSSAppExecute(r ApiPutRedfishV1SFSSAppRequest) (*PutRedfishV1SFSSAppRequest, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PutRedfishV1SFSSApp200Response
+		localVarReturnValue  *PutRedfishV1SFSSAppRequest
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PutRedfishV1SFSSApp")
@@ -6718,15 +6495,12 @@ func (a *DefaultAPIService) PutRedfishV1SFSSAppExecute(r ApiPutRedfishV1SFSSAppR
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/redfish/v1/SFSSApp/SFSSImages"
+	localVarPath := localBasePath + "/redfish/v1/SFSSApp"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.versiontbd != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "versiontbd", r.versiontbd, "form", "")
-	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -7108,6 +6882,114 @@ func (a *DefaultAPIService) PutRedfishV1SFSSAppIpAddressManagementsExecute(r Api
 	return localVarHTTPResponse, nil
 }
 
+type ApiPutRedfishV1SFSSAppLicensesRequest struct {
+	ctx context.Context
+	ApiService *DefaultAPIService
+	putRedfishV1SFSSAppLicensesRequest *PutRedfishV1SFSSAppLicensesRequest
+}
+
+// { \&quot;Identifier\&quot;: \&quot;2\&quot;, \&quot;EULA\&quot;: \&quot;Agreed\&quot; }
+func (r ApiPutRedfishV1SFSSAppLicensesRequest) PutRedfishV1SFSSAppLicensesRequest(putRedfishV1SFSSAppLicensesRequest PutRedfishV1SFSSAppLicensesRequest) ApiPutRedfishV1SFSSAppLicensesRequest {
+	r.putRedfishV1SFSSAppLicensesRequest = &putRedfishV1SFSSAppLicensesRequest
+	return r
+}
+
+func (r ApiPutRedfishV1SFSSAppLicensesRequest) Execute() (*PutRedfishV1SFSSAppLicenses200Response, *http.Response, error) {
+	return r.ApiService.PutRedfishV1SFSSAppLicensesExecute(r)
+}
+
+/*
+PutRedfishV1SFSSAppLicenses Accept EULA
+
+This API is used to accept the End User License Agreement (EULA) for the partner license.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPutRedfishV1SFSSAppLicensesRequest
+*/
+func (a *DefaultAPIService) PutRedfishV1SFSSAppLicenses(ctx context.Context) ApiPutRedfishV1SFSSAppLicensesRequest {
+	return ApiPutRedfishV1SFSSAppLicensesRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return PutRedfishV1SFSSAppLicenses200Response
+func (a *DefaultAPIService) PutRedfishV1SFSSAppLicensesExecute(r ApiPutRedfishV1SFSSAppLicensesRequest) (*PutRedfishV1SFSSAppLicenses200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PutRedfishV1SFSSAppLicenses200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PutRedfishV1SFSSAppLicenses")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/redfish/v1/SFSSApp/Licenses"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.putRedfishV1SFSSAppLicensesRequest
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiPutRedfishV1SFSSAppNTPRequest struct {
 	ctx context.Context
 	ApiService *DefaultAPIService
@@ -7179,6 +7061,124 @@ func (a *DefaultAPIService) PutRedfishV1SFSSAppNTPExecute(r ApiPutRedfishV1SFSSA
 	}
 	// body params
 	localVarPostBody = r.putRedfishV1SFSSAppNTPRequest
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiPutRedfishV1SFSSApp_0Request struct {
+	ctx context.Context
+	ApiService *DefaultAPIService
+	versiontbd *string
+	putRedfishV1SFSSAppRequest *PutRedfishV1SFSSAppRequest
+}
+
+// ImageId 
+func (r ApiPutRedfishV1SFSSApp_0Request) Versiontbd(versiontbd string) ApiPutRedfishV1SFSSApp_0Request {
+	r.versiontbd = &versiontbd
+	return r
+}
+
+// {     \&quot;ImageServerUserName\&quot; : \&quot;dell\&quot;,     \&quot;ImageServerPassword\&quot; : \&quot;New_Password\&quot;,     \&quot;ImageServerLocation\&quot; : \&quot;100.94.72.166:/home/dell/new_location/SFSS-1.2.0.deb\&quot;,     \&quot;TransportType\&quot; : \&quot;SCP\&quot; }
+func (r ApiPutRedfishV1SFSSApp_0Request) PutRedfishV1SFSSAppRequest(putRedfishV1SFSSAppRequest PutRedfishV1SFSSAppRequest) ApiPutRedfishV1SFSSApp_0Request {
+	r.putRedfishV1SFSSAppRequest = &putRedfishV1SFSSAppRequest
+	return r
+}
+
+func (r ApiPutRedfishV1SFSSApp_0Request) Execute() (*PutRedfishV1SFSSApp200Response, *http.Response, error) {
+	return r.ApiService.PutRedfishV1SFSSApp_2Execute(r)
+}
+
+/*
+PutRedfishV1SFSSApp_0 Upgrade application
+
+This API upgrades the SFSS application to the specified version from the list of available images.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPutRedfishV1SFSSApp_0Request
+*/
+func (a *DefaultAPIService) PutRedfishV1SFSSApp_2(ctx context.Context) ApiPutRedfishV1SFSSApp_0Request {
+	return ApiPutRedfishV1SFSSApp_0Request{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return PutRedfishV1SFSSApp200Response
+func (a *DefaultAPIService) PutRedfishV1SFSSApp_2Execute(r ApiPutRedfishV1SFSSApp_0Request) (*PutRedfishV1SFSSApp200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PutRedfishV1SFSSApp200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PutRedfishV1SFSSApp_2")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/redfish/v1/SFSSApp/SFSSImages"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.versiontbd != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "versiontbd", r.versiontbd, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.putRedfishV1SFSSAppRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

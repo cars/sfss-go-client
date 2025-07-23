@@ -16,40 +16,40 @@ import (
 	"fmt"
 )
 
-// checks if the PUTRedfishV1SFSSAppLicensesRequest type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PUTRedfishV1SFSSAppLicensesRequest{}
+// checks if the PutRedfishV1SFSSAppLicensesRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PutRedfishV1SFSSAppLicensesRequest{}
 
-// PUTRedfishV1SFSSAppLicensesRequest 
-type PUTRedfishV1SFSSAppLicensesRequest struct {
+// PutRedfishV1SFSSAppLicensesRequest 
+type PutRedfishV1SFSSAppLicensesRequest struct {
 	// License identifier
 	Identifier string `json:"Identifier"`
 	// End User License Agreement
 	EULA string `json:"EULA"`
 }
 
-type _PUTRedfishV1SFSSAppLicensesRequest PUTRedfishV1SFSSAppLicensesRequest
+type _PutRedfishV1SFSSAppLicensesRequest PutRedfishV1SFSSAppLicensesRequest
 
-// NewPUTRedfishV1SFSSAppLicensesRequest instantiates a new PUTRedfishV1SFSSAppLicensesRequest object
+// NewPutRedfishV1SFSSAppLicensesRequest instantiates a new PutRedfishV1SFSSAppLicensesRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPUTRedfishV1SFSSAppLicensesRequest(identifier string, eULA string) *PUTRedfishV1SFSSAppLicensesRequest {
-	this := PUTRedfishV1SFSSAppLicensesRequest{}
+func NewPutRedfishV1SFSSAppLicensesRequest(identifier string, eULA string) *PutRedfishV1SFSSAppLicensesRequest {
+	this := PutRedfishV1SFSSAppLicensesRequest{}
 	this.Identifier = identifier
 	this.EULA = eULA
 	return &this
 }
 
-// NewPUTRedfishV1SFSSAppLicensesRequestWithDefaults instantiates a new PUTRedfishV1SFSSAppLicensesRequest object
+// NewPutRedfishV1SFSSAppLicensesRequestWithDefaults instantiates a new PutRedfishV1SFSSAppLicensesRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewPUTRedfishV1SFSSAppLicensesRequestWithDefaults() *PUTRedfishV1SFSSAppLicensesRequest {
-	this := PUTRedfishV1SFSSAppLicensesRequest{}
+func NewPutRedfishV1SFSSAppLicensesRequestWithDefaults() *PutRedfishV1SFSSAppLicensesRequest {
+	this := PutRedfishV1SFSSAppLicensesRequest{}
 	return &this
 }
 
 // GetIdentifier returns the Identifier field value
-func (o *PUTRedfishV1SFSSAppLicensesRequest) GetIdentifier() string {
+func (o *PutRedfishV1SFSSAppLicensesRequest) GetIdentifier() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -60,7 +60,7 @@ func (o *PUTRedfishV1SFSSAppLicensesRequest) GetIdentifier() string {
 
 // GetIdentifierOk returns a tuple with the Identifier field value
 // and a boolean to check if the value has been set.
-func (o *PUTRedfishV1SFSSAppLicensesRequest) GetIdentifierOk() (*string, bool) {
+func (o *PutRedfishV1SFSSAppLicensesRequest) GetIdentifierOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -68,12 +68,12 @@ func (o *PUTRedfishV1SFSSAppLicensesRequest) GetIdentifierOk() (*string, bool) {
 }
 
 // SetIdentifier sets field value
-func (o *PUTRedfishV1SFSSAppLicensesRequest) SetIdentifier(v string) {
+func (o *PutRedfishV1SFSSAppLicensesRequest) SetIdentifier(v string) {
 	o.Identifier = v
 }
 
 // GetEULA returns the EULA field value
-func (o *PUTRedfishV1SFSSAppLicensesRequest) GetEULA() string {
+func (o *PutRedfishV1SFSSAppLicensesRequest) GetEULA() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -84,7 +84,7 @@ func (o *PUTRedfishV1SFSSAppLicensesRequest) GetEULA() string {
 
 // GetEULAOk returns a tuple with the EULA field value
 // and a boolean to check if the value has been set.
-func (o *PUTRedfishV1SFSSAppLicensesRequest) GetEULAOk() (*string, bool) {
+func (o *PutRedfishV1SFSSAppLicensesRequest) GetEULAOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -92,11 +92,11 @@ func (o *PUTRedfishV1SFSSAppLicensesRequest) GetEULAOk() (*string, bool) {
 }
 
 // SetEULA sets field value
-func (o *PUTRedfishV1SFSSAppLicensesRequest) SetEULA(v string) {
+func (o *PutRedfishV1SFSSAppLicensesRequest) SetEULA(v string) {
 	o.EULA = v
 }
 
-func (o PUTRedfishV1SFSSAppLicensesRequest) MarshalJSON() ([]byte, error) {
+func (o PutRedfishV1SFSSAppLicensesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -104,14 +104,14 @@ func (o PUTRedfishV1SFSSAppLicensesRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o PUTRedfishV1SFSSAppLicensesRequest) ToMap() (map[string]interface{}, error) {
+func (o PutRedfishV1SFSSAppLicensesRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["Identifier"] = o.Identifier
 	toSerialize["EULA"] = o.EULA
 	return toSerialize, nil
 }
 
-func (o *PUTRedfishV1SFSSAppLicensesRequest) UnmarshalJSON(data []byte) (err error) {
+func (o *PutRedfishV1SFSSAppLicensesRequest) UnmarshalJSON(data []byte) (err error) {
 	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
@@ -134,53 +134,53 @@ func (o *PUTRedfishV1SFSSAppLicensesRequest) UnmarshalJSON(data []byte) (err err
 		}
 	}
 
-	varPUTRedfishV1SFSSAppLicensesRequest := _PUTRedfishV1SFSSAppLicensesRequest{}
+	varPutRedfishV1SFSSAppLicensesRequest := _PutRedfishV1SFSSAppLicensesRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
 	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varPUTRedfishV1SFSSAppLicensesRequest)
+	err = decoder.Decode(&varPutRedfishV1SFSSAppLicensesRequest)
 
 	if err != nil {
 		return err
 	}
 
-	*o = PUTRedfishV1SFSSAppLicensesRequest(varPUTRedfishV1SFSSAppLicensesRequest)
+	*o = PutRedfishV1SFSSAppLicensesRequest(varPutRedfishV1SFSSAppLicensesRequest)
 
 	return err
 }
 
-type NullablePUTRedfishV1SFSSAppLicensesRequest struct {
-	value *PUTRedfishV1SFSSAppLicensesRequest
+type NullablePutRedfishV1SFSSAppLicensesRequest struct {
+	value *PutRedfishV1SFSSAppLicensesRequest
 	isSet bool
 }
 
-func (v NullablePUTRedfishV1SFSSAppLicensesRequest) Get() *PUTRedfishV1SFSSAppLicensesRequest {
+func (v NullablePutRedfishV1SFSSAppLicensesRequest) Get() *PutRedfishV1SFSSAppLicensesRequest {
 	return v.value
 }
 
-func (v *NullablePUTRedfishV1SFSSAppLicensesRequest) Set(val *PUTRedfishV1SFSSAppLicensesRequest) {
+func (v *NullablePutRedfishV1SFSSAppLicensesRequest) Set(val *PutRedfishV1SFSSAppLicensesRequest) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullablePUTRedfishV1SFSSAppLicensesRequest) IsSet() bool {
+func (v NullablePutRedfishV1SFSSAppLicensesRequest) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullablePUTRedfishV1SFSSAppLicensesRequest) Unset() {
+func (v *NullablePutRedfishV1SFSSAppLicensesRequest) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullablePUTRedfishV1SFSSAppLicensesRequest(val *PUTRedfishV1SFSSAppLicensesRequest) *NullablePUTRedfishV1SFSSAppLicensesRequest {
-	return &NullablePUTRedfishV1SFSSAppLicensesRequest{value: val, isSet: true}
+func NewNullablePutRedfishV1SFSSAppLicensesRequest(val *PutRedfishV1SFSSAppLicensesRequest) *NullablePutRedfishV1SFSSAppLicensesRequest {
+	return &NullablePutRedfishV1SFSSAppLicensesRequest{value: val, isSet: true}
 }
 
-func (v NullablePUTRedfishV1SFSSAppLicensesRequest) MarshalJSON() ([]byte, error) {
+func (v NullablePutRedfishV1SFSSAppLicensesRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullablePUTRedfishV1SFSSAppLicensesRequest) UnmarshalJSON(src []byte) error {
+func (v *NullablePutRedfishV1SFSSAppLicensesRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

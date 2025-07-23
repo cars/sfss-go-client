@@ -92,9 +92,6 @@ docs/LicensesGETExpandLicensesInner.md
 docs/LicensesGETID.md
 docs/NTPServerConfig.md
 docs/NTPServerGET.md
-docs/PUTRedfishV1SFSSAppLicenses200Response.md
-docs/PUTRedfishV1SFSSAppLicensesRequest.md
-docs/PUTRedfishV1SFSSAppRequest.md
 docs/PostRedfishV1SFSSAppAlerts200Response.md
 docs/PostRedfishV1SFSSAppAlertsRequest.md
 docs/PostRedfishV1SFSSAppAuthenticationSequence200Response.md
@@ -123,6 +120,8 @@ docs/PutRedfishV1SFSSAppAlertsRequest.md
 docs/PutRedfishV1SFSSAppCDCInstanceManagersRequest.md
 docs/PutRedfishV1SFSSAppIpAddressManagementsRequest.md
 docs/PutRedfishV1SFSSAppIpAddressManagementsRequestIPV6RouteInner.md
+docs/PutRedfishV1SFSSAppLicenses200Response.md
+docs/PutRedfishV1SFSSAppLicensesRequest.md
 docs/PutRedfishV1SFSSAppNTP200Response.md
 docs/PutRedfishV1SFSSAppNTPRequest.md
 docs/PutRedfishV1SFSSAppRequest.md
@@ -267,7 +266,6 @@ model_put_redfish_v1_sfss_app_licenses_request.go
 model_put_redfish_v1_sfss_app_ntp_200_response.go
 model_put_redfish_v1_sfss_app_ntp_request.go
 model_put_redfish_v1_sfss_app_request.go
-model_put_redfish_v1_sfss_app_request_0.go
 model_radius_servers_get.go
 model_radius_servers_get_id.go
 model_restores_get.go

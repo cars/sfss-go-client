@@ -54,8 +54,6 @@ Method | HTTP request | Description
 [**GetRedfishV1SFSSAppUserActivityAudit**](DefaultAPI.md#GetRedfishV1SFSSAppUserActivityAudit) | **Get** /redfish/v1/SFSSApp/UserActivityAudit | Get user activities
 [**GetRedfishV1SFSSAppUserActivityAuditID**](DefaultAPI.md#GetRedfishV1SFSSAppUserActivityAuditID) | **Get** /redfish/v1/SFSSApp/UserActivityAudit({ID}) | Get specific user activity
 [**GetRedfishV1SFSSApp_0**](DefaultAPI.md#GetRedfishV1SFSSApp_0) | **Get** /redfish/v1/SFSSApp/SFSSImages | Get all images
-[**PUTRedfishV1SFSSApp**](DefaultAPI.md#PUTRedfishV1SFSSApp) | **Put** /redfish/v1/SFSSApp | Upgrade SFSS application
-[**PUTRedfishV1SFSSAppLicenses**](DefaultAPI.md#PUTRedfishV1SFSSAppLicenses) | **Put** /redfish/v1/SFSSApp/Licenses | Accept EULA
 [**PostRedfishV1SFSSAppAlerts**](DefaultAPI.md#PostRedfishV1SFSSAppAlerts) | **Post** /redfish/v1/SFSSApp/Alerts | Add alert
 [**PostRedfishV1SFSSAppAuthenticationSequence**](DefaultAPI.md#PostRedfishV1SFSSAppAuthenticationSequence) | **Post** /redfish/v1/SFSSApp/AuthenticationSequence | Add authentication sequence
 [**PostRedfishV1SFSSAppBackups**](DefaultAPI.md#PostRedfishV1SFSSAppBackups) | **Post** /redfish/v1/SFSSApp/Backups | Perform backup
@@ -69,11 +67,13 @@ Method | HTTP request | Description
 [**PostRedfishV1SFSSAppRestores**](DefaultAPI.md#PostRedfishV1SFSSAppRestores) | **Post** /redfish/v1/SFSSApp/Restores | Restore a backup
 [**PostRedfishV1SFSSAppSFSSImages**](DefaultAPI.md#PostRedfishV1SFSSAppSFSSImages) | **Post** /redfish/v1/SFSSApp/SFSSImages | Add image
 [**PostRedfishV1SFSSAppTacacsServers**](DefaultAPI.md#PostRedfishV1SFSSAppTacacsServers) | **Post** /redfish/v1/SFSSApp/TacacsServers | Configure TACACS+ server
-[**PutRedfishV1SFSSApp**](DefaultAPI.md#PutRedfishV1SFSSApp) | **Put** /redfish/v1/SFSSApp/SFSSImages | Upgrade application
+[**PutRedfishV1SFSSApp**](DefaultAPI.md#PutRedfishV1SFSSApp) | **Put** /redfish/v1/SFSSApp | Upgrade SFSS application
 [**PutRedfishV1SFSSAppAlerts**](DefaultAPI.md#PutRedfishV1SFSSAppAlerts) | **Put** /redfish/v1/SFSSApp/Alerts({uuid}) | Update alert
 [**PutRedfishV1SFSSAppCDCInstanceManagers**](DefaultAPI.md#PutRedfishV1SFSSAppCDCInstanceManagers) | **Put** /redfish/v1/SFSSApp/CDCInstanceManagers({InstanceId}) | Update CDC instance
 [**PutRedfishV1SFSSAppIpAddressManagements**](DefaultAPI.md#PutRedfishV1SFSSAppIpAddressManagements) | **Put** /redfish/v1/SFSSApp/IpAddressManagements({InterfaceId}) | Update interface
+[**PutRedfishV1SFSSAppLicenses**](DefaultAPI.md#PutRedfishV1SFSSAppLicenses) | **Put** /redfish/v1/SFSSApp/Licenses | Accept EULA
 [**PutRedfishV1SFSSAppNTP**](DefaultAPI.md#PutRedfishV1SFSSAppNTP) | **Put** /redfish/v1/SFSSApp/NTP | Enable or disable NTP service
+[**PutRedfishV1SFSSApp_0**](DefaultAPI.md#PutRedfishV1SFSSApp_0) | **Put** /redfish/v1/SFSSApp/SFSSImages | Upgrade application
 
 
 
@@ -3303,138 +3303,6 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## PUTRedfishV1SFSSApp
-
-> PUTRedfishV1SFSSAppRequest PUTRedfishV1SFSSApp(ctx).PUTRedfishV1SFSSAppRequest(pUTRedfishV1SFSSAppRequest).Execute()
-
-Upgrade SFSS application
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	pUTRedfishV1SFSSAppRequest := *openapiclient.NewPUTRedfishV1SFSSAppRequest("Version_example") // PUTRedfishV1SFSSAppRequest | {     \"Version\": \"1.2.0\" } (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PUTRedfishV1SFSSApp(context.Background()).PUTRedfishV1SFSSAppRequest(pUTRedfishV1SFSSAppRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PUTRedfishV1SFSSApp``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PUTRedfishV1SFSSApp`: PUTRedfishV1SFSSAppRequest
-	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PUTRedfishV1SFSSApp`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPUTRedfishV1SFSSAppRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pUTRedfishV1SFSSAppRequest** | [**PUTRedfishV1SFSSAppRequest**](PUTRedfishV1SFSSAppRequest.md) | {     \&quot;Version\&quot;: \&quot;1.2.0\&quot; } | 
-
-### Return type
-
-[**PUTRedfishV1SFSSAppRequest**](PUTRedfishV1SFSSAppRequest.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PUTRedfishV1SFSSAppLicenses
-
-> PUTRedfishV1SFSSAppLicenses200Response PUTRedfishV1SFSSAppLicenses(ctx).PUTRedfishV1SFSSAppLicensesRequest(pUTRedfishV1SFSSAppLicensesRequest).Execute()
-
-Accept EULA
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	pUTRedfishV1SFSSAppLicensesRequest := *openapiclient.NewPUTRedfishV1SFSSAppLicensesRequest("Identifier_example", "EULA_example") // PUTRedfishV1SFSSAppLicensesRequest | { \"Identifier\": \"2\", \"EULA\": \"Agreed\" } (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PUTRedfishV1SFSSAppLicenses(context.Background()).PUTRedfishV1SFSSAppLicensesRequest(pUTRedfishV1SFSSAppLicensesRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PUTRedfishV1SFSSAppLicenses``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PUTRedfishV1SFSSAppLicenses`: PUTRedfishV1SFSSAppLicenses200Response
-	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PUTRedfishV1SFSSAppLicenses`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPUTRedfishV1SFSSAppLicensesRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pUTRedfishV1SFSSAppLicensesRequest** | [**PUTRedfishV1SFSSAppLicensesRequest**](PUTRedfishV1SFSSAppLicensesRequest.md) | { \&quot;Identifier\&quot;: \&quot;2\&quot;, \&quot;EULA\&quot;: \&quot;Agreed\&quot; } | 
-
-### Return type
-
-[**PUTRedfishV1SFSSAppLicenses200Response**](PUTRedfishV1SFSSAppLicenses200Response.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## PostRedfishV1SFSSAppAlerts
 
 > PostRedfishV1SFSSAppAlerts200Response PostRedfishV1SFSSAppAlerts(ctx).PostRedfishV1SFSSAppAlertsRequest(postRedfishV1SFSSAppAlertsRequest).Execute()
@@ -4289,9 +4157,9 @@ Name | Type | Description  | Notes
 
 ## PutRedfishV1SFSSApp
 
-> PutRedfishV1SFSSApp200Response PutRedfishV1SFSSApp(ctx).Versiontbd(versiontbd).PutRedfishV1SFSSAppRequest(putRedfishV1SFSSAppRequest).Execute()
+> PutRedfishV1SFSSAppRequest PutRedfishV1SFSSApp(ctx).PutRedfishV1SFSSAppRequest(putRedfishV1SFSSAppRequest).Execute()
 
-Upgrade application
+Upgrade SFSS application
 
 
 
@@ -4308,17 +4176,16 @@ import (
 )
 
 func main() {
-	versiontbd := "versiontbd_example" // string | ImageId  (optional)
-	putRedfishV1SFSSAppRequest := *openapiclient.NewPutRedfishV1SFSSAppRequest("ImageServerUserName_example", "ImageServerPassword_example", "ImageServerLocation_example", "TransportType_example") // PutRedfishV1SFSSAppRequest | {     \"ImageServerUserName\" : \"dell\",     \"ImageServerPassword\" : \"New_Password\",     \"ImageServerLocation\" : \"100.94.72.166:/home/dell/new_location/SFSS-1.2.0.deb\",     \"TransportType\" : \"SCP\" } (optional)
+	putRedfishV1SFSSAppRequest := *openapiclient.NewPutRedfishV1SFSSAppRequest("ImageServerUserName_example", "ImageServerPassword_example", "ImageServerLocation_example", "TransportType_example") // PutRedfishV1SFSSAppRequest | {     \"Version\": \"1.2.0\" } (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PutRedfishV1SFSSApp(context.Background()).Versiontbd(versiontbd).PutRedfishV1SFSSAppRequest(putRedfishV1SFSSAppRequest).Execute()
+	resp, r, err := apiClient.DefaultAPI.PutRedfishV1SFSSApp(context.Background()).PutRedfishV1SFSSAppRequest(putRedfishV1SFSSAppRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PutRedfishV1SFSSApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PutRedfishV1SFSSApp`: PutRedfishV1SFSSApp200Response
+	// response from `PutRedfishV1SFSSApp`: PutRedfishV1SFSSAppRequest
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PutRedfishV1SFSSApp`: %v\n", resp)
 }
 ```
@@ -4334,12 +4201,11 @@ Other parameters are passed through a pointer to a apiPutRedfishV1SFSSAppRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **versiontbd** | **string** | ImageId  | 
- **putRedfishV1SFSSAppRequest** | [**PutRedfishV1SFSSAppRequest**](PutRedfishV1SFSSAppRequest.md) | {     \&quot;ImageServerUserName\&quot; : \&quot;dell\&quot;,     \&quot;ImageServerPassword\&quot; : \&quot;New_Password\&quot;,     \&quot;ImageServerLocation\&quot; : \&quot;100.94.72.166:/home/dell/new_location/SFSS-1.2.0.deb\&quot;,     \&quot;TransportType\&quot; : \&quot;SCP\&quot; } | 
+ **putRedfishV1SFSSAppRequest** | [**PutRedfishV1SFSSAppRequest**](PutRedfishV1SFSSAppRequest.md) | {     \&quot;Version\&quot;: \&quot;1.2.0\&quot; } | 
 
 ### Return type
 
-[**PutRedfishV1SFSSApp200Response**](PutRedfishV1SFSSApp200Response.md)
+[**PutRedfishV1SFSSAppRequest**](PutRedfishV1SFSSAppRequest.md)
 
 ### Authorization
 
@@ -4569,6 +4435,72 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## PutRedfishV1SFSSAppLicenses
+
+> PutRedfishV1SFSSAppLicenses200Response PutRedfishV1SFSSAppLicenses(ctx).PutRedfishV1SFSSAppLicensesRequest(putRedfishV1SFSSAppLicensesRequest).Execute()
+
+Accept EULA
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	putRedfishV1SFSSAppLicensesRequest := *openapiclient.NewPutRedfishV1SFSSAppLicensesRequest("Identifier_example", "EULA_example") // PutRedfishV1SFSSAppLicensesRequest | { \"Identifier\": \"2\", \"EULA\": \"Agreed\" } (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DefaultAPI.PutRedfishV1SFSSAppLicenses(context.Background()).PutRedfishV1SFSSAppLicensesRequest(putRedfishV1SFSSAppLicensesRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PutRedfishV1SFSSAppLicenses``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PutRedfishV1SFSSAppLicenses`: PutRedfishV1SFSSAppLicenses200Response
+	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PutRedfishV1SFSSAppLicenses`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPutRedfishV1SFSSAppLicensesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **putRedfishV1SFSSAppLicensesRequest** | [**PutRedfishV1SFSSAppLicensesRequest**](PutRedfishV1SFSSAppLicensesRequest.md) | { \&quot;Identifier\&quot;: \&quot;2\&quot;, \&quot;EULA\&quot;: \&quot;Agreed\&quot; } | 
+
+### Return type
+
+[**PutRedfishV1SFSSAppLicenses200Response**](PutRedfishV1SFSSAppLicenses200Response.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## PutRedfishV1SFSSAppNTP
 
 > PutRedfishV1SFSSAppNTP200Response PutRedfishV1SFSSAppNTP(ctx).PutRedfishV1SFSSAppNTPRequest(putRedfishV1SFSSAppNTPRequest).Execute()
@@ -4624,6 +4556,74 @@ Name | Type | Description  | Notes
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PutRedfishV1SFSSApp_0
+
+> PutRedfishV1SFSSApp200Response PutRedfishV1SFSSApp_0(ctx).Versiontbd(versiontbd).PutRedfishV1SFSSAppRequest(putRedfishV1SFSSAppRequest).Execute()
+
+Upgrade application
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	versiontbd := "versiontbd_example" // string | ImageId  (optional)
+	putRedfishV1SFSSAppRequest := *openapiclient.NewPutRedfishV1SFSSAppRequest("ImageServerUserName_example", "ImageServerPassword_example", "ImageServerLocation_example", "TransportType_example") // PutRedfishV1SFSSAppRequest | {     \"ImageServerUserName\" : \"dell\",     \"ImageServerPassword\" : \"New_Password\",     \"ImageServerLocation\" : \"100.94.72.166:/home/dell/new_location/SFSS-1.2.0.deb\",     \"TransportType\" : \"SCP\" } (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DefaultAPI.PutRedfishV1SFSSApp_0(context.Background()).Versiontbd(versiontbd).PutRedfishV1SFSSAppRequest(putRedfishV1SFSSAppRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PutRedfishV1SFSSApp_0``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PutRedfishV1SFSSApp_0`: PutRedfishV1SFSSApp200Response
+	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PutRedfishV1SFSSApp_0`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPutRedfishV1SFSSApp_2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **versiontbd** | **string** | ImageId  | 
+ **putRedfishV1SFSSAppRequest** | [**PutRedfishV1SFSSAppRequest**](PutRedfishV1SFSSAppRequest.md) | {     \&quot;ImageServerUserName\&quot; : \&quot;dell\&quot;,     \&quot;ImageServerPassword\&quot; : \&quot;New_Password\&quot;,     \&quot;ImageServerLocation\&quot; : \&quot;100.94.72.166:/home/dell/new_location/SFSS-1.2.0.deb\&quot;,     \&quot;TransportType\&quot; : \&quot;SCP\&quot; } | 
+
+### Return type
+
+[**PutRedfishV1SFSSApp200Response**](PutRedfishV1SFSSApp200Response.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
