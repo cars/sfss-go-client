@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Licenses** | [**[]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner**](GetRedfishV1SFSSAppLicenses200ResponseLicensesInner.md) |  | 
+**Licenses** | [**[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner**](GetRedfishV1SFSSAppBackups200ResponseBackupsInner.md) |  | 
 **LicensesodataCount** | **float32** | Number of licenses installed on the SFSS VM | 
 **OdataId** | **string** |  | 
 **OdataContext** | **string** |  | 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewLicensesGET
 
-`func NewLicensesGET(licenses []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, licensesodataCount float32, odataId string, odataContext string, odataType string, ) *LicensesGET`
+`func NewLicensesGET(licenses []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, licensesodataCount float32, odataId string, odataContext string, odataType string, ) *LicensesGET`
 
 NewLicensesGET instantiates a new LicensesGET object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetLicenses
 
-`func (o *LicensesGET) GetLicenses() []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner`
+`func (o *LicensesGET) GetLicenses() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner`
 
 GetLicenses returns the Licenses field if non-nil, zero value otherwise.
 
 ### GetLicensesOk
 
-`func (o *LicensesGET) GetLicensesOk() (*[]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, bool)`
+`func (o *LicensesGET) GetLicensesOk() (*[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool)`
 
 GetLicensesOk returns a tuple with the Licenses field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLicenses
 
-`func (o *LicensesGET) SetLicenses(v []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner)`
+`func (o *LicensesGET) SetLicenses(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner)`
 
 SetLicenses sets Licenses field to given value.
 

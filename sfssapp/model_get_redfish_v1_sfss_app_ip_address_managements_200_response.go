@@ -22,7 +22,7 @@ var _ MappedNullable = &GetRedfishV1SFSSAppIpAddressManagements200Response{}
 // GetRedfishV1SFSSAppIpAddressManagements200Response 
 type GetRedfishV1SFSSAppIpAddressManagements200Response struct {
 	// A set of SFSS VM interfaces that are assigned an IP address
-	IpAddressManagements []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner `json:"IpAddressManagements"`
+	IpAddressManagements []GetRedfishV1SFSSAppBackups200ResponseBackupsInner `json:"IpAddressManagements"`
 	// Number of interfaces that are configured with an IP address
 	IpAddressManagementsodataCount float32 `json:"IpAddressManagements@odata.count"`
 	OdataId string `json:"@odata.id"`
@@ -36,7 +36,7 @@ type _GetRedfishV1SFSSAppIpAddressManagements200Response GetRedfishV1SFSSAppIpAd
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGetRedfishV1SFSSAppIpAddressManagements200Response(ipAddressManagements []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, ipAddressManagementsodataCount float32, odataId string, odataContext string, odataType string) *GetRedfishV1SFSSAppIpAddressManagements200Response {
+func NewGetRedfishV1SFSSAppIpAddressManagements200Response(ipAddressManagements []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, ipAddressManagementsodataCount float32, odataId string, odataContext string, odataType string) *GetRedfishV1SFSSAppIpAddressManagements200Response {
 	this := GetRedfishV1SFSSAppIpAddressManagements200Response{}
 	this.IpAddressManagements = ipAddressManagements
 	this.IpAddressManagementsodataCount = ipAddressManagementsodataCount
@@ -55,9 +55,9 @@ func NewGetRedfishV1SFSSAppIpAddressManagements200ResponseWithDefaults() *GetRed
 }
 
 // GetIpAddressManagements returns the IpAddressManagements field value
-func (o *GetRedfishV1SFSSAppIpAddressManagements200Response) GetIpAddressManagements() []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner {
+func (o *GetRedfishV1SFSSAppIpAddressManagements200Response) GetIpAddressManagements() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner {
 	if o == nil {
-		var ret []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner
+		var ret []GetRedfishV1SFSSAppBackups200ResponseBackupsInner
 		return ret
 	}
 
@@ -66,7 +66,7 @@ func (o *GetRedfishV1SFSSAppIpAddressManagements200Response) GetIpAddressManagem
 
 // GetIpAddressManagementsOk returns a tuple with the IpAddressManagements field value
 // and a boolean to check if the value has been set.
-func (o *GetRedfishV1SFSSAppIpAddressManagements200Response) GetIpAddressManagementsOk() ([]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, bool) {
+func (o *GetRedfishV1SFSSAppIpAddressManagements200Response) GetIpAddressManagementsOk() ([]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -74,7 +74,7 @@ func (o *GetRedfishV1SFSSAppIpAddressManagements200Response) GetIpAddressManagem
 }
 
 // SetIpAddressManagements sets field value
-func (o *GetRedfishV1SFSSAppIpAddressManagements200Response) SetIpAddressManagements(v []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner) {
+func (o *GetRedfishV1SFSSAppIpAddressManagements200Response) SetIpAddressManagements(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner) {
 	o.IpAddressManagements = v
 }
 

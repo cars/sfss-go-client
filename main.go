@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"os"
 
 	sfssapp "github.com/cars/sfss-go-client/sfssapp"
 )
@@ -17,9 +18,15 @@ func main() {
 		fmt.Println("Failed to create API client")
 		return
 	}
-	req := client.DefaultAPI.GetRedfishV1SFSSApp(context.Background())
-	resp1 := client.DefaultAPI.GetRedfishV1SFSSAppExecute(context.Background())
-	if resp1 == nil {
+	ctx := context.Background()
+	req := client.DefaultAPI.GetRedfishV1SFSSApp(ctx)
+	rf_resp, http_resp, err := client.DefaultAPI.GetRedfishV1SFSSAppExecute(req)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SFSSAppApi.GetRedfishV1SFSSApp`: %v\n", err)
+		fmt.Printf("HTTP Response: %v\n", http_resp)
+		return
+	}
+	if rf_resp == nil {
 		fmt.Println("Failed to get SFSS application details")
 		return
 	} else {
@@ -31,5 +38,5 @@ func main() {
 	// 	fmt.Fprintf(os.Stderr, "Error when calling `SFSSAppApi.GetSosReports`: %v\n", err)
 	// 	os.Exit(1)
 	// }
-	fmt.Printf("Response from `SFSSAppApi.GetSosReports`: %v\n", resp)
+	fmt.Printf("Response from `SFSSAppApi.GetSosReports`: %v\n", resp2)
 }

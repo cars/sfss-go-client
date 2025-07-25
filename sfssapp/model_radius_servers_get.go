@@ -22,7 +22,7 @@ var _ MappedNullable = &RadiusServersGET{}
 // RadiusServersGET This model lists all the RADIUS servers configured in SFSS.
 type RadiusServersGET struct {
 	// List of configured RADIUS servers
-	RadiusServers []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner `json:"RadiusServers"`
+	RadiusServers []GetRedfishV1SFSSAppBackups200ResponseBackupsInner `json:"RadiusServers"`
 	// Number of configured RADIUS servers
 	RadiusServersodataCount float32 `json:"RadiusServers@odata.count"`
 	OdataId string `json:"@odata.id"`
@@ -36,7 +36,7 @@ type _RadiusServersGET RadiusServersGET
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRadiusServersGET(radiusServers []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, radiusServersodataCount float32, odataId string, odataContext string, odataType string) *RadiusServersGET {
+func NewRadiusServersGET(radiusServers []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, radiusServersodataCount float32, odataId string, odataContext string, odataType string) *RadiusServersGET {
 	this := RadiusServersGET{}
 	this.RadiusServers = radiusServers
 	this.RadiusServersodataCount = radiusServersodataCount
@@ -55,9 +55,9 @@ func NewRadiusServersGETWithDefaults() *RadiusServersGET {
 }
 
 // GetRadiusServers returns the RadiusServers field value
-func (o *RadiusServersGET) GetRadiusServers() []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner {
+func (o *RadiusServersGET) GetRadiusServers() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner {
 	if o == nil {
-		var ret []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner
+		var ret []GetRedfishV1SFSSAppBackups200ResponseBackupsInner
 		return ret
 	}
 
@@ -66,7 +66,7 @@ func (o *RadiusServersGET) GetRadiusServers() []GetRedfishV1SFSSAppLicenses200Re
 
 // GetRadiusServersOk returns a tuple with the RadiusServers field value
 // and a boolean to check if the value has been set.
-func (o *RadiusServersGET) GetRadiusServersOk() ([]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, bool) {
+func (o *RadiusServersGET) GetRadiusServersOk() ([]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -74,7 +74,7 @@ func (o *RadiusServersGET) GetRadiusServersOk() ([]GetRedfishV1SFSSAppLicenses20
 }
 
 // SetRadiusServers sets field value
-func (o *RadiusServersGET) SetRadiusServers(v []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner) {
+func (o *RadiusServersGET) SetRadiusServers(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner) {
 	o.RadiusServers = v
 }
 

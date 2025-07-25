@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IpAddressManagements** | [**[]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner**](GetRedfishV1SFSSAppLicenses200ResponseLicensesInner.md) | List of available interfaces | 
+**IpAddressManagements** | [**[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner**](GetRedfishV1SFSSAppBackups200ResponseBackupsInner.md) | List of available interfaces | 
 **IpAddressMgmtsodataCount** | **float32** | Number of available interfaces | 
 **OdataId** | **string** |  | 
 **OdataContext** | **string** |  | 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewIpAddressManagementGET
 
-`func NewIpAddressManagementGET(ipAddressManagements []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, ipAddressMgmtsodataCount float32, odataId string, odataContext string, odataType string, ) *IpAddressManagementGET`
+`func NewIpAddressManagementGET(ipAddressManagements []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, ipAddressMgmtsodataCount float32, odataId string, odataContext string, odataType string, ) *IpAddressManagementGET`
 
 NewIpAddressManagementGET instantiates a new IpAddressManagementGET object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetIpAddressManagements
 
-`func (o *IpAddressManagementGET) GetIpAddressManagements() []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner`
+`func (o *IpAddressManagementGET) GetIpAddressManagements() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner`
 
 GetIpAddressManagements returns the IpAddressManagements field if non-nil, zero value otherwise.
 
 ### GetIpAddressManagementsOk
 
-`func (o *IpAddressManagementGET) GetIpAddressManagementsOk() (*[]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, bool)`
+`func (o *IpAddressManagementGET) GetIpAddressManagementsOk() (*[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool)`
 
 GetIpAddressManagementsOk returns a tuple with the IpAddressManagements field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIpAddressManagements
 
-`func (o *IpAddressManagementGET) SetIpAddressManagements(v []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner)`
+`func (o *IpAddressManagementGET) SetIpAddressManagements(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner)`
 
 SetIpAddressManagements sets IpAddressManagements field to given value.
 

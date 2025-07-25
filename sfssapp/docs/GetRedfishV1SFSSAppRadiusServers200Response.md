@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RadiusServers** | [**[]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner**](GetRedfishV1SFSSAppLicenses200ResponseLicensesInner.md) | A set of RADIUS servers | 
+**RadiusServers** | [**[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner**](GetRedfishV1SFSSAppBackups200ResponseBackupsInner.md) | A set of RADIUS servers | 
 **RadiusServersodataCount** | **float32** | Number of RADIUS servers configured up to a maximum of 10 | 
 **OdataId** | **string** |  | 
 **OdataContext** | **string** |  | 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewGetRedfishV1SFSSAppRadiusServers200Response
 
-`func NewGetRedfishV1SFSSAppRadiusServers200Response(radiusServers []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, radiusServersodataCount float32, odataId string, odataContext string, odataType string, ) *GetRedfishV1SFSSAppRadiusServers200Response`
+`func NewGetRedfishV1SFSSAppRadiusServers200Response(radiusServers []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, radiusServersodataCount float32, odataId string, odataContext string, odataType string, ) *GetRedfishV1SFSSAppRadiusServers200Response`
 
 NewGetRedfishV1SFSSAppRadiusServers200Response instantiates a new GetRedfishV1SFSSAppRadiusServers200Response object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRadiusServers
 
-`func (o *GetRedfishV1SFSSAppRadiusServers200Response) GetRadiusServers() []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner`
+`func (o *GetRedfishV1SFSSAppRadiusServers200Response) GetRadiusServers() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner`
 
 GetRadiusServers returns the RadiusServers field if non-nil, zero value otherwise.
 
 ### GetRadiusServersOk
 
-`func (o *GetRedfishV1SFSSAppRadiusServers200Response) GetRadiusServersOk() (*[]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, bool)`
+`func (o *GetRedfishV1SFSSAppRadiusServers200Response) GetRadiusServersOk() (*[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool)`
 
 GetRadiusServersOk returns a tuple with the RadiusServers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRadiusServers
 
-`func (o *GetRedfishV1SFSSAppRadiusServers200Response) SetRadiusServers(v []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner)`
+`func (o *GetRedfishV1SFSSAppRadiusServers200Response) SetRadiusServers(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner)`
 
 SetRadiusServers sets RadiusServers field to given value.
 

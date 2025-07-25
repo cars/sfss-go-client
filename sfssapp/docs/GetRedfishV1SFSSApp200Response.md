@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SFSSImages** | [**[]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner**](GetRedfishV1SFSSAppLicenses200ResponseLicensesInner.md) | A set of SFSS images | 
+**SFSSImages** | [**[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner**](GetRedfishV1SFSSAppBackups200ResponseBackupsInner.md) | A set of SFSS images | 
 **SFSSImagesodataCount** | **float32** | Number of SFSS images | 
 **OdataId** | **string** |  | 
 **OdataContext** | **string** |  | 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewGetRedfishV1SFSSApp200Response
 
-`func NewGetRedfishV1SFSSApp200Response(sFSSImages []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, sFSSImagesodataCount float32, odataId string, odataContext string, odataType string, ) *GetRedfishV1SFSSApp200Response`
+`func NewGetRedfishV1SFSSApp200Response(sFSSImages []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, sFSSImagesodataCount float32, odataId string, odataContext string, odataType string, ) *GetRedfishV1SFSSApp200Response`
 
 NewGetRedfishV1SFSSApp200Response instantiates a new GetRedfishV1SFSSApp200Response object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSFSSImages
 
-`func (o *GetRedfishV1SFSSApp200Response) GetSFSSImages() []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner`
+`func (o *GetRedfishV1SFSSApp200Response) GetSFSSImages() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner`
 
 GetSFSSImages returns the SFSSImages field if non-nil, zero value otherwise.
 
 ### GetSFSSImagesOk
 
-`func (o *GetRedfishV1SFSSApp200Response) GetSFSSImagesOk() (*[]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, bool)`
+`func (o *GetRedfishV1SFSSApp200Response) GetSFSSImagesOk() (*[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool)`
 
 GetSFSSImagesOk returns a tuple with the SFSSImages field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSFSSImages
 
-`func (o *GetRedfishV1SFSSApp200Response) SetSFSSImages(v []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner)`
+`func (o *GetRedfishV1SFSSApp200Response) SetSFSSImages(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner)`
 
 SetSFSSImages sets SFSSImages field to given value.
 

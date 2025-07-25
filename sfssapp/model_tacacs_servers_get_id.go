@@ -22,7 +22,7 @@ var _ MappedNullable = &TacacsServersGETID{}
 // TacacsServersGETID This model lists the TACACS+ server information based on the specified TACACS+ server ID. 
 type TacacsServersGETID struct {
 	// List of configured TACACS+ servers
-	TacacsServers []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner `json:"TacacsServers"`
+	TacacsServers []GetRedfishV1SFSSAppBackups200ResponseBackupsInner `json:"TacacsServers"`
 	// Number of configured TACACS+ servers
 	TacacsServersodataCount float32 `json:"TacacsServers@odata.count"`
 	OdataId string `json:"@odata.id"`
@@ -36,7 +36,7 @@ type _TacacsServersGETID TacacsServersGETID
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTacacsServersGETID(tacacsServers []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, tacacsServersodataCount float32, odataId string, odataContext string, odataType string) *TacacsServersGETID {
+func NewTacacsServersGETID(tacacsServers []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, tacacsServersodataCount float32, odataId string, odataContext string, odataType string) *TacacsServersGETID {
 	this := TacacsServersGETID{}
 	this.TacacsServers = tacacsServers
 	this.TacacsServersodataCount = tacacsServersodataCount
@@ -55,9 +55,9 @@ func NewTacacsServersGETIDWithDefaults() *TacacsServersGETID {
 }
 
 // GetTacacsServers returns the TacacsServers field value
-func (o *TacacsServersGETID) GetTacacsServers() []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner {
+func (o *TacacsServersGETID) GetTacacsServers() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner {
 	if o == nil {
-		var ret []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner
+		var ret []GetRedfishV1SFSSAppBackups200ResponseBackupsInner
 		return ret
 	}
 
@@ -66,7 +66,7 @@ func (o *TacacsServersGETID) GetTacacsServers() []GetRedfishV1SFSSAppLicenses200
 
 // GetTacacsServersOk returns a tuple with the TacacsServers field value
 // and a boolean to check if the value has been set.
-func (o *TacacsServersGETID) GetTacacsServersOk() ([]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, bool) {
+func (o *TacacsServersGETID) GetTacacsServersOk() ([]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -74,7 +74,7 @@ func (o *TacacsServersGETID) GetTacacsServersOk() ([]GetRedfishV1SFSSAppLicenses
 }
 
 // SetTacacsServers sets field value
-func (o *TacacsServersGETID) SetTacacsServers(v []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner) {
+func (o *TacacsServersGETID) SetTacacsServers(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner) {
 	o.TacacsServers = v
 }
 

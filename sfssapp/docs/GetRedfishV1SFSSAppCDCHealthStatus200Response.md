@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CDCHealthStatus** | [**[]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner**](GetRedfishV1SFSSAppLicenses200ResponseLicensesInner.md) | Health status of the CDC instance; possible values include Ok, Warning, and Critical | 
+**CDCHealthStatus** | [**[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner**](GetRedfishV1SFSSAppBackups200ResponseBackupsInner.md) | Health status of the CDC instance; possible values include Ok, Warning, and Critical | 
 **CDCHealthStatusodataCount** | **float32** | Number of health status records (one for each CDC instance) | 
 **OdataId** | **string** |  | 
 **OdataContext** | **string** |  | 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewGetRedfishV1SFSSAppCDCHealthStatus200Response
 
-`func NewGetRedfishV1SFSSAppCDCHealthStatus200Response(cDCHealthStatus []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, cDCHealthStatusodataCount float32, odataId string, odataContext string, odataType string, ) *GetRedfishV1SFSSAppCDCHealthStatus200Response`
+`func NewGetRedfishV1SFSSAppCDCHealthStatus200Response(cDCHealthStatus []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, cDCHealthStatusodataCount float32, odataId string, odataContext string, odataType string, ) *GetRedfishV1SFSSAppCDCHealthStatus200Response`
 
 NewGetRedfishV1SFSSAppCDCHealthStatus200Response instantiates a new GetRedfishV1SFSSAppCDCHealthStatus200Response object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCDCHealthStatus
 
-`func (o *GetRedfishV1SFSSAppCDCHealthStatus200Response) GetCDCHealthStatus() []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner`
+`func (o *GetRedfishV1SFSSAppCDCHealthStatus200Response) GetCDCHealthStatus() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner`
 
 GetCDCHealthStatus returns the CDCHealthStatus field if non-nil, zero value otherwise.
 
 ### GetCDCHealthStatusOk
 
-`func (o *GetRedfishV1SFSSAppCDCHealthStatus200Response) GetCDCHealthStatusOk() (*[]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, bool)`
+`func (o *GetRedfishV1SFSSAppCDCHealthStatus200Response) GetCDCHealthStatusOk() (*[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool)`
 
 GetCDCHealthStatusOk returns a tuple with the CDCHealthStatus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCDCHealthStatus
 
-`func (o *GetRedfishV1SFSSAppCDCHealthStatus200Response) SetCDCHealthStatus(v []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner)`
+`func (o *GetRedfishV1SFSSAppCDCHealthStatus200Response) SetCDCHealthStatus(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner)`
 
 SetCDCHealthStatus sets CDCHealthStatus field to given value.
 

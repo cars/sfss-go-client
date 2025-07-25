@@ -6,11 +6,10 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DeleteRedfishV1SFSSAppAlertsCDCInstanceManagers**](DefaultAPI.md#DeleteRedfishV1SFSSAppAlertsCDCInstanceManagers) | **Delete** /redfish/v1/SFSSApp/Alerts({uuid}) | Delete alert
 [**DeleteRedfishV1SFSSAppCDCInstanceManagers**](DefaultAPI.md#DeleteRedfishV1SFSSAppCDCInstanceManagers) | **Delete** /redfish/v1/SFSSApp/CDCInstanceManagers({InstanceId}) | Delete CDC instance
-[**DeleteRedfishV1SFSSAppIpAddressManagements**](DefaultAPI.md#DeleteRedfishV1SFSSAppIpAddressManagements) | **Delete** /redfish/v1/SFSSApp/IpAddressManagements({InterfaceId}) | Delete VLAN interface
+[**DeleteRedfishV1SFSSAppIpAddressManagementsInterface**](DefaultAPI.md#DeleteRedfishV1SFSSAppIpAddressManagementsInterface) | **Delete** /redfish/v1/SFSSApp/IpAddressManagements({InterfaceId}) | Delete VLAN interface
 [**DeleteRedfishV1SFSSAppNTPServerIP**](DefaultAPI.md#DeleteRedfishV1SFSSAppNTPServerIP) | **Delete** /redfish/v1/SFSSApp/NTP({ServerIP}) | Remove NTP configuration
 [**DeleteRedfishV1SFSSAppSFSSImages**](DefaultAPI.md#DeleteRedfishV1SFSSAppSFSSImages) | **Delete** /redfish/v1/SFSSApp/SFSSImages | Delete image
 [**GetEnumsRedfishV1SFSSAppIpAddressManagementsEnums**](DefaultAPI.md#GetEnumsRedfishV1SFSSAppIpAddressManagementsEnums) | **Get** /redfish/v1/SFSSApp/IpAddressManagements/Enums | Get interface enums
-[**GetExpandRedfishV1SFSSAppBackups**](DefaultAPI.md#GetExpandRedfishV1SFSSAppBackups) | **Get** /redfish/v1/SFSSApp/Backups?$expand&#x3D;Backups | Get all backups
 [**GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand**](DefaultAPI.md#GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand) | **Get** /redfish/v1/SFSSApp/FoundationalConfigs?$expand&#x3D;FoundationalConfigs | Get all foundational configuration
 [**GetExpandRedfishV1SFSSAppIpAddressManagements**](DefaultAPI.md#GetExpandRedfishV1SFSSAppIpAddressManagements) | **Get** /redfish/v1/SFSSApp/IpAddressManagements?$expand&#x3D;IpAddressManagements | Get all interfaces
 [**GetExpandRedfishV1SFSSAppRestores**](DefaultAPI.md#GetExpandRedfishV1SFSSAppRestores) | **Get** /redfish/v1/SFSSApp/Restores?$expand&#x3D;Restores | Get detailed restore information
@@ -36,7 +35,7 @@ Method | HTTP request | Description
 [**GetRedfishV1SFSSAppFoundationalConfigsInstanceIdentifier**](DefaultAPI.md#GetRedfishV1SFSSAppFoundationalConfigsInstanceIdentifier) | **Get** /redfish/v1/SFSSApp/FoundationalConfigs({InstanceIdentifer}) | Get specific foundational configuration
 [**GetRedfishV1SFSSAppGlobalSettings**](DefaultAPI.md#GetRedfishV1SFSSAppGlobalSettings) | **Get** /redfish/v1/SFSSApp/GlobalSettings | Get global settings
 [**GetRedfishV1SFSSAppIpAddressManagements**](DefaultAPI.md#GetRedfishV1SFSSAppIpAddressManagements) | **Get** /redfish/v1/SFSSApp/IpAddressManagements | Get all interfaces
-[**GetRedfishV1SFSSAppIpAddressManagementsInterface**](DefaultAPI.md#GetRedfishV1SFSSAppIpAddressManagementsInterface) | **Get** /redfish/v1/SFSSApp/IpAddressManagements({interface}) | Get specific interface
+[**GetRedfishV1SFSSAppIpAddressManagementsInterface**](DefaultAPI.md#GetRedfishV1SFSSAppIpAddressManagementsInterface) | **Get** /redfish/v1/SFSSApp/IpAddressManagements({InterfaceId}) | Get specific interface
 [**GetRedfishV1SFSSAppLicenses**](DefaultAPI.md#GetRedfishV1SFSSAppLicenses) | **Get** /redfish/v1/SFSSApp/Licenses | Get license count
 [**GetRedfishV1SFSSAppLicensesLicenseId**](DefaultAPI.md#GetRedfishV1SFSSAppLicensesLicenseId) | **Get** /redfish/v1/SFSSApp/Licenses({LicenseId}) | Get specific license
 [**GetRedfishV1SFSSAppLicensesexpandLicenses**](DefaultAPI.md#GetRedfishV1SFSSAppLicensesexpandLicenses) | **Get** /redfish/v1/SFSSApp/Licenses?$expand&#x3D;Licenses | Get detailed license information
@@ -70,7 +69,7 @@ Method | HTTP request | Description
 [**PutRedfishV1SFSSApp**](DefaultAPI.md#PutRedfishV1SFSSApp) | **Put** /redfish/v1/SFSSApp | Upgrade SFSS application
 [**PutRedfishV1SFSSAppAlerts**](DefaultAPI.md#PutRedfishV1SFSSAppAlerts) | **Put** /redfish/v1/SFSSApp/Alerts({uuid}) | Update alert
 [**PutRedfishV1SFSSAppCDCInstanceManagers**](DefaultAPI.md#PutRedfishV1SFSSAppCDCInstanceManagers) | **Put** /redfish/v1/SFSSApp/CDCInstanceManagers({InstanceId}) | Update CDC instance
-[**PutRedfishV1SFSSAppIpAddressManagements**](DefaultAPI.md#PutRedfishV1SFSSAppIpAddressManagements) | **Put** /redfish/v1/SFSSApp/IpAddressManagements({InterfaceId}) | Update interface
+[**PutRedfishV1SFSSAppIpAddressManagementsInterface**](DefaultAPI.md#PutRedfishV1SFSSAppIpAddressManagementsInterface) | **Put** /redfish/v1/SFSSApp/IpAddressManagements({InterfaceId}) | Update interface
 [**PutRedfishV1SFSSAppLicenses**](DefaultAPI.md#PutRedfishV1SFSSAppLicenses) | **Put** /redfish/v1/SFSSApp/Licenses | Accept EULA
 [**PutRedfishV1SFSSAppNTP**](DefaultAPI.md#PutRedfishV1SFSSAppNTP) | **Put** /redfish/v1/SFSSApp/NTP | Enable or disable NTP service
 [**PutRedfishV1SFSSApp_0**](DefaultAPI.md#PutRedfishV1SFSSApp_0) | **Put** /redfish/v1/SFSSApp/SFSSImages | Upgrade application
@@ -217,9 +216,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteRedfishV1SFSSAppIpAddressManagements
+## DeleteRedfishV1SFSSAppIpAddressManagementsInterface
 
-> DeleteRedfishV1SFSSAppIpAddressManagements(ctx, interfaceId).Execute()
+> DeleteRedfishV1SFSSAppIpAddressManagementsInterface(ctx, interfaceId).Execute()
 
 Delete VLAN interface
 
@@ -242,9 +241,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DefaultAPI.DeleteRedfishV1SFSSAppIpAddressManagements(context.Background(), interfaceId).Execute()
+	r, err := apiClient.DefaultAPI.DeleteRedfishV1SFSSAppIpAddressManagementsInterface(context.Background(), interfaceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteRedfishV1SFSSAppIpAddressManagements``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteRedfishV1SFSSAppIpAddressManagementsInterface``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -260,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteRedfishV1SFSSAppIpAddressManagementsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteRedfishV1SFSSAppIpAddressManagementsInterfaceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -471,67 +470,6 @@ Other parameters are passed through a pointer to a apiGetEnumsRedfishV1SFSSAppIp
 ### Authorization
 
 [BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetExpandRedfishV1SFSSAppBackups
-
-> GetExpandRedfishV1SFSSAppBackups200Response GetExpandRedfishV1SFSSAppBackups(ctx).Execute()
-
-Get all backups
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.GetExpandRedfishV1SFSSAppBackups(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetExpandRedfishV1SFSSAppBackups``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetExpandRedfishV1SFSSAppBackups`: GetExpandRedfishV1SFSSAppBackups200Response
-	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetExpandRedfishV1SFSSAppBackups`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetExpandRedfishV1SFSSAppBackupsRequest struct via the builder pattern
-
-
-### Return type
-
-[**GetExpandRedfishV1SFSSAppBackups200Response**](GetExpandRedfishV1SFSSAppBackups200Response.md)
-
-### Authorization
-
-No authorization required
 
 ### HTTP request headers
 
@@ -1250,7 +1188,7 @@ Other parameters are passed through a pointer to a apiGetRedfishV1SFSSAppAuthent
 
 ## GetRedfishV1SFSSAppBackups
 
-> GetRedfishV1SFSSAppBackups200Response GetRedfishV1SFSSAppBackups(ctx).Execute()
+> GetRedfishV1SFSSAppBackups200Response GetRedfishV1SFSSAppBackups(ctx).Expand(expand).Execute()
 
 Get all backups
 
@@ -1269,10 +1207,11 @@ import (
 )
 
 func main() {
+	expand := "expand_example" // string | Expand the Backups property to include detailed information about each backup. (optional) (default to "Backups")
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.GetRedfishV1SFSSAppBackups(context.Background()).Execute()
+	resp, r, err := apiClient.DefaultAPI.GetRedfishV1SFSSAppBackups(context.Background()).Expand(expand).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetRedfishV1SFSSAppBackups``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1284,12 +1223,16 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGetRedfishV1SFSSAppBackupsRequest struct via the builder pattern
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **expand** | **string** | Expand the Backups property to include detailed information about each backup. | [default to &quot;Backups&quot;]
 
 ### Return type
 
@@ -2166,7 +2109,7 @@ Other parameters are passed through a pointer to a apiGetRedfishV1SFSSAppIpAddre
 
 ## GetRedfishV1SFSSAppIpAddressManagementsInterface
 
-> GetRedfishV1SFSSAppIpAddressManagementsInterface200Response GetRedfishV1SFSSAppIpAddressManagementsInterface(ctx, interface_).Execute()
+> GetRedfishV1SFSSAppIpAddressManagementsInterface200Response GetRedfishV1SFSSAppIpAddressManagementsInterface(ctx, interfaceId).Execute()
 
 Get specific interface
 
@@ -2185,11 +2128,11 @@ import (
 )
 
 func main() {
-	interface_ := "interface__example" // string | Interface identifier
+	interfaceId := "interfaceId_example" // string | Interface identifier
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.GetRedfishV1SFSSAppIpAddressManagementsInterface(context.Background(), interface_).Execute()
+	resp, r, err := apiClient.DefaultAPI.GetRedfishV1SFSSAppIpAddressManagementsInterface(context.Background(), interfaceId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetRedfishV1SFSSAppIpAddressManagementsInterface``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2205,7 +2148,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**interface_** | **string** | Interface identifier | 
+**interfaceId** | **string** | Interface identifier | 
 
 ### Other Parameters
 
@@ -4365,9 +4308,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PutRedfishV1SFSSAppIpAddressManagements
+## PutRedfishV1SFSSAppIpAddressManagementsInterface
 
-> PutRedfishV1SFSSAppIpAddressManagements(ctx, interfaceId).PutRedfishV1SFSSAppIpAddressManagementsRequest(putRedfishV1SFSSAppIpAddressManagementsRequest).Execute()
+> PutRedfishV1SFSSAppIpAddressManagementsInterface(ctx, interfaceId).PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest(putRedfishV1SFSSAppIpAddressManagementsInterfaceRequest).Execute()
 
 Update interface
 
@@ -4387,13 +4330,13 @@ import (
 
 func main() {
 	interfaceId := "interfaceId_example" // string | Interface Name
-	putRedfishV1SFSSAppIpAddressManagementsRequest := *openapiclient.NewPutRedfishV1SFSSAppIpAddressManagementsRequest([]string{"IPV4Address_example"}, "IPV4Config_example", "IPV4Gateway_example", float32(123), "IPV6Config_example", []string{"IPV6Address_example"}, "IPV6Gateway_example", float32(123)) // PutRedfishV1SFSSAppIpAddressManagementsRequest | {      \"IPV4Address\": [         \"30.1.1.1\"                                           ],     \"IPV4Config\": \"MANUAL\",                    \"IPV4Gateway\": \"30.1.1.2\",     \"IPV4PrefixLength\": 16,     \"IPV6Config\": \"MANUAL\",      \"Name\": \"Name1\",                     \"IPV6Address\": [           \"fe80::1699:6fff:43dd:56c1\"               ],      \"IPV6Gateway\":   \"fe80::1699:6f09:43dd:ffff\",     \"IPV6PrefixLength\": 64,      \"MTU\": 7000 ## If this field is not present, the MTU is chosen as auto  } (optional)
+	putRedfishV1SFSSAppIpAddressManagementsInterfaceRequest := *openapiclient.NewPutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest([]string{"IPV4Address_example"}, "IPV4Config_example", "IPV4Gateway_example", float32(123), "IPV6Config_example", []string{"IPV6Address_example"}, "IPV6Gateway_example", float32(123)) // PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest | {      \"IPV4Address\": [         \"30.1.1.1\"                                           ],     \"IPV4Config\": \"MANUAL\",                    \"IPV4Gateway\": \"30.1.1.2\",     \"IPV4PrefixLength\": 16,     \"IPV6Config\": \"MANUAL\",      \"Name\": \"Name1\",                     \"IPV6Address\": [           \"fe80::1699:6fff:43dd:56c1\"               ],      \"IPV6Gateway\":   \"fe80::1699:6f09:43dd:ffff\",     \"IPV6PrefixLength\": 64,      \"MTU\": 7000 ## If this field is not present, the MTU is chosen as auto  } (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DefaultAPI.PutRedfishV1SFSSAppIpAddressManagements(context.Background(), interfaceId).PutRedfishV1SFSSAppIpAddressManagementsRequest(putRedfishV1SFSSAppIpAddressManagementsRequest).Execute()
+	r, err := apiClient.DefaultAPI.PutRedfishV1SFSSAppIpAddressManagementsInterface(context.Background(), interfaceId).PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest(putRedfishV1SFSSAppIpAddressManagementsInterfaceRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PutRedfishV1SFSSAppIpAddressManagements``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PutRedfishV1SFSSAppIpAddressManagementsInterface``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -4409,13 +4352,13 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPutRedfishV1SFSSAppIpAddressManagementsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **putRedfishV1SFSSAppIpAddressManagementsRequest** | [**PutRedfishV1SFSSAppIpAddressManagementsRequest**](PutRedfishV1SFSSAppIpAddressManagementsRequest.md) | {      \&quot;IPV4Address\&quot;: [         \&quot;30.1.1.1\&quot;                                           ],     \&quot;IPV4Config\&quot;: \&quot;MANUAL\&quot;,                    \&quot;IPV4Gateway\&quot;: \&quot;30.1.1.2\&quot;,     \&quot;IPV4PrefixLength\&quot;: 16,     \&quot;IPV6Config\&quot;: \&quot;MANUAL\&quot;,      \&quot;Name\&quot;: \&quot;Name1\&quot;,                     \&quot;IPV6Address\&quot;: [           \&quot;fe80::1699:6fff:43dd:56c1\&quot;               ],      \&quot;IPV6Gateway\&quot;:   \&quot;fe80::1699:6f09:43dd:ffff\&quot;,     \&quot;IPV6PrefixLength\&quot;: 64,      \&quot;MTU\&quot;: 7000 ## If this field is not present, the MTU is chosen as auto  } | 
+ **putRedfishV1SFSSAppIpAddressManagementsInterfaceRequest** | [**PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest**](PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest.md) | {      \&quot;IPV4Address\&quot;: [         \&quot;30.1.1.1\&quot;                                           ],     \&quot;IPV4Config\&quot;: \&quot;MANUAL\&quot;,                    \&quot;IPV4Gateway\&quot;: \&quot;30.1.1.2\&quot;,     \&quot;IPV4PrefixLength\&quot;: 16,     \&quot;IPV6Config\&quot;: \&quot;MANUAL\&quot;,      \&quot;Name\&quot;: \&quot;Name1\&quot;,                     \&quot;IPV6Address\&quot;: [           \&quot;fe80::1699:6fff:43dd:56c1\&quot;               ],      \&quot;IPV6Gateway\&quot;:   \&quot;fe80::1699:6f09:43dd:ffff\&quot;,     \&quot;IPV6PrefixLength\&quot;: 64,      \&quot;MTU\&quot;: 7000 ## If this field is not present, the MTU is chosen as auto  } | 
 
 ### Return type
 

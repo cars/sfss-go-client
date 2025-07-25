@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SosReports** | [**[]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner**](GetRedfishV1SFSSAppLicenses200ResponseLicensesInner.md) | A collection of system information that includes configuration details and diagnostic information | 
+**SosReports** | [**[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner**](GetRedfishV1SFSSAppBackups200ResponseBackupsInner.md) | A collection of system information that includes configuration details and diagnostic information | 
 **SosReportsodataCount** | **float32** | Number of SOS reports downloaded | 
 **OdataId** | **string** |  | 
 **OdataContext** | **string** |  | 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewSosReportsGET
 
-`func NewSosReportsGET(sosReports []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, sosReportsodataCount float32, odataId string, odataContext string, odataType string, ) *SosReportsGET`
+`func NewSosReportsGET(sosReports []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, sosReportsodataCount float32, odataId string, odataContext string, odataType string, ) *SosReportsGET`
 
 NewSosReportsGET instantiates a new SosReportsGET object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSosReports
 
-`func (o *SosReportsGET) GetSosReports() []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner`
+`func (o *SosReportsGET) GetSosReports() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner`
 
 GetSosReports returns the SosReports field if non-nil, zero value otherwise.
 
 ### GetSosReportsOk
 
-`func (o *SosReportsGET) GetSosReportsOk() (*[]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, bool)`
+`func (o *SosReportsGET) GetSosReportsOk() (*[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool)`
 
 GetSosReportsOk returns a tuple with the SosReports field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSosReports
 
-`func (o *SosReportsGET) SetSosReports(v []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner)`
+`func (o *SosReportsGET) SetSosReports(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner)`
 
 SetSosReports sets SosReports field to given value.
 

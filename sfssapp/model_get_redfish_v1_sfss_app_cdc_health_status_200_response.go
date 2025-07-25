@@ -22,7 +22,7 @@ var _ MappedNullable = &GetRedfishV1SFSSAppCDCHealthStatus200Response{}
 // GetRedfishV1SFSSAppCDCHealthStatus200Response 
 type GetRedfishV1SFSSAppCDCHealthStatus200Response struct {
 	// Health status of the CDC instance; possible values include Ok, Warning, and Critical
-	CDCHealthStatus []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner `json:"CDCHealthStatus"`
+	CDCHealthStatus []GetRedfishV1SFSSAppBackups200ResponseBackupsInner `json:"CDCHealthStatus"`
 	// Number of health status records (one for each CDC instance)
 	CDCHealthStatusodataCount float32 `json:"CDCHealthStatus@odata.count"`
 	OdataId string `json:"@odata.id"`
@@ -36,7 +36,7 @@ type _GetRedfishV1SFSSAppCDCHealthStatus200Response GetRedfishV1SFSSAppCDCHealth
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGetRedfishV1SFSSAppCDCHealthStatus200Response(cDCHealthStatus []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, cDCHealthStatusodataCount float32, odataId string, odataContext string, odataType string) *GetRedfishV1SFSSAppCDCHealthStatus200Response {
+func NewGetRedfishV1SFSSAppCDCHealthStatus200Response(cDCHealthStatus []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, cDCHealthStatusodataCount float32, odataId string, odataContext string, odataType string) *GetRedfishV1SFSSAppCDCHealthStatus200Response {
 	this := GetRedfishV1SFSSAppCDCHealthStatus200Response{}
 	this.CDCHealthStatus = cDCHealthStatus
 	this.CDCHealthStatusodataCount = cDCHealthStatusodataCount
@@ -55,9 +55,9 @@ func NewGetRedfishV1SFSSAppCDCHealthStatus200ResponseWithDefaults() *GetRedfishV
 }
 
 // GetCDCHealthStatus returns the CDCHealthStatus field value
-func (o *GetRedfishV1SFSSAppCDCHealthStatus200Response) GetCDCHealthStatus() []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner {
+func (o *GetRedfishV1SFSSAppCDCHealthStatus200Response) GetCDCHealthStatus() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner {
 	if o == nil {
-		var ret []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner
+		var ret []GetRedfishV1SFSSAppBackups200ResponseBackupsInner
 		return ret
 	}
 
@@ -66,7 +66,7 @@ func (o *GetRedfishV1SFSSAppCDCHealthStatus200Response) GetCDCHealthStatus() []G
 
 // GetCDCHealthStatusOk returns a tuple with the CDCHealthStatus field value
 // and a boolean to check if the value has been set.
-func (o *GetRedfishV1SFSSAppCDCHealthStatus200Response) GetCDCHealthStatusOk() ([]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, bool) {
+func (o *GetRedfishV1SFSSAppCDCHealthStatus200Response) GetCDCHealthStatusOk() ([]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -74,7 +74,7 @@ func (o *GetRedfishV1SFSSAppCDCHealthStatus200Response) GetCDCHealthStatusOk() (
 }
 
 // SetCDCHealthStatus sets field value
-func (o *GetRedfishV1SFSSAppCDCHealthStatus200Response) SetCDCHealthStatus(v []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner) {
+func (o *GetRedfishV1SFSSAppCDCHealthStatus200Response) SetCDCHealthStatus(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner) {
 	o.CDCHealthStatus = v
 }
 

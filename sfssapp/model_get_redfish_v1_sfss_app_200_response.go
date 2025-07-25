@@ -22,7 +22,7 @@ var _ MappedNullable = &GetRedfishV1SFSSApp200Response{}
 // GetRedfishV1SFSSApp200Response 
 type GetRedfishV1SFSSApp200Response struct {
 	// A set of SFSS images
-	SFSSImages []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner `json:"SFSSImages"`
+	SFSSImages []GetRedfishV1SFSSAppBackups200ResponseBackupsInner `json:"SFSSImages"`
 	// Number of SFSS images
 	SFSSImagesodataCount float32 `json:"SFSSImages@odata.count"`
 	OdataId string `json:"@odata.id"`
@@ -36,7 +36,7 @@ type _GetRedfishV1SFSSApp200Response GetRedfishV1SFSSApp200Response
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGetRedfishV1SFSSApp200Response(sFSSImages []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, sFSSImagesodataCount float32, odataId string, odataContext string, odataType string) *GetRedfishV1SFSSApp200Response {
+func NewGetRedfishV1SFSSApp200Response(sFSSImages []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, sFSSImagesodataCount float32, odataId string, odataContext string, odataType string) *GetRedfishV1SFSSApp200Response {
 	this := GetRedfishV1SFSSApp200Response{}
 	this.SFSSImages = sFSSImages
 	this.SFSSImagesodataCount = sFSSImagesodataCount
@@ -55,9 +55,9 @@ func NewGetRedfishV1SFSSApp200ResponseWithDefaults() *GetRedfishV1SFSSApp200Resp
 }
 
 // GetSFSSImages returns the SFSSImages field value
-func (o *GetRedfishV1SFSSApp200Response) GetSFSSImages() []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner {
+func (o *GetRedfishV1SFSSApp200Response) GetSFSSImages() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner {
 	if o == nil {
-		var ret []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner
+		var ret []GetRedfishV1SFSSAppBackups200ResponseBackupsInner
 		return ret
 	}
 
@@ -66,7 +66,7 @@ func (o *GetRedfishV1SFSSApp200Response) GetSFSSImages() []GetRedfishV1SFSSAppLi
 
 // GetSFSSImagesOk returns a tuple with the SFSSImages field value
 // and a boolean to check if the value has been set.
-func (o *GetRedfishV1SFSSApp200Response) GetSFSSImagesOk() ([]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, bool) {
+func (o *GetRedfishV1SFSSApp200Response) GetSFSSImagesOk() ([]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -74,7 +74,7 @@ func (o *GetRedfishV1SFSSApp200Response) GetSFSSImagesOk() ([]GetRedfishV1SFSSAp
 }
 
 // SetSFSSImages sets field value
-func (o *GetRedfishV1SFSSApp200Response) SetSFSSImages(v []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner) {
+func (o *GetRedfishV1SFSSApp200Response) SetSFSSImages(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner) {
 	o.SFSSImages = v
 }
 

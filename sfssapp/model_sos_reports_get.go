@@ -22,7 +22,7 @@ var _ MappedNullable = &SosReportsGET{}
 // SosReportsGET This model lists the SOS reports from SFSS.
 type SosReportsGET struct {
 	// A collection of system information that includes configuration details and diagnostic information
-	SosReports []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner `json:"SosReports"`
+	SosReports []GetRedfishV1SFSSAppBackups200ResponseBackupsInner `json:"SosReports"`
 	// Number of SOS reports downloaded
 	SosReportsodataCount float32 `json:"SosReports@odata.count"`
 	OdataId string `json:"@odata.id"`
@@ -36,7 +36,7 @@ type _SosReportsGET SosReportsGET
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSosReportsGET(sosReports []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, sosReportsodataCount float32, odataId string, odataContext string, odataType string) *SosReportsGET {
+func NewSosReportsGET(sosReports []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, sosReportsodataCount float32, odataId string, odataContext string, odataType string) *SosReportsGET {
 	this := SosReportsGET{}
 	this.SosReports = sosReports
 	this.SosReportsodataCount = sosReportsodataCount
@@ -55,9 +55,9 @@ func NewSosReportsGETWithDefaults() *SosReportsGET {
 }
 
 // GetSosReports returns the SosReports field value
-func (o *SosReportsGET) GetSosReports() []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner {
+func (o *SosReportsGET) GetSosReports() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner {
 	if o == nil {
-		var ret []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner
+		var ret []GetRedfishV1SFSSAppBackups200ResponseBackupsInner
 		return ret
 	}
 
@@ -66,7 +66,7 @@ func (o *SosReportsGET) GetSosReports() []GetRedfishV1SFSSAppLicenses200Response
 
 // GetSosReportsOk returns a tuple with the SosReports field value
 // and a boolean to check if the value has been set.
-func (o *SosReportsGET) GetSosReportsOk() ([]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, bool) {
+func (o *SosReportsGET) GetSosReportsOk() ([]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -74,7 +74,7 @@ func (o *SosReportsGET) GetSosReportsOk() ([]GetRedfishV1SFSSAppLicenses200Respo
 }
 
 // SetSosReports sets field value
-func (o *SosReportsGET) SetSosReports(v []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner) {
+func (o *SosReportsGET) SetSosReports(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner) {
 	o.SosReports = v
 }
 

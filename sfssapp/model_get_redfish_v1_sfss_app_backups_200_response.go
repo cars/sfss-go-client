@@ -22,7 +22,7 @@ var _ MappedNullable = &GetRedfishV1SFSSAppBackups200Response{}
 // GetRedfishV1SFSSAppBackups200Response 
 type GetRedfishV1SFSSAppBackups200Response struct {
 	// A set of backups obtained from SFSS
-	Backups []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner `json:"Backups"`
+	Backups []GetRedfishV1SFSSAppBackups200ResponseBackupsInner `json:"Backups"`
 	// Number of backups available
 	BackupsodataCount float32 `json:"Backups@odata.count"`
 	OdataId string `json:"@odata.id"`
@@ -36,7 +36,7 @@ type _GetRedfishV1SFSSAppBackups200Response GetRedfishV1SFSSAppBackups200Respons
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGetRedfishV1SFSSAppBackups200Response(backups []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, backupsodataCount float32, odataId string, odataContext string, odataType string) *GetRedfishV1SFSSAppBackups200Response {
+func NewGetRedfishV1SFSSAppBackups200Response(backups []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, backupsodataCount float32, odataId string, odataContext string, odataType string) *GetRedfishV1SFSSAppBackups200Response {
 	this := GetRedfishV1SFSSAppBackups200Response{}
 	this.Backups = backups
 	this.BackupsodataCount = backupsodataCount
@@ -55,9 +55,9 @@ func NewGetRedfishV1SFSSAppBackups200ResponseWithDefaults() *GetRedfishV1SFSSApp
 }
 
 // GetBackups returns the Backups field value
-func (o *GetRedfishV1SFSSAppBackups200Response) GetBackups() []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner {
+func (o *GetRedfishV1SFSSAppBackups200Response) GetBackups() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner {
 	if o == nil {
-		var ret []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner
+		var ret []GetRedfishV1SFSSAppBackups200ResponseBackupsInner
 		return ret
 	}
 
@@ -66,7 +66,7 @@ func (o *GetRedfishV1SFSSAppBackups200Response) GetBackups() []GetRedfishV1SFSSA
 
 // GetBackupsOk returns a tuple with the Backups field value
 // and a boolean to check if the value has been set.
-func (o *GetRedfishV1SFSSAppBackups200Response) GetBackupsOk() ([]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, bool) {
+func (o *GetRedfishV1SFSSAppBackups200Response) GetBackupsOk() ([]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -74,7 +74,7 @@ func (o *GetRedfishV1SFSSAppBackups200Response) GetBackupsOk() ([]GetRedfishV1SF
 }
 
 // SetBackups sets field value
-func (o *GetRedfishV1SFSSAppBackups200Response) SetBackups(v []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner) {
+func (o *GetRedfishV1SFSSAppBackups200Response) SetBackups(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner) {
 	o.Backups = v
 }
 

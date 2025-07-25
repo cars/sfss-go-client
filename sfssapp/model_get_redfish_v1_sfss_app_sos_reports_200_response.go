@@ -22,7 +22,7 @@ var _ MappedNullable = &GetRedfishV1SFSSAppSosReports200Response{}
 // GetRedfishV1SFSSAppSosReports200Response 
 type GetRedfishV1SFSSAppSosReports200Response struct {
 	// A collection of system information that includes configuration details and diagnostic information
-	SosReports []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner `json:"SosReports"`
+	SosReports []GetRedfishV1SFSSAppBackups200ResponseBackupsInner `json:"SosReports"`
 	//  Number of SOS reports downloaded
 	SosReportsodataCount float32 `json:"SosReports@odata.count"`
 	OdataId string `json:"@odata.id"`
@@ -36,7 +36,7 @@ type _GetRedfishV1SFSSAppSosReports200Response GetRedfishV1SFSSAppSosReports200R
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGetRedfishV1SFSSAppSosReports200Response(sosReports []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, sosReportsodataCount float32, odataId string, odataContext string, odataType string) *GetRedfishV1SFSSAppSosReports200Response {
+func NewGetRedfishV1SFSSAppSosReports200Response(sosReports []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, sosReportsodataCount float32, odataId string, odataContext string, odataType string) *GetRedfishV1SFSSAppSosReports200Response {
 	this := GetRedfishV1SFSSAppSosReports200Response{}
 	this.SosReports = sosReports
 	this.SosReportsodataCount = sosReportsodataCount
@@ -55,9 +55,9 @@ func NewGetRedfishV1SFSSAppSosReports200ResponseWithDefaults() *GetRedfishV1SFSS
 }
 
 // GetSosReports returns the SosReports field value
-func (o *GetRedfishV1SFSSAppSosReports200Response) GetSosReports() []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner {
+func (o *GetRedfishV1SFSSAppSosReports200Response) GetSosReports() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner {
 	if o == nil {
-		var ret []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner
+		var ret []GetRedfishV1SFSSAppBackups200ResponseBackupsInner
 		return ret
 	}
 
@@ -66,7 +66,7 @@ func (o *GetRedfishV1SFSSAppSosReports200Response) GetSosReports() []GetRedfishV
 
 // GetSosReportsOk returns a tuple with the SosReports field value
 // and a boolean to check if the value has been set.
-func (o *GetRedfishV1SFSSAppSosReports200Response) GetSosReportsOk() ([]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, bool) {
+func (o *GetRedfishV1SFSSAppSosReports200Response) GetSosReportsOk() ([]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -74,7 +74,7 @@ func (o *GetRedfishV1SFSSAppSosReports200Response) GetSosReportsOk() ([]GetRedfi
 }
 
 // SetSosReports sets field value
-func (o *GetRedfishV1SFSSAppSosReports200Response) SetSosReports(v []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner) {
+func (o *GetRedfishV1SFSSAppSosReports200Response) SetSosReports(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner) {
 	o.SosReports = v
 }
 

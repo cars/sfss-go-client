@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TacacsServers** | [**[]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner**](GetRedfishV1SFSSAppLicenses200ResponseLicensesInner.md) | List of configured TACACS+ servers | 
+**TacacsServers** | [**[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner**](GetRedfishV1SFSSAppBackups200ResponseBackupsInner.md) | List of configured TACACS+ servers | 
 **TacacsServersodataCount** | **float32** | Number of configured TACACS+ servers | 
 **OdataId** | **string** |  | 
 **OdataContext** | **string** |  | 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewTacacsServersGETID
 
-`func NewTacacsServersGETID(tacacsServers []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, tacacsServersodataCount float32, odataId string, odataContext string, odataType string, ) *TacacsServersGETID`
+`func NewTacacsServersGETID(tacacsServers []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, tacacsServersodataCount float32, odataId string, odataContext string, odataType string, ) *TacacsServersGETID`
 
 NewTacacsServersGETID instantiates a new TacacsServersGETID object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetTacacsServers
 
-`func (o *TacacsServersGETID) GetTacacsServers() []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner`
+`func (o *TacacsServersGETID) GetTacacsServers() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner`
 
 GetTacacsServers returns the TacacsServers field if non-nil, zero value otherwise.
 
 ### GetTacacsServersOk
 
-`func (o *TacacsServersGETID) GetTacacsServersOk() (*[]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, bool)`
+`func (o *TacacsServersGETID) GetTacacsServersOk() (*[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool)`
 
 GetTacacsServersOk returns a tuple with the TacacsServers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTacacsServers
 
-`func (o *TacacsServersGETID) SetTacacsServers(v []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner)`
+`func (o *TacacsServersGETID) SetTacacsServers(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner)`
 
 SetTacacsServers sets TacacsServers field to given value.
 

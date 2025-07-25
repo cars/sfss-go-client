@@ -22,7 +22,7 @@ var _ MappedNullable = &GetRedfishV1SFSSAppCDCInstanceManagers200Response{}
 // GetRedfishV1SFSSAppCDCInstanceManagers200Response 
 type GetRedfishV1SFSSAppCDCInstanceManagers200Response struct {
 	// A set of CDC instances
-	CDCInstanceManagers []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner `json:"CDCInstanceManagers"`
+	CDCInstanceManagers []GetRedfishV1SFSSAppBackups200ResponseBackupsInner `json:"CDCInstanceManagers"`
 	// Number of CDC instances
 	CDCInstanceManagersodataCount float32 `json:"CDCInstanceManagers@odata.count"`
 	OdataId string `json:"@odata.id"`
@@ -36,7 +36,7 @@ type _GetRedfishV1SFSSAppCDCInstanceManagers200Response GetRedfishV1SFSSAppCDCIn
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGetRedfishV1SFSSAppCDCInstanceManagers200Response(cDCInstanceManagers []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, cDCInstanceManagersodataCount float32, odataId string, odataContext string, odataType string) *GetRedfishV1SFSSAppCDCInstanceManagers200Response {
+func NewGetRedfishV1SFSSAppCDCInstanceManagers200Response(cDCInstanceManagers []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, cDCInstanceManagersodataCount float32, odataId string, odataContext string, odataType string) *GetRedfishV1SFSSAppCDCInstanceManagers200Response {
 	this := GetRedfishV1SFSSAppCDCInstanceManagers200Response{}
 	this.CDCInstanceManagers = cDCInstanceManagers
 	this.CDCInstanceManagersodataCount = cDCInstanceManagersodataCount
@@ -55,9 +55,9 @@ func NewGetRedfishV1SFSSAppCDCInstanceManagers200ResponseWithDefaults() *GetRedf
 }
 
 // GetCDCInstanceManagers returns the CDCInstanceManagers field value
-func (o *GetRedfishV1SFSSAppCDCInstanceManagers200Response) GetCDCInstanceManagers() []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner {
+func (o *GetRedfishV1SFSSAppCDCInstanceManagers200Response) GetCDCInstanceManagers() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner {
 	if o == nil {
-		var ret []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner
+		var ret []GetRedfishV1SFSSAppBackups200ResponseBackupsInner
 		return ret
 	}
 
@@ -66,7 +66,7 @@ func (o *GetRedfishV1SFSSAppCDCInstanceManagers200Response) GetCDCInstanceManage
 
 // GetCDCInstanceManagersOk returns a tuple with the CDCInstanceManagers field value
 // and a boolean to check if the value has been set.
-func (o *GetRedfishV1SFSSAppCDCInstanceManagers200Response) GetCDCInstanceManagersOk() ([]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, bool) {
+func (o *GetRedfishV1SFSSAppCDCInstanceManagers200Response) GetCDCInstanceManagersOk() ([]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -74,7 +74,7 @@ func (o *GetRedfishV1SFSSAppCDCInstanceManagers200Response) GetCDCInstanceManage
 }
 
 // SetCDCInstanceManagers sets field value
-func (o *GetRedfishV1SFSSAppCDCInstanceManagers200Response) SetCDCInstanceManagers(v []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner) {
+func (o *GetRedfishV1SFSSAppCDCInstanceManagers200Response) SetCDCInstanceManagers(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner) {
 	o.CDCInstanceManagers = v
 }
 

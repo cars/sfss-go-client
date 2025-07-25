@@ -22,7 +22,7 @@ var _ MappedNullable = &GetRedfishV1SFSSAppRadiusServers200Response{}
 // GetRedfishV1SFSSAppRadiusServers200Response 
 type GetRedfishV1SFSSAppRadiusServers200Response struct {
 	// A set of RADIUS servers
-	RadiusServers []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner `json:"RadiusServers"`
+	RadiusServers []GetRedfishV1SFSSAppBackups200ResponseBackupsInner `json:"RadiusServers"`
 	// Number of RADIUS servers configured up to a maximum of 10
 	RadiusServersodataCount float32 `json:"RadiusServers@odata.count"`
 	OdataId string `json:"@odata.id"`
@@ -36,7 +36,7 @@ type _GetRedfishV1SFSSAppRadiusServers200Response GetRedfishV1SFSSAppRadiusServe
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGetRedfishV1SFSSAppRadiusServers200Response(radiusServers []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, radiusServersodataCount float32, odataId string, odataContext string, odataType string) *GetRedfishV1SFSSAppRadiusServers200Response {
+func NewGetRedfishV1SFSSAppRadiusServers200Response(radiusServers []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, radiusServersodataCount float32, odataId string, odataContext string, odataType string) *GetRedfishV1SFSSAppRadiusServers200Response {
 	this := GetRedfishV1SFSSAppRadiusServers200Response{}
 	this.RadiusServers = radiusServers
 	this.RadiusServersodataCount = radiusServersodataCount
@@ -55,9 +55,9 @@ func NewGetRedfishV1SFSSAppRadiusServers200ResponseWithDefaults() *GetRedfishV1S
 }
 
 // GetRadiusServers returns the RadiusServers field value
-func (o *GetRedfishV1SFSSAppRadiusServers200Response) GetRadiusServers() []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner {
+func (o *GetRedfishV1SFSSAppRadiusServers200Response) GetRadiusServers() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner {
 	if o == nil {
-		var ret []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner
+		var ret []GetRedfishV1SFSSAppBackups200ResponseBackupsInner
 		return ret
 	}
 
@@ -66,7 +66,7 @@ func (o *GetRedfishV1SFSSAppRadiusServers200Response) GetRadiusServers() []GetRe
 
 // GetRadiusServersOk returns a tuple with the RadiusServers field value
 // and a boolean to check if the value has been set.
-func (o *GetRedfishV1SFSSAppRadiusServers200Response) GetRadiusServersOk() ([]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, bool) {
+func (o *GetRedfishV1SFSSAppRadiusServers200Response) GetRadiusServersOk() ([]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -74,7 +74,7 @@ func (o *GetRedfishV1SFSSAppRadiusServers200Response) GetRadiusServersOk() ([]Ge
 }
 
 // SetRadiusServers sets field value
-func (o *GetRedfishV1SFSSAppRadiusServers200Response) SetRadiusServers(v []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner) {
+func (o *GetRedfishV1SFSSAppRadiusServers200Response) SetRadiusServers(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner) {
 	o.RadiusServers = v
 }
 

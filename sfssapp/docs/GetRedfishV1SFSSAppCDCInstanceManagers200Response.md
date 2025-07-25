@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CDCInstanceManagers** | [**[]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner**](GetRedfishV1SFSSAppLicenses200ResponseLicensesInner.md) | A set of CDC instances | 
+**CDCInstanceManagers** | [**[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner**](GetRedfishV1SFSSAppBackups200ResponseBackupsInner.md) | A set of CDC instances | 
 **CDCInstanceManagersodataCount** | **float32** | Number of CDC instances | 
 **OdataId** | **string** |  | 
 **OdataContext** | **string** |  | 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewGetRedfishV1SFSSAppCDCInstanceManagers200Response
 
-`func NewGetRedfishV1SFSSAppCDCInstanceManagers200Response(cDCInstanceManagers []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, cDCInstanceManagersodataCount float32, odataId string, odataContext string, odataType string, ) *GetRedfishV1SFSSAppCDCInstanceManagers200Response`
+`func NewGetRedfishV1SFSSAppCDCInstanceManagers200Response(cDCInstanceManagers []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, cDCInstanceManagersodataCount float32, odataId string, odataContext string, odataType string, ) *GetRedfishV1SFSSAppCDCInstanceManagers200Response`
 
 NewGetRedfishV1SFSSAppCDCInstanceManagers200Response instantiates a new GetRedfishV1SFSSAppCDCInstanceManagers200Response object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCDCInstanceManagers
 
-`func (o *GetRedfishV1SFSSAppCDCInstanceManagers200Response) GetCDCInstanceManagers() []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner`
+`func (o *GetRedfishV1SFSSAppCDCInstanceManagers200Response) GetCDCInstanceManagers() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner`
 
 GetCDCInstanceManagers returns the CDCInstanceManagers field if non-nil, zero value otherwise.
 
 ### GetCDCInstanceManagersOk
 
-`func (o *GetRedfishV1SFSSAppCDCInstanceManagers200Response) GetCDCInstanceManagersOk() (*[]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, bool)`
+`func (o *GetRedfishV1SFSSAppCDCInstanceManagers200Response) GetCDCInstanceManagersOk() (*[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool)`
 
 GetCDCInstanceManagersOk returns a tuple with the CDCInstanceManagers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCDCInstanceManagers
 
-`func (o *GetRedfishV1SFSSAppCDCInstanceManagers200Response) SetCDCInstanceManagers(v []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner)`
+`func (o *GetRedfishV1SFSSAppCDCInstanceManagers200Response) SetCDCInstanceManagers(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner)`
 
 SetCDCInstanceManagers sets CDCInstanceManagers field to given value.
 

@@ -22,7 +22,7 @@ var _ MappedNullable = &GetRedfishV1SFSSAppTacacsServers200Response{}
 // GetRedfishV1SFSSAppTacacsServers200Response 
 type GetRedfishV1SFSSAppTacacsServers200Response struct {
 	// A set of TACACS+ servers
-	TacacsServers []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner `json:"TacacsServers"`
+	TacacsServers []GetRedfishV1SFSSAppBackups200ResponseBackupsInner `json:"TacacsServers"`
 	// Number of TACACS+ servers configured up to a maximum of 10 servers
 	TacacsServersodataCount float32 `json:"TacacsServers@odata.count"`
 	OdataId string `json:"@odata.id"`
@@ -36,7 +36,7 @@ type _GetRedfishV1SFSSAppTacacsServers200Response GetRedfishV1SFSSAppTacacsServe
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGetRedfishV1SFSSAppTacacsServers200Response(tacacsServers []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, tacacsServersodataCount float32, odataId string, odataContext string, odataType string) *GetRedfishV1SFSSAppTacacsServers200Response {
+func NewGetRedfishV1SFSSAppTacacsServers200Response(tacacsServers []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, tacacsServersodataCount float32, odataId string, odataContext string, odataType string) *GetRedfishV1SFSSAppTacacsServers200Response {
 	this := GetRedfishV1SFSSAppTacacsServers200Response{}
 	this.TacacsServers = tacacsServers
 	this.TacacsServersodataCount = tacacsServersodataCount
@@ -55,9 +55,9 @@ func NewGetRedfishV1SFSSAppTacacsServers200ResponseWithDefaults() *GetRedfishV1S
 }
 
 // GetTacacsServers returns the TacacsServers field value
-func (o *GetRedfishV1SFSSAppTacacsServers200Response) GetTacacsServers() []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner {
+func (o *GetRedfishV1SFSSAppTacacsServers200Response) GetTacacsServers() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner {
 	if o == nil {
-		var ret []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner
+		var ret []GetRedfishV1SFSSAppBackups200ResponseBackupsInner
 		return ret
 	}
 
@@ -66,7 +66,7 @@ func (o *GetRedfishV1SFSSAppTacacsServers200Response) GetTacacsServers() []GetRe
 
 // GetTacacsServersOk returns a tuple with the TacacsServers field value
 // and a boolean to check if the value has been set.
-func (o *GetRedfishV1SFSSAppTacacsServers200Response) GetTacacsServersOk() ([]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, bool) {
+func (o *GetRedfishV1SFSSAppTacacsServers200Response) GetTacacsServersOk() ([]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -74,7 +74,7 @@ func (o *GetRedfishV1SFSSAppTacacsServers200Response) GetTacacsServersOk() ([]Ge
 }
 
 // SetTacacsServers sets field value
-func (o *GetRedfishV1SFSSAppTacacsServers200Response) SetTacacsServers(v []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner) {
+func (o *GetRedfishV1SFSSAppTacacsServers200Response) SetTacacsServers(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner) {
 	o.TacacsServers = v
 }
 

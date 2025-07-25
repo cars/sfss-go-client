@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Backups** | [**[]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner**](GetRedfishV1SFSSAppLicenses200ResponseLicensesInner.md) | A set of backups obtained from SFSS | 
+**Backups** | [**[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner**](GetRedfishV1SFSSAppBackups200ResponseBackupsInner.md) | A set of backups obtained from SFSS | 
 **BackupsodataCount** | **float32** | Number of backups available | 
 **OdataId** | **string** |  | 
 **OdataContext** | **string** |  | 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewGetRedfishV1SFSSAppBackups200Response
 
-`func NewGetRedfishV1SFSSAppBackups200Response(backups []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, backupsodataCount float32, odataId string, odataContext string, odataType string, ) *GetRedfishV1SFSSAppBackups200Response`
+`func NewGetRedfishV1SFSSAppBackups200Response(backups []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, backupsodataCount float32, odataId string, odataContext string, odataType string, ) *GetRedfishV1SFSSAppBackups200Response`
 
 NewGetRedfishV1SFSSAppBackups200Response instantiates a new GetRedfishV1SFSSAppBackups200Response object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetBackups
 
-`func (o *GetRedfishV1SFSSAppBackups200Response) GetBackups() []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner`
+`func (o *GetRedfishV1SFSSAppBackups200Response) GetBackups() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner`
 
 GetBackups returns the Backups field if non-nil, zero value otherwise.
 
 ### GetBackupsOk
 
-`func (o *GetRedfishV1SFSSAppBackups200Response) GetBackupsOk() (*[]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, bool)`
+`func (o *GetRedfishV1SFSSAppBackups200Response) GetBackupsOk() (*[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool)`
 
 GetBackupsOk returns a tuple with the Backups field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBackups
 
-`func (o *GetRedfishV1SFSSAppBackups200Response) SetBackups(v []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner)`
+`func (o *GetRedfishV1SFSSAppBackups200Response) SetBackups(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner)`
 
 SetBackups sets Backups field to given value.
 

@@ -229,27 +229,27 @@ func (a *DefaultAPIService) DeleteRedfishV1SFSSAppCDCInstanceManagersExecute(r A
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeleteRedfishV1SFSSAppIpAddressManagementsRequest struct {
+type ApiDeleteRedfishV1SFSSAppIpAddressManagementsInterfaceRequest struct {
 	ctx context.Context
 	ApiService *DefaultAPIService
 	interfaceId string
 }
 
-func (r ApiDeleteRedfishV1SFSSAppIpAddressManagementsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteRedfishV1SFSSAppIpAddressManagementsExecute(r)
+func (r ApiDeleteRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteRedfishV1SFSSAppIpAddressManagementsInterfaceExecute(r)
 }
 
 /*
-DeleteRedfishV1SFSSAppIpAddressManagements Delete VLAN interface
+DeleteRedfishV1SFSSAppIpAddressManagementsInterface Delete VLAN interface
 
 This API removes the specified interface from SFSS application.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param interfaceId Vlan interface Name
- @return ApiDeleteRedfishV1SFSSAppIpAddressManagementsRequest
+ @return ApiDeleteRedfishV1SFSSAppIpAddressManagementsInterfaceRequest
 */
-func (a *DefaultAPIService) DeleteRedfishV1SFSSAppIpAddressManagements(ctx context.Context, interfaceId string) ApiDeleteRedfishV1SFSSAppIpAddressManagementsRequest {
-	return ApiDeleteRedfishV1SFSSAppIpAddressManagementsRequest{
+func (a *DefaultAPIService) DeleteRedfishV1SFSSAppIpAddressManagementsInterface(ctx context.Context, interfaceId string) ApiDeleteRedfishV1SFSSAppIpAddressManagementsInterfaceRequest {
+	return ApiDeleteRedfishV1SFSSAppIpAddressManagementsInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		interfaceId: interfaceId,
@@ -257,14 +257,14 @@ func (a *DefaultAPIService) DeleteRedfishV1SFSSAppIpAddressManagements(ctx conte
 }
 
 // Execute executes the request
-func (a *DefaultAPIService) DeleteRedfishV1SFSSAppIpAddressManagementsExecute(r ApiDeleteRedfishV1SFSSAppIpAddressManagementsRequest) (*http.Response, error) {
+func (a *DefaultAPIService) DeleteRedfishV1SFSSAppIpAddressManagementsInterfaceExecute(r ApiDeleteRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.DeleteRedfishV1SFSSAppIpAddressManagements")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.DeleteRedfishV1SFSSAppIpAddressManagementsInterface")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -573,105 +573,6 @@ func (a *DefaultAPIService) GetEnumsRedfishV1SFSSAppIpAddressManagementsEnumsExe
 	}
 
 	localVarPath := localBasePath + "/redfish/v1/SFSSApp/IpAddressManagements/Enums"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiGetExpandRedfishV1SFSSAppBackupsRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
-}
-
-func (r ApiGetExpandRedfishV1SFSSAppBackupsRequest) Execute() (*GetExpandRedfishV1SFSSAppBackups200Response, *http.Response, error) {
-	return r.ApiService.GetExpandRedfishV1SFSSAppBackupsExecute(r)
-}
-
-/*
-GetExpandRedfishV1SFSSAppBackups Get all backups
-
-This API retrieves detailed backup information available in SFSS.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetExpandRedfishV1SFSSAppBackupsRequest
-*/
-func (a *DefaultAPIService) GetExpandRedfishV1SFSSAppBackups(ctx context.Context) ApiGetExpandRedfishV1SFSSAppBackupsRequest {
-	return ApiGetExpandRedfishV1SFSSAppBackupsRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return GetExpandRedfishV1SFSSAppBackups200Response
-func (a *DefaultAPIService) GetExpandRedfishV1SFSSAppBackupsExecute(r ApiGetExpandRedfishV1SFSSAppBackupsRequest) (*GetExpandRedfishV1SFSSAppBackups200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetExpandRedfishV1SFSSAppBackups200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetExpandRedfishV1SFSSAppBackups")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/redfish/v1/SFSSApp/Backups?$expand=Backups"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1831,6 +1732,13 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppAuthenticationSequenceEnumsExecut
 type ApiGetRedfishV1SFSSAppBackupsRequest struct {
 	ctx context.Context
 	ApiService *DefaultAPIService
+	expand *string
+}
+
+// Expand the Backups property to include detailed information about each backup.
+func (r ApiGetRedfishV1SFSSAppBackupsRequest) Expand(expand string) ApiGetRedfishV1SFSSAppBackupsRequest {
+	r.expand = &expand
+	return r
 }
 
 func (r ApiGetRedfishV1SFSSAppBackupsRequest) Execute() (*GetRedfishV1SFSSAppBackups200Response, *http.Response, error) {
@@ -1873,6 +1781,12 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppBackupsExecute(r ApiGetRedfishV1S
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.expand != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "$expand", r.expand, "form", "")
+	} else {
+		var defaultValue string = "Backups"
+		r.expand = &defaultValue
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -3293,7 +3207,7 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppIpAddressManagementsExecute(r Api
 type ApiGetRedfishV1SFSSAppIpAddressManagementsInterfaceRequest struct {
 	ctx context.Context
 	ApiService *DefaultAPIService
-	interface_ string
+	interfaceId string
 }
 
 func (r ApiGetRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) Execute() (*GetRedfishV1SFSSAppIpAddressManagementsInterface200Response, *http.Response, error) {
@@ -3306,14 +3220,14 @@ GetRedfishV1SFSSAppIpAddressManagementsInterface Get specific interface
 This API retrieves details of the specified interface from SFSS application based on the interface name. IPv4 and IPv6 route-specific configuration parameters are available from Release 1.3.0 onwards. See example-2 for sample route configuration in the response.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param interface_ Interface identifier
+ @param interfaceId Interface identifier
  @return ApiGetRedfishV1SFSSAppIpAddressManagementsInterfaceRequest
 */
-func (a *DefaultAPIService) GetRedfishV1SFSSAppIpAddressManagementsInterface(ctx context.Context, interface_ string) ApiGetRedfishV1SFSSAppIpAddressManagementsInterfaceRequest {
+func (a *DefaultAPIService) GetRedfishV1SFSSAppIpAddressManagementsInterface(ctx context.Context, interfaceId string) ApiGetRedfishV1SFSSAppIpAddressManagementsInterfaceRequest {
 	return ApiGetRedfishV1SFSSAppIpAddressManagementsInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
-		interface_: interface_,
+		interfaceId: interfaceId,
 	}
 }
 
@@ -3332,8 +3246,8 @@ func (a *DefaultAPIService) GetRedfishV1SFSSAppIpAddressManagementsInterfaceExec
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/redfish/v1/SFSSApp/IpAddressManagements({interface})"
-	localVarPath = strings.Replace(localVarPath, "{"+"interface"+"}", url.PathEscape(parameterValueToString(r.interface_, "interface_")), -1)
+	localVarPath := localBasePath + "/redfish/v1/SFSSApp/IpAddressManagements({InterfaceId})"
+	localVarPath = strings.Replace(localVarPath, "{"+"InterfaceId"+"}", url.PathEscape(parameterValueToString(r.interfaceId, "interfaceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6781,34 +6695,34 @@ func (a *DefaultAPIService) PutRedfishV1SFSSAppCDCInstanceManagersExecute(r ApiP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPutRedfishV1SFSSAppIpAddressManagementsRequest struct {
+type ApiPutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest struct {
 	ctx context.Context
 	ApiService *DefaultAPIService
 	interfaceId string
-	putRedfishV1SFSSAppIpAddressManagementsRequest *PutRedfishV1SFSSAppIpAddressManagementsRequest
+	putRedfishV1SFSSAppIpAddressManagementsInterfaceRequest *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest
 }
 
 // {      \&quot;IPV4Address\&quot;: [         \&quot;30.1.1.1\&quot;                                           ],     \&quot;IPV4Config\&quot;: \&quot;MANUAL\&quot;,                    \&quot;IPV4Gateway\&quot;: \&quot;30.1.1.2\&quot;,     \&quot;IPV4PrefixLength\&quot;: 16,     \&quot;IPV6Config\&quot;: \&quot;MANUAL\&quot;,      \&quot;Name\&quot;: \&quot;Name1\&quot;,                     \&quot;IPV6Address\&quot;: [           \&quot;fe80::1699:6fff:43dd:56c1\&quot;               ],      \&quot;IPV6Gateway\&quot;:   \&quot;fe80::1699:6f09:43dd:ffff\&quot;,     \&quot;IPV6PrefixLength\&quot;: 64,      \&quot;MTU\&quot;: 7000 ## If this field is not present, the MTU is chosen as auto  }
-func (r ApiPutRedfishV1SFSSAppIpAddressManagementsRequest) PutRedfishV1SFSSAppIpAddressManagementsRequest(putRedfishV1SFSSAppIpAddressManagementsRequest PutRedfishV1SFSSAppIpAddressManagementsRequest) ApiPutRedfishV1SFSSAppIpAddressManagementsRequest {
-	r.putRedfishV1SFSSAppIpAddressManagementsRequest = &putRedfishV1SFSSAppIpAddressManagementsRequest
+func (r ApiPutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest(putRedfishV1SFSSAppIpAddressManagementsInterfaceRequest PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) ApiPutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest {
+	r.putRedfishV1SFSSAppIpAddressManagementsInterfaceRequest = &putRedfishV1SFSSAppIpAddressManagementsInterfaceRequest
 	return r
 }
 
-func (r ApiPutRedfishV1SFSSAppIpAddressManagementsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PutRedfishV1SFSSAppIpAddressManagementsExecute(r)
+func (r ApiPutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) Execute() (*http.Response, error) {
+	return r.ApiService.PutRedfishV1SFSSAppIpAddressManagementsInterfaceExecute(r)
 }
 
 /*
-PutRedfishV1SFSSAppIpAddressManagements Update interface
+PutRedfishV1SFSSAppIpAddressManagementsInterface Update interface
 
 This API updates the interface information based on the specified interface name. IPv4 and IPv6 route-specific configuration parameters are available from Release 1.3.0 onwards. See example-2 with route configuration for payload details.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param interfaceId Interface Name
- @return ApiPutRedfishV1SFSSAppIpAddressManagementsRequest
+ @return ApiPutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest
 */
-func (a *DefaultAPIService) PutRedfishV1SFSSAppIpAddressManagements(ctx context.Context, interfaceId string) ApiPutRedfishV1SFSSAppIpAddressManagementsRequest {
-	return ApiPutRedfishV1SFSSAppIpAddressManagementsRequest{
+func (a *DefaultAPIService) PutRedfishV1SFSSAppIpAddressManagementsInterface(ctx context.Context, interfaceId string) ApiPutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest {
+	return ApiPutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		interfaceId: interfaceId,
@@ -6816,14 +6730,14 @@ func (a *DefaultAPIService) PutRedfishV1SFSSAppIpAddressManagements(ctx context.
 }
 
 // Execute executes the request
-func (a *DefaultAPIService) PutRedfishV1SFSSAppIpAddressManagementsExecute(r ApiPutRedfishV1SFSSAppIpAddressManagementsRequest) (*http.Response, error) {
+func (a *DefaultAPIService) PutRedfishV1SFSSAppIpAddressManagementsInterfaceExecute(r ApiPutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PutRedfishV1SFSSAppIpAddressManagements")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PutRedfishV1SFSSAppIpAddressManagementsInterface")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6853,7 +6767,7 @@ func (a *DefaultAPIService) PutRedfishV1SFSSAppIpAddressManagementsExecute(r Api
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.putRedfishV1SFSSAppIpAddressManagementsRequest
+	localVarPostBody = r.putRedfishV1SFSSAppIpAddressManagementsInterfaceRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err

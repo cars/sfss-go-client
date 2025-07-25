@@ -80,11 +80,10 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *DefaultAPI* | [**DeleteRedfishV1SFSSAppAlertsCDCInstanceManagers**](docs/DefaultAPI.md#deleteredfishv1sfssappalertscdcinstancemanagers) | **Delete** /redfish/v1/SFSSApp/Alerts({uuid}) | Delete alert
 *DefaultAPI* | [**DeleteRedfishV1SFSSAppCDCInstanceManagers**](docs/DefaultAPI.md#deleteredfishv1sfssappcdcinstancemanagers) | **Delete** /redfish/v1/SFSSApp/CDCInstanceManagers({InstanceId}) | Delete CDC instance
-*DefaultAPI* | [**DeleteRedfishV1SFSSAppIpAddressManagements**](docs/DefaultAPI.md#deleteredfishv1sfssappipaddressmanagements) | **Delete** /redfish/v1/SFSSApp/IpAddressManagements({InterfaceId}) | Delete VLAN interface
+*DefaultAPI* | [**DeleteRedfishV1SFSSAppIpAddressManagementsInterface**](docs/DefaultAPI.md#deleteredfishv1sfssappipaddressmanagementsinterface) | **Delete** /redfish/v1/SFSSApp/IpAddressManagements({InterfaceId}) | Delete VLAN interface
 *DefaultAPI* | [**DeleteRedfishV1SFSSAppNTPServerIP**](docs/DefaultAPI.md#deleteredfishv1sfssappntpserverip) | **Delete** /redfish/v1/SFSSApp/NTP({ServerIP}) | Remove NTP configuration
 *DefaultAPI* | [**DeleteRedfishV1SFSSAppSFSSImages**](docs/DefaultAPI.md#deleteredfishv1sfssappsfssimages) | **Delete** /redfish/v1/SFSSApp/SFSSImages | Delete image
 *DefaultAPI* | [**GetEnumsRedfishV1SFSSAppIpAddressManagementsEnums**](docs/DefaultAPI.md#getenumsredfishv1sfssappipaddressmanagementsenums) | **Get** /redfish/v1/SFSSApp/IpAddressManagements/Enums | Get interface enums
-*DefaultAPI* | [**GetExpandRedfishV1SFSSAppBackups**](docs/DefaultAPI.md#getexpandredfishv1sfssappbackups) | **Get** /redfish/v1/SFSSApp/Backups?$expand&#x3D;Backups | Get all backups
 *DefaultAPI* | [**GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand**](docs/DefaultAPI.md#getexpandredfishv1sfssappfoundationalconfigsgetexpand) | **Get** /redfish/v1/SFSSApp/FoundationalConfigs?$expand&#x3D;FoundationalConfigs | Get all foundational configuration
 *DefaultAPI* | [**GetExpandRedfishV1SFSSAppIpAddressManagements**](docs/DefaultAPI.md#getexpandredfishv1sfssappipaddressmanagements) | **Get** /redfish/v1/SFSSApp/IpAddressManagements?$expand&#x3D;IpAddressManagements | Get all interfaces
 *DefaultAPI* | [**GetExpandRedfishV1SFSSAppRestores**](docs/DefaultAPI.md#getexpandredfishv1sfssapprestores) | **Get** /redfish/v1/SFSSApp/Restores?$expand&#x3D;Restores | Get detailed restore information
@@ -110,7 +109,7 @@ Class | Method | HTTP request | Description
 *DefaultAPI* | [**GetRedfishV1SFSSAppFoundationalConfigsInstanceIdentifier**](docs/DefaultAPI.md#getredfishv1sfssappfoundationalconfigsinstanceidentifier) | **Get** /redfish/v1/SFSSApp/FoundationalConfigs({InstanceIdentifer}) | Get specific foundational configuration
 *DefaultAPI* | [**GetRedfishV1SFSSAppGlobalSettings**](docs/DefaultAPI.md#getredfishv1sfssappglobalsettings) | **Get** /redfish/v1/SFSSApp/GlobalSettings | Get global settings
 *DefaultAPI* | [**GetRedfishV1SFSSAppIpAddressManagements**](docs/DefaultAPI.md#getredfishv1sfssappipaddressmanagements) | **Get** /redfish/v1/SFSSApp/IpAddressManagements | Get all interfaces
-*DefaultAPI* | [**GetRedfishV1SFSSAppIpAddressManagementsInterface**](docs/DefaultAPI.md#getredfishv1sfssappipaddressmanagementsinterface) | **Get** /redfish/v1/SFSSApp/IpAddressManagements({interface}) | Get specific interface
+*DefaultAPI* | [**GetRedfishV1SFSSAppIpAddressManagementsInterface**](docs/DefaultAPI.md#getredfishv1sfssappipaddressmanagementsinterface) | **Get** /redfish/v1/SFSSApp/IpAddressManagements({InterfaceId}) | Get specific interface
 *DefaultAPI* | [**GetRedfishV1SFSSAppLicenses**](docs/DefaultAPI.md#getredfishv1sfssapplicenses) | **Get** /redfish/v1/SFSSApp/Licenses | Get license count
 *DefaultAPI* | [**GetRedfishV1SFSSAppLicensesLicenseId**](docs/DefaultAPI.md#getredfishv1sfssapplicenseslicenseid) | **Get** /redfish/v1/SFSSApp/Licenses({LicenseId}) | Get specific license
 *DefaultAPI* | [**GetRedfishV1SFSSAppLicensesexpandLicenses**](docs/DefaultAPI.md#getredfishv1sfssapplicensesexpandlicenses) | **Get** /redfish/v1/SFSSApp/Licenses?$expand&#x3D;Licenses | Get detailed license information
@@ -144,7 +143,7 @@ Class | Method | HTTP request | Description
 *DefaultAPI* | [**PutRedfishV1SFSSApp**](docs/DefaultAPI.md#putredfishv1sfssapp) | **Put** /redfish/v1/SFSSApp | Upgrade SFSS application
 *DefaultAPI* | [**PutRedfishV1SFSSAppAlerts**](docs/DefaultAPI.md#putredfishv1sfssappalerts) | **Put** /redfish/v1/SFSSApp/Alerts({uuid}) | Update alert
 *DefaultAPI* | [**PutRedfishV1SFSSAppCDCInstanceManagers**](docs/DefaultAPI.md#putredfishv1sfssappcdcinstancemanagers) | **Put** /redfish/v1/SFSSApp/CDCInstanceManagers({InstanceId}) | Update CDC instance
-*DefaultAPI* | [**PutRedfishV1SFSSAppIpAddressManagements**](docs/DefaultAPI.md#putredfishv1sfssappipaddressmanagements) | **Put** /redfish/v1/SFSSApp/IpAddressManagements({InterfaceId}) | Update interface
+*DefaultAPI* | [**PutRedfishV1SFSSAppIpAddressManagementsInterface**](docs/DefaultAPI.md#putredfishv1sfssappipaddressmanagementsinterface) | **Put** /redfish/v1/SFSSApp/IpAddressManagements({InterfaceId}) | Update interface
 *DefaultAPI* | [**PutRedfishV1SFSSAppLicenses**](docs/DefaultAPI.md#putredfishv1sfssapplicenses) | **Put** /redfish/v1/SFSSApp/Licenses | Accept EULA
 *DefaultAPI* | [**PutRedfishV1SFSSAppNTP**](docs/DefaultAPI.md#putredfishv1sfssappntp) | **Put** /redfish/v1/SFSSApp/NTP | Enable or disable NTP service
 *DefaultAPI* | [**PutRedfishV1SFSSApp_0**](docs/DefaultAPI.md#putredfishv1sfssapp_0) | **Put** /redfish/v1/SFSSApp/SFSSImages | Upgrade application
@@ -177,8 +176,6 @@ Class | Method | HTTP request | Description
  - [FoundationalConfigsGETExpand](docs/FoundationalConfigsGETExpand.md)
  - [FoundationalConfigsGETID](docs/FoundationalConfigsGETID.md)
  - [GetEnumsRedfishV1SFSSAppIpAddressManagementsEnums200Response](docs/GetEnumsRedfishV1SFSSAppIpAddressManagementsEnums200Response.md)
- - [GetExpandRedfishV1SFSSAppBackups200Response](docs/GetExpandRedfishV1SFSSAppBackups200Response.md)
- - [GetExpandRedfishV1SFSSAppBackups200ResponseBackupsInner](docs/GetExpandRedfishV1SFSSAppBackups200ResponseBackupsInner.md)
  - [GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200Response](docs/GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200Response.md)
  - [GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200ResponseFoundationalConfigsInner](docs/GetExpandRedfishV1SFSSAppFoundationalConfigsGETExpand200ResponseFoundationalConfigsInner.md)
  - [GetExpandRedfishV1SFSSAppIpAddressManagements200Response](docs/GetExpandRedfishV1SFSSAppIpAddressManagements200Response.md)
@@ -193,6 +190,7 @@ Class | Method | HTTP request | Description
  - [GetRedfishV1SFSSAppAuthenticationSequence200Response](docs/GetRedfishV1SFSSAppAuthenticationSequence200Response.md)
  - [GetRedfishV1SFSSAppAuthenticationSequenceEnums200Response](docs/GetRedfishV1SFSSAppAuthenticationSequenceEnums200Response.md)
  - [GetRedfishV1SFSSAppBackups200Response](docs/GetRedfishV1SFSSAppBackups200Response.md)
+ - [GetRedfishV1SFSSAppBackups200ResponseBackupsInner](docs/GetRedfishV1SFSSAppBackups200ResponseBackupsInner.md)
  - [GetRedfishV1SFSSAppBackupsID200Response](docs/GetRedfishV1SFSSAppBackupsID200Response.md)
  - [GetRedfishV1SFSSAppCDCHealthStatus200Response](docs/GetRedfishV1SFSSAppCDCHealthStatus200Response.md)
  - [GetRedfishV1SFSSAppCDCHealthStatusID200Response](docs/GetRedfishV1SFSSAppCDCHealthStatusID200Response.md)
@@ -210,7 +208,6 @@ Class | Method | HTTP request | Description
  - [GetRedfishV1SFSSAppIpAddressManagementsInterface200Response](docs/GetRedfishV1SFSSAppIpAddressManagementsInterface200Response.md)
  - [GetRedfishV1SFSSAppIpAddressManagementsInterface200ResponseIPV4RouteInner](docs/GetRedfishV1SFSSAppIpAddressManagementsInterface200ResponseIPV4RouteInner.md)
  - [GetRedfishV1SFSSAppLicenses200Response](docs/GetRedfishV1SFSSAppLicenses200Response.md)
- - [GetRedfishV1SFSSAppLicenses200ResponseLicensesInner](docs/GetRedfishV1SFSSAppLicenses200ResponseLicensesInner.md)
  - [GetRedfishV1SFSSAppLicensesExpandLicenses200Response](docs/GetRedfishV1SFSSAppLicensesExpandLicenses200Response.md)
  - [GetRedfishV1SFSSAppLicensesExpandLicenses200ResponseLicensesInner](docs/GetRedfishV1SFSSAppLicensesExpandLicenses200ResponseLicensesInner.md)
  - [GetRedfishV1SFSSAppLicensesLicenseId200Response](docs/GetRedfishV1SFSSAppLicensesLicenseId200Response.md)
@@ -264,8 +261,8 @@ Class | Method | HTTP request | Description
  - [PutRedfishV1SFSSApp200Response](docs/PutRedfishV1SFSSApp200Response.md)
  - [PutRedfishV1SFSSAppAlertsRequest](docs/PutRedfishV1SFSSAppAlertsRequest.md)
  - [PutRedfishV1SFSSAppCDCInstanceManagersRequest](docs/PutRedfishV1SFSSAppCDCInstanceManagersRequest.md)
- - [PutRedfishV1SFSSAppIpAddressManagementsRequest](docs/PutRedfishV1SFSSAppIpAddressManagementsRequest.md)
- - [PutRedfishV1SFSSAppIpAddressManagementsRequestIPV6RouteInner](docs/PutRedfishV1SFSSAppIpAddressManagementsRequestIPV6RouteInner.md)
+ - [PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest](docs/PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest.md)
+ - [PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequestIPV6RouteInner](docs/PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequestIPV6RouteInner.md)
  - [PutRedfishV1SFSSAppLicenses200Response](docs/PutRedfishV1SFSSAppLicenses200Response.md)
  - [PutRedfishV1SFSSAppLicensesRequest](docs/PutRedfishV1SFSSAppLicensesRequest.md)
  - [PutRedfishV1SFSSAppNTP200Response](docs/PutRedfishV1SFSSAppNTP200Response.md)

@@ -16,11 +16,11 @@ import (
 	"fmt"
 )
 
-// checks if the PutRedfishV1SFSSAppIpAddressManagementsRequest type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PutRedfishV1SFSSAppIpAddressManagementsRequest{}
+// checks if the PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest{}
 
-// PutRedfishV1SFSSAppIpAddressManagementsRequest 
-type PutRedfishV1SFSSAppIpAddressManagementsRequest struct {
+// PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest 
+type PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest struct {
 	// Interface IPv4 address 
 	IPV4Address []string `json:"IPV4Address"`
 	// IP address configuration type; possible values include Manual, Automatic, and Disabled
@@ -43,17 +43,17 @@ type PutRedfishV1SFSSAppIpAddressManagementsRequest struct {
 	IPV6PrefixLength float32 `json:"IPV6PrefixLength"`
 	// The cost assigned to the route; valid range is from 1 to 255
 	MTU *float32 `json:"MTU,omitempty"`
-	IPV6Route []PutRedfishV1SFSSAppIpAddressManagementsRequestIPV6RouteInner `json:"IPV6Route,omitempty"`
+	IPV6Route []PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequestIPV6RouteInner `json:"IPV6Route,omitempty"`
 }
 
-type _PutRedfishV1SFSSAppIpAddressManagementsRequest PutRedfishV1SFSSAppIpAddressManagementsRequest
+type _PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest
 
-// NewPutRedfishV1SFSSAppIpAddressManagementsRequest instantiates a new PutRedfishV1SFSSAppIpAddressManagementsRequest object
+// NewPutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest instantiates a new PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPutRedfishV1SFSSAppIpAddressManagementsRequest(iPV4Address []string, iPV4Config string, iPV4Gateway string, iPV4PrefixLength float32, iPV6Config string, iPV6Address []string, iPV6Gateway string, iPV6PrefixLength float32) *PutRedfishV1SFSSAppIpAddressManagementsRequest {
-	this := PutRedfishV1SFSSAppIpAddressManagementsRequest{}
+func NewPutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest(iPV4Address []string, iPV4Config string, iPV4Gateway string, iPV4PrefixLength float32, iPV6Config string, iPV6Address []string, iPV6Gateway string, iPV6PrefixLength float32) *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest {
+	this := PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest{}
 	this.IPV4Address = iPV4Address
 	this.IPV4Config = iPV4Config
 	this.IPV4Gateway = iPV4Gateway
@@ -65,16 +65,16 @@ func NewPutRedfishV1SFSSAppIpAddressManagementsRequest(iPV4Address []string, iPV
 	return &this
 }
 
-// NewPutRedfishV1SFSSAppIpAddressManagementsRequestWithDefaults instantiates a new PutRedfishV1SFSSAppIpAddressManagementsRequest object
+// NewPutRedfishV1SFSSAppIpAddressManagementsInterfaceRequestWithDefaults instantiates a new PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewPutRedfishV1SFSSAppIpAddressManagementsRequestWithDefaults() *PutRedfishV1SFSSAppIpAddressManagementsRequest {
-	this := PutRedfishV1SFSSAppIpAddressManagementsRequest{}
+func NewPutRedfishV1SFSSAppIpAddressManagementsInterfaceRequestWithDefaults() *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest {
+	this := PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest{}
 	return &this
 }
 
 // GetIPV4Address returns the IPV4Address field value
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV4Address() []string {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) GetIPV4Address() []string {
 	if o == nil {
 		var ret []string
 		return ret
@@ -85,7 +85,7 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV4Address() []stri
 
 // GetIPV4AddressOk returns a tuple with the IPV4Address field value
 // and a boolean to check if the value has been set.
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV4AddressOk() ([]string, bool) {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) GetIPV4AddressOk() ([]string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -93,12 +93,12 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV4AddressOk() ([]s
 }
 
 // SetIPV4Address sets field value
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) SetIPV4Address(v []string) {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) SetIPV4Address(v []string) {
 	o.IPV4Address = v
 }
 
 // GetIPV4Config returns the IPV4Config field value
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV4Config() string {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) GetIPV4Config() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -109,7 +109,7 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV4Config() string 
 
 // GetIPV4ConfigOk returns a tuple with the IPV4Config field value
 // and a boolean to check if the value has been set.
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV4ConfigOk() (*string, bool) {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) GetIPV4ConfigOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -117,12 +117,12 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV4ConfigOk() (*str
 }
 
 // SetIPV4Config sets field value
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) SetIPV4Config(v string) {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) SetIPV4Config(v string) {
 	o.IPV4Config = v
 }
 
 // GetIPV4Gateway returns the IPV4Gateway field value
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV4Gateway() string {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) GetIPV4Gateway() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -133,7 +133,7 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV4Gateway() string
 
 // GetIPV4GatewayOk returns a tuple with the IPV4Gateway field value
 // and a boolean to check if the value has been set.
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV4GatewayOk() (*string, bool) {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) GetIPV4GatewayOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -141,12 +141,12 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV4GatewayOk() (*st
 }
 
 // SetIPV4Gateway sets field value
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) SetIPV4Gateway(v string) {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) SetIPV4Gateway(v string) {
 	o.IPV4Gateway = v
 }
 
 // GetIPV4PrefixLength returns the IPV4PrefixLength field value
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV4PrefixLength() float32 {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) GetIPV4PrefixLength() float32 {
 	if o == nil {
 		var ret float32
 		return ret
@@ -157,7 +157,7 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV4PrefixLength() f
 
 // GetIPV4PrefixLengthOk returns a tuple with the IPV4PrefixLength field value
 // and a boolean to check if the value has been set.
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV4PrefixLengthOk() (*float32, bool) {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) GetIPV4PrefixLengthOk() (*float32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -165,12 +165,12 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV4PrefixLengthOk()
 }
 
 // SetIPV4PrefixLength sets field value
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) SetIPV4PrefixLength(v float32) {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) SetIPV4PrefixLength(v float32) {
 	o.IPV4PrefixLength = v
 }
 
 // GetIPV4Route returns the IPV4Route field value if set, zero value otherwise.
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV4Route() []PostRedfishV1SFSSAppIpAddressManagementsRequestIPV4RouteInner {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) GetIPV4Route() []PostRedfishV1SFSSAppIpAddressManagementsRequestIPV4RouteInner {
 	if o == nil || IsNil(o.IPV4Route) {
 		var ret []PostRedfishV1SFSSAppIpAddressManagementsRequestIPV4RouteInner
 		return ret
@@ -180,7 +180,7 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV4Route() []PostRe
 
 // GetIPV4RouteOk returns a tuple with the IPV4Route field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV4RouteOk() ([]PostRedfishV1SFSSAppIpAddressManagementsRequestIPV4RouteInner, bool) {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) GetIPV4RouteOk() ([]PostRedfishV1SFSSAppIpAddressManagementsRequestIPV4RouteInner, bool) {
 	if o == nil || IsNil(o.IPV4Route) {
 		return nil, false
 	}
@@ -188,7 +188,7 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV4RouteOk() ([]Pos
 }
 
 // HasIPV4Route returns a boolean if a field has been set.
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) HasIPV4Route() bool {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) HasIPV4Route() bool {
 	if o != nil && !IsNil(o.IPV4Route) {
 		return true
 	}
@@ -197,12 +197,12 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) HasIPV4Route() bool {
 }
 
 // SetIPV4Route gets a reference to the given []PostRedfishV1SFSSAppIpAddressManagementsRequestIPV4RouteInner and assigns it to the IPV4Route field.
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) SetIPV4Route(v []PostRedfishV1SFSSAppIpAddressManagementsRequestIPV4RouteInner) {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) SetIPV4Route(v []PostRedfishV1SFSSAppIpAddressManagementsRequestIPV4RouteInner) {
 	o.IPV4Route = v
 }
 
 // GetIPV6Config returns the IPV6Config field value
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV6Config() string {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) GetIPV6Config() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -213,7 +213,7 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV6Config() string 
 
 // GetIPV6ConfigOk returns a tuple with the IPV6Config field value
 // and a boolean to check if the value has been set.
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV6ConfigOk() (*string, bool) {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) GetIPV6ConfigOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -221,12 +221,12 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV6ConfigOk() (*str
 }
 
 // SetIPV6Config sets field value
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) SetIPV6Config(v string) {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) SetIPV6Config(v string) {
 	o.IPV6Config = v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetName() string {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) GetName() string {
 	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
@@ -236,7 +236,7 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetNameOk() (*string, bool) {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) GetNameOk() (*string, bool) {
 	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
@@ -244,7 +244,7 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetNameOk() (*string, b
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) HasName() bool {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) HasName() bool {
 	if o != nil && !IsNil(o.Name) {
 		return true
 	}
@@ -253,12 +253,12 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) SetName(v string) {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) SetName(v string) {
 	o.Name = &v
 }
 
 // GetIPV6Address returns the IPV6Address field value
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV6Address() []string {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) GetIPV6Address() []string {
 	if o == nil {
 		var ret []string
 		return ret
@@ -269,7 +269,7 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV6Address() []stri
 
 // GetIPV6AddressOk returns a tuple with the IPV6Address field value
 // and a boolean to check if the value has been set.
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV6AddressOk() ([]string, bool) {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) GetIPV6AddressOk() ([]string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -277,12 +277,12 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV6AddressOk() ([]s
 }
 
 // SetIPV6Address sets field value
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) SetIPV6Address(v []string) {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) SetIPV6Address(v []string) {
 	o.IPV6Address = v
 }
 
 // GetIPV6Gateway returns the IPV6Gateway field value
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV6Gateway() string {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) GetIPV6Gateway() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -293,7 +293,7 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV6Gateway() string
 
 // GetIPV6GatewayOk returns a tuple with the IPV6Gateway field value
 // and a boolean to check if the value has been set.
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV6GatewayOk() (*string, bool) {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) GetIPV6GatewayOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -301,12 +301,12 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV6GatewayOk() (*st
 }
 
 // SetIPV6Gateway sets field value
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) SetIPV6Gateway(v string) {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) SetIPV6Gateway(v string) {
 	o.IPV6Gateway = v
 }
 
 // GetIPV6PrefixLength returns the IPV6PrefixLength field value
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV6PrefixLength() float32 {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) GetIPV6PrefixLength() float32 {
 	if o == nil {
 		var ret float32
 		return ret
@@ -317,7 +317,7 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV6PrefixLength() f
 
 // GetIPV6PrefixLengthOk returns a tuple with the IPV6PrefixLength field value
 // and a boolean to check if the value has been set.
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV6PrefixLengthOk() (*float32, bool) {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) GetIPV6PrefixLengthOk() (*float32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -325,12 +325,12 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV6PrefixLengthOk()
 }
 
 // SetIPV6PrefixLength sets field value
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) SetIPV6PrefixLength(v float32) {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) SetIPV6PrefixLength(v float32) {
 	o.IPV6PrefixLength = v
 }
 
 // GetMTU returns the MTU field value if set, zero value otherwise.
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetMTU() float32 {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) GetMTU() float32 {
 	if o == nil || IsNil(o.MTU) {
 		var ret float32
 		return ret
@@ -340,7 +340,7 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetMTU() float32 {
 
 // GetMTUOk returns a tuple with the MTU field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetMTUOk() (*float32, bool) {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) GetMTUOk() (*float32, bool) {
 	if o == nil || IsNil(o.MTU) {
 		return nil, false
 	}
@@ -348,7 +348,7 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetMTUOk() (*float32, b
 }
 
 // HasMTU returns a boolean if a field has been set.
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) HasMTU() bool {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) HasMTU() bool {
 	if o != nil && !IsNil(o.MTU) {
 		return true
 	}
@@ -357,14 +357,14 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) HasMTU() bool {
 }
 
 // SetMTU gets a reference to the given float32 and assigns it to the MTU field.
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) SetMTU(v float32) {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) SetMTU(v float32) {
 	o.MTU = &v
 }
 
 // GetIPV6Route returns the IPV6Route field value if set, zero value otherwise.
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV6Route() []PutRedfishV1SFSSAppIpAddressManagementsRequestIPV6RouteInner {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) GetIPV6Route() []PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequestIPV6RouteInner {
 	if o == nil || IsNil(o.IPV6Route) {
-		var ret []PutRedfishV1SFSSAppIpAddressManagementsRequestIPV6RouteInner
+		var ret []PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequestIPV6RouteInner
 		return ret
 	}
 	return o.IPV6Route
@@ -372,7 +372,7 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV6Route() []PutRed
 
 // GetIPV6RouteOk returns a tuple with the IPV6Route field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV6RouteOk() ([]PutRedfishV1SFSSAppIpAddressManagementsRequestIPV6RouteInner, bool) {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) GetIPV6RouteOk() ([]PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequestIPV6RouteInner, bool) {
 	if o == nil || IsNil(o.IPV6Route) {
 		return nil, false
 	}
@@ -380,7 +380,7 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) GetIPV6RouteOk() ([]Put
 }
 
 // HasIPV6Route returns a boolean if a field has been set.
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) HasIPV6Route() bool {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) HasIPV6Route() bool {
 	if o != nil && !IsNil(o.IPV6Route) {
 		return true
 	}
@@ -388,12 +388,12 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) HasIPV6Route() bool {
 	return false
 }
 
-// SetIPV6Route gets a reference to the given []PutRedfishV1SFSSAppIpAddressManagementsRequestIPV6RouteInner and assigns it to the IPV6Route field.
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) SetIPV6Route(v []PutRedfishV1SFSSAppIpAddressManagementsRequestIPV6RouteInner) {
+// SetIPV6Route gets a reference to the given []PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequestIPV6RouteInner and assigns it to the IPV6Route field.
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) SetIPV6Route(v []PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequestIPV6RouteInner) {
 	o.IPV6Route = v
 }
 
-func (o PutRedfishV1SFSSAppIpAddressManagementsRequest) MarshalJSON() ([]byte, error) {
+func (o PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -401,7 +401,7 @@ func (o PutRedfishV1SFSSAppIpAddressManagementsRequest) MarshalJSON() ([]byte, e
 	return json.Marshal(toSerialize)
 }
 
-func (o PutRedfishV1SFSSAppIpAddressManagementsRequest) ToMap() (map[string]interface{}, error) {
+func (o PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["IPV4Address"] = o.IPV4Address
 	toSerialize["IPV4Config"] = o.IPV4Config
@@ -426,7 +426,7 @@ func (o PutRedfishV1SFSSAppIpAddressManagementsRequest) ToMap() (map[string]inte
 	return toSerialize, nil
 }
 
-func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) UnmarshalJSON(data []byte) (err error) {
+func (o *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) UnmarshalJSON(data []byte) (err error) {
 	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
@@ -455,53 +455,53 @@ func (o *PutRedfishV1SFSSAppIpAddressManagementsRequest) UnmarshalJSON(data []by
 		}
 	}
 
-	varPutRedfishV1SFSSAppIpAddressManagementsRequest := _PutRedfishV1SFSSAppIpAddressManagementsRequest{}
+	varPutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest := _PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
 	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varPutRedfishV1SFSSAppIpAddressManagementsRequest)
+	err = decoder.Decode(&varPutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest)
 
 	if err != nil {
 		return err
 	}
 
-	*o = PutRedfishV1SFSSAppIpAddressManagementsRequest(varPutRedfishV1SFSSAppIpAddressManagementsRequest)
+	*o = PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest(varPutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest)
 
 	return err
 }
 
-type NullablePutRedfishV1SFSSAppIpAddressManagementsRequest struct {
-	value *PutRedfishV1SFSSAppIpAddressManagementsRequest
+type NullablePutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest struct {
+	value *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest
 	isSet bool
 }
 
-func (v NullablePutRedfishV1SFSSAppIpAddressManagementsRequest) Get() *PutRedfishV1SFSSAppIpAddressManagementsRequest {
+func (v NullablePutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) Get() *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest {
 	return v.value
 }
 
-func (v *NullablePutRedfishV1SFSSAppIpAddressManagementsRequest) Set(val *PutRedfishV1SFSSAppIpAddressManagementsRequest) {
+func (v *NullablePutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) Set(val *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullablePutRedfishV1SFSSAppIpAddressManagementsRequest) IsSet() bool {
+func (v NullablePutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullablePutRedfishV1SFSSAppIpAddressManagementsRequest) Unset() {
+func (v *NullablePutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullablePutRedfishV1SFSSAppIpAddressManagementsRequest(val *PutRedfishV1SFSSAppIpAddressManagementsRequest) *NullablePutRedfishV1SFSSAppIpAddressManagementsRequest {
-	return &NullablePutRedfishV1SFSSAppIpAddressManagementsRequest{value: val, isSet: true}
+func NewNullablePutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest(val *PutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) *NullablePutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest {
+	return &NullablePutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest{value: val, isSet: true}
 }
 
-func (v NullablePutRedfishV1SFSSAppIpAddressManagementsRequest) MarshalJSON() ([]byte, error) {
+func (v NullablePutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullablePutRedfishV1SFSSAppIpAddressManagementsRequest) UnmarshalJSON(src []byte) error {
+func (v *NullablePutRedfishV1SFSSAppIpAddressManagementsInterfaceRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

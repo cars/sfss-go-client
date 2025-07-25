@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Backups** | [**[]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner**](GetRedfishV1SFSSAppLicenses200ResponseLicensesInner.md) | A set of backups obtained from SFSS | 
+**Backups** | [**[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner**](GetRedfishV1SFSSAppBackups200ResponseBackupsInner.md) | A set of backups obtained from SFSS | 
 **BackupsodataCount** | **float32** | Number of backups available | 
 **OdataId** | **string** |  | 
 **OdataContext** | **string** |  | 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewBackupsGET
 
-`func NewBackupsGET(backups []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, backupsodataCount float32, odataId string, odataContext string, odataType string, ) *BackupsGET`
+`func NewBackupsGET(backups []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, backupsodataCount float32, odataId string, odataContext string, odataType string, ) *BackupsGET`
 
 NewBackupsGET instantiates a new BackupsGET object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetBackups
 
-`func (o *BackupsGET) GetBackups() []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner`
+`func (o *BackupsGET) GetBackups() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner`
 
 GetBackups returns the Backups field if non-nil, zero value otherwise.
 
 ### GetBackupsOk
 
-`func (o *BackupsGET) GetBackupsOk() (*[]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, bool)`
+`func (o *BackupsGET) GetBackupsOk() (*[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool)`
 
 GetBackupsOk returns a tuple with the Backups field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBackups
 
-`func (o *BackupsGET) SetBackups(v []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner)`
+`func (o *BackupsGET) SetBackups(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner)`
 
 SetBackups sets Backups field to given value.
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IpAddressManagements** | [**[]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner**](GetRedfishV1SFSSAppLicenses200ResponseLicensesInner.md) | A set of SFSS VM interfaces that are assigned an IP address | 
+**IpAddressManagements** | [**[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner**](GetRedfishV1SFSSAppBackups200ResponseBackupsInner.md) | A set of SFSS VM interfaces that are assigned an IP address | 
 **IpAddressManagementsodataCount** | **float32** | Number of interfaces that are configured with an IP address | 
 **OdataId** | **string** |  | 
 **OdataContext** | **string** |  | 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewGetRedfishV1SFSSAppIpAddressManagements200Response
 
-`func NewGetRedfishV1SFSSAppIpAddressManagements200Response(ipAddressManagements []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, ipAddressManagementsodataCount float32, odataId string, odataContext string, odataType string, ) *GetRedfishV1SFSSAppIpAddressManagements200Response`
+`func NewGetRedfishV1SFSSAppIpAddressManagements200Response(ipAddressManagements []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, ipAddressManagementsodataCount float32, odataId string, odataContext string, odataType string, ) *GetRedfishV1SFSSAppIpAddressManagements200Response`
 
 NewGetRedfishV1SFSSAppIpAddressManagements200Response instantiates a new GetRedfishV1SFSSAppIpAddressManagements200Response object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetIpAddressManagements
 
-`func (o *GetRedfishV1SFSSAppIpAddressManagements200Response) GetIpAddressManagements() []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner`
+`func (o *GetRedfishV1SFSSAppIpAddressManagements200Response) GetIpAddressManagements() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner`
 
 GetIpAddressManagements returns the IpAddressManagements field if non-nil, zero value otherwise.
 
 ### GetIpAddressManagementsOk
 
-`func (o *GetRedfishV1SFSSAppIpAddressManagements200Response) GetIpAddressManagementsOk() (*[]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, bool)`
+`func (o *GetRedfishV1SFSSAppIpAddressManagements200Response) GetIpAddressManagementsOk() (*[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool)`
 
 GetIpAddressManagementsOk returns a tuple with the IpAddressManagements field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIpAddressManagements
 
-`func (o *GetRedfishV1SFSSAppIpAddressManagements200Response) SetIpAddressManagements(v []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner)`
+`func (o *GetRedfishV1SFSSAppIpAddressManagements200Response) SetIpAddressManagements(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner)`
 
 SetIpAddressManagements sets IpAddressManagements field to given value.
 

@@ -22,7 +22,7 @@ var _ MappedNullable = &RestoresGET{}
 // RestoresGET This model lists the restore information from SFSS. 
 type RestoresGET struct {
 	// A set of restore operations performed on SFSS
-	Restores []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner `json:"Restores"`
+	Restores []GetRedfishV1SFSSAppBackups200ResponseBackupsInner `json:"Restores"`
 	// Number of restore operations performed
 	RestoresodataCount float32 `json:"Restores@odata.count"`
 	OdataId string `json:"@odata.id"`
@@ -36,7 +36,7 @@ type _RestoresGET RestoresGET
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRestoresGET(restores []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, restoresodataCount float32, odataId string, odataContext string, odataType string) *RestoresGET {
+func NewRestoresGET(restores []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, restoresodataCount float32, odataId string, odataContext string, odataType string) *RestoresGET {
 	this := RestoresGET{}
 	this.Restores = restores
 	this.RestoresodataCount = restoresodataCount
@@ -55,9 +55,9 @@ func NewRestoresGETWithDefaults() *RestoresGET {
 }
 
 // GetRestores returns the Restores field value
-func (o *RestoresGET) GetRestores() []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner {
+func (o *RestoresGET) GetRestores() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner {
 	if o == nil {
-		var ret []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner
+		var ret []GetRedfishV1SFSSAppBackups200ResponseBackupsInner
 		return ret
 	}
 
@@ -66,7 +66,7 @@ func (o *RestoresGET) GetRestores() []GetRedfishV1SFSSAppLicenses200ResponseLice
 
 // GetRestoresOk returns a tuple with the Restores field value
 // and a boolean to check if the value has been set.
-func (o *RestoresGET) GetRestoresOk() ([]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, bool) {
+func (o *RestoresGET) GetRestoresOk() ([]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -74,7 +74,7 @@ func (o *RestoresGET) GetRestoresOk() ([]GetRedfishV1SFSSAppLicenses200ResponseL
 }
 
 // SetRestores sets field value
-func (o *RestoresGET) SetRestores(v []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner) {
+func (o *RestoresGET) SetRestores(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner) {
 	o.Restores = v
 }
 

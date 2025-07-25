@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CDCHealthStatus** | [**[]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner**](GetRedfishV1SFSSAppLicenses200ResponseLicensesInner.md) | CDC health status | 
+**CDCHealthStatus** | [**[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner**](GetRedfishV1SFSSAppBackups200ResponseBackupsInner.md) | CDC health status | 
 **CDCHealthStatusodataCount** | **float32** | Number of CDC instances | 
 **OdataId** | **string** |  | 
 **OdataContext** | **string** |  | 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewCDCHealthStatusGET
 
-`func NewCDCHealthStatusGET(cDCHealthStatus []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, cDCHealthStatusodataCount float32, odataId string, odataContext string, odataType string, ) *CDCHealthStatusGET`
+`func NewCDCHealthStatusGET(cDCHealthStatus []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, cDCHealthStatusodataCount float32, odataId string, odataContext string, odataType string, ) *CDCHealthStatusGET`
 
 NewCDCHealthStatusGET instantiates a new CDCHealthStatusGET object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCDCHealthStatus
 
-`func (o *CDCHealthStatusGET) GetCDCHealthStatus() []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner`
+`func (o *CDCHealthStatusGET) GetCDCHealthStatus() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner`
 
 GetCDCHealthStatus returns the CDCHealthStatus field if non-nil, zero value otherwise.
 
 ### GetCDCHealthStatusOk
 
-`func (o *CDCHealthStatusGET) GetCDCHealthStatusOk() (*[]GetRedfishV1SFSSAppLicenses200ResponseLicensesInner, bool)`
+`func (o *CDCHealthStatusGET) GetCDCHealthStatusOk() (*[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool)`
 
 GetCDCHealthStatusOk returns a tuple with the CDCHealthStatus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCDCHealthStatus
 
-`func (o *CDCHealthStatusGET) SetCDCHealthStatus(v []GetRedfishV1SFSSAppLicenses200ResponseLicensesInner)`
+`func (o *CDCHealthStatusGET) SetCDCHealthStatus(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner)`
 
 SetCDCHealthStatus sets CDCHealthStatus field to given value.
 
