@@ -58,7 +58,12 @@ func main() {
 	})
 
 	req := client.DefaultAPI.GetRedfishV1SFSSApp(ctx)
+	//client.DefaultAPI.GetRedfishV1SFSSAppExecute(req)
 	rf_resp, http_resp, err := client.DefaultAPI.GetRedfishV1SFSSAppExecute(req)
+	if http_resp.StatusCode != http.StatusOK {
+		fmt.Fprintf(os.Stderr, "Error: HTTP request failed with status %s\n", http_resp.Status)
+		return
+	}
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SFSSAppApi.GetRedfishV1SFSSApp`: %v\n", err)
 		fmt.Printf("HTTP Response: %v\n", http_resp)
