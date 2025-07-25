@@ -34,6 +34,7 @@ Method | HTTP request | Description
 [**GetRedfishV1SFSSAppEventsID**](DefaultAPI.md#GetRedfishV1SFSSAppEventsID) | **Get** /redfish/v1/SFSSApp/Events({ID}) | Get specific event
 [**GetRedfishV1SFSSAppFoundationalConfigsInstanceIdentifier**](DefaultAPI.md#GetRedfishV1SFSSAppFoundationalConfigsInstanceIdentifier) | **Get** /redfish/v1/SFSSApp/FoundationalConfigs({InstanceIdentifer}) | Get specific foundational configuration
 [**GetRedfishV1SFSSAppGlobalSettings**](DefaultAPI.md#GetRedfishV1SFSSAppGlobalSettings) | **Get** /redfish/v1/SFSSApp/GlobalSettings | Get global settings
+[**GetRedfishV1SFSSAppImages**](DefaultAPI.md#GetRedfishV1SFSSAppImages) | **Get** /redfish/v1/SFSSApp/SFSSImages | Get all images
 [**GetRedfishV1SFSSAppIpAddressManagements**](DefaultAPI.md#GetRedfishV1SFSSAppIpAddressManagements) | **Get** /redfish/v1/SFSSApp/IpAddressManagements | Get all interfaces
 [**GetRedfishV1SFSSAppIpAddressManagementsInterface**](DefaultAPI.md#GetRedfishV1SFSSAppIpAddressManagementsInterface) | **Get** /redfish/v1/SFSSApp/IpAddressManagements({InterfaceId}) | Get specific interface
 [**GetRedfishV1SFSSAppLicenses**](DefaultAPI.md#GetRedfishV1SFSSAppLicenses) | **Get** /redfish/v1/SFSSApp/Licenses | Get license count
@@ -52,7 +53,6 @@ Method | HTTP request | Description
 [**GetRedfishV1SFSSAppTacacsServersSequence**](DefaultAPI.md#GetRedfishV1SFSSAppTacacsServersSequence) | **Get** /redfish/v1/SFSSApp/TacacsServers/Sequence | Get all TACACS+ servers
 [**GetRedfishV1SFSSAppUserActivityAudit**](DefaultAPI.md#GetRedfishV1SFSSAppUserActivityAudit) | **Get** /redfish/v1/SFSSApp/UserActivityAudit | Get user activities
 [**GetRedfishV1SFSSAppUserActivityAuditID**](DefaultAPI.md#GetRedfishV1SFSSAppUserActivityAuditID) | **Get** /redfish/v1/SFSSApp/UserActivityAudit({ID}) | Get specific user activity
-[**GetRedfishV1SFSSApp_0**](DefaultAPI.md#GetRedfishV1SFSSApp_0) | **Get** /redfish/v1/SFSSApp/SFSSImages | Get all images
 [**PostRedfishV1SFSSAppAlerts**](DefaultAPI.md#PostRedfishV1SFSSAppAlerts) | **Post** /redfish/v1/SFSSApp/Alerts | Add alert
 [**PostRedfishV1SFSSAppAuthenticationSequence**](DefaultAPI.md#PostRedfishV1SFSSAppAuthenticationSequence) | **Post** /redfish/v1/SFSSApp/AuthenticationSequence | Add authentication sequence
 [**PostRedfishV1SFSSAppBackups**](DefaultAPI.md#PostRedfishV1SFSSAppBackups) | **Post** /redfish/v1/SFSSApp/Backups | Perform backup
@@ -2046,6 +2046,67 @@ Other parameters are passed through a pointer to a apiGetRedfishV1SFSSAppGlobalS
 [[Back to README]](../README.md)
 
 
+## GetRedfishV1SFSSAppImages
+
+> GetRedfishV1SFSSAppImages200Response GetRedfishV1SFSSAppImages(ctx).Execute()
+
+Get all images
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DefaultAPI.GetRedfishV1SFSSAppImages(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetRedfishV1SFSSAppImages``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetRedfishV1SFSSAppImages`: GetRedfishV1SFSSAppImages200Response
+	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetRedfishV1SFSSAppImages`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetRedfishV1SFSSAppImagesRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetRedfishV1SFSSAppImages200Response**](GetRedfishV1SFSSAppImages200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetRedfishV1SFSSAppIpAddressManagements
 
 > GetRedfishV1SFSSAppIpAddressManagements200Response GetRedfishV1SFSSAppIpAddressManagements(ctx).Execute()
@@ -3174,67 +3235,6 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetRedfishV1SFSSApp_0
-
-> GetRedfishV1SFSSApp200Response GetRedfishV1SFSSApp_0(ctx).Execute()
-
-Get all images
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.GetRedfishV1SFSSApp_0(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetRedfishV1SFSSApp_0``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetRedfishV1SFSSApp_0`: GetRedfishV1SFSSApp200Response
-	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetRedfishV1SFSSApp_0`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetRedfishV1SFSSApp_1Request struct via the builder pattern
-
-
-### Return type
-
-[**GetRedfishV1SFSSApp200Response**](GetRedfishV1SFSSApp200Response.md)
-
-### Authorization
-
-No authorization required
 
 ### HTTP request headers
 
@@ -4552,7 +4552,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPutRedfishV1SFSSApp_2Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiPutRedfishV1SFSSApp_1Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes

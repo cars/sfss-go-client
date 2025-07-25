@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SFSSImages** | [**[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner**](GetRedfishV1SFSSAppBackups200ResponseBackupsInner.md) | A set of SFSS images | 
-**SFSSImagesodataCount** | **float32** | Number of SFSS images | 
+**DeploymentModel** | **string** | Deployment model | 
+**Version** | **string** | Version of the SFSS application | 
 **OdataId** | **string** |  | 
-**OdataContext** | **string** |  | 
 **OdataType** | **string** |  | 
+**OdataContext** | **string** |  | 
 
 ## Methods
 
 ### NewGetRedfishV1SFSSApp200Response
 
-`func NewGetRedfishV1SFSSApp200Response(sFSSImages []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, sFSSImagesodataCount float32, odataId string, odataContext string, odataType string, ) *GetRedfishV1SFSSApp200Response`
+`func NewGetRedfishV1SFSSApp200Response(deploymentModel string, version string, odataId string, odataType string, odataContext string, ) *GetRedfishV1SFSSApp200Response`
 
 NewGetRedfishV1SFSSApp200Response instantiates a new GetRedfishV1SFSSApp200Response object
 This constructor will assign default values to properties that have it defined,
@@ -29,44 +29,44 @@ NewGetRedfishV1SFSSApp200ResponseWithDefaults instantiates a new GetRedfishV1SFS
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetSFSSImages
+### GetDeploymentModel
 
-`func (o *GetRedfishV1SFSSApp200Response) GetSFSSImages() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner`
+`func (o *GetRedfishV1SFSSApp200Response) GetDeploymentModel() string`
 
-GetSFSSImages returns the SFSSImages field if non-nil, zero value otherwise.
+GetDeploymentModel returns the DeploymentModel field if non-nil, zero value otherwise.
 
-### GetSFSSImagesOk
+### GetDeploymentModelOk
 
-`func (o *GetRedfishV1SFSSApp200Response) GetSFSSImagesOk() (*[]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool)`
+`func (o *GetRedfishV1SFSSApp200Response) GetDeploymentModelOk() (*string, bool)`
 
-GetSFSSImagesOk returns a tuple with the SFSSImages field if it's non-nil, zero value otherwise
+GetDeploymentModelOk returns a tuple with the DeploymentModel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSFSSImages
+### SetDeploymentModel
 
-`func (o *GetRedfishV1SFSSApp200Response) SetSFSSImages(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner)`
+`func (o *GetRedfishV1SFSSApp200Response) SetDeploymentModel(v string)`
 
-SetSFSSImages sets SFSSImages field to given value.
+SetDeploymentModel sets DeploymentModel field to given value.
 
 
-### GetSFSSImagesodataCount
+### GetVersion
 
-`func (o *GetRedfishV1SFSSApp200Response) GetSFSSImagesodataCount() float32`
+`func (o *GetRedfishV1SFSSApp200Response) GetVersion() string`
 
-GetSFSSImagesodataCount returns the SFSSImagesodataCount field if non-nil, zero value otherwise.
+GetVersion returns the Version field if non-nil, zero value otherwise.
 
-### GetSFSSImagesodataCountOk
+### GetVersionOk
 
-`func (o *GetRedfishV1SFSSApp200Response) GetSFSSImagesodataCountOk() (*float32, bool)`
+`func (o *GetRedfishV1SFSSApp200Response) GetVersionOk() (*string, bool)`
 
-GetSFSSImagesodataCountOk returns a tuple with the SFSSImagesodataCount field if it's non-nil, zero value otherwise
+GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSFSSImagesodataCount
+### SetVersion
 
-`func (o *GetRedfishV1SFSSApp200Response) SetSFSSImagesodataCount(v float32)`
+`func (o *GetRedfishV1SFSSApp200Response) SetVersion(v string)`
 
-SetSFSSImagesodataCount sets SFSSImagesodataCount field to given value.
+SetVersion sets Version field to given value.
 
 
 ### GetOdataId
@@ -89,26 +89,6 @@ and a boolean to check if the value has been set.
 SetOdataId sets OdataId field to given value.
 
 
-### GetOdataContext
-
-`func (o *GetRedfishV1SFSSApp200Response) GetOdataContext() string`
-
-GetOdataContext returns the OdataContext field if non-nil, zero value otherwise.
-
-### GetOdataContextOk
-
-`func (o *GetRedfishV1SFSSApp200Response) GetOdataContextOk() (*string, bool)`
-
-GetOdataContextOk returns a tuple with the OdataContext field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOdataContext
-
-`func (o *GetRedfishV1SFSSApp200Response) SetOdataContext(v string)`
-
-SetOdataContext sets OdataContext field to given value.
-
-
 ### GetOdataType
 
 `func (o *GetRedfishV1SFSSApp200Response) GetOdataType() string`
@@ -127,6 +107,26 @@ and a boolean to check if the value has been set.
 `func (o *GetRedfishV1SFSSApp200Response) SetOdataType(v string)`
 
 SetOdataType sets OdataType field to given value.
+
+
+### GetOdataContext
+
+`func (o *GetRedfishV1SFSSApp200Response) GetOdataContext() string`
+
+GetOdataContext returns the OdataContext field if non-nil, zero value otherwise.
+
+### GetOdataContextOk
+
+`func (o *GetRedfishV1SFSSApp200Response) GetOdataContextOk() (*string, bool)`
+
+GetOdataContextOk returns a tuple with the OdataContext field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOdataContext
+
+`func (o *GetRedfishV1SFSSApp200Response) SetOdataContext(v string)`
+
+SetOdataContext sets OdataContext field to given value.
 
 
 

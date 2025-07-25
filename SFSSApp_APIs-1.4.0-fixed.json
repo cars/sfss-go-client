@@ -5926,7 +5926,7 @@
       "parameters": [],
       "get": {
         "summary": "Get all images",
-        "operationId": "get-redfish-v1-SFSSApp",
+        "operationId": "get-redfish-v1-SFSSApp-Images",
         "responses": {
           "200": {
             "description": "OK",

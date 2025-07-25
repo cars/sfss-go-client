@@ -108,6 +108,7 @@ Class | Method | HTTP request | Description
 *DefaultAPI* | [**GetRedfishV1SFSSAppEventsID**](docs/DefaultAPI.md#getredfishv1sfssappeventsid) | **Get** /redfish/v1/SFSSApp/Events({ID}) | Get specific event
 *DefaultAPI* | [**GetRedfishV1SFSSAppFoundationalConfigsInstanceIdentifier**](docs/DefaultAPI.md#getredfishv1sfssappfoundationalconfigsinstanceidentifier) | **Get** /redfish/v1/SFSSApp/FoundationalConfigs({InstanceIdentifer}) | Get specific foundational configuration
 *DefaultAPI* | [**GetRedfishV1SFSSAppGlobalSettings**](docs/DefaultAPI.md#getredfishv1sfssappglobalsettings) | **Get** /redfish/v1/SFSSApp/GlobalSettings | Get global settings
+*DefaultAPI* | [**GetRedfishV1SFSSAppImages**](docs/DefaultAPI.md#getredfishv1sfssappimages) | **Get** /redfish/v1/SFSSApp/SFSSImages | Get all images
 *DefaultAPI* | [**GetRedfishV1SFSSAppIpAddressManagements**](docs/DefaultAPI.md#getredfishv1sfssappipaddressmanagements) | **Get** /redfish/v1/SFSSApp/IpAddressManagements | Get all interfaces
 *DefaultAPI* | [**GetRedfishV1SFSSAppIpAddressManagementsInterface**](docs/DefaultAPI.md#getredfishv1sfssappipaddressmanagementsinterface) | **Get** /redfish/v1/SFSSApp/IpAddressManagements({InterfaceId}) | Get specific interface
 *DefaultAPI* | [**GetRedfishV1SFSSAppLicenses**](docs/DefaultAPI.md#getredfishv1sfssapplicenses) | **Get** /redfish/v1/SFSSApp/Licenses | Get license count
@@ -126,7 +127,6 @@ Class | Method | HTTP request | Description
 *DefaultAPI* | [**GetRedfishV1SFSSAppTacacsServersSequence**](docs/DefaultAPI.md#getredfishv1sfssapptacacsserverssequence) | **Get** /redfish/v1/SFSSApp/TacacsServers/Sequence | Get all TACACS+ servers
 *DefaultAPI* | [**GetRedfishV1SFSSAppUserActivityAudit**](docs/DefaultAPI.md#getredfishv1sfssappuseractivityaudit) | **Get** /redfish/v1/SFSSApp/UserActivityAudit | Get user activities
 *DefaultAPI* | [**GetRedfishV1SFSSAppUserActivityAuditID**](docs/DefaultAPI.md#getredfishv1sfssappuseractivityauditid) | **Get** /redfish/v1/SFSSApp/UserActivityAudit({ID}) | Get specific user activity
-*DefaultAPI* | [**GetRedfishV1SFSSApp_0**](docs/DefaultAPI.md#getredfishv1sfssapp_0) | **Get** /redfish/v1/SFSSApp/SFSSImages | Get all images
 *DefaultAPI* | [**PostRedfishV1SFSSAppAlerts**](docs/DefaultAPI.md#postredfishv1sfssappalerts) | **Post** /redfish/v1/SFSSApp/Alerts | Add alert
 *DefaultAPI* | [**PostRedfishV1SFSSAppAuthenticationSequence**](docs/DefaultAPI.md#postredfishv1sfssappauthenticationsequence) | **Post** /redfish/v1/SFSSApp/AuthenticationSequence | Add authentication sequence
 *DefaultAPI* | [**PostRedfishV1SFSSAppBackups**](docs/DefaultAPI.md#postredfishv1sfssappbackups) | **Post** /redfish/v1/SFSSApp/Backups | Perform backup
@@ -204,6 +204,7 @@ Class | Method | HTTP request | Description
  - [GetRedfishV1SFSSAppEventsID200Response](docs/GetRedfishV1SFSSAppEventsID200Response.md)
  - [GetRedfishV1SFSSAppFoundationalConfigsInstanceIdentifier200Response](docs/GetRedfishV1SFSSAppFoundationalConfigsInstanceIdentifier200Response.md)
  - [GetRedfishV1SFSSAppGlobalSettings200Response](docs/GetRedfishV1SFSSAppGlobalSettings200Response.md)
+ - [GetRedfishV1SFSSAppImages200Response](docs/GetRedfishV1SFSSAppImages200Response.md)
  - [GetRedfishV1SFSSAppIpAddressManagements200Response](docs/GetRedfishV1SFSSAppIpAddressManagements200Response.md)
  - [GetRedfishV1SFSSAppIpAddressManagementsInterface200Response](docs/GetRedfishV1SFSSAppIpAddressManagementsInterface200Response.md)
  - [GetRedfishV1SFSSAppIpAddressManagementsInterface200ResponseIPV4RouteInner](docs/GetRedfishV1SFSSAppIpAddressManagementsInterface200ResponseIPV4RouteInner.md)

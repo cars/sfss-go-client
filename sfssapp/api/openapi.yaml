@@ -2899,7 +2899,7 @@ paths:
       summary: Delete image
     get:
       description: This API retrieves all the SFSS images available in the system.
-      operationId: get-redfish-v1-SFSSApp
+      operationId: get-redfish-v1-SFSSApp-Images
       responses:
         "200":
           content:
@@ -2915,7 +2915,7 @@ paths:
                     '@odata.context': /redfish/v1/SFSSApp/$metadata#SFSSImages
                     '@odata.type': "#SFSSImagesCollection.SFSSImagesCollection"
               schema:
-                $ref: "#/components/schemas/get_redfish_v1_SFSSApp_200_response"
+                $ref: "#/components/schemas/get_redfish_v1_SFSSApp_Images_200_response"
           description: OK
       summary: Get all images
     post:
@@ -9187,7 +9187,7 @@ components:
           '@odata.id': /redfish/v1/SFSSApp/SFSSHealthStatus
           '@odata.type': "#SFSSHealthStatus.SFSSHealthStatus"
           '@odata.context': /redfish/v1/SFSSApp/$metadata#SFSSHealthStatus/SFSSHealthStatus/$entity
-    get_redfish_v1_SFSSApp_200_response:
+    get_redfish_v1_SFSSApp_Images_200_response:
       description: ""
       example:
         SFSSImages@odata.count: 0.8008281904610115

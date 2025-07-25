@@ -21,13 +21,13 @@ var _ MappedNullable = &GetRedfishV1SFSSApp200Response{}
 
 // GetRedfishV1SFSSApp200Response 
 type GetRedfishV1SFSSApp200Response struct {
-	// A set of SFSS images
-	SFSSImages []GetRedfishV1SFSSAppBackups200ResponseBackupsInner `json:"SFSSImages"`
-	// Number of SFSS images
-	SFSSImagesodataCount float32 `json:"SFSSImages@odata.count"`
+	// Deployment model
+	DeploymentModel string `json:"DeploymentModel"`
+	// Version of the SFSS application
+	Version string `json:"Version"`
 	OdataId string `json:"@odata.id"`
-	OdataContext string `json:"@odata.context"`
 	OdataType string `json:"@odata.type"`
+	OdataContext string `json:"@odata.context"`
 }
 
 type _GetRedfishV1SFSSApp200Response GetRedfishV1SFSSApp200Response
@@ -36,13 +36,13 @@ type _GetRedfishV1SFSSApp200Response GetRedfishV1SFSSApp200Response
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGetRedfishV1SFSSApp200Response(sFSSImages []GetRedfishV1SFSSAppBackups200ResponseBackupsInner, sFSSImagesodataCount float32, odataId string, odataContext string, odataType string) *GetRedfishV1SFSSApp200Response {
+func NewGetRedfishV1SFSSApp200Response(deploymentModel string, version string, odataId string, odataType string, odataContext string) *GetRedfishV1SFSSApp200Response {
 	this := GetRedfishV1SFSSApp200Response{}
-	this.SFSSImages = sFSSImages
-	this.SFSSImagesodataCount = sFSSImagesodataCount
+	this.DeploymentModel = deploymentModel
+	this.Version = version
 	this.OdataId = odataId
-	this.OdataContext = odataContext
 	this.OdataType = odataType
+	this.OdataContext = odataContext
 	return &this
 }
 
@@ -54,52 +54,52 @@ func NewGetRedfishV1SFSSApp200ResponseWithDefaults() *GetRedfishV1SFSSApp200Resp
 	return &this
 }
 
-// GetSFSSImages returns the SFSSImages field value
-func (o *GetRedfishV1SFSSApp200Response) GetSFSSImages() []GetRedfishV1SFSSAppBackups200ResponseBackupsInner {
+// GetDeploymentModel returns the DeploymentModel field value
+func (o *GetRedfishV1SFSSApp200Response) GetDeploymentModel() string {
 	if o == nil {
-		var ret []GetRedfishV1SFSSAppBackups200ResponseBackupsInner
+		var ret string
 		return ret
 	}
 
-	return o.SFSSImages
+	return o.DeploymentModel
 }
 
-// GetSFSSImagesOk returns a tuple with the SFSSImages field value
+// GetDeploymentModelOk returns a tuple with the DeploymentModel field value
 // and a boolean to check if the value has been set.
-func (o *GetRedfishV1SFSSApp200Response) GetSFSSImagesOk() ([]GetRedfishV1SFSSAppBackups200ResponseBackupsInner, bool) {
+func (o *GetRedfishV1SFSSApp200Response) GetDeploymentModelOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.SFSSImages, true
+	return &o.DeploymentModel, true
 }
 
-// SetSFSSImages sets field value
-func (o *GetRedfishV1SFSSApp200Response) SetSFSSImages(v []GetRedfishV1SFSSAppBackups200ResponseBackupsInner) {
-	o.SFSSImages = v
+// SetDeploymentModel sets field value
+func (o *GetRedfishV1SFSSApp200Response) SetDeploymentModel(v string) {
+	o.DeploymentModel = v
 }
 
-// GetSFSSImagesodataCount returns the SFSSImagesodataCount field value
-func (o *GetRedfishV1SFSSApp200Response) GetSFSSImagesodataCount() float32 {
+// GetVersion returns the Version field value
+func (o *GetRedfishV1SFSSApp200Response) GetVersion() string {
 	if o == nil {
-		var ret float32
+		var ret string
 		return ret
 	}
 
-	return o.SFSSImagesodataCount
+	return o.Version
 }
 
-// GetSFSSImagesodataCountOk returns a tuple with the SFSSImagesodataCount field value
+// GetVersionOk returns a tuple with the Version field value
 // and a boolean to check if the value has been set.
-func (o *GetRedfishV1SFSSApp200Response) GetSFSSImagesodataCountOk() (*float32, bool) {
+func (o *GetRedfishV1SFSSApp200Response) GetVersionOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.SFSSImagesodataCount, true
+	return &o.Version, true
 }
 
-// SetSFSSImagesodataCount sets field value
-func (o *GetRedfishV1SFSSApp200Response) SetSFSSImagesodataCount(v float32) {
-	o.SFSSImagesodataCount = v
+// SetVersion sets field value
+func (o *GetRedfishV1SFSSApp200Response) SetVersion(v string) {
+	o.Version = v
 }
 
 // GetOdataId returns the OdataId field value
@@ -126,30 +126,6 @@ func (o *GetRedfishV1SFSSApp200Response) SetOdataId(v string) {
 	o.OdataId = v
 }
 
-// GetOdataContext returns the OdataContext field value
-func (o *GetRedfishV1SFSSApp200Response) GetOdataContext() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.OdataContext
-}
-
-// GetOdataContextOk returns a tuple with the OdataContext field value
-// and a boolean to check if the value has been set.
-func (o *GetRedfishV1SFSSApp200Response) GetOdataContextOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.OdataContext, true
-}
-
-// SetOdataContext sets field value
-func (o *GetRedfishV1SFSSApp200Response) SetOdataContext(v string) {
-	o.OdataContext = v
-}
-
 // GetOdataType returns the OdataType field value
 func (o *GetRedfishV1SFSSApp200Response) GetOdataType() string {
 	if o == nil {
@@ -174,6 +150,30 @@ func (o *GetRedfishV1SFSSApp200Response) SetOdataType(v string) {
 	o.OdataType = v
 }
 
+// GetOdataContext returns the OdataContext field value
+func (o *GetRedfishV1SFSSApp200Response) GetOdataContext() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.OdataContext
+}
+
+// GetOdataContextOk returns a tuple with the OdataContext field value
+// and a boolean to check if the value has been set.
+func (o *GetRedfishV1SFSSApp200Response) GetOdataContextOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.OdataContext, true
+}
+
+// SetOdataContext sets field value
+func (o *GetRedfishV1SFSSApp200Response) SetOdataContext(v string) {
+	o.OdataContext = v
+}
+
 func (o GetRedfishV1SFSSApp200Response) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -184,11 +184,11 @@ func (o GetRedfishV1SFSSApp200Response) MarshalJSON() ([]byte, error) {
 
 func (o GetRedfishV1SFSSApp200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["SFSSImages"] = o.SFSSImages
-	toSerialize["SFSSImages@odata.count"] = o.SFSSImagesodataCount
+	toSerialize["DeploymentModel"] = o.DeploymentModel
+	toSerialize["Version"] = o.Version
 	toSerialize["@odata.id"] = o.OdataId
-	toSerialize["@odata.context"] = o.OdataContext
 	toSerialize["@odata.type"] = o.OdataType
+	toSerialize["@odata.context"] = o.OdataContext
 	return toSerialize, nil
 }
 
@@ -197,11 +197,11 @@ func (o *GetRedfishV1SFSSApp200Response) UnmarshalJSON(data []byte) (err error) 
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"SFSSImages",
-		"SFSSImages@odata.count",
+		"DeploymentModel",
+		"Version",
 		"@odata.id",
-		"@odata.context",
 		"@odata.type",
+		"@odata.context",
 	}
 
 	allProperties := make(map[string]interface{})
